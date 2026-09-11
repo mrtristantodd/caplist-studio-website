@@ -113,3 +113,9 @@ Review layout, type, imagery, copy hierarchy, composition and colour balance now
 - Sticky navigation verified at mobile and desktop sizes.
 - Examples use distinct pan, push-in, crane-style rise, pull-back and diagonal flyover-style transforms; each scene lasts four seconds (12-second loop). These are 2D camera-style treatments of still photographs.
 - Production build passed. Browser checks at 390, 1440 and 1932px verified ratios, sticky header, no horizontal overflow and no inline catalogue animations. All five example motion names were verified as distinct.
+
+## Rotating scene motion and website effects
+- Preview timing doubled from 12 to 24 seconds per loop: eight seconds per scene, halving camera movement speed. Each scene in a product uses a distinct move, cycling through pan, push, crane-style rise, pull and flyover-style movement.
+- Added one-time below-fold scroll reveals, page entrance, reading progress, hover and navigation underline effects, and scrolled-header translucency. Homepage catalogue photographs remain static.
+- Guest / Sign in now accompanies the profile icon; no authenticated identity is simulated.
+- Build and 28 responsive route checks pass. Browser verification confirms three unique motions per product, 24-second timing, sign-in dialog, scroll reveals and reduced-motion behaviour.

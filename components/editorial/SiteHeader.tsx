@@ -37,8 +37,8 @@ export function SiteHeader() {
         </nav>
         <div className="header-actions">
           <PreviewButton notice="login" className="profile-signin">
-            <UserRound size={22} />
-            <span className="sr-only">Sign in</span>
+            <span className="profile-avatar"><UserRound size={22} /></span>
+            <span className="profile-label"><strong>Guest</strong><span>Sign in</span></span>
           </PreviewButton>
         </div>
         <details ref={menu} className="mobile-menu">

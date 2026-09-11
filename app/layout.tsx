@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { SiteEffects } from "@/components/editorial/SiteEffects";
 
 const inter = localFont({
   src: "../public/fonts/inter-variable.woff2",
@@ -29,7 +30,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}><SiteEffects />{children}</body>
     </html>
   );
 }

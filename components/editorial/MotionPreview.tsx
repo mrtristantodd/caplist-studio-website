@@ -33,7 +33,6 @@ export function MotionPreview({ product }: { product: Product }) {
     <div
       ref={ref}
       className={`motion-preview ${product.id === "mixed-media" ? "drone-preview" : ""}`}
-      data-movement={({"vertical-reel":"pan", "property-teaser":"push", "feature-reel":"crane", "photo-reel":"pull", "mixed-media":"flyover"})[product.id]}
       data-paused={paused || !visible}
       aria-label={`${product.name} animated example`}
     >
@@ -41,7 +40,8 @@ export function MotionPreview({ product }: { product: Product }) {
         <div
           className="motion-scene"
           key={media}
-          style={{ animationDelay: `${i * 4}s` }}
+          data-movement={["pan", "push", "crane", "pull", "flyover"][(Number(product.number) - 1 + i) % 5]}
+          style={{ animationDelay: `${i * 8}s` }}
         >
           <Photo media={media} sizes="(max-width:767px) 90vw, 48vw" />
         </div>
