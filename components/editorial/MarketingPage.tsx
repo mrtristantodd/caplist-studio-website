@@ -1,3 +1,4 @@
+import { MotionPreview } from "./MotionPreview";
 import {
   ArrowDown,
   ArrowRight,
@@ -436,10 +437,7 @@ function Catalogue() {
                 className="reference-product-image"
                 data-ratio={product.ratio}
               >
-                <Photo
-                  media={product.media}
-                  sizes="(max-width:767px) 90vw, 22vw"
-                />
+                <MotionPreview product={product} />
                 <FrameCorners />
                 <span className="reference-ratio">{product.ratio}</span>
                 <PreviewButton product={product} className="reference-preview">
@@ -587,6 +585,23 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="shell">
+        <div className="footer-invitation">
+          <div>
+            <p className="eyebrow">Same workflow. More media.</p>
+            <h2>
+              Make more of
+              <br />
+              <span>every capture.</span>
+            </h2>
+          </div>
+          <a href="mailto:tristan@tristantodd.me" className="footer-contact">
+            <span>Let’s talk about your next delivery</span>
+            <strong>
+              Get in touch <ArrowUpRight size={28} />
+            </strong>
+            <small>tristan@tristantodd.me</small>
+          </a>
+        </div>
         <div className="footer-top">
           <a href="/#top" aria-label="Caplist Studio home">
             <CaplistLogo />
@@ -610,7 +625,9 @@ export function Footer() {
             <a href="/pricing">Pricing</a>
             <a href="/resources">Resources</a>
           </nav>
-          <span>AI concept imagery · Visual prototype</span>
+          <a href="/contact">
+            Contact <ArrowUpRight size={14} />
+          </a>
         </div>
       </div>
     </footer>

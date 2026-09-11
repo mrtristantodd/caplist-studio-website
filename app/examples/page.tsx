@@ -1,3 +1,4 @@
+import { MotionPreview } from "@/components/editorial/MotionPreview";
 import { ArrowUpRight } from "lucide-react";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { Photo, FrameCorners } from "@/components/editorial/Photo";
@@ -7,17 +8,27 @@ export const metadata = { title: "Example products — Caplist Studio" };
 export default function Examples() {
   return (
     <InnerPage>
-      <section className="inner-hero shell">
-        <p className="eyebrow">See what you can create</p>
-        <h1>
-          Your property media.
-          <br />
-          <span>Five new possibilities.</span>
-        </h1>
-        <p>
-          A social reel. A listing teaser. A new angle on the details. Give your
-          clients more ways to show a property.
-        </p>
+      <section className="examples-hero">
+        <div className="examples-hero-backdrop">
+          <Photo media="aerial" sizes="100vw" priority />
+        </div>
+        <div className="inner-hero shell">
+          <p className="eyebrow">See what you can create</p>
+          <h1>
+            Your property media.
+            <br />
+            <span>Five new possibilities.</span>
+          </h1>
+          <p>
+            A social reel. A listing teaser. A new angle on the details. Give
+            your clients more ways to show a property.
+          </p>
+          <div className="examples-hero-signature">
+            <span>One capture</span>
+            <strong>5</strong>
+            <span>New ways to deliver</span>
+          </div>
+        </div>
       </section>
       <section className="light-section examples-section">
         <div className="shell examples-grid">
@@ -30,7 +41,7 @@ export default function Examples() {
                     (p.ratio === "9:16" ? "example-portrait" : "")
                   }
                 >
-                  <Photo media={p.media} sizes="(max-width:767px) 95vw, 48vw" />
+                  <MotionPreview product={p} />
                   <div className="example-art">
                     <h2>
                       {

@@ -97,3 +97,12 @@ Review layout, type, imagery, copy hierarchy, composition and colour balance now
 - Balanced the closing section into two columns and removed the requested examples introduction disclosure.
 - Retained five products per clarification. This revision remains static, following the main request to refine before motion.
 - Production build passed. All four pages passed browser checks at seven viewport widths, with no broken images, horizontal overflow or clipped headings/controls; preview dialogs and navigation passed.
+
+## Motion, pricing and contact update — 11 September 2026
+- User explicitly approved motion. Five animated photo sequences now appear in the catalogue, examples page and preview dialogs, with camera-style pan/zoom, crossfades, progress and play/pause controls. These are browser animations, not rendered video files or final production outputs.
+- Animations pause offscreen and honour reduced-motion preferences. Browser checks verified movement, pause and reduced-motion behaviour.
+- Elevated examples hero, rebuilt footer, added contact page and mailto links for tristan@tristantodd.me. Removed visible imagery disclosure as requested.
+- Replaced header CTA/login text with a profile-style sign-in control. Account access remains a frontend preview.
+- Pricing now uses Essential / Pro / Studio selected per property, with Pro recommended and larger; seven inclusions per tier and a five-product comparison.
+- Pricing source: latest relevant discussion in “Australian Real Estate SaaS Opportunity”, including the September 4 per-project clarification and September 9 confirmation of working tiers. These discussions explicitly leave pricing unvalidated; retail examples are not Caplist wholesale prices. Removed invented A$29/A$99 amounts and displayed pricing pending.
+- Added four FAQs about archived media, resale, ownership/privacy and requests. The privacy copy expresses the user's requested product policy; no backend or media-processing services were implemented.

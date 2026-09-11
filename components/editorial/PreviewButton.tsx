@@ -1,4 +1,5 @@
 "use client";
+import { MotionPreview } from "./MotionPreview";
 import { useRef } from "react";
 import { ArrowUpRight, X } from "lucide-react";
 import type { Product } from "@/lib/demo-media";
@@ -65,13 +66,10 @@ export function PreviewButton({
         {product ? (
           <>
             <div className="dialog-photo">
-              <Photo
-                media={product.media}
-                sizes="(max-width: 700px) 90vw, 600px"
-              />
+              <MotionPreview product={product} />
               <FrameCorners />
               <span className="image-label">
-                Still preview · {product.ratio}
+                Motion preview · {product.ratio}
               </span>
             </div>
             <div className="dialog-copy">
@@ -91,9 +89,7 @@ export function PreviewButton({
                 </div>
               </dl>
               <p className="dialog-needs">Source media: {product.needs}</p>
-              <p className="prototype-note">
-                Illustrative still preview. No video has been generated.
-              </p>
+              <p className="prototype-note">Animated product concept.</p>
             </div>
           </>
         ) : (

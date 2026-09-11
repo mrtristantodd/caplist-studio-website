@@ -4,36 +4,48 @@ import { InnerPage } from "@/components/editorial/InnerPage";
 export const metadata = { title: "Pricing — Caplist Studio" };
 const plans = [
   {
-    name: "Single product",
-    price: "29",
-    unit: "per product",
-    intro: "Add one more reason to choose your media business.",
+    name: "Essential",
+    price: null,
+    unit: "per property",
+    intro: "Upload your media. Let Caplist handle the rest.",
     items: [
-      "One additional reel or edit",
-      "Choose a product suited to your capture",
-      "Add it to your existing client delivery",
+      "Automatic image selection and sequencing",
+      "Caplist-selected music",
+      "Short standard duration",
+      "One primary output format",
+      "One output variation",
+      "Essential revision allowance",
+      "Automatic movement and transitions",
     ],
   },
   {
-    name: "Property collection",
-    price: "99",
+    name: "Pro",
+    price: null,
     unit: "per property",
-    intro: "Build a bigger marketing package from one capture.",
+    intro: "More creative choice. The same effortless production.",
     items: [
-      "Up to five additional products",
-      "A coordinated collection for one listing",
-      "Product selection based on supplied media",
+      "Select images and adjust their order",
+      "Choose your music style",
+      "Additional duration options",
+      "Selected additional social formats",
+      "More output variations",
+      "Expanded revision allowance",
+      "Automatic movement and transitions",
     ],
   },
   {
     name: "Studio",
     price: null,
-    unit: "for ongoing volume",
-    intro: "A repeatable offer for busy property media teams.",
+    unit: "per property",
+    intro: "The full range of choices for a complete delivery.",
     items: [
-      "A proposed volume pricing arrangement",
-      "A consistent product range for your team",
-      "A package shaped around your workflow",
+      "Select images and adjust their order",
+      "Broader curated music choice",
+      "Widest duration selection",
+      "Full social format pack",
+      "Widest choice of output variations",
+      "Most revision flexibility",
+      "Automatic movement and transitions",
     ],
   },
 ];
@@ -52,8 +64,8 @@ export default function Pricing() {
             <span>More on the invoice.</span>
           </h1>
           <p>
-            Add a single product or offer a complete collection. Keep doing the
-            work you do best. Get more value from every delivery.
+            Choose a product, then choose the tier for that property. Essential,
+            Pro or Studio — shaped around what your client needs.
           </p>
           <div className="pricing-value">
             <span>
@@ -65,14 +77,15 @@ export default function Pricing() {
             <span>
               <strong>More</strong> Value per delivery
             </span>
+
           </div>
         </div>
       </section>
       <section className="light-section pricing-section">
         <div className="shell">
           <p className="pricing-disclosure">
-            Pricing concept for design review · Illustrative AUD amounts, not a
-            live offer. Plans, inclusions and GST treatment are to be confirmed.
+            Choose per property. No subscription required. Final prices and
+            allowances are being confirmed.
           </p>
           <div className="pricing-grid">
             {plans.map((p, i) => (
@@ -96,9 +109,7 @@ export default function Pricing() {
                   </span>
                 </div>
                 {i === 1 && (
-                  <span className="plan-badge">
-                    The complete property story
-                  </span>
+                  <span className="plan-badge">Recommended · Pro</span>
                 )}
 
                 <h2>{p.name}</h2>
@@ -110,7 +121,7 @@ export default function Pricing() {
                       {p.price}
                     </>
                   ) : (
-                    <>Let’s tailor it</>
+                    <>Pricing soon</>
                   )}
                 </div>
                 <span className="plan-unit">{p.unit}</span>
@@ -133,28 +144,64 @@ export default function Pricing() {
               </article>
             ))}
           </div>
-          <div className="pricing-explainer">
-            <h2>
-              You’ve already made the trip.
-              <br />
-              Make more of the files.
-            </h2>
+          <div className="tier-comparison">
+            <p className="eyebrow">Your product. Your level of choice.</p>
+            <h2>Five products. Three ways to make them yours.</h2>
             <p>
-              Caplist is designed for professional property photographers and
-              media businesses. Your existing photos, video and drone footage
-              become additional products you can offer to your clients.
+              Choose Essential, Pro or Studio for each product. Available
+              formats depend on the media you supply.
             </p>
+            <div className="tier-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Essential</th>
+                    <th>Pro</th>
+                    <th>Studio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    "Vertical Video Reel",
+                    "Property Teaser",
+                    "Feature Reel",
+                    "Photo Reel",
+                    "Mixed Media Reel",
+                  ].map((name) => (
+                    <tr key={name}>
+                      <th scope="row">{name}</th>
+                      <td>Automatic creation</td>
+                      <td>Creative choice + formats</td>
+                      <td>Full format pack + variants</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <div className="pricing-faq">
             <h2>A few things to know.</h2>
             {[
               [
                 "Do I need to visit the property again?",
-                "No additional visit is part of the concept. Products use the professional media from your existing capture.",
+                "No. Caplist uses the professional media from your existing capture.",
               ],
               [
                 "Can every capture create all five products?",
                 "The available products depend on your media. Edited photography can support a Photo Reel; property video opens up teasers and feature edits. Drone footage adds another perspective.",
+              ],
+              [
+                "Can I use Caplist with my old media?",
+                "Yes. Your archive can become new deliverables too. Start with your original high-quality photos and footage, with permission to use them for the project.",
+              ],
+              [
+                "Can I sell what I create with Caplist to my clients?",
+                "Yes. Caplist is designed to create additional products you can sell under your own media business. You decide how to package and price your client delivery.",
+              ],
+              [
+                "Do you use my media anywhere?",
+                "No. Your media stays yours. We use it only to create the products you request — never for our own marketing, training or other customers, and never share or repurpose it without your consent.",
               ],
               [
                 "Can I purchase a plan now?",
@@ -166,6 +213,16 @@ export default function Pricing() {
                 <p>{a}</p>
               </details>
             ))}
+            <details>
+              <summary>I have a request from a client. Can you add it?</summary>
+              <p>
+                We’re always looking to improve Caplist and would love to hear
+                what your client needs.{" "}
+                <a href="/contact">
+                  Tell us about your request <ArrowUpRight size={16} />
+                </a>
+              </p>
+            </details>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { UserRound, Menu, X } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
 import { PreviewButton } from "./PreviewButton";
 function Links({ onNavigate }: { onNavigate?: () => void }) {
@@ -36,14 +36,10 @@ export function SiteHeader() {
           <Links />
         </nav>
         <div className="header-actions">
-          <PreviewButton notice="login" className="login-link">
-            Log in
+          <PreviewButton notice="login" className="profile-signin">
+            <UserRound size={22} />
+            <span className="sr-only">Sign in</span>
           </PreviewButton>
-          <a href="/#products" className="button button-blue header-cta">
-            <span className="full-cta">See what you can create</span>
-            <span className="short-cta">Explore products</span>
-            <ArrowUpRight size={15} />
-          </a>
         </div>
         <details ref={menu} className="mobile-menu">
           <summary aria-label="Toggle navigation">
@@ -52,7 +48,7 @@ export function SiteHeader() {
           </summary>
           <nav aria-label="Mobile navigation">
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <PreviewButton notice="login">Log in</PreviewButton>
+            <PreviewButton notice="login">Sign in</PreviewButton>
           </nav>
         </details>
       </div>
