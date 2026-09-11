@@ -2,7 +2,19 @@
 
 **Status: static redesign complete; awaiting explicit visual approval.**
 
-Live local prototype: http://127.0.0.1:3000/?review=static-v2
+Live local prototype: http://127.0.0.1:3000/?review=static-v3
+
+## Reference-led revision and new pages
+
+Homepage sections now follow the supplied reference more closely: a photographic hero with five outputs, compact opportunity layout, layered How It Works illustration, five-column product catalogue, professional-media dashboard and photographic close. The standard workflow ends at Deliver. Only Deliver connects to Caplist’s five additional outputs. Mobile uses a readable vertical workflow.
+
+The standards message now leads with “Your craft. In every product.” and explains professional source media positively. The visual dashboard remains illustrative, with no fake numerical quality score or live assessment.
+
+New pages: `/examples` contains five still product mock-ups; `/pricing` contains clearly labelled illustrative AUD pricing, plans and FAQs; `/resources` is an empty journal with a coming-soon message and no invented articles. Navigation reaches the actual pages. No billing, accounts, uploads or backend services were added.
+
+Copywriting reference: https://outlist.io/ — reviewed for its direct source → output → benefit structure. Caplist copy is original and retains its professional property-media audience. No testimonials, performance claims or customer numbers were borrowed.
+
+Validation: production static build and TypeScript pass; all four routes checked at 320, 390, 768, 1024 and 1440px. Navigation, empty resources state, five example dialogs and pricing FAQ checks pass. See `docs/review/pages-report.json` and the `static-v3-*` screenshots.
 
 ## September 11 revision
 

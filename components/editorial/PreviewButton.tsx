@@ -9,19 +9,19 @@ const notices = {
     title: "More value. Pricing to follow.",
     text: "Plans and pricing will be introduced in a later product phase. For now, explore the visual product catalogue and the possibilities in your existing capture.",
     link: "Explore the products",
-    href: "#products",
+    href: "/#products",
   },
   login: {
     title: "Studio access comes next.",
     text: "This is the Caplist Studio visual preview. Account access will be available in a later product phase. Explore how captured media becomes additional products below.",
     link: "See how Caplist works",
-    href: "#how-it-works",
+    href: "/#how-it-works",
   },
   resources: {
     title: "Start with a stronger capture.",
     text: "Professional media is the foundation of every product. This introductory checklist shows what makes an asset suitable for repurposing.",
     link: "Explore professional standards",
-    href: "#standards",
+    href: "/#standards",
   },
 };
 export function PreviewButton({

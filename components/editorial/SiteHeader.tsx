@@ -6,17 +6,21 @@ import { PreviewButton } from "./PreviewButton";
 function Links({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
-      <a href="#products" onClick={onNavigate}>
+      <a href="/#products" onClick={onNavigate}>
         Products
       </a>
-      <a href="#how-it-works" onClick={onNavigate}>
+      <a href="/#how-it-works" onClick={onNavigate}>
         How Caplist Works
       </a>
-      <a href="#for-media-businesses" onClick={onNavigate}>
+      <a href="/#for-media-businesses" onClick={onNavigate}>
         For Media Businesses
       </a>
-      <PreviewButton notice="pricing">Pricing</PreviewButton>
-      <PreviewButton notice="resources">Resources</PreviewButton>
+      <a href="/pricing" onClick={onNavigate}>
+        Pricing
+      </a>
+      <a href="/resources" onClick={onNavigate}>
+        Resources
+      </a>
     </>
   );
 }
@@ -25,7 +29,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <a href="#top" className="brand-link" aria-label="Caplist Studio home">
+        <a href="/#top" className="brand-link" aria-label="Caplist Studio home">
           <CaplistLogo />
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -35,7 +39,7 @@ export function SiteHeader() {
           <PreviewButton notice="login" className="login-link">
             Log in
           </PreviewButton>
-          <a href="#products" className="button button-blue header-cta">
+          <a href="/#products" className="button button-blue header-cta">
             <span className="full-cta">See what you can create</span>
             <span className="short-cta">Explore products</span>
             <ArrowUpRight size={15} />

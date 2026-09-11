@@ -33,6 +33,9 @@ function Chapter({
 function Hero() {
   return (
     <section id="top" className="hero" aria-labelledby="hero-title">
+      <div className="hero-atmosphere">
+        <Photo media="exterior" sizes="100vw" decorative />
+      </div>
       <div className="shell hero-main">
         <div className="hero-copy">
           <p className="eyebrow">
@@ -51,11 +54,11 @@ function Hero() {
             </strong>
           </p>
           <div className="hero-actions">
-            <a href="#products" className="button button-blue">
+            <a href="/#products" className="button button-blue">
               See what your media can create
               <ArrowUpRight size={18} />
             </a>
-            <a href="#how-it-works" className="text-link">
+            <a href="/#how-it-works" className="text-link">
               See how it works
               <ArrowDown size={16} />
             </a>
@@ -105,6 +108,20 @@ function Hero() {
               ))}
             </div>
           </div>
+          <div className="hero-product-list">
+            <p className="eyebrow">New products</p>
+            {products.map((p) => (
+              <a href={`#${p.id}`} key={p.id}>
+                <div>
+                  <Photo media={p.media} sizes="100px" decorative />
+                </div>
+                <span>
+                  {p.name.replace("Alternative / ", "")}
+                  <small>{p.duration}</small>
+                </span>
+              </a>
+            ))}
+          </div>
           <div className="hero-output">
             <div className="output-image">
               <Photo media="living" sizes="200px" />
@@ -142,134 +159,112 @@ function Hero() {
 }
 
 function Opportunity() {
-  const steps = [
-    { name: "Book", detail: "The job is booked", media: "living" },
-    { name: "Travel", detail: "One property visit", media: "aerial" },
-    { name: "Capture", detail: "Your professional media", media: "exterior" },
-    { name: "Edit", detail: "Your finished files", media: "kitchen" },
-    { name: "Deliver", detail: "The original package", media: "exterior" },
-  ] as const;
+  const steps = ["Book", "Travel", "Capture", "Edit", "Deliver"];
+  const media: MediaKey[] = [
+    "living",
+    "aerial",
+    "exterior",
+    "kitchen",
+    "exterior",
+  ];
   return (
     <section
       id="for-media-businesses"
       className="opportunity light-section chapter-section"
       aria-labelledby="opportunity-title"
     >
-      <div className="shell">
-        <div className="opportunity-v2-heading">
-          <div>
-            <Chapter number="01">The commercial opportunity</Chapter>
-            <h2 id="opportunity-title">
-              The expensive part
-              <br />
-              already happened.
-            </h2>
-          </div>
+      <div className="shell opportunity-reference">
+        <div className="opportunity-story">
+          <Chapter number="01">The commercial opportunity</Chapter>
+          <h2 id="opportunity-title">
+            The expensive
+            <br />
+            part already
+            <br />
+            happened.
+          </h2>
           <p>
-            You’ve booked, travelled, captured and delivered. The investment is
-            already in your files.{" "}
-            <strong>
-              Turn that same capture into more products your clients can buy.
-            </strong>
+            You’ve booked, travelled, captured and delivered. Now turn the media
+            from that same job into additional products your clients can buy.
+          </p>
+          <p className="usp-copy">
+            One property visit.
+            <br />
+            <strong>More products to sell.</strong>
+          </p>
+          <a href="/examples" className="button button-outline">
+            See the possibilities <ArrowUpRight size={18} />
+          </a>
+        </div>
+        <div className="delivery-diagram">
+          <p className="eyebrow workflow-heading">Your standard workflow</p>
+          <ol className="capture-journey">
+            {steps.map((step, i) => (
+              <li key={step}>
+                <div className="journey-label">
+                  <span>{step}</span>
+                </div>
+                <div className={`journey-photo journey-${step.toLowerCase()}`}>
+                  <Photo
+                    media={media[i]}
+                    sizes="(max-width:767px) 30vw, 15vw"
+                    decorative
+                  />
+                  {i === 0 && (
+                    <div className="booking-ticket">
+                      <span>SHOOT</span>
+                      <strong>Booked</strong>
+                      <Check size={18} />
+                    </div>
+                  )}
+                  {i === 3 && (
+                    <div className="edit-tracks">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                  )}
+                  <FrameCorners />
+                </div>
+                {i < 4 && <ArrowRight className="workflow-arrow" size={16} />}
+              </li>
+            ))}
+          </ol>
+          <div
+            className="deliver-branch"
+            aria-label="From Deliver, Caplist creates five additional products"
+          >
+            <div className="branch-origin" />
+            <div className="branch-bar" />
+            <div className="branch-brand">
+              <CaplistMark size={23} />
+              <span>
+                Same capture. <strong>Additional delivery by Caplist.</strong>
+              </span>
+            </div>
+          </div>
+          <div className="possibility-grid">
+            {products.map((product) => (
+              <a
+                href={`#${product.id}`}
+                className="possibility"
+                key={product.id}
+              >
+                <div className="possibility-photo">
+                  <Photo
+                    media={product.media}
+                    sizes="(max-width:767px) 40vw, 16vw"
+                  />
+                  <FrameCorners />
+                </div>
+                <h3>{product.name.replace("Alternative / ", "")}</h3>
+              </a>
+            ))}
+          </div>
+          <p className="opportunity-note">
+            Your original delivery stays the same. Your offer gets bigger.
           </p>
         </div>
-        <ol className="capture-journey">
-          {steps.map((step, i) => (
-            <li key={step.name}>
-              <div className="journey-label">
-                <span>
-                  0{i + 1} / {step.name}
-                </span>
-                <Check size={18} />
-              </div>
-              <div
-                className={`journey-photo journey-${step.name.toLowerCase()}`}
-              >
-                <Photo
-                  media={step.media}
-                  sizes="(max-width: 600px) 45vw, 20vw"
-                  decorative
-                />
-                {i === 0 && (
-                  <div className="booking-ticket">
-                    <span>PROPERTY SHOOT</span>
-                    <strong>Confirmed</strong>
-                    <CheckCheck size={25} />
-                  </div>
-                )}
-                {i === 3 && (
-                  <div className="edit-tracks">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                )}
-                <FrameCorners />
-              </div>
-              <p>{step.detail}</p>
-            </li>
-          ))}
-        </ol>
-        <div
-          className="core-promise"
-          aria-label="One property visit, existing capture, multiple additional products"
-        >
-          <div>
-            <span className="promise-number">01</span>
-            <h3>
-              One property
-              <br />
-              visit.
-            </h3>
-          </div>
-          <ArrowRight className="promise-arrow" />
-          <div>
-            <span className="promise-number">
-              <Scan />
-            </span>
-            <h3>
-              Your existing
-              <br />
-              capture.
-            </h3>
-          </div>
-          <ArrowRight className="promise-arrow" />
-          <div className="promise-result">
-            <span className="promise-number">05</span>
-            <h3>
-              Multiple additional
-              <br />
-              products.
-            </h3>
-          </div>
-        </div>
-        <div className="output-intro">
-          <p className="eyebrow">Same capture. More products.</p>
-          <p>A bigger offer, without another trip.</p>
-        </div>
-        <div className="possibility-grid">
-          {products.map((product) => (
-            <a href={`#${product.id}`} className="possibility" key={product.id}>
-              <div className="possibility-photo">
-                <Photo
-                  media={product.media}
-                  sizes="(max-width: 600px) 85vw, 25vw"
-                />
-                <FrameCorners />
-                <span>{product.ratio}</span>
-                <ArrowUpRight size={22} />
-              </div>
-              <h3>{product.name.replace("Alternative / ", "")}</h3>
-              <p>
-                {product.duration} · {product.ratio}
-              </p>
-            </a>
-          ))}
-        </div>
-        <p className="opportunity-note">
-          Five product possibilities. Availability depends on the coverage and
-          quality of your media.
-        </p>
       </div>
     </section>
   );
@@ -292,11 +287,11 @@ function Transformation() {
               <span className="muted-type">Multiple products.</span>
             </h2>
             <p>
-              Start with the professional media you already have. Caplist
-              assesses the content, quality and formats, then identifies the
-              products that capture can support.
+              Turn your finished photos, property video and drone footage into
+              new reels and edits. Choose from the products suited to your
+              capture, then add them to your client’s delivery.
             </p>
-            <a href="#products" className="button button-blue">
+            <a href="/#products" className="button button-blue">
               Explore the five products <ArrowUpRight size={18} />
             </a>
           </div>
@@ -390,82 +385,44 @@ function Catalogue() {
       aria-labelledby="catalogue-title"
     >
       <div className="shell">
-        <div className="section-heading">
+        <div className="catalogue-reference-heading">
           <div>
-            <Chapter number="03">The product catalogue</Chapter>
+            <Chapter number="03">Product catalogue</Chapter>
             <h2 id="catalogue-title">
-              PROFESSIONAL
+              Professional products,
               <br />
-              PRODUCTS.
-              <br />
-              <span className="muted-type">READY TO SELL.</span>
+              ready to sell.
             </h2>
           </div>
-          <div className="catalogue-intro">
-            <p>
-              A considered collection of visual products. Created from your
-              existing capture. Ready to become part of your offer.
-            </p>
-            <span className="eyebrow">05 products / More possibilities</span>
-          </div>
+          <p>
+            Give your clients more ways to market a property. Social reels,
+            listing teasers and feature edits — created from the media you
+            already have.
+          </p>
+          <a href="/examples" className="text-link">
+            See example products <ArrowUpRight size={18} />
+          </a>
         </div>
-        <div className="editorial-catalogue">
+        <div className="reference-catalogue">
           {products.map((product) => (
-            <article
-              id={product.id}
-              className={`catalogue-product product-${product.number}`}
-              key={product.id}
-            >
-              <div className="catalogue-media">
+            <article id={product.id} key={product.id}>
+              <div className="reference-product-image">
                 <Photo
                   media={product.media}
-                  sizes={
-                    product.number === "05"
-                      ? "(max-width: 767px) 100vw, 85vw"
-                      : "(max-width: 767px) 90vw, 50vw"
-                  }
+                  sizes="(max-width:767px) 90vw, 22vw"
                 />
-                <div className="photo-shade" />
                 <FrameCorners />
-                <div className="catalogue-overlay">
-                  <span>{product.label}</span>
-                  <span className="format-tag">{product.ratio}</span>
-                </div>
-                {product.number === "04" && (
-                  <div className="photo-sequence">
-                    {(["living", "kitchen", "exterior"] as MediaKey[]).map(
-                      (media) => (
-                        <div key={media}>
-                          <Photo media={media} sizes="130px" decorative />
-                        </div>
-                      ),
-                    )}
-                  </div>
-                )}
-                {product.number === "05" && (
-                  <div className="mixed-inset">
-                    <Photo media="exterior" sizes="300px" />
-                    <span>GROUND / AIR / DETAIL</span>
-                  </div>
-                )}
-              </div>
-              <div className="product-caption">
-                <span className="product-index">{product.number}</span>
-                <div className="product-copy">
-                  <h3>{product.name}</h3>
-                  <p>{product.purpose}</p>
-                  <span className="product-requirements">{product.needs}</span>
-                </div>
-                <PreviewButton product={product} className="product-open">
+                <span className="reference-ratio">{product.ratio}</span>
+                <PreviewButton product={product} className="reference-preview">
                   <span className="sr-only">Preview {product.name}</span>
-                  <ArrowUpRight size={24} />
+                  <ArrowUpRight size={22} />
                 </PreviewButton>
               </div>
-              <div className="product-specs">
-                <span>{product.duration}</span>
-                <span>{product.ratio}</span>
-                <span>Visual concept</span>
-              </div>
+              <h3>{product.name.replace("Alternative / ", "")}</h3>
+              <p className="product-meta">
+                {product.duration} · {product.ratio}
+              </p>
+              <p>{product.purpose}</p>
             </article>
           ))}
         </div>
@@ -481,89 +438,85 @@ function Standards() {
       className="standards chapter-section"
       aria-labelledby="standards-title"
     >
-      <div className="shell">
-        <div className="section-heading">
-          <div>
-            <Chapter number="04">Professional standards</Chapter>
-            <h2 id="standards-title">
-              ONLY WHAT
-              <br />
-              THE MEDIA
-              <br />
-              <span className="muted-type">CAN SUPPORT.</span>
-            </h2>
-          </div>
-          <div>
-            <p>Professional input. Professional output.</p>
-            <p>
-              Caplist assesses source media before a product becomes available.
-              When the capture can’t support the result, that product stays
-              unavailable.
-            </p>
-            <PreviewButton notice="resources" className="text-link">
-              The capture checklist
-              <ArrowUpRight size={18} />
-            </PreviewButton>
-          </div>
+      <div className="shell standards-reference">
+        <div className="standards-story">
+          <Chapter number="04">Built for media professionals</Chapter>
+          <h2 id="standards-title">
+            Your craft.
+            <br />
+            In every product.
+          </h2>
+          <p>
+            You create professional property media. Caplist helps you get more
+            from it — with considered edits that reflect the quality of your
+            work.
+          </p>
+          <p>
+            Start with sharp, high-resolution photos and well-shot footage. Give
+            your clients more content you’re proud to deliver.
+          </p>
+          <a href="/examples" className="button button-blue">
+            See the finished look <ArrowUpRight size={18} />
+          </a>
         </div>
-        <div className="standards-assessment">
-          <div className="assessment-image">
-            <Photo media="exterior" sizes="(max-width: 767px) 90vw, 42vw" />
-            <FrameCorners />
-            <div className="assessment-caption">
-              <span>
-                <Video size={14} /> PROPERTY VIDEO / SOURCE FRAME
-              </span>
-              <span>4K</span>
-            </div>
-            <div className="assessment-crop">
-              <FrameCorners />
-              <span>VERTICAL-SAFE AREA</span>
-            </div>
+        <div className="professional-console">
+          <div className="console-title">
+            <span className="eyebrow">
+              Professional media. Client-ready products.
+            </span>
+            <span>EXAMPLE</span>
           </div>
-          <div className="assessment-copy">
-            <p className="eyebrow">
-              <Scan size={15} /> An example of a suitable capture
-            </p>
-            <dl className="quality-metrics">
+          <div className="console-main">
+            <div className="console-image">
+              <Photo media="exterior" sizes="500px" />
+              <FrameCorners />
+            </div>
+            <dl>
               {[
-                ["Resolution", "4K source"],
-                ["Sharpness", "Clear detail"],
+                ["Detail", "Sharp & clear"],
+                ["Resolution", "High quality"],
                 ["Exposure", "Balanced"],
-                ["Motion stability", "Stable"],
-                ["Composition", "Suitable"],
-                ["Vertical reframe", "Subject retained"],
-              ].map(([name, value]) => (
-                <div key={name}>
-                  <dt>{name}</dt>
+                ["Composition", "Considered"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
                   <dd>
-                    {value}
                     <Check size={15} />
+                    {v}
                   </dd>
                 </div>
               ))}
             </dl>
-            <div className="eligibility available">
-              <Check size={19} />
-              <div>
-                <strong>Vertical Video Reel available</strong>
-                <span>The source supports the output.</span>
-              </div>
+            <div className="quality-seal">
+              <CheckCheck size={32} />
+              <strong>PRO</strong>
+              <span>FROM THE START</span>
             </div>
-            <div className="eligibility unavailable">
-              <Minus size={19} />
-              <div>
-                <strong>Below the standard? Unavailable.</strong>
-                <span>
-                  Poor resolution, heavy blur or insufficient footage won’t
-                  unlock a premium output.
-                </span>
-              </div>
-            </div>
-            <p className="assessment-note">
-              Illustrative assessment. No media is being analysed.
-            </p>
           </div>
+          <div className="console-filmstrip">
+            {(
+              [
+                "exterior",
+                "living",
+                "kitchen",
+                "aerial",
+                "exterior",
+              ] as MediaKey[]
+            ).map((m, i) => (
+              <div key={i}>
+                <Photo media={m} sizes="150px" decorative />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="delivery-checks">
+          <p className="eyebrow">More for your clients</p>
+          {products.map((p) => (
+            <span key={p.id}>
+              <Check size={18} />
+              {p.name.replace("Alternative / ", "")}
+            </span>
+          ))}
         </div>
       </div>
     </section>
@@ -585,7 +538,7 @@ function Close() {
           ON YOUR HARD DRIVE.
         </h2>
         <p>Capture once. Create more. Sell more.</p>
-        <a className="button button-blue" href="#products">
+        <a className="button button-blue" href="/#products">
           See what your media can create
           <ArrowUpRight size={18} />
         </a>
@@ -610,12 +563,12 @@ function Close() {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="site-footer">
       <div className="shell">
         <div className="footer-top">
-          <a href="#top" aria-label="Caplist Studio home">
+          <a href="/#top" aria-label="Caplist Studio home">
             <CaplistLogo />
           </a>
           <p>
@@ -623,7 +576,7 @@ function Footer() {
             <br />
             <span>More opportunity.</span>
           </p>
-          <a href="#top" className="text-link">
+          <a href="/#top" className="text-link">
             Back to top
             <ArrowUpRight size={16} />
           </a>
@@ -631,11 +584,11 @@ function Footer() {
         <div className="footer-bottom">
           <span>© 2026 Caplist Studio</span>
           <nav aria-label="Footer navigation">
-            <a href="#products">Products</a>
-            <a href="#how-it-works">How Caplist Works</a>
-            <a href="#for-media-businesses">For Media Businesses</a>
-            <PreviewButton notice="pricing">Pricing</PreviewButton>
-            <PreviewButton notice="resources">Resources</PreviewButton>
+            <a href="/#products">Products</a>
+            <a href="/#how-it-works">How Caplist Works</a>
+            <a href="/#for-media-businesses">For Media Businesses</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/resources">Resources</a>
           </nav>
           <span>Static visual preview / 01</span>
         </div>

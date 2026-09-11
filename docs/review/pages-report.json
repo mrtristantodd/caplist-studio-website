@@ -1,0 +1,166 @@
+{
+  "results": [
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/pricing",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/pricing",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/pricing",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/pricing",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/pricing",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/resources",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/resources",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/resources",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/resources",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/resources",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/examples",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    },
+    {
+      "route": "/examples",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    },
+    {
+      "route": "/examples",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    },
+    {
+      "route": "/examples",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    },
+    {
+      "route": "/examples",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    }
+  ],
+  "errors": [],
+  "interactions": "Pricing and resources navigation, empty journal, five example dialogs and pricing FAQ passed"
+}
