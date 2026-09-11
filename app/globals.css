@@ -4687,3 +4687,236 @@ body {
     padding: 0;
   }
 }
+
+/* Brand kit and final static art direction. */
+:root {
+  --blue: #2f7bff;
+}
+.caplist-logo {
+  gap: 12px;
+}
+.caplist-logo > svg {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+.caplist-wordmark {
+  width: 143px;
+}
+.caplist-wordmark > span {
+  letter-spacing: 0.48em;
+  padding-left: 0.48em;
+}
+.source-contact .source-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 7px;
+}
+.source-contact .source-thumbnails > div {
+  display: block;
+}
+.source-contact .source-thumb {
+  width: 100%;
+  height: 49px;
+}
+.source-contact .source-thumbnails span {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+}
+.hero-product-list a > div {
+  width: 48px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+}
+.hero-product-list a > div[data-ratio="9:16"] {
+  width: 32px;
+  aspect-ratio: 9 / 16;
+  margin-inline: 8px;
+}
+.media-plane {
+  border: 3px solid #71899b;
+  box-shadow:
+    0 20px 45px #000a,
+    0 0 0 5px #0b1119;
+}
+.media-input-labels > span {
+  background: linear-gradient(140deg, #2a3c4b, #0e1821);
+  border: 1px solid #587187;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 1px 0 #ffffff25,
+    0 8px 18px #0005;
+  padding: 12px 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.assessment-strip.feature-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 15px;
+  padding-block: 25px;
+  border: 0;
+}
+.feature-strip > span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  border-top: 1px solid #36516a;
+  padding: 20px 12px;
+  font-size: 14px;
+  background: linear-gradient(145deg, #18293480, transparent);
+}
+.feature-strip > span svg {
+  color: #6ca6ff;
+  padding: 9px;
+  box-sizing: content-box;
+  border: 1px solid #35506a;
+  border-radius: 10px;
+  background: #1d3146;
+}
+.reference-product-image {
+  container-type: size;
+}
+.reference-product-image[data-ratio] > .frame-corners {
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.reference-product-image[data-ratio="9:16"] > .frame-corners {
+  width: min(calc(100cqw - 28px), calc((100cqh - 28px) * 9 / 16));
+  height: auto;
+  aspect-ratio: 9 / 16;
+}
+.reference-product-image[data-ratio="16:9"] > .frame-corners {
+  width: min(calc(100cqw - 28px), calc((100cqh - 28px) * 16 / 9));
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+.console-main {
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 25px;
+}
+.console-image {
+  min-height: 215px;
+}
+.craft-promise {
+  padding: 10px 0;
+}
+.craft-promise h3 {
+  margin: 14px 0;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+.craft-promise p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #b5c3cd;
+}
+.professional-console {
+  background: linear-gradient(135deg, #1b2b3880, #0b1017);
+  border-color: #314657;
+  box-shadow: 0 22px 60px #0005;
+}
+.commercial-close .close-content {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  column-gap: 9%;
+  align-content: center;
+  padding-block: 75px;
+}
+.close-content > .chapter {
+  grid-column: 1 / -1;
+}
+.close-content > h2 {
+  grid-column: 1;
+  grid-row: 2 / 5;
+  max-width: none;
+  font-size: clamp(32px, 3.2vw, 59px);
+  margin: 0;
+}
+.close-content > p:not(.chapter) {
+  grid-column: 2;
+  font-size: 22px;
+  align-self: end;
+  margin: 0 0 24px;
+}
+.close-content > .button {
+  grid-column: 2;
+  justify-self: start;
+}
+.close-content > .close-equation {
+  grid-column: 2;
+  width: 100%;
+  gap: 15px;
+  margin-top: 28px;
+  padding-top: 22px;
+}
+.close-equation strong {
+  font-size: 29px;
+}
+.close-equation span {
+  font-size: 9px;
+}
+@media (max-width: 1023px) {
+  .source-contact .source-thumb {
+    height: 55px;
+  }
+  .commercial-close .close-content {
+    gap: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .caplist-logo > svg {
+    width: 37px;
+    height: 37px;
+  }
+  .caplist-wordmark {
+    width: 118px;
+  }
+  .source-contact .source-thumbnails {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .source-contact .source-thumb {
+    height: 50px;
+  }
+  .assessment-strip.feature-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .feature-strip > span:last-child {
+    grid-column: 1 / -1;
+  }
+  .console-main {
+    grid-template-columns: 1fr;
+  }
+  .console-image {
+    min-height: 220px;
+  }
+  .craft-promise {
+    padding: 12px;
+  }
+  .commercial-close .close-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 50px;
+    gap: 22px;
+  }
+  .close-content > h2 {
+    font-size: clamp(30px, 7.5vw, 50px);
+  }
+  .close-content > p:not(.chapter) {
+    align-self: auto;
+    margin: 0;
+  }
+  .close-content > .close-equation {
+    margin: 0;
+  }
+}
+/* The light lockup uses black outer panels and the blue centre panel. */
+.branch-brand > svg { color: #0b0d10; }

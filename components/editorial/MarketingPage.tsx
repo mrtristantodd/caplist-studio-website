@@ -8,6 +8,10 @@ import {
   Scan,
   Plus,
   Minus,
+  Music2,
+  MousePointerClick,
+  Layers,
+  Crop,
 } from "lucide-react";
 import { CaplistLogo, CaplistMark } from "@/components/brand/CaplistLogo";
 import { products, type MediaKey } from "@/lib/demo-media";
@@ -63,12 +67,6 @@ function Hero() {
               <ArrowDown size={16} />
             </a>
           </div>
-          <p className="hero-qualifier">
-            <CheckCheck size={16} /> Built for professional property-media
-            businesses.
-            <br />
-            No additional property visit.
-          </p>
         </div>
         <div className="hero-media">
           <div className="hero-property">
@@ -89,14 +87,16 @@ function Hero() {
             </div>
           </div>
           <div className="source-contact">
-            <p className="eyebrow">Your capture</p>
+            <p className="eyebrow">Your capture · 6 images</p>
             <div className="source-thumbnails">
               {(
                 [
-                  ["exterior", "Photos"],
-                  ["living", "Video"],
+                  ["suburban", "Exterior"],
+                  ["familyLiving", "Living"],
+                  ["familyKitchen", "Kitchen"],
+                  ["bedroom", "Bedroom"],
+                  ["bathroom", "Bathroom"],
                   ["aerial", "Drone"],
-                  ["kitchen", "Vertical"],
                 ] as [MediaKey, string][]
               ).map(([media, label]) => (
                 <div key={label}>
@@ -112,7 +112,7 @@ function Hero() {
             <p className="eyebrow">New products</p>
             {products.map((p) => (
               <a href={`#${p.id}`} key={p.id}>
-                <div>
+                <div data-ratio={p.ratio}>
                   <Photo media={p.media} sizes="100px" decorative />
                 </div>
                 <span>
@@ -168,11 +168,11 @@ function Hero() {
 function Opportunity() {
   const steps = ["Book", "Travel", "Capture", "Edit", "Deliver"];
   const media: MediaKey[] = [
-    "living",
+    "familyLiving",
     "aerial",
-    "exterior",
-    "kitchen",
-    "exterior",
+    "suburban",
+    "familyKitchen",
+    "suburban",
   ];
   return (
     <section
@@ -341,30 +341,33 @@ function Transformation() {
               <FrameCorners />
             </div>
             <div className="media-plane plane-front">
-              <Photo media="kitchen" sizes="500px" />
+              <Photo media="familyKitchen" sizes="500px" />
 
               <FrameCorners />
             </div>
             <div className="media-plane plane-vertical">
-              <Photo media="living" sizes="300px" />
+              <Photo media="bedroom" sizes="300px" />
               <span>9:16</span>
               <FrameCorners />
             </div>
           </div>
         </div>
-        <div className="assessment-strip">
-          <span className="eyebrow">A professional standard at every step</span>
+        <div className="assessment-strip feature-strip">
           {[
-            "Scene selection",
-            "Quality assessment",
-            "Format eligibility",
-            "Product matching",
-          ].map((x) => (
-            <span key={x}>
-              <Check size={18} />
-              {x}
-            </span>
-          ))}
+            [Music2, "Music selection"],
+            [MousePointerClick, "One-click generation"],
+            [Layers, "Multiple deliverables"],
+            [Scan, "Scene selection"],
+            [Crop, "Crop selection"],
+          ].map(([Icon, label]) => {
+            const FeatureIcon = Icon as typeof Music2;
+            return (
+              <span key={label as string}>
+                <FeatureIcon size={23} />
+                {label as string}
+              </span>
+            );
+          })}
         </div>
         <div className="source-outcomes">
           <div>
@@ -429,7 +432,10 @@ function Catalogue() {
         <div className="reference-catalogue">
           {products.map((product) => (
             <article id={product.id} key={product.id}>
-              <div className="reference-product-image">
+              <div
+                className="reference-product-image"
+                data-ratio={product.ratio}
+              >
                 <Photo
                   media={product.media}
                   sizes="(max-width:767px) 90vw, 22vw"
@@ -465,18 +471,17 @@ function Standards() {
         <div className="standards-story">
           <Chapter number="04">Built for media professionals</Chapter>
           <h2 id="standards-title">
-            Your craft.
+            Made for photographers.
             <br />
-            In every product.
+            More from every shoot.
           </h2>
           <p>
-            You create professional property media. Caplist helps you get more
-            from it — with considered edits that reflect the quality of your
-            work.
+            You’ve done the skilled work. Caplist remixes your finished photos
+            and footage into more products your clients can buy.
           </p>
           <p>
-            Start with sharp, high-resolution photos and well-shot footage. Give
-            your clients more content you’re proud to deliver.
+            The same shoot. More deliverables. More earning potential — without
+            another edit taking over your day.
           </p>
           <a href="/examples" className="button button-blue">
             See the finished look <ArrowUpRight size={18} />
@@ -491,39 +496,31 @@ function Standards() {
           </div>
           <div className="console-main">
             <div className="console-image">
-              <Photo media="exterior" sizes="500px" />
+              <Photo media="familyLiving" sizes="500px" />
               <FrameCorners />
             </div>
-            <dl>
-              {[
-                ["Detail", "Sharp & clear"],
-                ["Resolution", "High quality"],
-                ["Exposure", "Balanced"],
-                ["Composition", "Considered"],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <dt>{k}</dt>
-                  <dd>
-                    <Check size={15} />
-                    {v}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <div className="quality-seal">
-              <CheckCheck size={32} />
-              <strong>PRO</strong>
-              <span>MEDIA</span>
+            <div className="craft-promise">
+              <CaplistMark size={52} />
+              <h3>
+                Your media.
+                <br />
+                Our next edit.
+              </h3>
+              <p>
+                Professional capture in.
+                <br />
+                More to deliver out.
+              </p>
             </div>
           </div>
           <div className="console-filmstrip">
             {(
               [
-                "exterior",
-                "living",
-                "kitchen",
-                "aerial",
-                "exterior",
+                "suburban",
+                "familyKitchen",
+                "bathroom",
+                "bedroom",
+                "weatherboard",
               ] as MediaKey[]
             ).map((m, i) => (
               <div key={i}>

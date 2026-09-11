@@ -88,3 +88,12 @@ Pricing and Log in provide explanatory local notices. No prices, accounts or tra
 The user's execution addendum says: “After completing Pass One: STOP. Do not begin Pass Two automatically.”
 
 Review layout, type, imagery, copy hierarchy, composition and colour balance now. Resolve requested changes first. Only explicit approval starts the separate motion pass. That later pass must preserve the approved layout and receive its own commit: `feat(marketing): add Caplist motion system`.
+
+## Brand and static refinement — 11 September 2026
+- Applied the supplied three-panel icon, blue-A wordmark and favicon throughout the shared navigation and workflow graphics.
+- Added six new property/interior concepts, including two more modest architectural suburban houses.
+- Corrected catalogue frame proportions to 9:16 / 16:9, adjusted hero product thumbnails and expanded source capture to six images.
+- Replaced quality metrics with photographer-focused value messaging, elevated feature icons and separated layered images with borders.
+- Balanced the closing section into two columns and removed the requested examples introduction disclosure.
+- Retained five products per clarification. This revision remains static, following the main request to refine before motion.
+- Production build passed. All four pages passed browser checks at seven viewport widths, with no broken images, horizontal overflow or clipped headings/controls; preview dialogs and navigation passed.

@@ -18,10 +18,6 @@ export default function Examples() {
           A social reel. A listing teaser. A new angle on the details. Give your
           clients more ways to show a property.
         </p>
-        <span className="example-disclosure">
-          AI-generated luxury property concepts. Still mock-ups, not completed
-          client videos.
-        </span>
       </section>
       <section className="light-section examples-section">
         <div className="shell examples-grid">

@@ -1,5 +1,35 @@
 /** Isolated, locally hosted demo photography. Replace after art approval. */
 export const demoMedia = {
+  suburban: {
+    src: "/media/suburban",
+    alt: "AI property concept: suburban",
+    position: "50% 50%",
+  },
+  weatherboard: {
+    src: "/media/weatherboard",
+    alt: "AI property concept: weatherboard",
+    position: "50% 50%",
+  },
+  familyKitchen: {
+    src: "/media/familyKitchen",
+    alt: "AI property concept: family kitchen",
+    position: "50% 50%",
+  },
+  familyLiving: {
+    src: "/media/familyLiving",
+    alt: "AI property concept: family living",
+    position: "50% 50%",
+  },
+  bedroom: {
+    src: "/media/bedroom",
+    alt: "AI property concept: bedroom",
+    position: "50% 50%",
+  },
+  bathroom: {
+    src: "/media/bathroom",
+    alt: "AI property concept: bathroom",
+    position: "50% 50%",
+  },
   coastal: {
     src: "/media/luxury-coastal",
     alt: "AI concept of a grand classical Australian coastal mansion with gardens and swimming pool",
@@ -51,7 +81,7 @@ export const products = [
     description:
       "A concise property introduction that puts the strongest moments first and gives your client another way to launch a listing.",
     needs: "Property video · a strong opening sequence",
-    media: "exterior",
+    media: "suburban",
     label: "Make an entrance",
   },
   {
@@ -77,7 +107,7 @@ export const products = [
     description:
       "A purposeful sequence built from professionally edited photographs, extending the value of a stills-only shoot.",
     needs: "Professionally edited photography",
-    media: "coastal",
+    media: "weatherboard",
     label: "Still images. More possibilities.",
   },
   {

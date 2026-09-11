@@ -34,3 +34,9 @@ The rising-bar logo and geometric wordmark are scalable vector interpretations o
 Inter is hosted locally. Source: https://github.com/rsms/inter . The SIL Open Font License is included at `public/fonts/OFL.txt`. Next local-font loading preloads the font and supplies an adjusted fallback to prevent layout shift.
 
 The supplied visual references are preserved in `docs/review/design-reference.png` and `docs/review/brand-reference.png`.
+
+## Brand kit and September 11 refinements
+- Brand source: user-supplied `Screenshot 2026-09-11 at 2.20.06 PM.png`. Reconstructed scalable three-panel mark and blue-A wordmark from the raster reference; these are vector interpretations, not original source artwork.
+- Reusable light/dark icon, horizontal, stacked and wordmark SVGs: `public/brand/`.
+- Six additional fictional property concepts generated with OpenAI image generation: suburban, weatherboard, familyKitchen, familyLiving, bathroom, bedroom. Responsive WebP variants are locally hosted in `public/media/`.
+- Two catalogue properties now show architectural suburban homes. Harbour imagery remains for drone examples. Five-product range retained at the user's request.
