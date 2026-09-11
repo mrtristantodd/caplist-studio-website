@@ -34,7 +34,23 @@
     },
     {
       "route": "/",
+      "width": 1280,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/",
       "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "MORE FROMEVERYCAPTURE."
+    },
+    {
+      "route": "/",
+      "width": 1932,
       "overflow": false,
       "broken": [],
       "clipped": [],
@@ -74,7 +90,23 @@
     },
     {
       "route": "/pricing",
+      "width": 1280,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/pricing",
       "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "One capture.More on the invoice."
+    },
+    {
+      "route": "/pricing",
+      "width": 1932,
       "overflow": false,
       "broken": [],
       "clipped": [],
@@ -114,7 +146,23 @@
     },
     {
       "route": "/resources",
+      "width": 1280,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/resources",
       "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "More from your media.More for your business."
+    },
+    {
+      "route": "/resources",
+      "width": 1932,
       "overflow": false,
       "broken": [],
       "clipped": [],
@@ -154,7 +202,23 @@
     },
     {
       "route": "/examples",
+      "width": 1280,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    },
+    {
+      "route": "/examples",
       "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "clipped": [],
+      "h1": "Your property media.Five new possibilities."
+    },
+    {
+      "route": "/examples",
+      "width": 1932,
       "overflow": false,
       "broken": [],
       "clipped": [],

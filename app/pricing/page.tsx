@@ -1,4 +1,5 @@
 import { ArrowUpRight, Check } from "lucide-react";
+import { Photo } from "@/components/editorial/Photo";
 import { InnerPage } from "@/components/editorial/InnerPage";
 export const metadata = { title: "Pricing — Caplist Studio" };
 const plans = [
@@ -39,17 +40,33 @@ const plans = [
 export default function Pricing() {
   return (
     <InnerPage>
-      <section className="inner-hero shell">
-        <p className="eyebrow">Pricing</p>
-        <h1>
-          One capture.
-          <br />
-          <span>More on the invoice.</span>
-        </h1>
-        <p>
-          Add a single product or offer a complete collection. Keep doing the
-          work you do best. Get more value from every delivery.
-        </p>
+      <section className="pricing-hero">
+        <div className="pricing-hero-image">
+          <Photo media="exterior" sizes="100vw" priority />
+        </div>
+        <div className="inner-hero shell">
+          <p className="eyebrow">Pricing</p>
+          <h1>
+            One capture.
+            <br />
+            <span>More on the invoice.</span>
+          </h1>
+          <p>
+            Add a single product or offer a complete collection. Keep doing the
+            work you do best. Get more value from every delivery.
+          </p>
+          <div className="pricing-value">
+            <span>
+              <strong>1</strong> Property visit
+            </span>
+            <span>
+              <strong>5</strong> Product possibilities
+            </span>
+            <span>
+              <strong>More</strong> Value per delivery
+            </span>
+          </div>
+        </div>
       </section>
       <section className="light-section pricing-section">
         <div className="shell">
@@ -63,14 +80,27 @@ export default function Pricing() {
                 className={i === 1 ? "plan featured-plan" : "plan"}
                 key={p.name}
               >
+                <div className="plan-photo">
+                  <Photo
+                    media={(["living", "exterior", "aerial"] as const)[i]}
+                    sizes="(max-width:767px) 90vw, 35vw"
+                  />
+                  <span>
+                    {
+                      [
+                        "A fresh perspective",
+                        "The complete collection",
+                        "At studio scale",
+                      ][i]
+                    }
+                  </span>
+                </div>
                 {i === 1 && (
                   <span className="plan-badge">
                     The complete property story
                   </span>
                 )}
-                <p className="eyebrow">
-                  0{i + 1} / {p.name}
-                </p>
+
                 <h2>{p.name}</h2>
                 <p>{p.intro}</p>
                 <div className="plan-price">

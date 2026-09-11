@@ -2,7 +2,15 @@
 
 **Status: static redesign complete; awaiting explicit visual approval.**
 
-Live local prototype: http://127.0.0.1:3000/?review=static-v3
+Live local prototype: http://127.0.0.1:3000/?review=static-v4
+
+## Luxury imagery and annotation revision
+
+All eight browser annotations addressed: larger menu text; prominent “Same Workflow, More Media” USP; calendar Book tile; Caplist icon as the intermediate step between Deliver and additional outputs; luxury home, kitchen and harbour estate images; and a larger aligned professional-media badge. Removed incidental image captions and duplicate small labels.
+
+The examples now share equal-height display frames and aligned captions while preserving portrait and landscape formats. Pricing adds a photographic hero, value summary, photographic plan covers, shadow depth and a dark highlighted collection card. All current property imagery is AI-generated luxury architectural concept imagery, disclosed in the footer, example introduction and alt text. See ASSET_SOURCES.md.
+
+Validation: static production build passes. Four pages checked at 320, 390, 768, 1024, 1280, 1440 and 1932px; no horizontal overflow, broken images or clipped controls. Page navigation, five preview dialogs and pricing FAQ pass. No backend or motion implementation added.
 
 ## Reference-led revision and new pages
 

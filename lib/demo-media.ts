@@ -1,23 +1,28 @@
 /** Isolated, locally hosted demo photography. Replace after art approval. */
 export const demoMedia = {
+  coastal: {
+    src: "/media/luxury-coastal",
+    alt: "AI concept of a grand classical Australian coastal mansion with gardens and swimming pool",
+    position: "50% 50%",
+  },
   exterior: {
-    src: "/media/au-exterior",
-    alt: "Parkdale House by R Architecture in Victoria, with a mature gum tree and illuminated timber facade",
+    src: "/media/luxury-exterior",
+    alt: "AI concept of a grand contemporary Australian waterfront mansion at twilight",
     position: "50% 54%",
   },
   living: {
-    src: "/media/au-living",
-    alt: "Living room with garden-facing glazing in Sydney, New South Wales",
+    src: "/media/luxury-living",
+    alt: "AI concept of a grand Mediterranean-style Australian luxury home overlooking the harbour",
     position: "50% 50%",
   },
   kitchen: {
-    src: "/media/au-kitchen",
-    alt: "White kitchen and timber detailing in Crows Nest, New South Wales",
+    src: "/media/luxury-kitchen",
+    alt: "AI concept of a luxury quartzite and walnut kitchen overlooking Sydney Harbour",
     position: "50% 55%",
   },
   aerial: {
-    src: "/media/au-aerial",
-    alt: "Aerial view of waterfront homes in Sylvania Waters, New South Wales",
+    src: "/media/luxury-aerial",
+    alt: "AI concept of an expansive Sydney Harbour waterfront estate with pool, tennis court and private jetty",
     position: "50% 50%",
   },
 } as const;
@@ -72,7 +77,7 @@ export const products = [
     description:
       "A purposeful sequence built from professionally edited photographs, extending the value of a stills-only shoot.",
     needs: "Professionally edited photography",
-    media: "exterior",
+    media: "coastal",
     label: "Still images. More possibilities.",
   },
   {

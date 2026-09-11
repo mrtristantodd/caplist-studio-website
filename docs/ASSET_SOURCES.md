@@ -1,3 +1,21 @@
+# Active luxury concept assets
+
+The September 11 luxury revision replaces every active property image with five AI-generated concepts. These are fictional Australian/Sydney Harbour-inspired architectural visualisations, not photographs of actual listings, actual supplied media, or completed client outputs. The website footer, example-page introduction and image alt text identify the concept imagery.
+
+| Asset family | Art direction | Original generated file |
+| --- | --- | --- |
+| luxury-exterior | Contemporary twilight waterfront mansion and infinity pool | exec-02a68491-caab-4962-8d97-841ca779a4d9.png |
+| luxury-living | Grand Mediterranean-style harbour interior | exec-b8db813c-da09-4a42-a3c8-8de3d8d2c115.png |
+| luxury-kitchen | Quartzite, walnut and bronze kitchen with harbour outlook | exec-36dbb029-6247-4ea0-9065-7ff4dbdfa475.png |
+| luxury-aerial | Large harbourfront estate, tennis court, pool and private jetty | exec-e5c8835c-d063-4c11-b276-72725bb78da5.png |
+| luxury-coastal | Classical white coastal mansion and landscaped pool | exec-b61dc22a-2d58-4f0e-8a6d-90bb3a85d47b.png |
+
+Generated with the built-in image generation tool. Originals remain in `/Users/nattee/.codex/generated_images/01a08d32-2417-7cc0-b28e-a54dee787391/`. Responsive WebP copies are in `public/media`, referenced only through `lib/demo-media.ts`. All website image requests remain local.
+
+## Archived previous image sources
+
+The following describes superseded demo imagery, not the current active site.
+
 # Demo photography and brand assets
 
 All website media is served from `public/media`. `lib/demo-media.ts` contains the replaceable asset map, descriptions and product concepts. Images are real photographs used as isolated demo assets; this is not a documented single-property shoot. Photography and video labels illustrate possible supplied media, not actual uploaded files. Product previews are still compositions, not generated video.

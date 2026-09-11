@@ -80,8 +80,8 @@ function Hero() {
             <div className="photo-shade" />
             <FrameCorners />
             <div className="property-caption">
-              <span>EXISTING CAPTURE / 001</span>
-              <span>PARKDALE HOUSE, VIC</span>
+              <span></span>
+              <span></span>
             </div>
             <div className="vertical-view">
               <FrameCorners />
@@ -93,10 +93,10 @@ function Hero() {
             <div className="source-thumbnails">
               {(
                 [
-                  ["exterior", "27 Photos"],
-                  ["living", "Property Video"],
-                  ["aerial", "Drone Clips"],
-                  ["kitchen", "Vertical Clips"],
+                  ["exterior", "Photos"],
+                  ["living", "Video"],
+                  ["aerial", "Drone"],
+                  ["kitchen", "Vertical"],
                 ] as [MediaKey, string][]
               ).map(([media, label]) => (
                 <div key={label}>
@@ -135,23 +135,30 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="shell hero-relationship">
-        <div className="relationship-origin">
-          <span className="eyebrow">Captured media</span>
-          <span>Photos. Video. Drone. Vertical.</span>
+      <div className="shell usp-banner">
+        <div>
+          <h2>
+            Same Workflow.
+            <br />
+            <span>More Media.</span>
+          </h2>
+          <p>One property visit. Five new ways to deliver.</p>
         </div>
-        <ArrowRight className="relationship-arrow" size={24} />
-        <div className="relationship-brand">
-          <CaplistMark size={30} />
-          <span>CAPLIST</span>
-        </div>
-        <ArrowRight className="relationship-arrow" size={24} />
-        <div className="relationship-products">
-          <span className="eyebrow">Additional sellable products</span>
-          <p>
-            Vertical Video Reel <b>·</b> Property Teaser <b>·</b> Feature Reel{" "}
-            <b>·</b> Photo Reel <b>·</b> Mixed Media Reel
-          </p>
+        <div className="usp-equation">
+          <div>
+            <strong>Your capture</strong>
+            <span>Photos · Video · Drone</span>
+          </div>
+          <ArrowRight />
+          <div className="usp-logo">
+            <CaplistMark size={44} />
+            <span>CAPLIST</span>
+          </div>
+          <ArrowRight />
+          <div>
+            <strong>More to sell</strong>
+            <span>Reels · Teasers · Feature edits</span>
+          </div>
         </div>
       </div>
     </section>
@@ -211,10 +218,25 @@ function Opportunity() {
                     decorative
                   />
                   {i === 0 && (
-                    <div className="booking-ticket">
-                      <span>SHOOT</span>
-                      <strong>Booked</strong>
-                      <Check size={18} />
+                    <div
+                      className="booking-calendar"
+                      aria-label="Calendar with a booked property shoot"
+                    >
+                      <div className="calendar-binding">
+                        <i />
+                        <i />
+                      </div>
+                      <span>SEPTEMBER</span>
+                      <div className="calendar-grid">
+                        {Array.from({ length: 21 }, (_, n) => (
+                          <b
+                            className={n === 11 ? "calendar-booked" : ""}
+                            key={n}
+                          >
+                            {n + 1}
+                          </b>
+                        ))}
+                      </div>
                     </div>
                   )}
                   {i === 3 && (
@@ -237,9 +259,10 @@ function Opportunity() {
             <div className="branch-origin" />
             <div className="branch-bar" />
             <div className="branch-brand">
-              <CaplistMark size={23} />
+              <CaplistMark size={40} />
               <span>
-                Same capture. <strong>Additional delivery by Caplist.</strong>
+                <strong>CAPLIST</strong>
+                <small>More from your delivery</small>
               </span>
             </div>
           </div>
@@ -309,17 +332,17 @@ function Transformation() {
             </div>
             <div className="media-plane plane-back">
               <Photo media="aerial" sizes="500px" />
-              <span>THE WIDER VIEW</span>
+
               <FrameCorners />
             </div>
             <div className="media-plane plane-main">
               <Photo media="exterior" sizes="700px" />
-              <span>THE PROPERTY STORY</span>
+
               <FrameCorners />
             </div>
             <div className="media-plane plane-front">
               <Photo media="kitchen" sizes="500px" />
-              <span>THE DETAILS</span>
+
               <FrameCorners />
             </div>
             <div className="media-plane plane-vertical">
@@ -490,7 +513,7 @@ function Standards() {
             <div className="quality-seal">
               <CheckCheck size={32} />
               <strong>PRO</strong>
-              <span>FROM THE START</span>
+              <span>MEDIA</span>
             </div>
           </div>
           <div className="console-filmstrip">
@@ -590,7 +613,7 @@ export function Footer() {
             <a href="/pricing">Pricing</a>
             <a href="/resources">Resources</a>
           </nav>
-          <span>Static visual preview / 01</span>
+          <span>AI concept imagery · Visual prototype</span>
         </div>
       </div>
     </footer>

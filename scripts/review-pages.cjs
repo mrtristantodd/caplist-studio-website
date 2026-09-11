@@ -7,7 +7,7 @@ const fs = require("node:fs");
   page.on("pageerror", (e) => errors.push(e.message));
   const results = [];
   for (const route of ["/", "/pricing", "/resources", "/examples"])
-    for (const width of [320, 390, 768, 1024, 1440]) {
+    for (const width of [320, 390, 768, 1024, 1280, 1440, 1932]) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto("http://127.0.0.1:3000" + route, {
         waitUntil: "networkidle",
@@ -40,14 +40,14 @@ const fs = require("node:fs");
       results.push({ route, width, ...r });
       if (width === 390 || width === 1440)
         await page.screenshot({
-          path: `docs/review/static-v3-${route.slice(1) || "home"}-${width}.png`,
+          path: `docs/review/static-v4-${route.slice(1) || "home"}-${width}.png`,
           fullPage: true,
         });
       if (route === "/" && width === 1440)
         for (const id of ["for-media-businesses", "standards", "products"])
           await page
             .locator("#" + id)
-            .screenshot({ path: `docs/review/static-v3-${id}.png` });
+            .screenshot({ path: `docs/review/static-v4-${id}.png` });
       console.log(JSON.stringify(results.at(-1)));
     }
   await page.setViewportSize({ width: 1440, height: 1000 });
