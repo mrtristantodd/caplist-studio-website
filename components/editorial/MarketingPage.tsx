@@ -78,7 +78,7 @@ function Hero() {
             <FrameCorners />
             <div className="property-caption">
               <span>EXISTING CAPTURE / 001</span>
-              <span>TWILIGHT EXTERIOR</span>
+              <span>PARKDALE HOUSE, VIC</span>
             </div>
             <div className="vertical-view">
               <FrameCorners />
@@ -142,6 +142,13 @@ function Hero() {
 }
 
 function Opportunity() {
+  const steps = [
+    { name: "Book", detail: "The job is booked", media: "living" },
+    { name: "Travel", detail: "One property visit", media: "aerial" },
+    { name: "Capture", detail: "Your professional media", media: "exterior" },
+    { name: "Edit", detail: "Your finished files", media: "kitchen" },
+    { name: "Deliver", detail: "The original package", media: "exterior" },
+  ] as const;
   return (
     <section
       id="for-media-businesses"
@@ -149,128 +156,126 @@ function Opportunity() {
       aria-labelledby="opportunity-title"
     >
       <div className="shell">
-        <div className="opportunity-heading">
+        <div className="opportunity-v2-heading">
           <div>
             <Chapter number="01">The commercial opportunity</Chapter>
             <h2 id="opportunity-title">
-              THE EXPENSIVE
+              The expensive part
               <br />
-              PART ALREADY
-              <br />
-              <span className="muted-type">HAPPENED.</span>
+              already happened.
             </h2>
           </div>
-          <div className="opportunity-intro">
-            <p>
-              You’ve booked the job. Made the trip. Captured the property.
-              Delivered the edit.
-            </p>
-            <p>
-              The hard work is already in the files.
-              <br />
-              <strong>Now make more of what’s there.</strong>
-            </p>
-          </div>
+          <p>
+            You’ve booked, travelled, captured and delivered. The investment is
+            already in your files.{" "}
+            <strong>
+              Turn that same capture into more products your clients can buy.
+            </strong>
+          </p>
         </div>
-        <ol className="lifecycle">
-          {["Book", "Travel", "Capture", "Edit", "Deliver"].map((step, i) => (
-            <li key={step}>
-              <span className="step-number">0{i + 1}</span>
-              <span>{step}</span>
-              {i === 4 ? <Check size={20} /> : <ArrowRight size={20} />}
+        <ol className="capture-journey">
+          {steps.map((step, i) => (
+            <li key={step.name}>
+              <div className="journey-label">
+                <span>
+                  0{i + 1} / {step.name}
+                </span>
+                <Check size={18} />
+              </div>
+              <div
+                className={`journey-photo journey-${step.name.toLowerCase()}`}
+              >
+                <Photo
+                  media={step.media}
+                  sizes="(max-width: 600px) 45vw, 20vw"
+                  decorative
+                />
+                {i === 0 && (
+                  <div className="booking-ticket">
+                    <span>PROPERTY SHOOT</span>
+                    <strong>Confirmed</strong>
+                    <CheckCheck size={25} />
+                  </div>
+                )}
+                {i === 3 && (
+                  <div className="edit-tracks">
+                    <i />
+                    <i />
+                    <i />
+                  </div>
+                )}
+                <FrameCorners />
+              </div>
+              <p>{step.detail}</p>
             </li>
           ))}
         </ol>
-        <div className="opportunity-branch">
-          <div className="capture-sheet">
-            <div className="sheet-photo">
-              <Photo media="exterior" sizes="(max-width: 767px) 80vw, 30vw" />
-              <FrameCorners />
-            </div>
-            <div className="sheet-small">
-              <Photo media="living" sizes="200px" />
-            </div>
-            <span className="sheet-caption">THE CAPTURE YOU ALREADY HAVE</span>
-          </div>
-          <div className="branch-copy">
-            <div className="branch-connector">
-              <span />
-              <Plus size={26} />
-              <span />
-            </div>
+        <div
+          className="core-promise"
+          aria-label="One property visit, existing capture, multiple additional products"
+        >
+          <div>
+            <span className="promise-number">01</span>
             <h3>
-              One property visit.
+              One property
               <br />
-              <span>More to put on the invoice.</span>
+              visit.
             </h3>
-            <p>
-              Extend an existing delivery with a teaser, a vertical edit or a
-              photo reel. Additional products from professional media you’ve
-              already created.
-            </p>
-            <a href="#how-it-works" className="text-link">
-              See what’s possible
-              <ArrowUpRight size={18} />
+          </div>
+          <ArrowRight className="promise-arrow" />
+          <div>
+            <span className="promise-number">
+              <Scan />
+            </span>
+            <h3>
+              Your existing
+              <br />
+              capture.
+            </h3>
+          </div>
+          <ArrowRight className="promise-arrow" />
+          <div className="promise-result">
+            <span className="promise-number">05</span>
+            <h3>
+              Multiple additional
+              <br />
+              products.
+            </h3>
+          </div>
+        </div>
+        <div className="output-intro">
+          <p className="eyebrow">Same capture. More products.</p>
+          <p>A bigger offer, without another trip.</p>
+        </div>
+        <div className="possibility-grid">
+          {products.map((product) => (
+            <a href={`#${product.id}`} className="possibility" key={product.id}>
+              <div className="possibility-photo">
+                <Photo
+                  media={product.media}
+                  sizes="(max-width: 600px) 85vw, 25vw"
+                />
+                <FrameCorners />
+                <span>{product.ratio}</span>
+                <ArrowUpRight size={22} />
+              </div>
+              <h3>{product.name.replace("Alternative / ", "")}</h3>
+              <p>
+                {product.duration} · {product.ratio}
+              </p>
             </a>
-          </div>
-          <div className="opportunity-outputs">
-            <span className="eyebrow">Same capture. More products.</span>
-            {products.map((p) => (
-              <a href={`#${p.id}`} key={p.id}>
-                <span>
-                  {p.name === "Alternative / Feature Reel"
-                    ? "Feature Reel"
-                    : p.name}
-                </span>
-                <ArrowUpRight size={16} />
-              </a>
-            ))}
-          </div>
+          ))}
         </div>
-        <div className="opportunity-bottom">
-          <span>ONE PROPERTY VISIT</span>
-          <ArrowRight size={18} />
-          <span>EXISTING CAPTURE</span>
-          <ArrowRight size={18} />
-          <strong>MULTIPLE ADDITIONAL PRODUCTS</strong>
-        </div>
+        <p className="opportunity-note">
+          Five product possibilities. Availability depends on the coverage and
+          quality of your media.
+        </p>
       </div>
     </section>
   );
 }
 
 function Transformation() {
-  const stages = [
-    {
-      number: "01",
-      title: "Start with photography",
-      media: ["living", "kitchen"] as MediaKey[],
-      inputs: "PHOTOS",
-      outputs: ["Photo Reel"],
-      note: "Give a stills-only shoot a second life.",
-    },
-    {
-      number: "02",
-      title: "Add property video",
-      media: ["exterior"] as MediaKey[],
-      inputs: "PHOTOS + VIDEO",
-      outputs: [
-        "Photo Reel",
-        "Vertical Video Reel",
-        "Property Teaser",
-        "Feature Reel",
-      ],
-      note: "More coverage. More ways to tell the story.",
-    },
-    {
-      number: "03",
-      title: "Bring in the wider view",
-      media: ["aerial"] as MediaKey[],
-      inputs: "PHOTOS + VIDEO + DRONE",
-      outputs: ["All previous products", "Mixed Media Reel"],
-      note: "Connect the home to its surroundings.",
-    },
-  ];
   return (
     <section
       id="how-it-works"
@@ -278,74 +283,100 @@ function Transformation() {
       aria-labelledby="transformation-title"
     >
       <div className="shell">
-        <div className="section-heading">
-          <div>
+        <div className="how-composition">
+          <div className="how-copy">
             <Chapter number="02">How Caplist works</Chapter>
             <h2 id="transformation-title">
-              ONE CAPTURE.
+              One capture.
               <br />
-              <span className="muted-type">MULTIPLE PRODUCTS.</span>
+              <span className="muted-type">Multiple products.</span>
             </h2>
+            <p>
+              Start with the professional media you already have. Caplist
+              assesses the content, quality and formats, then identifies the
+              products that capture can support.
+            </p>
+            <a href="#products" className="button button-blue">
+              Explore the five products <ArrowUpRight size={18} />
+            </a>
           </div>
-          <p>
-            The catalogue starts with your media.
-            <br />
-            What you supply determines what you can create. Every output must
-            meet the professional standard.
-          </p>
+          <div
+            className="media-exploded"
+            aria-label="Photography, video, drone and vertical media become additional property products"
+          >
+            <div className="media-input-labels">
+              {["Photos", "Video", "Drone", "Vertical"].map((x) => (
+                <span key={x}>
+                  {x}
+                  <i />
+                </span>
+              ))}
+            </div>
+            <div className="media-plane plane-back">
+              <Photo media="aerial" sizes="500px" />
+              <span>THE WIDER VIEW</span>
+              <FrameCorners />
+            </div>
+            <div className="media-plane plane-main">
+              <Photo media="exterior" sizes="700px" />
+              <span>THE PROPERTY STORY</span>
+              <FrameCorners />
+            </div>
+            <div className="media-plane plane-front">
+              <Photo media="kitchen" sizes="500px" />
+              <span>THE DETAILS</span>
+              <FrameCorners />
+            </div>
+            <div className="media-plane plane-vertical">
+              <Photo media="living" sizes="300px" />
+              <span>9:16</span>
+              <FrameCorners />
+            </div>
+          </div>
         </div>
-        <div className="transformation-stages">
-          {stages.map((stage) => (
-            <article
-              className={`transform-stage stage-${stage.number}`}
-              key={stage.number}
-            >
-              <div className="stage-top">
-                <span>{stage.number}</span>
-                <h3>{stage.title}</h3>
-              </div>
-              <div className={`stage-media stage-media-${stage.media.length}`}>
-                {stage.media.map((media) => (
-                  <div className="stage-photo" key={media}>
-                    <Photo
-                      media={media}
-                      sizes="(max-width: 767px) 85vw, 32vw"
-                    />
-                    <FrameCorners />
-                  </div>
-                ))}
-                <span className="image-label">{stage.inputs}</span>
-              </div>
-              <div className="stage-flow">
-                <span /> <ArrowDown size={18} /> <span />
-              </div>
-              <ul className="stage-outputs">
-                {stage.outputs.map((output, i) => (
-                  <li
-                    key={output}
-                    className={
-                      stage.number !== "01" && i === 0 ? "previous-output" : ""
-                    }
-                  >
-                    <Check size={15} />
-                    {output}
-                  </li>
-                ))}
-              </ul>
-              <p className="stage-note">{stage.note}</p>
-            </article>
+        <div className="assessment-strip">
+          <span className="eyebrow">A professional standard at every step</span>
+          {[
+            "Scene selection",
+            "Quality assessment",
+            "Format eligibility",
+            "Product matching",
+          ].map((x) => (
+            <span key={x}>
+              <Check size={18} />
+              {x}
+            </span>
           ))}
         </div>
-        <div className="vertical-footnote">
-          <span className="format-symbol" aria-hidden="true">
-            9:16
-          </span>
-          <p>
-            <strong>Already captured vertical?</strong> Suitable vertical clips
-            can also support social-first reels and mixed-media stories.
-          </p>
-          <span className="eyebrow">Source-led. Standard-led.</span>
+        <div className="source-outcomes">
+          <div>
+            <span className="eyebrow">01 / Photography</span>
+            <h3>Stills become a story.</h3>
+            <p>Professionally edited photos</p>
+            <ArrowDown />
+            <strong>Photo Reel</strong>
+          </div>
+          <div>
+            <span className="eyebrow">02 / Property video</span>
+            <h3>One film. New perspectives.</h3>
+            <p>Suitable footage and feature coverage</p>
+            <ArrowDown />
+            <strong>
+              Vertical Video Reel · Property Teaser · Feature Reel
+            </strong>
+          </div>
+          <div>
+            <span className="eyebrow">03 / Mixed capture</span>
+            <h3>Bring it all together.</h3>
+            <p>Photography, video and drone footage</p>
+            <ArrowDown />
+            <strong>Mixed Media Reel</strong>
+          </div>
         </div>
+        <p className="how-note">
+          Already captured vertical? Suitable vertical clips can also support
+          social reels and mixed-media stories.
+        </p>
       </div>
     </section>
   );

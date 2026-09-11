@@ -78,7 +78,7 @@ a svg {
   margin-inline: auto;
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: var(--type-label);
   font-weight: 550;
   line-height: 1.5;
   letter-spacing: 0.17em;
@@ -92,7 +92,7 @@ a svg {
   margin-bottom: 32px;
 }
 .chapter-index {
-  font-size: 11px;
+  font-size: var(--type-label);
   color: var(--blue);
   border-right: 1px solid #64717c66;
   padding-right: 16px;
@@ -131,7 +131,7 @@ a svg {
   justify-content: center;
   gap: 24px;
   padding: 17px 21px;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 600;
   line-height: 1.4;
   min-height: 48px;
@@ -152,7 +152,7 @@ a svg {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 550;
   min-height: 44px;
 }
@@ -194,7 +194,7 @@ a svg {
 .desktop-nav > a,
 .desktop-nav > button,
 .login-link {
-  font-size: 10px;
+  font-size: var(--type-label);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -211,7 +211,7 @@ a svg {
   align-items: center;
 }
 .header-cta {
-  font-size: 10px;
+  font-size: var(--type-label);
   padding: 13px 16px;
   gap: 17px;
   min-height: 42px;
@@ -239,7 +239,7 @@ a svg {
 }
 .hero-copy > .eyebrow {
   margin-bottom: 32px;
-  font-size: 9px;
+  font-size: var(--type-label);
 }
 .hero h1 {
   font-size: clamp(100px, 8.7vw, 165px);
@@ -253,7 +253,7 @@ a svg {
   white-space: nowrap;
 }
 .hero-description {
-  font-size: 14px;
+  font-size: var(--type-small);
   line-height: 1.85;
   color: #a9b0b6;
   max-width: 430px;
@@ -271,17 +271,17 @@ a svg {
   margin-top: 27px;
 }
 .hero-actions > .button {
-  font-size: 11px;
+  font-size: var(--type-label);
   gap: 14px;
   padding-inline: 17px;
 }
 .hero-actions > .text-link {
-  font-size: 11px;
+  font-size: var(--type-label);
 }
 .hero-qualifier {
   position: relative;
   padding-left: 24px;
-  font-size: 9px;
+  font-size: var(--type-label);
   line-height: 1.9;
   color: #8f9aa4;
   margin-top: 27px;
@@ -349,7 +349,7 @@ a svg {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 0.12em;
 }
 .vertical-view {
@@ -367,7 +367,7 @@ a svg {
   position: absolute;
   bottom: -24px;
   left: 0;
-  font-size: 10px;
+  font-size: var(--type-label);
   letter-spacing: 0.1em;
 }
 .source-contact {
@@ -379,7 +379,7 @@ a svg {
   padding: 17px 17px 0 0;
 }
 .source-contact > .eyebrow {
-  font-size: 8px;
+  font-size: var(--type-label);
   margin-bottom: 10px;
 }
 .source-thumbnails {
@@ -393,7 +393,7 @@ a svg {
 }
 .source-thumbnails > div > span {
   display: block;
-  font-size: 7px;
+  font-size: var(--type-label);
   line-height: 1.5;
   padding-top: 7px;
   color: #a6afb7;
@@ -421,11 +421,11 @@ a svg {
   position: absolute;
   left: 16px;
   bottom: 16px;
-  font-size: 8px;
+  font-size: var(--type-label);
   color: white;
 }
 .output-caption {
-  font-size: 8px;
+  font-size: var(--type-label);
   display: block;
   padding: 12px 5px 0;
 }
@@ -437,7 +437,7 @@ a svg {
 .output-caption small {
   display: block;
   color: #9aa3ac;
-  font-size: 7px;
+  font-size: var(--type-label);
   margin: 5px 0 0 9px;
 }
 .hero-relationship {
@@ -449,21 +449,21 @@ a svg {
   padding: 28px 0 32px;
 }
 .hero-relationship .eyebrow {
-  font-size: 8px;
+  font-size: var(--type-label);
   display: block;
   margin-bottom: 9px;
   color: #8b95a1;
 }
 .relationship-origin > span:last-child,
 .relationship-products p {
-  font-size: 10px;
+  font-size: var(--type-label);
   line-height: 1.9;
 }
 .relationship-brand {
   display: flex;
   gap: 12px;
   align-items: center;
-  font-size: 12px;
+  font-size: var(--type-small);
   letter-spacing: 0.16em;
 }
 .relationship-arrow {
@@ -491,7 +491,7 @@ a svg {
 .section-heading > p,
 .section-heading > div:last-child > p,
 .opportunity-intro p {
-  font-size: 14px;
+  font-size: var(--type-small);
   line-height: 1.85;
   color: #a6adb4;
   max-width: 390px;
@@ -523,7 +523,7 @@ a svg {
   display: flex;
   gap: 13px;
   align-items: center;
-  font-size: 13px;
+  font-size: var(--type-small);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -532,7 +532,7 @@ a svg {
   padding-left: 24px;
 }
 .lifecycle .step-number {
-  font-size: 9px;
+  font-size: var(--type-label);
   color: #67727c;
 }
 .lifecycle svg {
@@ -570,7 +570,7 @@ a svg {
 }
 .sheet-caption {
   display: block;
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 0.13em;
   margin-top: 24px;
 }
@@ -596,7 +596,7 @@ a svg {
   color: #65717b;
 }
 .branch-copy p {
-  font-size: 12px;
+  font-size: var(--type-small);
   line-height: 1.85;
   color: #657079;
   margin: 18px 0 10px;
@@ -605,7 +605,7 @@ a svg {
   color: #175bd2;
 }
 .opportunity-outputs > .eyebrow {
-  font-size: 8px;
+  font-size: var(--type-label);
   margin-bottom: 13px;
   display: block;
 }
@@ -616,7 +616,7 @@ a svg {
   gap: 12px;
   border-bottom: 1px solid #11171d24;
   padding: 14px 0;
-  font-size: 11px;
+  font-size: var(--type-label);
 }
 .opportunity-outputs > a:hover {
   color: var(--blue);
@@ -631,7 +631,7 @@ a svg {
   justify-content: center;
   border-top: 1px solid #11171d22;
   padding-top: 29px;
-  font-size: 9px;
+  font-size: var(--type-label);
   letter-spacing: 0.09em;
 }
 .opportunity-bottom svg {
@@ -663,11 +663,11 @@ a svg {
   padding-bottom: 20px;
 }
 .stage-top > span {
-  font-size: 10px;
+  font-size: var(--type-label);
   color: #6690ce;
 }
 .stage-top h3 {
-  font-size: 13px;
+  font-size: var(--type-small);
   font-weight: 450;
 }
 .stage-media {
@@ -697,7 +697,7 @@ a svg {
   bottom: 15px;
   background: #080d10d9;
   color: #fff;
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 0.08em;
   padding: 8px 10px;
 }
@@ -722,7 +722,7 @@ a svg {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 12px;
+  font-size: var(--type-small);
   line-height: 2.7;
 }
 .stage-outputs svg {
@@ -732,7 +732,7 @@ a svg {
   color: #84929d;
 }
 .stage-note {
-  font-size: 11px;
+  font-size: var(--type-label);
   color: #9da8b0;
   line-height: 1.8;
   margin-top: 18px;
@@ -752,11 +752,11 @@ a svg {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  font-size: 8px;
+  font-size: var(--type-label);
   color: #8eade1;
 }
 .vertical-footnote p {
-  font-size: 11px;
+  font-size: var(--type-label);
   line-height: 1.8;
   max-width: 550px;
   color: #9ba5ad;
@@ -767,7 +767,7 @@ a svg {
 }
 .vertical-footnote > .eyebrow {
   margin-left: auto;
-  font-size: 8px;
+  font-size: var(--type-label);
   white-space: nowrap;
 }
 .catalogue {
@@ -839,11 +839,11 @@ a svg {
   color: white;
 }
 .catalogue-overlay > span:first-child {
-  font-size: 12px;
+  font-size: var(--type-small);
   max-width: 190px;
 }
 .format-tag {
-  font-size: 9px;
+  font-size: var(--type-label);
   letter-spacing: 0.04em;
   border: 1px solid #ffffff60;
   padding: 7px 9px;
@@ -857,7 +857,7 @@ a svg {
 }
 .product-index {
   color: #61707c;
-  font-size: 9px;
+  font-size: var(--type-label);
   padding-top: 5px;
 }
 .product-copy {
@@ -871,14 +871,14 @@ a svg {
   font-weight: 570;
 }
 .product-copy p {
-  font-size: 11px;
+  font-size: var(--type-label);
   line-height: 1.7;
   color: #5b6770;
   margin-top: 9px;
 }
 .product-requirements {
   display: block;
-  font-size: 9px;
+  font-size: var(--type-label);
   line-height: 1.8;
   margin-top: 10px;
   color: #657079;
@@ -903,7 +903,7 @@ a svg {
   gap: 18px;
   padding-top: 12px;
   border-top: 1px solid #11171d30;
-  font-size: 9px;
+  font-size: var(--type-label);
   color: #586571;
 }
 .product-specs > span + span {
@@ -941,7 +941,7 @@ a svg {
   left: 0;
   right: 0;
   bottom: 0;
-  font-size: 7px;
+  font-size: var(--type-label);
   letter-spacing: 0.08em;
   background: var(--paper);
   color: var(--ink);
@@ -969,7 +969,7 @@ a svg {
   left: 28px;
   right: 28px;
   bottom: 30px;
-  font-size: 8px;
+  font-size: var(--type-label);
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -996,7 +996,7 @@ a svg {
   position: absolute;
   top: 9px;
   left: 9px;
-  font-size: 7px;
+  font-size: var(--type-label);
   letter-spacing: 0.08em;
   color: white;
   background: #080d10a6;
@@ -1006,7 +1006,7 @@ a svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 8px;
+  font-size: var(--type-label);
   margin-bottom: 16px;
 }
 .quality-metrics {
@@ -1019,7 +1019,7 @@ a svg {
   gap: 20px;
   border-bottom: 1px solid #ffffff1a;
   padding: 13px 0;
-  font-size: 11px;
+  font-size: var(--type-label);
 }
 .quality-metrics dt {
   color: #adb6be;
@@ -1046,12 +1046,12 @@ a svg {
 }
 .eligibility strong {
   display: block;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 500;
 }
 .eligibility span {
   display: block;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: #9ba7b0;
   line-height: 1.7;
   margin-top: 5px;
@@ -1068,7 +1068,7 @@ a svg {
   color: #c9cdd1;
 }
 .assessment-note {
-  font-size: 8px;
+  font-size: var(--type-label);
   color: #83929e;
   margin-top: 17px;
 }
@@ -1101,7 +1101,7 @@ a svg {
   max-width: 1150px;
 }
 .close-content > p:not(.eyebrow) {
-  font-size: 18px;
+  font-size: var(--type-body);
   line-height: 1.6;
   margin-top: 28px;
   color: #e0e5e9;
@@ -1130,7 +1130,7 @@ a svg {
   font-weight: 500;
 }
 .close-equation span {
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 0.1em;
   color: #c1cbd2;
 }
@@ -1147,7 +1147,7 @@ a svg {
   margin-bottom: 50px;
 }
 .footer-top p {
-  font-size: 16px;
+  font-size: var(--type-body);
   line-height: 1.4;
   letter-spacing: -0.025em;
 }
@@ -1156,7 +1156,7 @@ a svg {
 }
 .footer-top > .text-link {
   margin-left: auto;
-  font-size: 10px;
+  font-size: var(--type-label);
 }
 .footer-bottom {
   padding-top: 20px;
@@ -1165,7 +1165,7 @@ a svg {
   align-items: center;
   justify-content: space-between;
   gap: 22px;
-  font-size: 8px;
+  font-size: var(--type-label);
   color: #94a0aa;
 }
 .footer-bottom nav {
@@ -1217,7 +1217,7 @@ a svg {
   padding: 48px 38px 38px;
 }
 .dialog-copy > .eyebrow {
-  font-size: 8px;
+  font-size: var(--type-label);
   margin-bottom: 24px;
 }
 .dialog-copy h2 {
@@ -1227,7 +1227,7 @@ a svg {
   letter-spacing: -0.05em;
 }
 .dialog-copy > p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: var(--type-small);
   line-height: 1.85;
   color: #acb6bf;
   margin-top: 20px;
@@ -1241,19 +1241,19 @@ a svg {
   margin-top: 25px;
 }
 .dialog-copy dt {
-  font-size: 10px;
+  font-size: var(--type-label);
   color: #8b95a1;
 }
 .dialog-copy dd {
   margin: 7px 0 0;
-  font-size: 14px;
+  font-size: var(--type-small);
 }
 .dialog-copy > .prototype-note {
   font-size: 10px !important;
 }
 .resource-list {
   padding-left: 18px;
-  font-size: 13px;
+  font-size: var(--type-small);
   line-height: 1.9;
   color: #c8d0d6;
   margin-top: 20px;
@@ -1279,17 +1279,17 @@ a svg {
     height: 690px;
   }
   .hero-description {
-    font-size: 16px;
+    font-size: var(--type-body);
     max-width: 470px;
   }
   .hero-copy > .eyebrow {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .hero-actions > .button {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .hero-qualifier {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .stage-media {
     height: 290px;
@@ -1298,11 +1298,11 @@ a svg {
     padding-block: 35px;
   }
   .hero-relationship .eyebrow {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .relationship-origin > span:last-child,
   .relationship-products p {
-    font-size: 11px;
+    font-size: var(--type-label);
   }
   .hero h1 {
     font-size: min(9.1vw, 174px);
@@ -1353,7 +1353,7 @@ a svg {
     display: flex;
     align-items: center;
     min-height: 46px;
-    font-size: 13px;
+    font-size: var(--type-small);
     padding: 5px 12px;
   }
   .header-actions {
@@ -1369,20 +1369,20 @@ a svg {
     min-height: 570px;
   }
   .hero-description {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .hero-relationship {
     gap: 17px;
     grid-template-columns: 1.2fr 24px 0.8fr 24px 2fr;
   }
   .relationship-brand {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .opportunity-branch {
     gap: 28px;
   }
   .opportunity-bottom {
-    font-size: 8px;
+    font-size: var(--type-label);
     gap: 18px;
   }
   .section-heading,
@@ -1396,7 +1396,7 @@ a svg {
     padding-right: 10px;
   }
   .product-copy h3 {
-    font-size: 20px;
+    font-size: var(--type-body);
   }
   .standards-assessment {
     gap: 40px;
@@ -1426,7 +1426,7 @@ a svg {
   }
   .hero-description {
     max-width: 490px;
-    font-size: 15px;
+    font-size: var(--type-small);
   }
   .hero-media {
     height: 610px;
@@ -1445,7 +1445,7 @@ a svg {
     bottom: 5px;
   }
   .source-thumbnails > div > span {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .hero-relationship {
     grid-template-columns: 1.2fr 24px 1fr;
@@ -1461,13 +1461,13 @@ a svg {
   }
   .relationship-origin > span:last-child,
   .relationship-products p {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .hero-relationship .eyebrow {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .relationship-brand {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .chapter-section {
     padding: 80px 0;
@@ -1483,7 +1483,7 @@ a svg {
   .section-heading > p,
   .section-heading > div:last-child > p,
   .opportunity-intro p {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .opportunity-branch {
     grid-template-columns: 1fr 1fr;
@@ -1498,7 +1498,7 @@ a svg {
     grid-column: 1/-1;
   }
   .lifecycle li {
-    font-size: 10px;
+    font-size: var(--type-label);
     gap: 9px;
   }
   .lifecycle li + li {
@@ -1522,18 +1522,18 @@ a svg {
     align-items: start;
   }
   .stage-top h3 {
-    font-size: 11px;
+    font-size: var(--type-label);
     line-height: 1.5;
   }
   .stage-top > span {
     padding-top: 2px;
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .stage-media {
     height: 200px;
   }
   .stage-outputs li {
-    font-size: 10px;
+    font-size: var(--type-label);
     line-height: 2.6;
     gap: 7px;
   }
@@ -1541,7 +1541,7 @@ a svg {
     min-height: 125px;
   }
   .stage-note {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .vertical-footnote > .eyebrow {
     display: none;
@@ -1568,20 +1568,20 @@ a svg {
     gap: 60px 24px;
   }
   .product-copy h3 {
-    font-size: 18px;
+    font-size: var(--type-body);
   }
   .catalogue-overlay {
     inset: auto 17px 20px;
     gap: 12px;
   }
   .catalogue-overlay > span:first-child {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .product-caption {
     gap: 10px;
   }
   .product-requirements {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .product-open {
     width: 36px;
@@ -1589,7 +1589,7 @@ a svg {
   }
   .product-specs {
     gap: 10px;
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .product-specs > span + span {
     padding-left: 10px;
@@ -1603,14 +1603,14 @@ a svg {
   }
   .assessment-caption {
     inset: auto 18px 23px;
-    font-size: 7px;
+    font-size: var(--type-label);
   }
   .quality-metrics > div {
-    font-size: 10px;
+    font-size: var(--type-label);
     padding: 11px 0;
   }
   .eligibility strong {
-    font-size: 11px;
+    font-size: var(--type-label);
   }
   .assessment-crop {
     left: 22%;
@@ -1643,7 +1643,7 @@ a svg {
     display: none;
   }
   .header-cta {
-    font-size: 9px;
+    font-size: var(--type-label);
     padding: 11px 12px;
     min-height: 39px;
     gap: 9px;
@@ -1665,10 +1665,10 @@ a svg {
     width: 24px;
   }
   .brand-link .text-\[15px\] {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .brand-link .text-\[8px\] {
-    font-size: 6px;
+    font-size: var(--type-label);
   }
   .hero {
     padding-top: 37px;
@@ -1678,7 +1678,7 @@ a svg {
     padding-bottom: 38px;
   }
   .hero-copy > .eyebrow {
-    font-size: 7px;
+    font-size: var(--type-label);
     letter-spacing: 0.14em;
     margin-bottom: 25px;
   }
@@ -1688,7 +1688,7 @@ a svg {
     letter-spacing: -0.067em;
   }
   .hero-description {
-    font-size: 13px;
+    font-size: var(--type-small);
     line-height: 1.85;
     margin-top: 24px;
     max-width: 460px;
@@ -1698,17 +1698,17 @@ a svg {
     margin-top: 23px;
   }
   .hero-actions > .button {
-    font-size: 10px;
+    font-size: var(--type-label);
     min-height: 46px;
     padding-inline: 14px;
     gap: 18px;
   }
   .hero-actions > .text-link {
-    font-size: 10px;
+    font-size: var(--type-label);
     padding: 0 4px;
   }
   .hero-qualifier {
-    font-size: 8px;
+    font-size: var(--type-label);
     line-height: 1.85;
     margin-top: 19px;
   }
@@ -1724,7 +1724,7 @@ a svg {
   }
   .property-caption {
     inset: 24px 23px auto;
-    font-size: 6px;
+    font-size: var(--type-label);
     gap: 12px;
   }
   .hero-property > .frame-corners {
@@ -1742,14 +1742,14 @@ a svg {
     bottom: 0;
   }
   .source-contact > .eyebrow {
-    font-size: 7px;
+    font-size: var(--type-label);
     margin-bottom: 8px;
   }
   .source-thumbnails {
     gap: 5px;
   }
   .source-thumbnails > div > span {
-    font-size: 6px;
+    font-size: var(--type-label);
     line-height: 1.5;
   }
   .hero-output {
@@ -1762,12 +1762,12 @@ a svg {
     aspect-ratio: 9/13;
   }
   .output-caption {
-    font-size: 6px;
+    font-size: var(--type-label);
     padding: 8px 3px 0;
     line-height: 1.5;
   }
   .output-caption small {
-    font-size: 6px;
+    font-size: var(--type-label);
     margin: 3px 0 0;
   }
   .output-caption > .blue-dot {
@@ -1780,14 +1780,14 @@ a svg {
   }
   .relationship-origin > span:last-child,
   .relationship-products p {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .hero-relationship .eyebrow {
-    font-size: 7px;
+    font-size: var(--type-label);
     margin-bottom: 7px;
   }
   .relationship-brand {
-    font-size: 9px;
+    font-size: var(--type-label);
     gap: 9px;
     letter-spacing: 0.08em;
   }
@@ -1806,10 +1806,10 @@ a svg {
   .chapter {
     margin-bottom: 26px;
     gap: 12px;
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .chapter-index {
-    font-size: 9px;
+    font-size: var(--type-label);
     padding-right: 12px;
   }
   .section-heading,
@@ -1826,7 +1826,7 @@ a svg {
   .section-heading > p,
   .section-heading > div:last-child > p,
   .opportunity-intro p {
-    font-size: 13px;
+    font-size: var(--type-small);
     max-width: 450px;
   }
   .opportunity-intro p + p {
@@ -1837,7 +1837,7 @@ a svg {
   }
   .lifecycle li {
     padding: 14px 7px 14px 0;
-    font-size: 7px;
+    font-size: var(--type-label);
     letter-spacing: 0;
     display: grid;
     grid-template-columns: 1fr 12px;
@@ -1848,7 +1848,7 @@ a svg {
   }
   .lifecycle .step-number {
     grid-column: 1/-1;
-    font-size: 7px;
+    font-size: var(--type-label);
   }
   .lifecycle svg {
     width: 10px;
@@ -1875,7 +1875,7 @@ a svg {
     bottom: 28px;
   }
   .sheet-caption {
-    font-size: 7px;
+    font-size: var(--type-label);
     margin-top: 15px;
   }
   .branch-connector {
@@ -1885,25 +1885,25 @@ a svg {
     font-size: 27px;
   }
   .branch-copy p {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .opportunity-outputs {
     gap: 0 20px;
   }
   .opportunity-outputs > a {
-    font-size: 10px;
+    font-size: var(--type-label);
     min-height: 47px;
     line-height: 1.5;
   }
   .opportunity-outputs > .eyebrow {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .opportunity-bottom {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 12px;
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .opportunity-bottom svg {
     transform: rotate(90deg);
@@ -1920,10 +1920,10 @@ a svg {
     gap: 14px;
   }
   .stage-top h3 {
-    font-size: 14px;
+    font-size: var(--type-small);
   }
   .stage-top > span {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .stage-media {
     height: auto;
@@ -1933,18 +1933,18 @@ a svg {
     min-height: 0;
   }
   .stage-outputs li {
-    font-size: 12px;
+    font-size: var(--type-small);
     line-height: 2.4;
   }
   .stage-note {
-    font-size: 11px;
+    font-size: var(--type-label);
     margin-top: 12px;
   }
   .stage-flow {
     padding: 15px 0 8px;
   }
   .image-label {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .vertical-footnote {
     align-items: start;
@@ -1952,13 +1952,13 @@ a svg {
     gap: 15px;
   }
   .vertical-footnote p {
-    font-size: 11px;
+    font-size: var(--type-label);
   }
   .catalogue .section-heading {
     margin-bottom: 40px;
   }
   .catalogue-intro > .eyebrow {
-    font-size: 8px;
+    font-size: var(--type-label);
     margin-top: 20px;
   }
   .editorial-catalogue {
@@ -2002,14 +2002,14 @@ a svg {
     gap: 9px;
   }
   .product-copy h3 {
-    font-size: 20px;
+    font-size: var(--type-body);
   }
   .product-copy p {
-    font-size: 10px;
+    font-size: var(--type-label);
     margin-top: 7px;
   }
   .product-requirements {
-    font-size: 8px;
+    font-size: var(--type-label);
     margin-top: 6px;
   }
   .product-open {
@@ -2017,14 +2017,14 @@ a svg {
     height: 36px;
   }
   .product-index {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .product-specs {
     margin-top: 14px;
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .product-specs > span:last-child {
-    font-size: 7px;
+    font-size: var(--type-label);
   }
   .catalogue-overlay {
     inset: auto 16px 20px;
@@ -2042,7 +2042,7 @@ a svg {
     border-width: 3px;
   }
   .mixed-inset > span {
-    font-size: 5px;
+    font-size: var(--type-label);
     padding: 6px 3px;
   }
   .standards-assessment {
@@ -2058,26 +2058,26 @@ a svg {
     top: 12%;
   }
   .assessment-caption {
-    font-size: 6px;
+    font-size: var(--type-label);
     bottom: 22px;
     left: 20px;
     right: 20px;
   }
   .assessment-copy > .eyebrow {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .quality-metrics > div {
-    font-size: 12px;
+    font-size: var(--type-small);
     padding: 14px 0;
   }
   .eligibility strong {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .eligibility span {
-    font-size: 11px;
+    font-size: var(--type-label);
   }
   .assessment-note {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .commercial-close {
     min-height: 0;
@@ -2089,11 +2089,11 @@ a svg {
     line-height: 1.08;
   }
   .close-content > p:not(.eyebrow) {
-    font-size: 14px;
+    font-size: var(--type-small);
     margin-top: 22px;
   }
   .close-content > .button {
-    font-size: 10px;
+    font-size: var(--type-label);
     gap: 17px;
     padding-inline: 16px;
     margin-top: 24px;
@@ -2108,7 +2108,7 @@ a svg {
     font-size: 28px;
   }
   .close-equation span {
-    font-size: 6px;
+    font-size: var(--type-label);
     letter-spacing: 0.04em;
     line-height: 1.5;
   }
@@ -2128,20 +2128,20 @@ a svg {
     margin-bottom: 28px;
   }
   .footer-top p {
-    font-size: 12px;
+    font-size: var(--type-small);
     margin-left: auto;
   }
   .footer-top > .text-link {
     margin-left: 0;
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .footer-bottom {
     gap: 15px;
-    font-size: 7px;
+    font-size: var(--type-label);
   }
   .footer-bottom nav {
     gap: 8px 16px;
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .dialog-copy {
     padding: 55px 24px 26px;
@@ -2150,12 +2150,12 @@ a svg {
     font-size: 32px;
   }
   .dialog-copy > .button {
-    font-size: 11px;
+    font-size: var(--type-label);
     gap: 14px;
   }
   .dialog-copy > p:not(.eyebrow),
   .resource-list {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .product-dialog .dialog-copy {
     padding-top: 25px;
@@ -2169,7 +2169,7 @@ a svg {
     gap: 8px;
   }
   .header-cta {
-    font-size: 8px;
+    font-size: var(--type-label);
     padding-inline: 9px;
     gap: 7px;
   }
@@ -2177,10 +2177,10 @@ a svg {
     width: 12px;
   }
   .brand-link .text-\[15px\] {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .brand-link .text-\[8px\] {
-    font-size: 5px;
+    font-size: var(--type-label);
   }
   .brand-link svg {
     width: 21px;
@@ -2189,7 +2189,7 @@ a svg {
     width: 28px;
   }
   .hero-copy > .eyebrow {
-    font-size: 6px;
+    font-size: var(--type-label);
     letter-spacing: 0.1em;
   }
   .hero h1 {
@@ -2199,33 +2199,33 @@ a svg {
     height: 375px;
   }
   .hero-actions > .button {
-    font-size: 9px;
+    font-size: var(--type-label);
     gap: 12px;
   }
   .hero-description {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .hero-qualifier {
-    font-size: 7px;
+    font-size: var(--type-label);
   }
   .chapter-section h2 {
     font-size: 9.1vw;
   }
   .source-thumbnails > div > span {
-    font-size: 5px;
+    font-size: var(--type-label);
   }
   .output-caption small {
-    font-size: 5px;
+    font-size: var(--type-label);
   }
   .property-caption {
-    font-size: 5px;
+    font-size: var(--type-label);
   }
   .product-01,
   .product-04 {
     width: 92%;
   }
   .product-copy h3 {
-    font-size: 18px;
+    font-size: var(--type-body);
   }
   .product-specs {
     gap: 7px;
@@ -2240,7 +2240,7 @@ a svg {
     gap: 10px;
   }
   .close-equation span {
-    font-size: 5px;
+    font-size: var(--type-label);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2271,7 +2271,7 @@ a svg {
   height: auto;
 }
 .caplist-wordmark > span {
-  font-size: 8px;
+  font-size: var(--type-label);
   font-weight: 450;
   letter-spacing: 0.52em;
   padding-left: 0.52em;
@@ -2293,7 +2293,7 @@ a svg {
     gap: 5px;
   }
   .caplist-wordmark > span {
-    font-size: 6px;
+    font-size: var(--type-label);
   }
   .caplist-logo > svg,
   .brand-link .caplist-logo > svg {
@@ -2314,6 +2314,573 @@ a svg {
     height: 29px;
   }
   .brand-link .caplist-wordmark > span {
-    font-size: 5px;
+    font-size: var(--type-label);
+  }
+}
+
+/* Shared reading scale and photographic process — static review revision. */
+:root {
+  --type-label: 12px;
+  --type-small: 15px;
+  --type-body: 18px;
+}
+body {
+  font-size: var(--type-body);
+}
+.eyebrow {
+  font-size: var(--type-label);
+  letter-spacing: 0.12em;
+}
+.hero h1 {
+  font-size: clamp(56px, 6.7vw, 116px);
+}
+.chapter-section h2 {
+  font-size: clamp(36px, 4.2vw, 68px);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+.hero-description,
+.section-heading > p,
+.catalogue-intro p,
+.product-description,
+.standards-copy p {
+  font-size: var(--type-body);
+  line-height: 1.7;
+}
+.button,
+.text-link {
+  font-size: var(--type-small);
+}
+.opportunity-v2-heading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 8%;
+  align-items: end;
+  margin-bottom: 48px;
+}
+.opportunity-v2-heading > p {
+  max-width: 530px;
+  line-height: 1.7;
+  color: #65717b;
+}
+.opportunity-v2-heading strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 500;
+  margin-top: 12px;
+}
+.capture-journey {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  padding: 0;
+}
+.journey-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--type-small);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.journey-label svg {
+  color: var(--blue);
+}
+.journey-photo {
+  position: relative;
+  aspect-ratio: 1.55;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.capture-journey li > p {
+  font-size: var(--type-small);
+  margin-top: 12px;
+  color: #56616c;
+}
+.booking-ticket {
+  position: absolute;
+  inset: 15% 12%;
+  background: #f7f9fbef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px;
+}
+.booking-ticket span {
+  font-size: var(--type-label);
+  letter-spacing: 0.06em;
+}
+.booking-ticket strong {
+  font-size: 20px;
+}
+.booking-ticket svg {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  color: var(--blue);
+}
+.edit-tracks {
+  position: absolute;
+  inset: auto 8% 12%;
+  background: #080d10dc;
+  padding: 10px;
+  display: grid;
+  gap: 5px;
+}
+.edit-tracks i {
+  height: 8px;
+  background: repeating-linear-gradient(90deg, #2f7bff 0 20%, #152e54 20% 21%);
+}
+.edit-tracks i:nth-child(2) {
+  width: 80%;
+  background: #7c9f95;
+}
+.core-promise {
+  margin: 48px 0 0;
+  border-top: 1px solid #b9c5cf;
+  border-bottom: 1px solid #b9c5cf;
+  padding: 32px 0;
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr 40px 1.35fr;
+  align-items: center;
+  gap: 22px;
+}
+.core-promise > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.promise-number {
+  font-size: clamp(32px, 4vw, 60px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: #8695a1;
+}
+.promise-number svg {
+  width: 45px;
+  height: 45px;
+}
+.core-promise h3 {
+  font-size: clamp(22px, 2.3vw, 36px);
+  line-height: 1.13;
+  letter-spacing: -0.045em;
+}
+.promise-result h3,
+.promise-result .promise-number,
+.promise-arrow {
+  color: var(--blue);
+}
+.promise-arrow {
+  width: 32px;
+  height: 32px;
+}
+.output-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0 22px;
+  gap: 20px;
+}
+.output-intro > p:last-child {
+  font-size: var(--type-body);
+}
+.possibility-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+.possibility-photo {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #17212a;
+}
+.possibility-photo:after {
+  content: "";
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(transparent, #07101bbe);
+}
+.possibility-photo > span:not(.frame-corners) {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  color: white;
+  z-index: 1;
+  font-size: var(--type-label);
+}
+.possibility-photo > svg {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  color: white;
+}
+.possibility h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 16px 0 6px;
+  letter-spacing: -0.02em;
+}
+.possibility p {
+  font-size: var(--type-small);
+  color: #65717b;
+}
+.possibility:hover h3 {
+  color: var(--blue);
+}
+.opportunity-note {
+  margin-top: 26px;
+  color: #65717b;
+  font-size: var(--type-small);
+}
+.how-composition {
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: 5%;
+  align-items: center;
+}
+.how-copy > p {
+  margin: 26px 0;
+  color: #adb6be;
+  line-height: 1.7;
+  max-width: 480px;
+}
+.media-exploded {
+  position: relative;
+  height: 480px;
+  min-width: 0;
+}
+.media-input-labels {
+  position: absolute;
+  left: 0;
+  top: 18%;
+  width: 18%;
+  display: grid;
+  gap: 26px;
+  z-index: 5;
+}
+.media-input-labels > span {
+  padding: 10px;
+  border: 1px solid #456479;
+  background: #101b24;
+  text-transform: uppercase;
+  font-size: var(--type-label);
+  position: relative;
+}
+.media-input-labels i {
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  background: #427faf;
+  top: 50%;
+  left: 100%;
+}
+.media-plane {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #7b9aaa80;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px #0005;
+}
+.media-plane > span:not(.frame-corners) {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #0b101bc9;
+  padding: 7px 10px;
+  font-size: var(--type-label);
+}
+.plane-back {
+  width: 53%;
+  height: 52%;
+  left: 22%;
+  top: 0;
+  transform: perspective(900px) rotateY(-14deg) rotateZ(-7deg);
+}
+.plane-main {
+  width: 58%;
+  height: 57%;
+  left: 22%;
+  top: 18%;
+  transform: perspective(900px) rotateY(-14deg) rotateZ(-7deg);
+}
+.plane-front {
+  width: 48%;
+  height: 45%;
+  left: 29%;
+  top: 49%;
+  transform: perspective(900px) rotateY(-14deg) rotateZ(-7deg);
+}
+.plane-vertical {
+  width: 20%;
+  height: 61%;
+  right: 0;
+  top: 26%;
+  transform: perspective(900px) rotateY(-16deg) rotateZ(3deg);
+  border: 5px solid #1a232c;
+  border-radius: 15px;
+}
+.assessment-strip {
+  margin-top: 45px;
+  padding: 25px 0;
+  border-block: 1px solid #36424b;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.assessment-strip > span:not(.eyebrow) {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--type-small);
+}
+.assessment-strip svg {
+  color: #58b7a4;
+}
+.source-outcomes {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 36px;
+  margin-top: 40px;
+}
+.source-outcomes > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.source-outcomes h3 {
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.source-outcomes p {
+  color: #adb6be;
+  font-size: var(--type-small);
+}
+.source-outcomes svg {
+  color: var(--blue);
+}
+.source-outcomes strong {
+  font-size: var(--type-body);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.how-note {
+  margin-top: 36px;
+  font-size: var(--type-small);
+  color: #adb6be;
+}
+@media (max-width: 1439px) {
+  .desktop-nav {
+    gap: 18px;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+  .source-thumbnails {
+    gap: 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .opportunity-v2-heading {
+    gap: 5%;
+  }
+  .core-promise {
+    gap: 12px;
+    grid-template-columns: 1fr 24px 1fr 24px 1.2fr;
+  }
+  .core-promise > div {
+    gap: 10px;
+  }
+  .promise-number {
+    font-size: 34px;
+  }
+  .promise-number svg {
+    width: 30px;
+  }
+  .possibility-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .how-composition {
+    grid-template-columns: 1fr;
+  }
+  .how-copy > p {
+    max-width: 650px;
+  }
+  .media-exploded {
+    margin-top: 36px;
+    height: 530px;
+  }
+  .booking-ticket {
+    inset: 10% 6%;
+    padding: 8px;
+  }
+  .booking-ticket strong {
+    font-size: 16px;
+  }
+  .booking-ticket svg {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --type-small: 14px;
+    --type-body: 16px;
+  }
+  .hero h1 {
+    font-size: clamp(52px, 11vw, 80px);
+  }
+  .chapter-section h2 {
+    font-size: clamp(34px, 7vw, 48px);
+  }
+  .opportunity-v2-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+  .capture-journey {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 14px;
+  }
+  .capture-journey li:last-child {
+    grid-column: 1/-1;
+  }
+  .capture-journey li:last-child .journey-photo {
+    aspect-ratio: 3;
+  }
+  .core-promise {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 0;
+    margin-top: 30px;
+  }
+  .core-promise > div {
+    gap: 22px;
+  }
+  .core-promise h3 {
+    font-size: 30px;
+  }
+  .promise-number {
+    width: 62px;
+    font-size: 46px;
+  }
+  .promise-arrow {
+    transform: rotate(90deg);
+    margin-left: 13px;
+  }
+  .output-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .possibility-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 14px;
+  }
+  .possibility-photo {
+    height: 210px;
+  }
+  .possibility h3 {
+    font-size: 17px;
+  }
+  .possibility:last-child {
+    grid-column: 1/-1;
+  }
+  .possibility:last-child .possibility-photo {
+    height: 230px;
+  }
+  .media-exploded {
+    height: 380px;
+    margin-top: 34px;
+  }
+  .media-input-labels {
+    width: 24%;
+    gap: 18px;
+  }
+  .media-input-labels i {
+    width: 20px;
+  }
+  .media-input-labels > span {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+  .media-plane > span:not(.frame-corners) {
+    font-size: 12px;
+    padding: 5px;
+    bottom: 7px;
+    left: 5px;
+  }
+  .plane-back,
+  .plane-main {
+    left: 27%;
+  }
+  .plane-front {
+    left: 30%;
+  }
+  .plane-vertical {
+    width: 24%;
+  }
+  .source-outcomes {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .source-outcomes > div + div {
+    border-top: 1px solid #36424b;
+    padding-top: 28px;
+  }
+  .assessment-strip {
+    justify-content: flex-start;
+  }
+  .assessment-strip .eyebrow {
+    width: 100%;
+  }
+  .source-contact {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin-top: 15px;
+  }
+  .source-thumbnails span {
+    white-space: normal;
+    line-height: 1.35;
+  }
+  .hero-output {
+    display: none;
+  }
+  .hero-media {
+    padding-bottom: 0;
+  }
+  .property-caption {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-relationship {
+    gap: 18px;
+  }
+  .footer-bottom,
+  .footer-main {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-media {
+    height: auto;
+  }
+  .hero-property {
+    position: relative;
+    inset: auto;
+    height: 340px;
+  }
+  .source-contact {
+    margin-top: 16px;
   }
 }

@@ -2,7 +2,13 @@
 
 **Status: static redesign complete; awaiting explicit visual approval.**
 
-Live local prototype: http://127.0.0.1:3000/?review=static
+Live local prototype: http://127.0.0.1:3000/?review=static-v2
+
+## September 11 revision
+
+Rebalanced the entire reading scale: 12px eyebrows, 14–15px metadata, 16–18px body text, and reduced section and hero headings. Rebuilt the commercial opportunity with a photographic five-step process, a large one-visit → existing-capture → five-products statement, and five linked output previews. Rebuilt How Caplist Works with layered media planes, assessment checks and readable source-to-product relationships. Active photography now depicts Australian properties; sources are in ASSET_SOURCES.md.
+
+The production build, nine responsive widths, local media checks, navigation, five product dialogs, keyboard focus, and reduced-motion checks pass. No backend or motion pass was added.
 
 ## What changed
 
@@ -22,8 +28,8 @@ Retained: the existing Next.js/React/TypeScript foundation; Caplist's near-black
 
 - 1280 px and above: full public navigation, large side-by-side hero, asymmetric catalogue and wide media relationships.
 - 1024 px: side-by-side hero with a compact navigation menu and adjusted image geometry.
-- 768 px: stacked hero and larger media canvas, with three readable source-to-output stages below.
-- 320–430 px: genuinely stacked composition, compact header CTA, accessible menu, vertically arranged transformation stages and varied single-column catalogue widths. No desktop pointer effects are present.
+- 768 px: stacked hero and larger media canvas, with the layered media composition and source-to-product outcomes below.
+- 320–430 px: genuinely stacked composition, compact header CTA, accessible menu, vertically arranged process and product relationships and varied single-column catalogue widths. No desktop pointer effects are present.
 - Fixed media aspect ratios reserve space. Local preloaded Inter uses an adjusted fallback. The page does not depend on animation to reveal content.
 
 ## Screenshots

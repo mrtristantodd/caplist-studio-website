@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-11T01:13:01.065Z",
+  "date": "2026-09-11T02:13:50.120Z",
   "viewportResults": [
     {
       "width": 320,
@@ -15,7 +15,7 @@
       "canvasCount": 0,
       "externalResources": [],
       "metrics": {
-        "lcp": 100,
+        "lcp": 60,
         "cls": 0
       }
     },
@@ -33,7 +33,7 @@
       "canvasCount": 0,
       "externalResources": [],
       "metrics": {
-        "lcp": 48,
+        "lcp": 44,
         "cls": 0
       }
     },
@@ -51,7 +51,7 @@
       "canvasCount": 0,
       "externalResources": [],
       "metrics": {
-        "lcp": 48,
+        "lcp": 56,
         "cls": 0
       }
     },
@@ -69,7 +69,7 @@
       "canvasCount": 0,
       "externalResources": [],
       "metrics": {
-        "lcp": 36,
+        "lcp": 44,
         "cls": 0
       }
     },
@@ -123,7 +123,7 @@
       "canvasCount": 0,
       "externalResources": [],
       "metrics": {
-        "lcp": 40,
+        "lcp": 36,
         "cls": 0
       }
     },
@@ -187,8 +187,8 @@
     },
     "keyboardSkipLink": true,
     "skipTarget": "#main-content",
-    "dialogFocusRestored": true,
     "dialogBackgroundInert": true,
-    "dialogFocusReturns": true
+    "dialogFocusReturns": true,
+    "dialogFocusRestored": true
   }
 }
