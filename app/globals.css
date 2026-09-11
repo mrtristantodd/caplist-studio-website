@@ -5293,3 +5293,25 @@ body {
     font-size: 29px;
   }
 }
+
+/* Crop demonstrations and distinct, immediately visible example motion. */
+.site-header {position:sticky; top:0; z-index:80; box-shadow:0 5px 24px #0003;}
+html {scroll-padding-top:110px;}
+.hero-media .hero-property {position:absolute; inset:auto; left:0; top:50%; transform:translateY(-50%); width:100%; height:auto; aspect-ratio:16 / 9;}
+.hero-property .vertical-view {left:50%; top:50%; transform:translate(-50%,-50%); height:80%; width:auto; aspect-ratio:9 / 16;}
+.hero-property .vertical-view > .frame-corners {inset:0;}
+.hero-property .vertical-view > span:last-child {bottom:8px; left:8px; background:#08121aa0; padding:4px 6px;}
+.reference-product-image[data-ratio="9:16"] > .frame-corners {box-shadow:0 0 0 500px #06111a88; border:1px solid #ffffff50; z-index:2;}
+.reference-product-image .reference-ratio, .reference-product-image .reference-preview {z-index:4;}
+.motion-scene,.motion-scene .photo,.motion-progress i {animation-duration:12s;}
+.motion-preview[data-movement="pan"] .photo {animation-name:showcase-pan;}
+.motion-preview[data-movement="push"] .photo {animation-name:showcase-push;}
+.motion-preview[data-movement="crane"] .photo {animation-name:showcase-crane;}
+.motion-preview[data-movement="pull"] .photo {animation-name:showcase-pull;}
+.motion-preview[data-movement="flyover"] .photo {animation-name:showcase-flyover;}
+@keyframes showcase-pan {0%{transform:scale(1.22) translateX(-7%)}33%,100%{transform:scale(1.22) translateX(7%)}}
+@keyframes showcase-push {0%{transform:scale(1.02)}33%,100%{transform:scale(1.28)}}
+@keyframes showcase-crane {0%{transform:scale(1.2) translateY(7%)}33%,100%{transform:scale(1.2) translateY(-7%)}}
+@keyframes showcase-pull {0%{transform:scale(1.28)}33%,100%{transform:scale(1.02)}}
+@keyframes showcase-flyover {0%{transform:scale(1.32) translate(7%,5%)}33%,100%{transform:scale(1.12) translate(-4%,-3%)}}
+@media(max-width:767px){html{scroll-padding-top:95px;}.hero-media .hero-property{position:relative;top:auto;left:auto;transform:none;width:100%;height:auto;aspect-ratio:16 / 9;margin-bottom:16px;}.hero-media{height:auto;min-height:0;}.hero-property .vertical-view{display:block;}}

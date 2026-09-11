@@ -1,4 +1,3 @@
-import { MotionPreview } from "./MotionPreview";
 import {
   ArrowDown,
   ArrowRight,
@@ -437,7 +436,7 @@ function Catalogue() {
                 className="reference-product-image"
                 data-ratio={product.ratio}
               >
-                <MotionPreview product={product} />
+                <Photo media={product.media} sizes="(max-width:767px) 90vw, 22vw" />
                 <FrameCorners />
                 <span className="reference-ratio">{product.ratio}</span>
                 <PreviewButton product={product} className="reference-preview">

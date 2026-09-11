@@ -106,3 +106,10 @@ Review layout, type, imagery, copy hierarchy, composition and colour balance now
 - Pricing now uses Essential / Pro / Studio selected per property, with Pro recommended and larger; seven inclusions per tier and a five-product comparison.
 - Pricing source: latest relevant discussion in “Australian Real Estate SaaS Opportunity”, including the September 4 per-project clarification and September 9 confirmation of working tiers. These discussions explicitly leave pricing unvalidated; retail examples are not Caplist wholesale prices. Removed invented A$29/A$99 amounts and displayed pricing pending.
 - Added four FAQs about archived media, resale, ownership/privacy and requests. The privacy copy expresses the user's requested product policy; no backend or media-processing services were implemented.
+
+## Motion differentiation and crop refinement
+- Homepage catalogue restored to static photographs. Vertical examples retain full colour inside exact 9:16 frames with translucent shading outside.
+- Hero image is exactly 16:9 with an 80%-height 9:16 frame inside.
+- Sticky navigation verified at mobile and desktop sizes.
+- Examples use distinct pan, push-in, crane-style rise, pull-back and diagonal flyover-style transforms; each scene lasts four seconds (12-second loop). These are 2D camera-style treatments of still photographs.
+- Production build passed. Browser checks at 390, 1440 and 1932px verified ratios, sticky header, no horizontal overflow and no inline catalogue animations. All five example motion names were verified as distinct.
