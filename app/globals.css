@@ -5343,3 +5343,15 @@ html {scroll-padding-top:110px;}
 @keyframes page-arrive {from{opacity:0;translate:0 12px;}to{opacity:1;translate:0 0;}}
 @media(max-width:767px){.header-actions .profile-signin{display:flex;}.profile-signin{gap:3px;padding-right:9px;}.profile-label strong{font-size:12px;}.profile-label > span{font-size:10px;}.profile-avatar{width:26px;height:30px;}}
 @media(prefers-reduced-motion:reduce){.site-reveal,.site-reveal.reveal-pending{opacity:1;translate:none;transition:none;}.hero-copy,.inner-hero h1{animation:none;}.button,.profile-signin,.footer-contact,.example-open,.reference-preview,.site-header,.desktop-nav a:after{transition:none;}.reading-progress{display:none;}}
+
+/* Consistent crop treatment across all five catalogue products. */
+.reference-product-image[data-ratio="16:9"] > .frame-corners {
+  box-shadow: 0 0 0 500px #06111a88;
+  border: 1px solid #ffffff50;
+  z-index: 2;
+}
+.console-filmstrip > div {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}

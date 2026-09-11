@@ -119,3 +119,8 @@ Review layout, type, imagery, copy hierarchy, composition and colour balance now
 - Added one-time below-fold scroll reveals, page entrance, reading progress, hover and navigation underline effects, and scrolled-header translucency. Homepage catalogue photographs remain static.
 - Guest / Sign in now accompanies the profile icon; no authenticated identity is simulated.
 - Build and 28 responsive route checks pass. Browser verification confirms three unique motions per product, 24-second timing, sign-in dialog, scroll reveals and reduced-motion behaviour.
+
+## Audit annotations — crop consistency
+- Extended the existing crop shading to all three landscape catalogue frames.
+- Set all five professional-console thumbnails to 16:9.
+- Production build passed; browser checks at 390, 1440 and 1932px confirmed every overlay, thumbnail ratios and no horizontal overflow.
