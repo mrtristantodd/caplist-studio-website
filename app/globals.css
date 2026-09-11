@@ -5355,3 +5355,32 @@ html {scroll-padding-top:110px;}
   min-height: 0;
   aspect-ratio: 16 / 9;
 }
+
+.header-signin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #f8fafc;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .18s ease;
+}
+.header-signin svg { flex-shrink: 0; color: #bdcbd8; }
+.header-signin:hover { background: #ffffff0b; }
+.header-signin:focus-visible { outline: 2px solid #79adff; outline-offset: 3px; }
+@media (max-width: 767px) {
+  .header-signin { font-size: 14px; gap: 7px; padding-inline: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-signin { transition: none; }
+}

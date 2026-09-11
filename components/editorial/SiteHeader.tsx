@@ -36,9 +36,9 @@ export function SiteHeader() {
           <Links />
         </nav>
         <div className="header-actions">
-          <PreviewButton notice="login" className="profile-signin">
-            <span className="profile-avatar"><UserRound size={22} /></span>
-            <span className="profile-label"><strong>Guest</strong><span>Sign in</span></span>
+          <PreviewButton notice="login" className="header-signin">
+            <UserRound size={20} strokeWidth={1.7} aria-hidden="true" />
+            <span>Sign in</span>
           </PreviewButton>
         </div>
         <details ref={menu} className="mobile-menu">
