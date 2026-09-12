@@ -1,185 +1,157 @@
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Layers, ShieldCheck } from "lucide-react";
 import { Photo } from "@/components/editorial/Photo";
 import { InnerPage } from "@/components/editorial/InnerPage";
+import { pricingTiers } from "@/lib/pricing-tiers";
 export const metadata = { title: "Pricing — Caplist Studio" };
-const plans = [
-  {
-    name: "Essential",
-    price: null,
-    unit: "per property",
-    intro: "Upload your media. Let Caplist handle the rest.",
-    items: [
-      "Automatic image selection and sequencing",
-      "Caplist-selected music",
-      "Short standard duration",
-      "One primary output format",
-      "One output variation",
-      "Essential revision allowance",
-      "Automatic movement and transitions",
-    ],
-  },
-  {
-    name: "Pro",
-    price: null,
-    unit: "per property",
-    intro: "More creative choice. The same effortless production.",
-    items: [
-      "Select images and adjust their order",
-      "Choose your music style",
-      "Additional duration options",
-      "Selected additional social formats",
-      "More output variations",
-      "Expanded revision allowance",
-      "Automatic movement and transitions",
-    ],
-  },
-  {
-    name: "Studio",
-    price: null,
-    unit: "per property",
-    intro: "The full range of choices for a complete delivery.",
-    items: [
-      "Select images and adjust their order",
-      "Broader curated music choice",
-      "Widest duration selection",
-      "Full social format pack",
-      "Widest choice of output variations",
-      "Most revision flexibility",
-      "Automatic movement and transitions",
-    ],
-  },
-];
 export default function Pricing() {
   return (
     <InnerPage>
-      <section className="pricing-hero">
-        <div className="pricing-hero-image">
-          <Photo media="exterior" sizes="100vw" priority />
-        </div>
-        <div className="inner-hero shell">
-          <p className="eyebrow">Pricing</p>
-          <h1>
-            One capture.
-            <br />
-            <span>More on the invoice.</span>
-          </h1>
-          <p>
-            Choose a product, then choose the tier for that property. Essential,
-            Pro or Studio — shaped around what your client needs.
-          </p>
-          <div className="pricing-value">
-            <span>
-              <strong>1</strong> Property visit
-            </span>
-            <span>
-              <strong>5</strong> Product possibilities
-            </span>
-            <span>
-              <strong>More</strong> Value per delivery
-            </span>
-
-          </div>
-        </div>
-      </section>
-      <section className="light-section pricing-section">
+      <section className="pricing-editorial">
         <div className="shell">
-          <p className="pricing-disclosure">
-            Choose per property. No subscription required. Final prices and
-            allowances are being confirmed.
-          </p>
-          <div className="pricing-grid">
-            {plans.map((p, i) => (
+          <div className="pricing-intro">
+            <p className="eyebrow">A product for every property brief</p>
+            <h1>
+              More products to sell.
+              <br />
+              <span>Your clients. Your pricing.</span>
+            </h1>
+            <p>
+              Choose a product, then the creative scope. Add it to your own
+              client package, under your media business, at the price you
+              choose.
+            </p>
+            <div className="pricing-terms">
+              <span>Per property</span>
+              <span>No subscription required</span>
+              <span>Early access</span>
+            </div>
+          </div>
+          <div className="offer-grid">
+            {pricingTiers.map((tier, index) => (
               <article
-                className={i === 1 ? "plan featured-plan" : "plan"}
-                key={p.name}
+                className={`offer-card offer-${tier.name.toLowerCase()}`}
+                key={tier.name}
               >
-                <div className="plan-photo">
+                <div className="offer-topline">
+                  <span>
+                    0{index + 1} / {tier.level}
+                  </span>
+                  {index === 1 ? (
+                    <Check size={17} />
+                  ) : index === 2 ? (
+                    <Layers size={17} />
+                  ) : null}
+                </div>
+                <div className="offer-image">
                   <Photo
-                    media={(["living", "exterior", "aerial"] as const)[i]}
-                    sizes="(max-width:767px) 90vw, 35vw"
+                    media={tier.media}
+                    sizes="(max-width:767px) 90vw, 33vw"
                   />
                   <span>
                     {
                       [
-                        "A fresh perspective",
-                        "The complete collection",
-                        "At studio scale",
-                      ][i]
+                        "Everyday listings",
+                        "Distinctive architecture",
+                        "Signature properties",
+                      ][index]
                     }
                   </span>
                 </div>
-                {i === 1 && (
-                  <span className="plan-badge">Recommended · Pro</span>
-                )}
-
-                <h2>{p.name}</h2>
-                <p>{p.intro}</p>
-                <div className="plan-price">
-                  {p.price ? (
-                    <>
-                      <sup>A$</sup>
-                      {p.price}
-                    </>
-                  ) : (
-                    <>Pricing soon</>
-                  )}
+                <div className="offer-body">
+                  <div className="offer-heading">
+                    <h2>{tier.name}</h2>
+                    {index === 1 && (
+                      <span className="offer-recommended">Recommended</span>
+                    )}
+                  </div>
+                  <p className="offer-description">{tier.description}</p>
+                  <div className="offer-price">
+                    <strong>Discuss your requirements</strong>
+                    <span>Pricing confirmed before production</span>
+                  </div>
+                  <a
+                    className="button offer-cta"
+                    href={`/demo?tier=${tier.name}`}
+                  >
+                    Discuss {tier.name}
+                    <ArrowUpRight size={18} />
+                  </a>
+                  <p className="offer-value">{tier.value}</p>
+                  <h3>{tier.inheritance}</h3>
+                  <ul>
+                    {tier.features.map((feature) => (
+                      <li key={feature}>
+                        <Check size={17} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="offer-fit">
+                    <span>Choose this when</span>
+                    <p>{tier.use}</p>
+                  </div>
                 </div>
-                <span className="plan-unit">{p.unit}</span>
-                <a
-                  className={
-                    "button " + (i === 1 ? "button-blue" : "button-outline")
-                  }
-                  href="/examples"
-                >
-                  Explore example products <ArrowUpRight size={18} />
-                </a>
-                <ul>
-                  {p.items.map((x) => (
-                    <li key={x}>
-                      <Check size={18} />
-                      {x}
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
-          <div className="tier-comparison">
-            <p className="eyebrow">Your product. Your level of choice.</p>
-            <h2>Five products. Three ways to make them yours.</h2>
-            <p>
-              Choose Essential, Pro or Studio for each product. Available
-              formats depend on the media you supply.
-            </p>
-            <div className="tier-table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Essential</th>
-                    <th>Pro</th>
-                    <th>Studio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    "Vertical Video Reel",
-                    "Property Teaser",
-                    "Feature Reel",
-                    "Photo Reel",
-                    "Mixed Media Reel",
-                  ].map((name) => (
-                    <tr key={name}>
-                      <th scope="row">{name}</th>
-                      <td>Automatic creation</td>
-                      <td>Creative choice + formats</td>
-                      <td>Full format pack + variants</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <p className="offer-scope-note">
+            Working tier scope. Final prices, durations, format availability and
+            revision allowances are confirmed before production. Property images
+            illustrate different briefs; any property can use any tier.
+          </p>
+          <div className="purchase-path">
+            <div>
+              <span className="eyebrow">Before you commit</span>
+              <h2>
+                A clear brief.
+                <br />
+                An agreed delivery.
+              </h2>
             </div>
+            <ol>
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>Tell us what your client needs</h3>
+                  <p>
+                    Start with the media you have and where the finished product
+                    will be used.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>Review the scope and price</h3>
+                  <p>
+                    Agree the products, formats, music rights and revision
+                    allowance before sharing files.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>Approve your client delivery</h3>
+                  <p>
+                    You retain the client relationship and decide how to package
+                    and price the result.
+                  </p>
+                </div>
+              </li>
+            </ol>
           </div>
+          <a className="media-policy-link" href="/media-policy">
+            <ShieldCheck size={20} />
+            <span>
+              Your media. Your permission. Read our media-handling commitment.
+            </span>
+            <ArrowUpRight size={18} />
+          </a>
+        </div>
+      </section>
+      <section className="light-section pricing-section">
+        <div className="shell">
           <div className="pricing-faq">
             <h2>A few things to know.</h2>
             {[
@@ -201,11 +173,11 @@ export default function Pricing() {
               ],
               [
                 "Do you use my media anywhere?",
-                "No. Your media stays yours. We use it only to create the products you request — never for our own marketing, training or other customers, and never share or repurpose it without your consent.",
+                "Your media belongs to you. Caplist’s commitment is to use it only for the work you request, with no reuse for marketing, training or other customers without your consent. Before a pilot, we will agree how files are transferred, accessed and deleted. This website does not accept media uploads.",
               ],
               [
                 "Can I purchase a plan now?",
-                "Not yet. This is a visual pricing proposal for review. Purchasing and account access are not available.",
+                "Caplist Studio is being built for professional property-media businesses. Request early access to start a conversation. Pricing and production terms will be confirmed before any work begins.",
               ],
             ].map(([q, a]) => (
               <details key={q}>

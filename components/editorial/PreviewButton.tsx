@@ -14,9 +14,9 @@ const notices = {
   },
   login: {
     title: "Studio access comes next.",
-    text: "This is the Caplist Studio visual preview. Account access will be available in a later product phase. Explore how captured media becomes additional products below.",
-    link: "See how Caplist works",
-    href: "/#how-it-works",
+    text: "Caplist Studio is being built for professional property-media businesses. Request early access to explore what your existing media could become.",
+    link: "Request Early Access",
+    href: "/early-access",
   },
   resources: {
     title: "Start with a stronger capture.",

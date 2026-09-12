@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { Photo, FrameCorners } from "@/components/editorial/Photo";
 import { PreviewButton } from "@/components/editorial/PreviewButton";
+import { AccessClose } from "@/components/editorial/StudioUI";
 import { products } from "@/lib/demo-media";
 export const metadata = { title: "Example products — Caplist Studio" };
 export default function Examples() {
@@ -13,15 +14,15 @@ export default function Examples() {
           <Photo media="aerial" sizes="100vw" priority />
         </div>
         <div className="inner-hero shell">
-          <p className="eyebrow">See what you can create</p>
+          <p className="eyebrow">An expanding product catalogue</p>
           <h1>
-            Your property media.
+            More ways to sell
             <br />
-            <span>Five new possibilities.</span>
+            <span>the media you’ve already made.</span>
           </h1>
           <p>
-            A social reel. A listing teaser. A new angle on the details. Give
-            your clients more ways to show a property.
+            Different source media can support different finished products —
+            giving your business more to offer without adding another shoot.
           </p>
           <div className="examples-hero-signature">
             <span>One capture</span>
@@ -86,6 +87,7 @@ export default function Examples() {
           ))}
         </div>
       </section>
+      <AccessClose />
     </InnerPage>
   );
 }

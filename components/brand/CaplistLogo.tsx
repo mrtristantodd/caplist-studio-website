@@ -1,40 +1,34 @@
-/** Vector interpretation of the supplied three-panel brand kit. */
+/** Original outlined wordmark and three-panel mark from the supplied CAPLIST.zip. */
 export function CaplistMark({ size = 32 }: { size?: number }) {
   return (
-    <svg
+    <img
+      src="/brand/caplist-mark-light.svg"
       width={size}
-      height={size}
-      viewBox="0 0 64 56"
+      height={(size * 280) / 340}
+      alt=""
       aria-hidden="true"
-      fill="currentColor"
-    >
-      <path d="M3 15Q3 13 5 14L21 17V40L5 44Q3 45 3 43Z M49 17L61 14Q63 13 63 15V43Q63 45 61 44L49 40Z" />
-      <path
-        fill="#2F7BFF"
-        d="M26 3Q26 1 28 2L43 8Q45 9 45 11V46Q45 48 43 49L28 55Q26 56 26 54Z"
-      />
-    </svg>
+      className="brand-mark"
+    />
   );
 }
-export function CaplistLogo() {
+export function CaplistLogo({ light = false }: { light?: boolean }) {
   return (
-    <div className="caplist-logo" aria-label="Caplist Studio">
-      <CaplistMark size={37} />
-      <div className="caplist-wordmark">
-        <svg viewBox="0 0 215 29" aria-hidden="true">
-          <g
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="5.2"
-            strokeLinecap="square"
-            strokeLinejoin="round"
-          >
-            <path d="M24 5H11C4 5 3 10 3 14s1 10 8 10h13M72 24V5h17c11 0 11 13 0 13H73M109 5v19h23M143 5v19M179 5h-17c-9 0-9 9 0 9h10c10 0 10 10 0 10h-18M188 5h24M200 5v19" />
-            <path stroke="#2F7BFF" d="M34 24 47 5 60 24" />
-          </g>
-        </svg>
-        <span>STUDIO</span>
-      </div>
+    <div className="brand-lockup" role="img" aria-label="Caplist Studio">
+      <img
+        src={`/brand/caplist-mark-${light ? "dark" : "light"}.svg`}
+        width={38}
+        height={31.3}
+        alt=""
+        aria-hidden="true"
+        className="brand-mark"
+      />
+      <img
+        src={`/brand/caplist-wordmark-${light ? "dark" : "light"}.svg`}
+        width={140}
+        height={39.2}
+        alt=""
+        aria-hidden="true"
+      />
     </div>
   );
 }

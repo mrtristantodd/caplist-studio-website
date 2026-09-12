@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { UserRound, Menu, X } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
 import { PreviewButton } from "./PreviewButton";
+import { AccessLink } from "./StudioUI";
 function Links({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
@@ -10,16 +11,13 @@ function Links({ onNavigate }: { onNavigate?: () => void }) {
         Products
       </a>
       <a href="/#how-it-works" onClick={onNavigate}>
-        How Caplist Works
+        How It Works
       </a>
       <a href="/#for-media-businesses" onClick={onNavigate}>
         For Media Businesses
       </a>
-      <a href="/pricing" onClick={onNavigate}>
-        Pricing
-      </a>
-      <a href="/resources" onClick={onNavigate}>
-        Resources
+      <a href="/about" onClick={onNavigate}>
+        About
       </a>
     </>
   );
@@ -30,15 +28,16 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell header-inner">
         <a href="/#top" className="brand-link" aria-label="Caplist Studio home">
-          <CaplistLogo />
+          <CaplistLogo light />
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <Links />
         </nav>
         <div className="header-actions">
-          <PreviewButton notice="login" className="header-signin">
+          <AccessLink />
+          <PreviewButton notice="login" className="header-avatar">
             <UserRound size={20} strokeWidth={1.7} aria-hidden="true" />
-            <span>Sign in</span>
+            <span className="sr-only">Sign in</span>
           </PreviewButton>
         </div>
         <details ref={menu} className="mobile-menu">
@@ -48,7 +47,8 @@ export function SiteHeader() {
           </summary>
           <nav aria-label="Mobile navigation">
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <PreviewButton notice="login">Sign in</PreviewButton>
+            <AccessLink />
+            <PreviewButton notice="login">Log in</PreviewButton>
           </nav>
         </details>
       </div>

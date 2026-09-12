@@ -1,0 +1,75 @@
+:root {
+  /* Locked Caplist Studio baseline v1.0 supplied by the user. */
+  --caplist-black: #0b0d10;
+  --caplist-blue: #2f7bff;
+  --caplist-offwhite: #f8fafc;
+  --surface-dark-900: #11151a;
+  --surface-dark-800: #171c22;
+  --surface-dark-700: #20262e;
+  --border-dark: #2b323c;
+  --text-dark-primary: #f8fafc;
+  --text-dark-secondary: #a7b0bc;
+  --text-dark-muted: #7e8997;
+  --surface-light: #ffffff;
+  --surface-light-alt: #f8fafc;
+  --border-light: #e6eaf0;
+  --text-light-primary: #0b0d10;
+  --text-light-secondary: #566170;
+  --success: #2e8b57;
+  --warning: #d99a2b;
+  --error: #d84b4b;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --transition-fast: 180ms;
+  --transition-normal: 280ms;
+  --transition-slow: 520ms;
+  --space-32: 128px;
+  --brand-blue: var(--caplist-blue);
+  /* Derived interaction shade: small white labels on the master blue fall below AA. */
+  --brand-blue-action: color-mix(
+    in srgb,
+    var(--caplist-blue) 88%,
+    var(--caplist-black)
+  );
+  --brand-blue-light: #96b7ff;
+  --brand-black: var(--caplist-black);
+  --brand-paper: var(--caplist-offwhite);
+  --brand-surface: var(--surface-dark-900);
+  --brand-raised: var(--surface-dark-800);
+  --brand-text: var(--text-dark-primary);
+  --brand-muted: var(--text-dark-secondary);
+  --brand-ink: var(--text-light-primary);
+  --brand-ink-muted: var(--text-light-secondary);
+  --brand-line: #ffffff1a;
+  --brand-line-light: #0b0d101a;
+  --blue: var(--caplist-blue);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --font-body: var(--font-inter), Arial, sans-serif;
+  --text-label: 12px;
+  --text-small: 14px;
+  --text-body: 16px;
+  --text-lead: 18px;
+  --text-card: 24px;
+  --text-section: clamp(32px, 3.1vw, 44px);
+  --text-display: clamp(48px, 5.4vw, 80px);
+  --line-body: 1.55;
+  --line-heading: 1.1;
+  --radius-control: 8px;
+  --radius-panel: 16px;
+  --radius-pill: 999px;
+  --motion-state: var(--transition-fast);
+  --shadow-panel: 0 16px 40px #0000001a;
+  --content-width: 1440px;
+}

@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./buyer-experience.css";
+import "./tokens.css";
+import "./studio-system.css";
 import { SiteEffects } from "@/components/editorial/SiteEffects";
 
 const inter = localFont({
@@ -13,9 +16,9 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Caplist Studio — MORE FROM EVERY CAPTURE.",
+  title: "Caplist Studio | More Products From Every Property Capture",
   description:
-    "Turn professional property photography, video and drone media you've already captured into additional visual products your media business can sell. No additional property visit.",
+    "Caplist Studio turns professional real-estate photography, video, drone and vertical footage into additional finished visual products your property-media business can sell.",
 };
 
 export const viewport: Viewport = {
@@ -30,7 +33,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}><SiteEffects />{children}</body>
+      <body className={inter.variable}>
+        <SiteEffects />
+        {children}
+      </body>
     </html>
   );
 }

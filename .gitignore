@@ -10,3 +10,10 @@ out
 .DS_Store
 # Full-resolution QA originals remain local; compact WebP copies are committed.
 docs/review/static-*.png
+
+# Local Codex setup and generated full-resolution review captures (kept on disk).
+.codex/environments/
+docs/review/brand-v1-*.png
+docs/review/buyer-*.png
+docs/review/all-crop-overlays.png
+docs/review/standards-ratio-fix.png
