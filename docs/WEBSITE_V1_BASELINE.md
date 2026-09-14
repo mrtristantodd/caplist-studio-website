@@ -189,7 +189,7 @@ These refs are a local recovery point, not an off-device backup. No remote push 
 
 The approved website is now preserved separately from the existing Caplist capability repository.
 
-- Private GitHub repository: https://github.com/mrtristantodd/caplist-studio-website
+- Public GitHub repository: https://github.com/mrtristantodd/caplist-studio-website
 - Origin (fetch and push): `https://github.com/mrtristantodd/caplist-studio-website.git`
 - Exact approved baseline commit: `3fc70e429bb8a3ae197ee0575ad6ccadceab29b6`
 - Fixed annotated tag: `website-v1-approved`
@@ -199,7 +199,7 @@ The approved website is now preserved separately from the existing Caplist capab
 
 The approved tag and backup branch must remain at the exact baseline commit. Future redesign or capability work must not move these recovery references. All current application, stylesheet, copy, font, logo and media files match the approved baseline. The existing `mrtristantodd/caplist-studio` repository was not modified.
 
-GitHub rejected private-repository branch protection because the account plan requires GitHub Pro for this feature. No visibility change, PR review requirement or status-check requirement was introduced. The tag and backup branch are recovery references, not server-enforced immutable references. Optional: after enabling a suitable GitHub plan, open repository Settings → Branches → Add branch protection rule, match `main`, leave force pushes and deletions disallowed, enable “Do not allow bypassing the above settings”, and leave mandatory reviews/status checks off.
+The repository was made public at the owner's explicit request. GitHub main-branch protection is enabled: force pushes and deletion are disallowed, and the rule applies to administrators. No mandatory PR reviews or status checks are required. The approved tag and backup branch remain fixed recovery references by convention; they do not have separate server-enforced protection.
 
 Recover on another computer, without relying on this Mac:
 
@@ -213,4 +213,4 @@ npm run build
 npm start
 ```
 
-Authenticate to GitHub with an account that has access to this private repository. The hash above must match the exact approved baseline. Earlier “no remote” statements describe the initial local snapshot, before this separate remote-recovery step.
+Public recovery does not require GitHub authentication. Push access still requires an authorized account. The hash above must match the exact approved baseline. Earlier “no remote” statements describe the initial local snapshot, before this separate remote-recovery step.
