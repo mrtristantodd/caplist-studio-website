@@ -1,17 +1,20 @@
 import { ArrowRight, ArrowUpRight, Check, ChevronDown } from "lucide-react";
 import { CaplistLogo, CaplistMark } from "@/components/brand/CaplistLogo";
-import { products, type MediaKey } from "@/lib/demo-media";
-import { Photo, FrameCorners } from "./Photo";
-import { PreviewButton } from "./PreviewButton";
+import { products } from "@/lib/demo-media";
+import { CONTACTS } from "@/lib/site";
+import { Photo } from "./Photo";
+import { AppLoginLink } from "./AppLoginLink";
 import { SiteHeader } from "./SiteHeader";
 import { AccessLink, AccessClose, SectionHeading } from "./StudioUI";
 import { ProductExplorer } from "./ProductExplorer";
+
 const inputs = [
   ["Photography", "familyLiving"],
   ["Video", "suburban"],
   ["Drone", "aerial"],
   ["Vertical", "weatherboard"],
 ] as const;
+
 function Hero() {
   return (
     <section id="top" className="studio-hero">
@@ -96,6 +99,7 @@ function Hero() {
     </section>
   );
 }
+
 function CommercialIdea() {
   return (
     <section className="studio-section studio-paper">
@@ -152,6 +156,7 @@ function CommercialIdea() {
     </section>
   );
 }
+
 function SourceMedia() {
   const descriptions = [
     [
@@ -171,6 +176,7 @@ function SourceMedia() {
       "Professionally captured vertical footage can be combined with other media or repurposed into alternative social formats.",
     ],
   ];
+
   return (
     <section className="studio-section studio-dark">
       <div className="shell">
@@ -216,6 +222,7 @@ function SourceMedia() {
     </section>
   );
 }
+
 function HowItWorks() {
   const steps = [
     [
@@ -234,6 +241,7 @@ function HowItWorks() {
       "Make focused creative choices, review the finished product and deliver through your existing workflow.",
     ],
   ];
+
   return (
     <section id="how-it-works" className="studio-section studio-paper">
       <div className="shell studio-how">
@@ -264,6 +272,7 @@ function HowItWorks() {
     </section>
   );
 }
+
 function Catalogue() {
   return (
     <section
@@ -307,6 +316,7 @@ function Catalogue() {
     </section>
   );
 }
+
 function BusinessBenefits() {
   const benefits = [
     [
@@ -334,6 +344,7 @@ function BusinessBenefits() {
       "Growth doesn’t have to come only from putting another photographer on the road.",
     ],
   ];
+
   return (
     <section id="for-media-businesses" className="studio-section studio-paper">
       <div className="shell">
@@ -366,6 +377,7 @@ function BusinessBenefits() {
     </section>
   );
 }
+
 function QualityAndControl() {
   return (
     <section id="standards" className="studio-section studio-paper">
@@ -466,6 +478,7 @@ function QualityAndControl() {
     </section>
   );
 }
+
 function WorkflowAndReseller() {
   return (
     <section className="studio-section studio-paper">
@@ -534,6 +547,7 @@ function WorkflowAndReseller() {
     </section>
   );
 }
+
 export function Footer() {
   return (
     <footer className="brand-footer">
@@ -556,12 +570,12 @@ export function Footer() {
             <a href="/about">About</a>
             <a href="/pricing">Pricing</a>
             <a href="/contact">Contact</a>
-            <PreviewButton notice="login">Log In</PreviewButton>
+            <AppLoginLink>Log In</AppLoginLink>
           </nav>
           <div className="brand-footer-contact">
             <p className="studio-kicker">Start a conversation</p>
-            <a href="mailto:tristan@tristantodd.me">
-              tristan@tristantodd.me <ArrowUpRight size={18} />
+            <a href={`mailto:${CONTACTS.general}`}>
+              {CONTACTS.general} <ArrowUpRight size={18} />
             </a>
             <AccessLink />
           </div>
@@ -569,7 +583,8 @@ export function Footer() {
         <div className="brand-footer-bottom">
           <span>© {new Date().getFullYear()} Caplist Studio</span>
           <div>
-            <a href="/media-policy">Privacy & media handling</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/media-policy">Media Handling</a>
             <a href="/terms">Terms</a>
             <a href="/#top">Back to top ↑</a>
           </div>
@@ -578,6 +593,7 @@ export function Footer() {
     </footer>
   );
 }
+
 export function MarketingPage() {
   return (
     <>
