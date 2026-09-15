@@ -4,6 +4,7 @@ import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
 import { CONTACTS } from "@/lib/site";
 
 const recipient = CONTACTS.partners;
+const validTiers = ["Essential", "Pro", "Studio"];
 
 export function PilotRequest({
   initialTier,
@@ -29,6 +30,13 @@ export function PilotRequest({
   useEffect(() => {
     if (review) heading.current?.focus();
   }, [review]);
+
+  useEffect(() => {
+    const requestedTier = new URLSearchParams(window.location.search).get("tier");
+    if (requestedTier && validTiers.includes(requestedTier)) {
+      setDetails((current) => ({ ...current, tier: requestedTier }));
+    }
+  }, []);
 
   const body = `Hi Caplist Studio,\n\n${isDemo ? "I’d like to arrange a Caplist Studio demo." : "I’d like to request early access to Caplist Studio."}\n\nName: ${details.name}\nBusiness: ${details.business}\nReply email: ${details.email}\nInterested tier: ${details.tier}\nAvailable media: ${details.media}\n\nBusiness needs:\n${details.brief}\n\nPlease confirm suitable products, scope, price, delivery timing, usage rights and file-handling arrangements before I share any media.\n\nThanks,\n${details.name}`;
 
@@ -160,8 +168,8 @@ export function PilotRequest({
       <div className="pilot-field-grid">
         <label>
           Interested tier
-          <select name="tier" defaultValue={details.tier}>
-            {["Not sure yet", "Essential", "Pro", "Studio"].map((x) => (
+          <select name="tier" value={details.tier} onChange={(event) => setDetails((current) => ({ ...current, tier: event.target.value }))}>
+            {["Not sure yet", ...validTiers].map((x) => (
               <option key={x}>{x}</option>
             ))}
           </select>
