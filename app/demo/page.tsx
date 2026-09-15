@@ -1,6 +1,12 @@
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { PilotRequest } from "@/components/editorial/PilotRequest";
-export const metadata = { title: "Book a demo — Caplist Studio" };
+
+export const metadata = {
+  title: "Book a demo — Caplist Studio",
+  description:
+    "Arrange a focused Caplist Studio demo for your professional property-media business.",
+};
+
 export default async function Demo({
   searchParams,
 }: {
@@ -11,6 +17,7 @@ export default async function Demo({
     tier && ["Essential", "Pro", "Studio"].includes(tier)
       ? tier
       : "Not sure yet";
+
   return (
     <InnerPage>
       <section className="pilot-page shell">
@@ -33,7 +40,7 @@ export default async function Demo({
             <li>Discuss creative scope and delivery needs</li>
           </ul>
           <p>
-            Your request opens an email draft to Tristan. A demo time is
+            Your request opens an email draft to Caplist Studio. A demo time is
             confirmed by email.
           </p>
         </div>
