@@ -23,3 +23,10 @@ jobs:
         run: npm run typecheck
       - name: Build static site
         run: npm run build
+      - name: Upload static site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: caplist-studio-site
+          path: out/
+          if-no-files-found: error
+          retention-days: 14
