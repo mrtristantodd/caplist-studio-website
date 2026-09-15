@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Caplist Studio | More Products From Every Property Capture",
   description,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_AU",
