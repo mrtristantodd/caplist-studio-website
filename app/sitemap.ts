@@ -1,0 +1,27 @@
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
+
+export const dynamic = "force-static";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = [
+    "",
+    "/about",
+    "/contact",
+    "/demo",
+    "/early-access",
+    "/examples",
+    "/media-policy",
+    "/pricing",
+    "/privacy",
+    "/resources",
+    "/terms",
+  ];
+
+  return routes.map((route) => ({
+    url: `${SITE_URL}${route}`,
+    lastModified: new Date("2026-09-15"),
+    changeFrequency: route === "" ? "weekly" : "monthly",
+    priority: route === "" ? 1 : 0.7,
+  }));
+}

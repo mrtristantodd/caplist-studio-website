@@ -1,28 +1,56 @@
-import { ArrowUpRight, Mail } from "lucide-react";
 import { InnerPage } from "@/components/editorial/InnerPage";
-export const metadata = { title: "Contact — Caplist Studio" };
+import { ContactRequest } from "@/components/editorial/ContactRequest";
+import { CONTACTS } from "@/lib/site";
+
+export const metadata = {
+  title: "Contact — Caplist Studio",
+  description:
+    "Contact Caplist Studio about product enquiries, partnerships, privacy or accounts.",
+};
+
 export default function Contact() {
   return (
     <InnerPage>
-      <section className="inner-hero shell contact-hero">
-        <p className="eyebrow">Contact Caplist</p>
+      <section className="policy-page shell">
+        <p className="eyebrow">Contact Caplist Studio</p>
         <h1>
-          What would you
+          Start with the right
           <br />
-          <span>like to create?</span>
+          <span>conversation.</span>
         </h1>
-        <p>
-          A question, a client request or an idea for a new product — we’d love
-          to hear it.
+        <p className="policy-lead">
+          Tell us what you need and we’ll route the enquiry to the appropriate
+          Caplist Studio address.
         </p>
-        <a className="button button-blue" href="/early-access">
-          Request Early Access <ArrowUpRight size={18} />
-        </a>
-        <a className="contact-email" href="mailto:tristan@tristantodd.me">
-          <Mail size={24} />
-          tristan@tristantodd.me
-          <ArrowUpRight size={24} />
-        </a>
+
+        <ContactRequest />
+
+        <div className="policy-sections">
+          <section>
+            <h2>General enquiries</h2>
+            <p>
+              <a href={`mailto:${CONTACTS.general}`}>{CONTACTS.general}</a>
+            </p>
+          </section>
+          <section>
+            <h2>Partnerships & early access</h2>
+            <p>
+              <a href={`mailto:${CONTACTS.partners}`}>{CONTACTS.partners}</a>
+            </p>
+          </section>
+          <section>
+            <h2>Privacy & data</h2>
+            <p>
+              <a href={`mailto:${CONTACTS.privacy}`}>{CONTACTS.privacy}</a>
+            </p>
+          </section>
+          <section>
+            <h2>Accounts & billing</h2>
+            <p>
+              <a href={`mailto:${CONTACTS.accounts}`}>{CONTACTS.accounts}</a>
+            </p>
+          </section>
+        </div>
       </section>
     </InnerPage>
   );

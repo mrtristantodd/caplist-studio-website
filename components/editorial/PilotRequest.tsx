@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
-const recipient = "tristan@tristantodd.me";
+import { CONTACTS } from "@/lib/site";
+
+const recipient = CONTACTS.partners;
+const validTiers = ["Essential", "Pro", "Studio"];
+
 export function PilotRequest({
   initialTier,
   mode = "early-access",
@@ -22,10 +26,20 @@ export function PilotRequest({
   const [opened, setOpened] = useState(false);
   const [copied, setCopied] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
+
   useEffect(() => {
     if (review) heading.current?.focus();
   }, [review]);
-  const body = `Hi Tristan,\n\n${isDemo ? "I’d like to arrange a Caplist Studio demo." : "I’d like to request early access to Caplist Studio."}\n\nName: ${details.name}\nBusiness: ${details.business}\nReply email: ${details.email}\nInterested tier: ${details.tier}\nAvailable media: ${details.media}\n\nBusiness needs:\n${details.brief}\n\nPlease confirm suitable products, scope, price, delivery timing, usage rights and file-handling arrangements before I share any media.\n\nThanks,\n${details.name}`;
+
+  useEffect(() => {
+    const requestedTier = new URLSearchParams(window.location.search).get("tier");
+    if (requestedTier && validTiers.includes(requestedTier)) {
+      setDetails((current) => ({ ...current, tier: requestedTier }));
+    }
+  }, []);
+
+  const body = `Hi Caplist Studio,\n\n${isDemo ? "I’d like to arrange a Caplist Studio demo." : "I’d like to request early access to Caplist Studio."}\n\nName: ${details.name}\nBusiness: ${details.business}\nReply email: ${details.email}\nInterested tier: ${details.tier}\nAvailable media: ${details.media}\n\nBusiness needs:\n${details.brief}\n\nPlease confirm suitable products, scope, price, delivery timing, usage rights and file-handling arrangements before I share any media.\n\nThanks,\n${details.name}`;
+
   async function copy() {
     try {
       await navigator.clipboard.writeText(body);
@@ -34,6 +48,7 @@ export function PilotRequest({
       setCopied(false);
     }
   }
+
   if (review)
     return (
       <div className="pilot-form pilot-review">
@@ -45,7 +60,7 @@ export function PilotRequest({
         </h2>
         <p>
           {opened
-            ? "We can’t confirm whether your email was sent. Send the draft in your email app, or copy it below and email Tristan directly."
+            ? "We can’t confirm whether your email was sent. Send the draft in your email app, or copy it below and email Caplist Studio directly."
             : "Review the details below. Opening your email app creates a draft; nothing is sent from this website."}
         </p>
         <label htmlFor="pilot-draft">Email to {recipient}</label>
@@ -60,29 +75,30 @@ export function PilotRequest({
             Open email draft
             <ArrowUpRight size={18} />
           </a>
-          <button className="button button-outline" onClick={copy}>
+          <button className="button button-outline" onClick={copy} type="button">
             {copied ? <Check size={18} /> : <Copy size={18} />}{" "}
             {copied ? "Copied" : "Copy request"}
           </button>
         </div>
         <p role="status" className="pilot-note">
           {copied
-            ? "Request copied. Paste it into an email to Tristan."
+            ? `Request copied. Paste it into an email to ${recipient}.`
             : "If your email app does not open, copy the request or select the text above."}
         </p>
         <div className="pilot-next">
           <h3>After you send it</h3>
           <p>
-            Tristan can reply to {details.email} to clarify the brief and
-            {isDemo ? "arrange a suitable demo time" : "discuss early access"}.
+            Caplist Studio can reply to {details.email} to clarify the brief and
+            {isDemo ? " arrange a suitable demo time" : " discuss early access"}.
             Agree the price, timing and file handling before sending property
             media. No payment or media upload is required to enquire.{" "}
             {isDemo &&
-              "A demo is only booked once you and Tristan have agreed a time."}
+              "A demo is only booked once you and Caplist Studio have agreed a time."}
           </p>
         </div>
         <button
           className="text-link"
+          type="button"
           onClick={() => {
             setReview(false);
             setOpened(false);
@@ -93,6 +109,7 @@ export function PilotRequest({
         </button>
       </div>
     );
+
   return (
     <form
       className="pilot-form"
@@ -151,8 +168,8 @@ export function PilotRequest({
       <div className="pilot-field-grid">
         <label>
           Interested tier
-          <select name="tier" defaultValue={details.tier}>
-            {["Not sure yet", "Essential", "Pro", "Studio"].map((x) => (
+          <select name="tier" value={details.tier} onChange={(event) => setDetails((current) => ({ ...current, tier: event.target.value }))}>
+            {["Not sure yet", ...validTiers].map((x) => (
               <option key={x}>{x}</option>
             ))}
           </select>

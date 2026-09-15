@@ -2,8 +2,9 @@
 import { useRef } from "react";
 import { UserRound, Menu, X } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
-import { PreviewButton } from "./PreviewButton";
+import { AppLoginLink } from "./AppLoginLink";
 import { AccessLink } from "./StudioUI";
+
 function Links({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
@@ -22,6 +23,7 @@ function Links({ onNavigate }: { onNavigate?: () => void }) {
     </>
   );
 }
+
 export function SiteHeader() {
   const menu = useRef<HTMLDetailsElement>(null);
   return (
@@ -35,10 +37,10 @@ export function SiteHeader() {
         </nav>
         <div className="header-actions">
           <AccessLink />
-          <PreviewButton notice="login" className="header-avatar">
+          <AppLoginLink className="header-avatar">
             <UserRound size={20} strokeWidth={1.7} aria-hidden="true" />
             <span className="sr-only">Sign in</span>
-          </PreviewButton>
+          </AppLoginLink>
         </div>
         <details ref={menu} className="mobile-menu">
           <summary aria-label="Toggle navigation">
@@ -48,7 +50,7 @@ export function SiteHeader() {
           <nav aria-label="Mobile navigation">
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
             <AccessLink />
-            <PreviewButton notice="login">Log in</PreviewButton>
+            <AppLoginLink>Log in</AppLoginLink>
           </nav>
         </details>
       </div>
