@@ -1,16 +1,13 @@
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { PilotRequest } from "@/components/editorial/PilotRequest";
-export const metadata = { title: "Request Early Access — Caplist Studio" };
-export default async function EarlyAccess({
-  searchParams,
-}: {
-  searchParams: Promise<{ tier?: string }>;
-}) {
-  const { tier } = await searchParams;
-  const initialTier =
-    tier && ["Essential", "Pro", "Studio"].includes(tier)
-      ? tier
-      : "Not sure yet";
+
+export const metadata = {
+  title: "Request Early Access — Caplist Studio",
+  description:
+    "Request early access to Caplist Studio for your professional property-media business.",
+};
+
+export default function EarlyAccess() {
   return (
     <InnerPage>
       <section className="pilot-page shell">
@@ -37,7 +34,7 @@ export default async function EarlyAccess({
             the products you want to offer.
           </p>
         </div>
-        <PilotRequest initialTier={initialTier} />
+        <PilotRequest initialTier="Not sure yet" />
       </section>
     </InnerPage>
   );
