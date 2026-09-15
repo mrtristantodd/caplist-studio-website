@@ -15,8 +15,20 @@ export default function NotFound() {
           The link may be outdated, or the page may have moved as the platform
           develops.
         </p>
-        <a className="button button-blue" href="/">
-          Return home <ArrowUpRight size={18} />
+        <a
+          className="button button-blue"
+          href="/"
+          aria-label="Return to the Caplist Studio homepage"
+          style={{ color: "#fff", opacity: 1, visibility: "visible", gap: 12 }}
+        >
+          <span style={{ color: "#fff", opacity: 1, visibility: "visible" }}>
+            Return home
+          </span>
+          <ArrowUpRight
+            size={18}
+            aria-hidden="true"
+            style={{ color: "#fff", opacity: 1, visibility: "visible" }}
+          />
         </a>
       </section>
     </InnerPage>
