@@ -21,10 +21,7 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Caplist Studio | More Products From Every Property Capture",
-    template: "%s | Caplist Studio",
-  },
+  title: "Caplist Studio | More Products From Every Property Capture",
   description,
   alternates: {
     canonical: "/",
