@@ -7,17 +7,7 @@ export const metadata = {
     "Arrange a focused Caplist Studio demo for your professional property-media business.",
 };
 
-export default async function Demo({
-  searchParams,
-}: {
-  searchParams: Promise<{ tier?: string }>;
-}) {
-  const { tier } = await searchParams;
-  const initialTier =
-    tier && ["Essential", "Pro", "Studio"].includes(tier)
-      ? tier
-      : "Not sure yet";
-
+export default function Demo() {
   return (
     <InnerPage>
       <section className="pilot-page shell">
@@ -44,7 +34,7 @@ export default async function Demo({
             confirmed by email.
           </p>
         </div>
-        <PilotRequest initialTier={initialTier} mode="demo" />
+        <PilotRequest initialTier="Not sure yet" mode="demo" />
       </section>
     </InnerPage>
   );
