@@ -1,3 +1,4 @@
+/** Public-facing resource catalogue. Keep partner economics and sales mechanics out of this library. */
 export type PublicResourceStatus = "live" | "planned";
 
 export type PublicResource = {
@@ -97,7 +98,7 @@ export const publicResources: PublicResource[] = [
     id: "PUB-011",
     title: "The economics of property-media repurposing",
     description:
-      "A commercial framework for understanding incremental products, wholesale production and resale margin.",
+      "A commercial guide to additional products, pricing strategy and the revenue potential of getting more from each completed property shoot.",
     category: "Commercial",
     format: "Commercial guide",
     href: "/resources/property-media-repurposing-economics",
