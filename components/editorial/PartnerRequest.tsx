@@ -19,7 +19,7 @@ export function PartnerRequest() {
 
   const body = useMemo(
     () =>
-      `Hi Caplist Studio,\n\nI’m interested in discussing an early Caplist Studio partnership.\n\nName: ${details.name}\nBusiness: ${details.business}\nWork email: ${details.email}\nLocation: ${details.location}\nApproximate property shoots per month: ${details.volume || "Not provided"}\nCurrent services: ${details.services}\n\nWhat interests me about Caplist Studio:\n${details.interest}\n\nPlease contact me to discuss fit, pilot scope and next steps.\n\nThanks,\n${details.name}`,
+      `Hi Caplist Studio,\n\nI’m interested in discussing early partner access to Caplist Studio.\n\nName: ${details.name}\nBusiness: ${details.business}\nWork email: ${details.email}\nLocation: ${details.location}\nApproximate property shoots per month: ${details.volume || "Not provided"}\nCurrent services: ${details.services}\n\nWhat interests me about Caplist Studio:\n${details.interest}\n\nPlease contact me to discuss whether Caplist is a good fit for my business and what the next steps would be.\n\nThanks,\n${details.name}`,
     [details],
   );
 
@@ -35,7 +35,7 @@ export function PartnerRequest() {
   if (review) {
     return (
       <div className="pilot-form pilot-review">
-        <p className="eyebrow">02 / Review your partner enquiry</p>
+        <p className="eyebrow">02 / Review your enquiry</p>
         <h2>Ready to start the conversation.</h2>
         <p>
           Review the draft below. Nothing is sent until you open your email app
@@ -53,8 +53,7 @@ export function PartnerRequest() {
             <ArrowUpRight size={18} />
           </a>
           <button className="button button-outline" type="button" onClick={copy}>
-            {copied ? <Check size={18} /> : <Copy size={18} />}{" "}
-            {copied ? "Copied" : "Copy enquiry"}
+            {copied ? <Check size={18} /> : <Copy size={18} />} {copied ? "Copied" : "Copy enquiry"}
           </button>
         </div>
         <p role="status" className="pilot-note">
@@ -95,7 +94,7 @@ export function PartnerRequest() {
       }}
     >
       <p className="eyebrow">01 / Your media business</p>
-      <h2>Request a partner discussion.</h2>
+      <h2>Tell us about your business.</h2>
       <div className="pilot-field-grid">
         <label>
           Your name
@@ -103,24 +102,13 @@ export function PartnerRequest() {
         </label>
         <label>
           Work email
-          <input
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            maxLength={180}
-          />
+          <input name="email" type="email" autoComplete="email" required maxLength={180} />
         </label>
       </div>
       <div className="pilot-field-grid">
         <label>
           Media business
-          <input
-            name="business"
-            autoComplete="organization"
-            required
-            maxLength={160}
-          />
+          <input name="business" autoComplete="organization" required maxLength={160} />
         </label>
         <label>
           Location
@@ -144,16 +132,16 @@ export function PartnerRequest() {
         </label>
       </div>
       <label>
-        What interests you about Caplist Studio?
+        What would you like Caplist to help you add to your offer?
         <textarea name="interest" required maxLength={1600} rows={6} />
       </label>
       <p className="pilot-note">
         Please do not send property media or client file links with this initial
-        enquiry. We’ll agree an appropriate transfer method if a pilot moves
-        forward.
+        enquiry. We’ll explain the appropriate transfer method before any files
+        are shared.
       </p>
       <button className="button button-blue" type="submit">
-        Review partner enquiry <ArrowUpRight size={18} />
+        Review my enquiry <ArrowUpRight size={18} />
       </button>
     </form>
   );
