@@ -1,0 +1,71 @@
+name: Deploy to HostGator
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-hostgator
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ vars.HOSTGATOR_DEPLOY_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Configure SSH key
+        shell: bash
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.HOSTGATOR_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p "${{ secrets.HOSTGATOR_SSH_PORT }}" -H "${{ secrets.HOSTGATOR_SSH_HOST }}" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy static export
+        shell: bash
+        run: |
+          rsync -az --delete \
+            --exclude='.htaccess' \
+            --exclude='.well-known/' \
+            --exclude='cgi-bin/' \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.HOSTGATOR_SSH_PORT }}" \
+            out/ \
+            "${{ secrets.HOSTGATOR_SSH_USER }}@${{ secrets.HOSTGATOR_SSH_HOST }}:${{ secrets.HOSTGATOR_DEPLOY_PATH }}/"
+
+      - name: Verify production homepage
+        shell: bash
+        run: |
+          for attempt in 1 2 3 4 5; do
+            code=$(curl -L -sS -o /tmp/caplist-home.html -w '%{http_code}' https://capliststudio.com/ || true)
+            if [ "$code" = "200" ] && grep -qi "Caplist Studio" /tmp/caplist-home.html; then
+              echo "Production homepage verified."
+              exit 0
+            fi
+            echo "Verification attempt $attempt failed with HTTP $code; retrying..."
+            sleep 5
+          done
+          echo "Production verification failed."
+          exit 1
