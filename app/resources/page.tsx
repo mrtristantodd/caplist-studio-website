@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, LockKeyhole } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { publicResources, resourceCategories } from "@/lib/resource-catalog";
 import styles from "./resources.module.css";
@@ -25,20 +25,11 @@ export default function Resources() {
               <span>More commercial value.</span>
             </h1>
             <p className={styles.heroLead}>
-              Practical guides on turning professional property media into more
-              sellable visual products — without adding another property visit
-              or another editing workflow.
+              Practical guides for professional property-media businesses that
+              want to create more sellable visual products from the media they
+              already capture.
             </p>
           </div>
-          <aside className={styles.heroAside}>
-            <strong>Public knowledge, not the reseller playbook.</strong>
-            <p>
-              This library explains the category, products and production
-              principles behind Caplist Studio. Wholesale pricing, margin tools,
-              sales scripts and partner-specific commercial material remain
-              inside the authenticated Partner Sales Toolkit.
-            </p>
-          </aside>
         </div>
       </section>
 
@@ -47,9 +38,9 @@ export default function Resources() {
           <div className={styles.sectionIntro}>
             <h2>Built for the business behind the camera.</h2>
             <p>
-              Not generic real-estate marketing advice. These resources focus on
-              media production, repurposing, product economics and the practical
-              decisions professional property-media businesses make every day.
+              Explore practical guidance on product opportunities, source-media
+              quality, production decisions and ways to create more value from
+              each property shoot.
             </p>
           </div>
 
@@ -67,12 +58,12 @@ export default function Resources() {
               <div className={styles.meta}>
                 <span>{featured.category}</span>
                 <span>{featured.format}</span>
-                <span>Coming first</span>
+                <span>Coming soon</span>
               </div>
               <h3>{featured.title}</h3>
               <p>{featured.description}</p>
               <span className={styles.previewLabel}>
-                First cornerstone guide in production <ArrowRight size={16} />
+                Coming soon <ArrowRight size={16} />
               </span>
             </div>
           </article>
@@ -93,35 +84,11 @@ export default function Resources() {
                 <h3>{resource.title}</h3>
                 <p>{resource.description}</p>
                 <div className={styles.cardFooter}>
-                  <span>In production</span>
+                  <span>Coming soon</span>
                   <ArrowUpRight size={16} />
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.boundary}>
-        <div className={`shell ${styles.boundaryGrid}`}>
-          <div>
-            <p className="eyebrow">For Caplist partners</p>
-            <h2>Some tools belong behind the login.</h2>
-          </div>
-          <div className={styles.boundaryCopy}>
-            <strong>
-              Wholesale costs, margins and the sales mechanics remain private.
-            </strong>
-            <p>
-              Approved Caplist partners will receive a separate Sales Toolkit
-              with product sell sheets, agent-facing materials, retail guidance,
-              margin tools, demo assets and co-brandable resources. Those tools
-              are designed to help the media business sell — not expose the
-              commercial model to the end client.
-            </p>
-            <a href="/partners">
-              <LockKeyhole size={17} />&nbsp; Explore the partner program
-            </a>
           </div>
         </div>
       </section>
