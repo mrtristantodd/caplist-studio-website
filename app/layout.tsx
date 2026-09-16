@@ -4,6 +4,7 @@ import "./globals.css";
 import "./buyer-experience.css";
 import "./tokens.css";
 import "./studio-system.css";
+import "./interface-fixes.css";
 import { SiteEffects } from "@/components/editorial/SiteEffects";
 import { SITE_URL } from "@/lib/site";
 

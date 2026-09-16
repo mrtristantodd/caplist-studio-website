@@ -14,13 +14,13 @@ export default function Contact() {
       <section className="policy-page shell">
         <p className="eyebrow">Contact Caplist Studio</p>
         <h1>
-          Start with the right
+          Tell us what
           <br />
-          <span>conversation.</span>
+          <span>you need.</span>
         </h1>
         <p className="policy-lead">
-          Tell us what you need and we’ll route the enquiry to the appropriate
-          Caplist Studio address.
+          Choose the type of enquiry below and send us the details. We’ll reply
+          from the appropriate Caplist Studio address.
         </p>
 
         <ContactRequest />
@@ -28,27 +28,19 @@ export default function Contact() {
         <div className="policy-sections">
           <section>
             <h2>General enquiries</h2>
-            <p>
-              <a href={`mailto:${CONTACTS.general}`}>{CONTACTS.general}</a>
-            </p>
+            <p><a href={`mailto:${CONTACTS.general}`}>{CONTACTS.general}</a></p>
           </section>
           <section>
             <h2>Partnerships & early access</h2>
-            <p>
-              <a href={`mailto:${CONTACTS.partners}`}>{CONTACTS.partners}</a>
-            </p>
+            <p><a href={`mailto:${CONTACTS.partners}`}>{CONTACTS.partners}</a></p>
           </section>
           <section>
             <h2>Privacy & data</h2>
-            <p>
-              <a href={`mailto:${CONTACTS.privacy}`}>{CONTACTS.privacy}</a>
-            </p>
+            <p><a href={`mailto:${CONTACTS.privacy}`}>{CONTACTS.privacy}</a></p>
           </section>
           <section>
             <h2>Accounts & billing</h2>
-            <p>
-              <a href={`mailto:${CONTACTS.accounts}`}>{CONTACTS.accounts}</a>
-            </p>
+            <p><a href={`mailto:${CONTACTS.accounts}`}>{CONTACTS.accounts}</a></p>
           </section>
         </div>
       </section>

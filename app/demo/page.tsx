@@ -21,17 +21,18 @@ export default function Demo() {
             <span>become.</span>
           </h1>
           <p>
-            Tell us about your property-media business and the products you want
-            to offer. We’ll use that context to arrange a focused conversation.
+            Tell us about your property-media business and what you would like
+            to add to your client offer. We’ll show you the most relevant Caplist
+            products and answer questions about how they could fit your workflow.
           </p>
           <ul>
-            <li>Explore suitable products for your source media</li>
-            <li>See how Caplist fits your existing workflow</li>
-            <li>Discuss creative scope and delivery needs</li>
+            <li>Explore products that suit the media you already capture</li>
+            <li>See how Caplist can fit your existing workflow</li>
+            <li>Discuss output options, pricing and next steps</li>
           </ul>
           <p>
-            Your request opens an email draft to Caplist Studio. A demo time is
-            confirmed by email.
+            Submit the details below to prepare an email request. We’ll confirm a
+            suitable demo time with you by email.
           </p>
         </div>
         <PilotRequest initialTier="Not sure yet" mode="demo" />
