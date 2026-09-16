@@ -4,7 +4,7 @@ import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
 import { CONTACTS } from "@/lib/site";
 
 const recipient = CONTACTS.partners;
-const validTiers = ["Essential", "Pro", "Studio"];
+const validTiers = ["Launch", "Growth", "Scale"];
 
 export function PilotRequest({
   initialTier,
@@ -38,7 +38,7 @@ export function PilotRequest({
     }
   }, []);
 
-  const body = `Hi Caplist Studio,\n\n${isDemo ? "I’d like to arrange a Caplist Studio demo." : "I’d like to request early access to Caplist Studio."}\n\nName: ${details.name}\nBusiness: ${details.business}\nReply email: ${details.email}\nInterested tier: ${details.tier}\nAvailable media: ${details.media}\n\nBusiness needs:\n${details.brief}\n\nPlease confirm suitable products, scope, price, delivery timing, usage rights and file-handling arrangements before I share any media.\n\nThanks,\n${details.name}`;
+  const body = `Hi Caplist Studio,\n\n${isDemo ? "I’d like to arrange a Caplist Studio demo." : "I’d like to request early access to Caplist Studio."}\n\nName: ${details.name}\nBusiness: ${details.business}\nReply email: ${details.email}\nInterested plan: ${details.tier}\nMedia I currently offer: ${details.media}\n\nWhat I’d like Caplist to help with:\n${details.brief}\n\nPlease contact me about suitable products, pricing and next steps before I share any property media.\n\nThanks,\n${details.name}`;
 
   async function copy() {
     try {
@@ -54,9 +54,7 @@ export function PilotRequest({
       <div className="pilot-form pilot-review">
         <p className="eyebrow">02 / Review your request</p>
         <h2 ref={heading} tabIndex={-1}>
-          {opened
-            ? "Finish sending in your email app."
-            : "Your request is ready to send."}
+          {opened ? "Finish sending in your email app." : "Your request is ready to send."}
         </h2>
         <p>
           {opened
@@ -76,8 +74,7 @@ export function PilotRequest({
             <ArrowUpRight size={18} />
           </a>
           <button className="button button-outline" onClick={copy} type="button">
-            {copied ? <Check size={18} /> : <Copy size={18} />}{" "}
-            {copied ? "Copied" : "Copy request"}
+            {copied ? <Check size={18} /> : <Copy size={18} />} {copied ? "Copied" : "Copy request"}
           </button>
         </div>
         <p role="status" className="pilot-note">
@@ -86,14 +83,12 @@ export function PilotRequest({
             : "If your email app does not open, copy the request or select the text above."}
         </p>
         <div className="pilot-next">
-          <h3>After you send it</h3>
+          <h3>What happens next</h3>
           <p>
-            Caplist Studio can reply to {details.email} to clarify the brief and
+            We’ll reply to {details.email} to answer questions and
             {isDemo ? " arrange a suitable demo time" : " discuss early access"}.
-            Agree the price, timing and file handling before sending property
-            media. No payment or media upload is required to enquire.{" "}
-            {isDemo &&
-              "A demo is only booked once you and Caplist Studio have agreed a time."}
+            You do not need to send property media or make a payment to enquire.
+            {isDemo && " A demo is booked once we have agreed a time with you."}
           </p>
         </div>
         <button
@@ -128,63 +123,33 @@ export function PilotRequest({
       }}
     >
       <p className="eyebrow">01 / Your business</p>
-      <p className="pilot-note">
-        Name, work email and media business are required.
-      </p>
-      <h2>{isDemo ? "Book a demo." : "Request Early Access."}</h2>
+      <p className="pilot-note">Name, work email and media business are required.</p>
+      <h2>{isDemo ? "Book a demo." : "Request early access."}</h2>
       <div className="pilot-field-grid">
         <label>
           Your name
-          <input
-            name="name"
-            autoComplete="name"
-            required
-            maxLength={100}
-            defaultValue={details.name}
-          />
+          <input name="name" autoComplete="name" required maxLength={100} defaultValue={details.name} />
         </label>
         <label>
           Work email
-          <input
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            maxLength={180}
-            defaultValue={details.email}
-          />
+          <input name="email" type="email" autoComplete="email" required maxLength={180} defaultValue={details.email} />
         </label>
       </div>
       <label>
         Media business
-        <input
-          name="business"
-          autoComplete="organization"
-          required
-          maxLength={160}
-          defaultValue={details.business}
-        />
+        <input name="business" autoComplete="organization" required maxLength={160} defaultValue={details.business} />
       </label>
       <div className="pilot-field-grid">
         <label>
-          Interested tier
+          Plan you’re interested in
           <select name="tier" value={details.tier} onChange={(event) => setDetails((current) => ({ ...current, tier: event.target.value }))}>
-            {["Not sure yet", ...validTiers].map((x) => (
-              <option key={x}>{x}</option>
-            ))}
+            {["Not sure yet", ...validTiers].map((x) => <option key={x}>{x}</option>)}
           </select>
         </label>
         <label>
-          Media you already have
+          Media you already offer
           <select name="media" defaultValue={details.media}>
-            {[
-              "Photography",
-              "Property video",
-              "Photography, video and drone",
-              "I’d like advice",
-            ].map((x) => (
-              <option key={x}>{x}</option>
-            ))}
+            {["Photography", "Property video", "Photography, video and drone", "I’d like advice"].map((x) => <option key={x}>{x}</option>)}
           </select>
         </label>
       </div>
@@ -195,17 +160,15 @@ export function PilotRequest({
           maxLength={1200}
           rows={4}
           defaultValue={details.brief}
-          placeholder="Tell us which products would add value to your existing property orders."
+          placeholder="Tell us which additional products would be useful for your clients."
         />
       </label>
       <p className="pilot-note">
-        Describe the brief without addresses, client names or file links. Your
-        details stay in this page until you choose to open or copy the email
-        draft. <a href="/media-policy">How we handle media and enquiries</a>.
+        Please leave out property addresses, client names and file links at this
+        stage. <a href="/media-policy">See how we handle media and enquiries</a>.
       </p>
       <button className="button button-blue" type="submit">
-        Review my request
-        <ArrowUpRight size={18} />
+        Review my request <ArrowUpRight size={18} />
       </button>
     </form>
   );
