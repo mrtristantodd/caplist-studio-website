@@ -5,15 +5,16 @@ export default function About() {
   return (
     <InnerPage>
       <section className="about-hero shell">
-        <p className="studio-kicker">An expanding production layer</p>
+        <p className="studio-kicker">More products from the media you already capture</p>
         <h1>
           More from
           <br />
           every capture.
         </h1>
         <p className="studio-lead">
-          When visual technology becomes commercially useful, it should become
-          something your business can sell.
+          When new visual technology is reliable enough for professional
+          property media, Caplist Studio turns it into something your business
+          can offer clients.
         </p>
       </section>
       <section className="studio-paper studio-section">
@@ -25,19 +26,19 @@ export default function About() {
             ],
             [
               "Professional in. Professional out.",
-              "New AI and media technologies appear constantly. Most don’t belong in a professional property-media workflow. A new capability only becomes a product when it can deliver the quality, property fidelity, reliability and economics required for professional use.",
+              "New AI and media technologies appear constantly. Caplist only turns them into customer-facing products when they can meet the quality, property fidelity and reliability expected from professional property media.",
             ],
             [
               "Your business stays in front.",
-              "Caplist Studio sits behind the professional media business — not between you and your client. Your agents don’t need another platform to learn. They buy the finished product from you. You choose what to offer, how to package it and the retail price.",
+              "Your agents buy the finished product from you. You choose what to offer, how to package it and the price your client pays. Caplist supports your media business rather than stepping between you and your clients.",
             ],
             [
-              "One specific part of your workflow.",
-              "Keep your existing CRM, booking system, delivery platform and agent relationships. Caplist makes more professional visual media from the assets your business already produces.",
+              "Keep the workflow you already use.",
+              "Keep your existing CRM, booking system, delivery platform and agent relationships. Caplist focuses on creating more professional visual media from the assets your business already produces.",
             ],
             [
               "More products over time.",
-              "The goal isn’t to give you more AI tools to experiment with. It’s to keep giving your business more products to sell. Caplist Studio is being built as an expanding production platform.",
+              "The aim is not to give you more AI tools to experiment with. It is to keep expanding the range of professional products your business can sell as the technology becomes good enough to trust.",
             ],
           ].map(([title, text]) => (
             <article key={title}>
