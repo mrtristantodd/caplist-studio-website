@@ -3,19 +3,19 @@ import { MotionPreview } from "./MotionPreview";
 import { useRef } from "react";
 import { ArrowUpRight, X } from "lucide-react";
 import type { Product } from "@/lib/demo-media";
-import { Photo, FrameCorners } from "./Photo";
+import { FrameCorners } from "./Photo";
 type Notice = "pricing" | "login" | "resources";
 const notices = {
   pricing: {
-    title: "More value. Pricing to follow.",
-    text: "Plans and pricing will be introduced in a later product phase. For now, explore the visual product catalogue and the possibilities in your existing capture.",
-    link: "Explore the products",
-    href: "/#products",
+    title: "See current pricing.",
+    text: "View the introductory subscription plans and learn how production usage works before you decide whether Caplist Studio fits your business.",
+    link: "View pricing",
+    href: "/pricing",
   },
   login: {
-    title: "Studio access comes next.",
-    text: "Caplist Studio is being built for professional property-media businesses. Request early access to explore what your existing media could become.",
-    link: "Request Early Access",
+    title: "Caplist Studio is currently invite-only.",
+    text: "If you run a professional property-media business, request early access and we’ll talk through how Caplist could fit your existing workflow.",
+    link: "Request early access",
     href: "/early-access",
   },
   resources: {
@@ -73,9 +73,7 @@ export function PreviewButton({
               </span>
             </div>
             <div className="dialog-copy">
-              <p className="eyebrow">
-                Product {product.number} / Visual concept
-              </p>
+              <p className="eyebrow">Product {product.number} / Example</p>
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <dl>
@@ -89,24 +87,20 @@ export function PreviewButton({
                 </div>
               </dl>
               <p className="dialog-needs">Source media: {product.needs}</p>
-              <p className="prototype-note">Animated product concept.</p>
+              <p className="prototype-note">Illustrative product example.</p>
             </div>
           </>
         ) : (
           <div className="dialog-copy">
-            <p className="eyebrow">Caplist Studio / Visual preview</p>
+            <p className="eyebrow">Caplist Studio</p>
             <h2>{info.title}</h2>
             <p>{info.text}</p>
             {notice === "resources" && (
               <ul className="resource-list">
                 <li>Professionally edited, full-resolution photography.</li>
-                <li>
-                  Stable video with consistent exposure and usable coverage.
-                </li>
+                <li>Stable video with consistent exposure and usable coverage.</li>
                 <li>Room around the subject for a vertical reframe.</li>
-                <li>
-                  Clear aerial context and a considered mix of perspectives.
-                </li>
+                <li>Clear aerial context and a considered mix of perspectives.</li>
               </ul>
             )}
             <a
