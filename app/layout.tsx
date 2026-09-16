@@ -23,6 +23,26 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Caplist Studio | More Products From Every Property Capture",
   description,
+  applicationName: "Caplist Studio",
+  alternates: {
+    canonical: SITE_URL,
+  },
+  icons: {
+    icon: [
+      {
+        url: "/favicon-96.png",
+        type: "image/png",
+        sizes: "96x96",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_AU",
