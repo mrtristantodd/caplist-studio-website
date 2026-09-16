@@ -20,6 +20,9 @@ function Links({ onNavigate }: { onNavigate?: () => void }) {
       <a href="/pricing" onClick={onNavigate}>
         Pricing
       </a>
+      <a href="/resources" onClick={onNavigate}>
+        Resources
+      </a>
       <a href="/about" onClick={onNavigate}>
         About
       </a>
