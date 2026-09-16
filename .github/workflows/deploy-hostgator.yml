@@ -55,6 +55,7 @@ jobs:
           set ftp:ssl-allow no
           mirror --reverse --delete --verbose --parallel=4 \
             --exclude-glob .htaccess \
+            --exclude-glob .ftpquota \
             --exclude-glob .well-known \
             --exclude-glob '.well-known/**' \
             --exclude-glob cgi-bin \
