@@ -14,9 +14,9 @@ const notices = {
   },
   login: {
     title: "Caplist Studio is currently invite-only.",
-    text: "If you run a professional property-media business, request early access and we’ll talk through how Caplist could fit your existing workflow.",
-    link: "Request early access",
-    href: "/early-access",
+    text: "If you run a professional property-media business, book a demo and we’ll talk through how Caplist could fit your existing workflow.",
+    link: "Book a demo",
+    href: "/demo",
   },
   resources: {
     title: "Start with a stronger capture.",
@@ -87,7 +87,6 @@ export function PreviewButton({
                 </div>
               </dl>
               <p className="dialog-needs">Source media: {product.needs}</p>
-              <p className="prototype-note">Illustrative product example.</p>
             </div>
           </>
         ) : (
@@ -98,9 +97,13 @@ export function PreviewButton({
             {notice === "resources" && (
               <ul className="resource-list">
                 <li>Professionally edited, full-resolution photography.</li>
-                <li>Stable video with consistent exposure and usable coverage.</li>
+                <li>
+                  Stable video with consistent exposure and usable coverage.
+                </li>
                 <li>Room around the subject for a vertical reframe.</li>
-                <li>Clear aerial context and a considered mix of perspectives.</li>
+                <li>
+                  Clear aerial context and a considered mix of perspectives.
+                </li>
               </ul>
             )}
             <a

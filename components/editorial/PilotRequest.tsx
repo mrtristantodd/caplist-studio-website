@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
 import { CONTACTS } from "@/lib/site";
 
-const recipient = CONTACTS.partners;
+const recipient = CONTACTS.general;
 const validTiers = ["Launch", "Growth", "Scale"];
 
 export function PilotRequest({
@@ -32,7 +32,9 @@ export function PilotRequest({
   }, [review]);
 
   useEffect(() => {
-    const requestedTier = new URLSearchParams(window.location.search).get("tier");
+    const requestedTier = new URLSearchParams(window.location.search).get(
+      "tier",
+    );
     if (requestedTier && validTiers.includes(requestedTier)) {
       setDetails((current) => ({ ...current, tier: requestedTier }));
     }
@@ -54,7 +56,9 @@ export function PilotRequest({
       <div className="pilot-form pilot-review">
         <p className="eyebrow">02 / Review your request</p>
         <h2 ref={heading} tabIndex={-1}>
-          {opened ? "Finish sending in your email app." : "Your request is ready to send."}
+          {opened
+            ? "Finish sending in your email app."
+            : "Your request is ready to send."}
         </h2>
         <p>
           {opened
@@ -73,8 +77,13 @@ export function PilotRequest({
             Open email draft
             <ArrowUpRight size={18} />
           </a>
-          <button className="button button-outline" onClick={copy} type="button">
-            {copied ? <Check size={18} /> : <Copy size={18} />} {copied ? "Copied" : "Copy request"}
+          <button
+            className="button button-outline"
+            onClick={copy}
+            type="button"
+          >
+            {copied ? <Check size={18} /> : <Copy size={18} />}{" "}
+            {copied ? "Copied" : "Copy request"}
           </button>
         </div>
         <p role="status" className="pilot-note">
@@ -86,8 +95,9 @@ export function PilotRequest({
           <h3>What happens next</h3>
           <p>
             We’ll reply to {details.email} to answer questions and
-            {isDemo ? " arrange a suitable demo time" : " discuss early access"}.
-            You do not need to send property media or make a payment to enquire.
+            {isDemo ? " arrange a suitable demo time" : " discuss early access"}
+            . You do not need to send property media or make a payment to
+            enquire.
             {isDemo && " A demo is booked once we have agreed a time with you."}
           </p>
         </div>
@@ -123,33 +133,72 @@ export function PilotRequest({
       }}
     >
       <p className="eyebrow">01 / Your business</p>
-      <p className="pilot-note">Name, work email and media business are required.</p>
+      <p className="pilot-note">
+        Name, work email and media business are required.
+      </p>
       <h2>{isDemo ? "Book a demo." : "Request early access."}</h2>
       <div className="pilot-field-grid">
         <label>
           Your name
-          <input name="name" autoComplete="name" required maxLength={100} defaultValue={details.name} />
+          <input
+            name="name"
+            autoComplete="name"
+            required
+            maxLength={100}
+            defaultValue={details.name}
+          />
         </label>
         <label>
           Work email
-          <input name="email" type="email" autoComplete="email" required maxLength={180} defaultValue={details.email} />
+          <input
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            maxLength={180}
+            defaultValue={details.email}
+          />
         </label>
       </div>
       <label>
         Media business
-        <input name="business" autoComplete="organization" required maxLength={160} defaultValue={details.business} />
+        <input
+          name="business"
+          autoComplete="organization"
+          required
+          maxLength={160}
+          defaultValue={details.business}
+        />
       </label>
       <div className="pilot-field-grid">
         <label>
           Plan you’re interested in
-          <select name="tier" value={details.tier} onChange={(event) => setDetails((current) => ({ ...current, tier: event.target.value }))}>
-            {["Not sure yet", ...validTiers].map((x) => <option key={x}>{x}</option>)}
+          <select
+            name="tier"
+            value={details.tier}
+            onChange={(event) =>
+              setDetails((current) => ({
+                ...current,
+                tier: event.target.value,
+              }))
+            }
+          >
+            {["Not sure yet", ...validTiers].map((x) => (
+              <option key={x}>{x}</option>
+            ))}
           </select>
         </label>
         <label>
           Media you already offer
           <select name="media" defaultValue={details.media}>
-            {["Photography", "Property video", "Photography, video and drone", "I’d like advice"].map((x) => <option key={x}>{x}</option>)}
+            {[
+              "Photography",
+              "Property video",
+              "Photography, video and drone",
+              "I’d like advice",
+            ].map((x) => (
+              <option key={x}>{x}</option>
+            ))}
           </select>
         </label>
       </div>
@@ -165,10 +214,15 @@ export function PilotRequest({
       </label>
       <p className="pilot-note">
         Please leave out property addresses, client names and file links at this
-        stage. <a href="/media-policy">See how we handle media and enquiries</a>.
+        stage. <a href="/media-policy">See how we handle media and enquiries</a>
+        .
+      </p>
+      <p className="pilot-note">
+        Next, review your request and send it through your email app. We’ll
+        reply to arrange a time.
       </p>
       <button className="button button-blue" type="submit">
-        Review my request <ArrowUpRight size={18} />
+        {isDemo ? "Book my demo" : "Book a demo"} <ArrowUpRight size={18} />
       </button>
     </form>
   );

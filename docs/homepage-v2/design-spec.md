@@ -1,3 +1,5 @@
+> Historical reference. Superseded where conflicting by `docs/marketing/approved-messaging-v3.md` and the v3 implementation review.
+
 # Homepage v2 — production candidate
 
 Prepared before implementation, 17 September 2026. Base: `6748abf`, approved buyer-first marketing rewrite. Branch: `feature/homepage-v2`.

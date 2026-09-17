@@ -1,64 +1,24 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/editorial/SiteHeader";
 import { Footer } from "@/components/editorial/MarketingPage";
-import { PropertyPhoto, type PropertyPhotoKey } from "./PropertyPhoto";
+import { homeCopy as copy } from "@/lib/approved-messaging";
+import { products } from "@/lib/demo-media";
+import { Photo } from "@/components/editorial/Photo";
 import { ProductWalkthrough } from "./ProductWalkthrough";
 import styles from "./homepage.module.css";
 
-const showroom: {
-  name: string;
-  ratio: string;
-  duration: string;
-  photo: PropertyPhotoKey;
-  description: string;
-  id: string;
-}[] = [
-  {
-    name: "Vertical Video Reel",
-    ratio: "9:16",
-    duration: "20–30 sec",
-    photo: "kitchen",
-    description:
-      "Another social-ready video from footage you already captured.",
-    id: "vertical-reel",
-  },
-  {
-    name: "Property Teaser",
-    ratio: "16:9",
-    duration: "10–15 sec",
-    photo: "living",
-    description: "A short first look. An easy addition to the order.",
-    id: "property-teaser",
-  },
-  {
-    name: "Feature Reel",
-    ratio: "16:9",
-    duration: "30–45 sec",
-    photo: "balcony",
-    description: "Give a standout space its own story.",
-    id: "feature-reel",
-  },
-  {
-    name: "Photo Reel",
-    ratio: "9:16",
-    duration: "15–30 sec",
-    photo: "bedroom",
-    description: "The photo set you delivered, now in motion.",
-    id: "photo-reel",
-  },
-  {
-    name: "Mixed Media Reel",
-    ratio: "16:9",
-    duration: "30–60 sec",
-    photo: "living",
-    description: "Photography, video and aerials in one complete edit.",
-    id: "mixed-media",
-  },
-];
-
+function Paragraphs({ body }: { body: readonly string[] }) {
+  return (
+    <>
+      {body.map((text) => (
+        <p key={text}>{text}</p>
+      ))}
+    </>
+  );
+}
 export function HomepageV2() {
   return (
-    <div className={styles.page}>
+    <div className={`marketing-v3 ${styles.page}`}>
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
@@ -66,16 +26,11 @@ export function HomepageV2() {
       <main id="main-content">
         <section className={`${styles.hero} ${styles.wrap}`} id="top">
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Capture once. Sell more.</p>
-            <h1>
-              Turn every property shoot into{" "}
-              <span>more products your clients can buy.</span>
-            </h1>
-            <p className={styles.lead}>
-              Turn the professional photos and footage you already capture into
-              finished reels, teasers and feature edits. More to offer from
-              every shoot.
-            </p>
+            <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
+            <h1>{copy.hero.headline}</h1>
+            <div className={styles.lead}>
+              <Paragraphs body={copy.hero.body} />
+            </div>
             <div className={styles.actions}>
               <a className={styles.button} href="#how-it-works">
                 See Caplist in action <ArrowRight size={18} />
@@ -84,16 +39,12 @@ export function HomepageV2() {
                 Book a demo <ArrowUpRight size={17} />
               </a>
             </div>
-            <p className={styles.audience}>
-              For professional real-estate photographers,
-              <br className={styles.desktopBreak} /> videographers and media
-              businesses.
-            </p>
+            <p className={styles.audience}>{copy.hero.audience}</p>
           </div>
           <figure className={styles.heroFigure}>
             <div className={styles.heroImage}>
-              <PropertyPhoto
-                photo="living"
+              <Photo
+                media="suburban"
                 priority
                 sizes="(max-width:960px) 92vw, 70vw"
               />
@@ -112,62 +63,62 @@ export function HomepageV2() {
         >
           <div className={styles.sectionTop}>
             <div>
-              <p className={styles.eyebrow}>
-                From your media to your next product
-              </p>
-              <h2 id="walkthrough-heading">One shoot. See what comes next.</h2>
+              <p className={styles.eyebrow}>{copy.showcase.eyebrow}</p>
+              <h2 id="walkthrough-heading">{copy.showcase.headline}</h2>
             </div>
-            <span className={styles.sectionIndex}>01 / THE STUDIO</span>
+          </div>
+          <div className={styles.introCopy}>
+            <Paragraphs body={copy.showcase.body} />
           </div>
           <ProductWalkthrough />
         </section>
-        <section className={`${styles.opportunity} ${styles.wrap}`}>
-          <p className={styles.eyebrow}>
-            More from the work you’ve already done
-          </p>
-          <div className={styles.split}>
-            <h2>
-              The shoot is finished.
-              <br />
-              <span>There’s more to sell.</span>
-            </h2>
-            <p>
-              You’ve already done the capture and the edit. Give the same client
-              more to choose from, using the media you already have.
-            </p>
-          </div>
-        </section>
+        {[copy.opportunity, copy.category].map((section) => (
+          <section
+            key={section.headline}
+            className={`${styles.opportunity} ${styles.wrap} ${section === copy.category ? styles.graphite : ""}`}
+          >
+            <p className={styles.eyebrow}>{section.eyebrow}</p>
+            <div className={styles.split}>
+              <h2>{section.headline}</h2>
+              <div className={styles.bodyCopy}>
+                <Paragraphs body={section.body} />
+                <p>
+                  <strong>{section.closing}</strong>
+                </p>
+              </div>
+            </div>
+          </section>
+        ))}
         <section className={`${styles.products} ${styles.wrap}`} id="products">
           <div className={styles.sectionTop}>
             <div>
-              <p className={styles.eyebrow}>Your next additions to the order</p>
-              <h2>
-                A bigger menu.
-                <br />
-                From the same shoot.
-              </h2>
+              <p className={styles.eyebrow}>{copy.products.eyebrow}</p>
+              <h2>{copy.products.headline}</h2>
             </div>
             <a className={styles.textLink} href="/examples">
-              Explore the products <ArrowUpRight size={18} />
+              Products <ArrowUpRight size={18} />
             </a>
           </div>
+          <div className={styles.introCopy}>
+            <Paragraphs body={copy.products.body} />
+          </div>
           <div className={styles.showroom}>
-            {showroom.map((product, index) => (
+            {products.map((product, index) => (
               <article
                 key={product.id}
-                className={`${styles.product} ${styles[`product${index}`]}`}
+                className={`${styles.product} ${styles[`product${index}`] || ""}`}
               >
                 <a
                   className={`${styles.productImage} ${product.ratio === "9:16" ? styles.portrait : styles.landscape}`}
-                  href="/examples"
+                  href={`/examples/#${product.id}`}
                   aria-label={`Explore ${product.name}`}
                 >
-                  <PropertyPhoto
-                    photo={product.photo}
+                  <Photo
+                    media={product.media}
                     sizes={
                       product.ratio === "9:16"
-                        ? "(max-width:640px) 200vw, (max-width:960px) 120vw, 75vw"
-                        : "(max-width:640px) 90vw, (max-width:960px) 44vw, 48vw"
+                        ? "(max-width:640px) 200vw, 100vw"
+                        : "(max-width:640px) 90vw, 50vw"
                     }
                   />
                   <span className={styles.productFormat}>{product.ratio}</span>
@@ -176,110 +127,86 @@ export function HomepageV2() {
                   </span>
                 </a>
                 <div className={styles.productTitle}>
-                  <h3>{product.name}</h3>
-                  <span>{product.duration}</span>
+                  <h3>
+                    <a href={`/examples/#${product.id}`}>{product.name}</a>
+                  </h3>
                 </div>
-                <p>{product.description}</p>
+                <p>{product.purpose}</p>
               </article>
             ))}
           </div>
-          <p className={styles.availability}>
-            Available products depend on the media in each project.
-          </p>
         </section>
         <section
-          className={`${styles.outcomes} ${styles.wrap}`}
+          className={`${styles.opportunity} ${styles.wrap}`}
           id="for-media-businesses"
-          aria-label="What it means for your business"
         >
-          {[
-            [
-              "More per job.",
-              "More finished products for the clients you already have.",
-            ],
-            [
-              "No return visit.",
-              "Start with the media from the completed shoot.",
-            ],
-            [
-              "Less production work.",
-              "Choose the direction. Caplist handles the edit.",
-            ],
-          ].map(([title, copy]) => (
-            <div key={title}>
-              <h2>{title}</h2>
-              <p>{copy}</p>
-            </div>
-          ))}
+          <p className={styles.eyebrow}>{copy.outcomes.eyebrow}</p>
+          <h2>{copy.outcomes.headline}</h2>
+          <div className={styles.introCopy}>
+            <Paragraphs body={copy.outcomes.body} />
+          </div>
+          <div className={styles.outcomeGrid}>
+            {copy.outcomes.items.map(([title, body]) => (
+              <article key={title}>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
         </section>
-        <section className={`${styles.quality} ${styles.wrap}`}>
+        <section className={`${styles.quality} ${styles.wrap}`} id="standards">
           <div className={styles.qualityVisual}>
             <div className={styles.sourceImage}>
-              <PropertyPhoto
-                photo="kitchen"
+              <Photo
+                media="familyKitchen"
                 sizes="(max-width:760px) 85vw, 44vw"
               />
               <span>Original photograph</span>
             </div>
             <div className={styles.cropImage}>
-              <PropertyPhoto
-                photo="kitchen"
+              <Photo
+                media="familyKitchen"
                 sizes="(max-width:760px) 38vw, 20vw"
               />
               <span>9:16</span>
             </div>
           </div>
           <div className={styles.qualityCopy}>
-            <p className={styles.eyebrow}>Made from your media</p>
-            <h2>
-              Your work.
-              <br />
-              Beautifully carried through.
-            </h2>
-            <p>
-              The same property. The same details. A new way for your client to
-              show them.
-            </p>
+            <p className={styles.eyebrow}>{copy.quality.eyebrow}</p>
+            <h2>{copy.quality.headline}</h2>
+            <Paragraphs body={copy.quality.body} />
             <a className={styles.textLink} href="/examples">
-              See the product formats <ArrowUpRight size={18} />
+              See product examples <ArrowRight size={18} />
             </a>
           </div>
         </section>
         <section className={`${styles.workflow} ${styles.wrap}`}>
-          <div className={styles.sectionTop}>
-            <h2>
-              Fits right into
-              <br />
-              your working day.
-            </h2>
-            <p>Your client. Your service. Your price.</p>
+          <p className={styles.eyebrow}>{copy.workflow.eyebrow}</p>
+          <h2>{copy.workflow.headline}</h2>
+          <div className={styles.introCopy}>
+            <Paragraphs body={copy.workflow.body} />
           </div>
           <ol>
-            {[
-              ["Capture", "Shoot as you normally do."],
-              ["Edit", "Finish your primary media."],
-              ["Caplist", "Create something more."],
-              ["Review & deliver", "Make it part of your offer."],
-            ].map(([title, copy], i) => (
+            {copy.workflow.steps.map(([title, body], i) => (
               <li key={title} className={i === 2 ? styles.caplistStep : ""}>
                 <span>0{i + 1}</span>
                 <h3>{title}</h3>
-                <p>{copy}</p>
+                <p>{body}</p>
                 {i < 3 && <ArrowRight aria-hidden="true" size={20} />}
               </li>
             ))}
           </ol>
+          <p className={styles.introCopy}>{copy.workflow.closing}</p>
         </section>
         <section className={styles.finalCta}>
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>Capture once. Sell more.</p>
-            <h2>
-              What else could
-              <br />
-              your last shoot sell?
-            </h2>
+            <p className={styles.eyebrow}>{copy.close.eyebrow}</p>
+            <h2>{copy.close.headline}</h2>
+            <div className={styles.introCopy}>
+              <Paragraphs body={copy.close.body} />
+            </div>
             <a className={styles.button} href="/demo">
-              Let’s look at a property <ArrowUpRight size={19} />
+              Book a demo <ArrowUpRight size={19} />
             </a>
           </div>
         </section>

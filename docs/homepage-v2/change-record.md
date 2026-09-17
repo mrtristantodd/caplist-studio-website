@@ -1,3 +1,5 @@
+> Historical reference. Superseded where conflicting by `docs/marketing/approved-messaging-v3.md` and the v3 implementation review.
+
 # Homepage v2 — change and verification record
 
 Date: 17 September 2026. Approved starting commit: `6748abf`.

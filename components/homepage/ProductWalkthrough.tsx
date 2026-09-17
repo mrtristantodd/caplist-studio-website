@@ -1,498 +1,273 @@
 "use client";
-
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
-  LayoutGroup,
+  AnimatePresence,
   motion,
   useInView,
   useReducedMotion,
 } from "framer-motion";
-import {
-  ArrowRight,
-  Check,
-  ChevronDown,
-  Pause,
-  Play,
-  RotateCcw,
-} from "lucide-react";
+import { ArrowRight, Check, Pause, Play, RotateCcw } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
-import { PropertyPhoto, type PropertyPhotoKey } from "./PropertyPhoto";
+import { Photo } from "@/components/editorial/Photo";
+import { showcaseFilm } from "@/lib/showcase-media";
 import styles from "./walkthrough.module.css";
-
-const stages = [
-  { name: "Media", start: 0, title: "One completed property project" },
-  { name: "Discover", start: 4000, title: "Finding more to create" },
-  { name: "Choose", start: 7000, title: "5 more products you could create" },
-  { name: "Style", start: 11000, title: "Make it your own" },
-  { name: "Create", start: 20000, title: "Creating your reel" },
-  {
-    name: "Ready",
-    start: 23000,
-    title: "Another finished product from the same shoot.",
-  },
+const discoveryEnd = 9500;
+const products = [
+  "Photo Reel",
+  "Property Teaser",
+  "Feature Reel",
+  "Mixed Media Reel",
+  "Drone & Location Reel",
 ];
-const duration = 30000;
-const photos: PropertyPhotoKey[] = [
-  "living",
-  "kitchen",
-  "bedroom",
-  "balcony",
-  "bathroom",
-];
-const options = [
-  { name: "Photo Reel", photo: "bedroom", portrait: true },
-  { name: "Vertical Video Reel", photo: "kitchen", portrait: true },
-  { name: "Property Teaser", photo: "living", portrait: false },
-  { name: "Feature Reel", photo: "balcony", portrait: false },
-  { name: "Mixed Media Reel", photo: "living", portrait: false },
-] as const;
-
 export function ProductWalkthrough() {
   const root = useRef<HTMLDivElement>(null);
-  const inView = useInView(root, { amount: 0.25 });
+  const video = useRef<HTMLVideoElement>(null);
+  const inView = useInView(root, { amount: 0.55 });
   const reduced = useReducedMotion();
-  const id = useId();
   const [elapsed, setElapsed] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [ready, setReady] = useState(false);
-  const ended = elapsed >= duration;
-  const [style, setStyle] = useState("Cinematic");
-  const [length, setLength] = useState("25 sec");
-  const [music, setMusic] = useState("Modern");
+  const [ended, setEnded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const phase =
+    elapsed < 3000 ? 0 : elapsed < 5800 ? 1 : elapsed < discoveryEnd ? 2 : 3;
+  const active = playing && visible && inView && !ended;
+  const [initialised, setInitialised] = useState(false);
   useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pref = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => {
-      if (preference.matches) {
-        setElapsed(23000);
-        setPlaying(false);
-      }
-      setReady(true);
+      setElapsed(pref.matches ? discoveryEnd : 0);
+      setPlaying(!pref.matches);
+      setEnded(false);
     };
     sync();
-    preference.addEventListener("change", sync);
-    const visibility = () => setVisible(document.visibilityState === "visible");
-    visibility();
-    document.addEventListener("visibilitychange", visibility);
+    setInitialised(true);
+    pref.addEventListener("change", sync);
+    const onVisibility = () =>
+      setVisible(document.visibilityState === "visible");
+    onVisibility();
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
-      preference.removeEventListener("change", sync);
-      document.removeEventListener("visibilitychange", visibility);
+      pref.removeEventListener("change", sync);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
   useEffect(() => {
-    if (!ready || !playing || !inView || !visible || ended) return;
+    if (!active || !initialised || phase === 3) return;
     let last = performance.now();
     const timer = window.setInterval(() => {
       const now = performance.now();
-      const delta = now - last;
+      setElapsed((t) => Math.min(discoveryEnd, t + now - last));
       last = now;
-      setElapsed((time) => Math.min(duration, time + delta));
-    }, 80);
-    return () => window.clearInterval(timer);
-  }, [ready, playing, inView, visible, ended]);
-  const stage = stages.reduce(
-    (current, item, index) => (elapsed >= item.start ? index : current),
-    0,
-  );
-  const selected = stage >= 3;
-  const finished = stage === 5;
-  const active = ready && playing && inView && visible && elapsed < duration;
-  const transition = {
-    duration: reduced ? 0 : 0.65,
-    ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-  };
-  const jump = (index: number) => {
-    setElapsed(stages[index].start);
-    setPlaying(false);
-  };
+    }, 60);
+    return () => clearInterval(timer);
+  }, [active, initialised, phase]);
+  useEffect(() => {
+    const element = video.current;
+    if (!element) return;
+    if (active && phase === 3) element.play().catch(() => setPlaying(false));
+    else element.pause();
+  }, [active, phase]);
   const replay = () => {
+    if (video.current) video.current.currentTime = 0;
     setElapsed(0);
-    setStyle("Cinematic");
-    setLength("25 sec");
-    setMusic("Modern");
+    setEnded(false);
     setPlaying(true);
   };
   const toggle = () => {
-    if (elapsed >= duration) replay();
-    else setPlaying((value) => !value);
+    if (ended) replay();
+    else setPlaying((p) => !p);
   };
-  const frame = finished
-    ? Math.min(4, Math.floor((elapsed - 23000) / 1400))
-    : 1;
+  const transition = { duration: reduced ? 0 : 0.5, ease: "easeOut" as const };
+  const title = [
+    "One completed shoot.",
+    "Finding more to offer",
+    "5 premium products found and ready to create",
+    "More premium products, ready to sell to the same client.",
+  ][phase];
   return (
-    <div ref={root} className={styles.demo} data-stage={stages[stage].name}>
-      <div className={styles.chrome}>
-        <CaplistLogo light />
-        <span className={styles.workspaceLabel}>Your workspace</span>
-        <span className={styles.avatar}>CS</span>
+    <div ref={root} className={styles.showcase} data-stage={phase}>
+      <div className={styles.topline}>
+        <CaplistLogo />
+        <span>ONE COMPLETED SHOOT</span>
+        <span className={styles.location}>Northern Beaches, NSW</span>
       </div>
-      <div className={styles.projectBar}>
-        <div>
-          <span className={styles.breadcrumb}>PROJECT / CHAPEL STREET</span>
-          <h3>Chapel Street, Rockdale</h3>
+      <div className={styles.story}>
+        <div className={styles.storyHeading}>
+          <span className={styles.index}>0{phase + 1}</span>
+          <h3>{title}</h3>
         </div>
-        <span className={styles.projectStatus}>
-          <Check size={14} /> Media uploaded
-        </span>
-      </div>
-      <LayoutGroup id={id}>
-        <div className={styles.workspace}>
-          <aside className={styles.mediaTray} aria-label="Source media">
-            <div className={styles.trayHeading}>
-              <strong>Your media</strong>
-              <span>27 photos · Video · Drone</span>
-            </div>
-            <div className={styles.thumbnails}>
-              {photos.map((photo, index) => (
-                <motion.div
-                  key={photo}
-                  initial={false}
-                  animate={{
-                    opacity: elapsed > index * 350 ? 1 : 0.2,
-                    y: elapsed > index * 350 || reduced ? 0 : 12,
-                  }}
-                  transition={transition}
-                  className={styles.thumbnail}
-                >
-                  <PropertyPhoto
-                    photo={photo}
-                    sizes="(max-width:700px) 100px, 200px"
+        <AnimatePresence mode="wait" initial={false}>
+          {phase < 2 ? (
+            <motion.div
+              key="capture"
+              className={styles.capture}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={transition}
+            >
+              <div className={styles.captureMain}>
+                <Photo
+                  media="showcaseAerial"
+                  sizes="(max-width:700px) 90vw, 65vw"
+                />
+                {phase === 1 && (
+                  <div
+                    className={styles.scan}
+                    style={{
+                      transform: `translateX(${((elapsed - 3000) / 2800) * 100}%)`,
+                    }}
                   />
-                  {stage >= 2 && (
-                    <span>
-                      <Check size={12} />
-                    </span>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-            <div className={styles.trayFooter}>
-              <span className={styles.blueDot} />
-              {stage === 1
-                ? "Checking media…"
-                : stage >= 2
-                  ? "Ready to create"
-                  : "Upload complete"}
-            </div>
-            {stage === 1 && (
-              <div
-                className={styles.scan}
-                style={{
-                  transform: `translateY(${((elapsed - 4000) / 3000) * 340}px)`,
-                }}
-              />
-            )}
-          </aside>
-          <div className={styles.canvas}>
-            <div className={styles.canvasHeading}>
-              <span className={styles.stepLabel}>
-                {String(stage + 1).padStart(2, "0")} / {stages[stage].name}
-              </span>
-              <h4>{stages[stage].title}</h4>
-            </div>
-            <div className={styles.stage}>
-              {!selected && (
-                <div
-                  className={styles.productOptions}
-                  aria-label="Additional products"
-                >
-                  {options.map((option, index) => (
-                    <motion.div
-                      layout
-                      key={option.name}
-                      className={styles.option}
-                      initial={false}
-                      animate={{
-                        opacity: stage >= 2 ? 1 : 0,
-                        y: stage >= 2 || reduced ? 0 : 24,
-                      }}
-                      transition={{
-                        ...transition,
-                        delay: stage === 2 ? index * 0.1 : 0,
-                      }}
-                      style={{ visibility: stage >= 2 ? "visible" : "hidden" }}
-                    >
-                      <motion.div
-                        layoutId={index === 1 ? "selected-product" : undefined}
-                        className={`${styles.optionMedia} ${option.portrait ? styles.portrait : styles.landscape}`}
-                      >
-                        <PropertyPhoto
-                          photo={option.photo}
-                          sizes={option.portrait ? "400px" : "240px"}
-                        />
-                        <span>{option.portrait ? "9:16" : "16:9"}</span>
-                      </motion.div>
-                      {index === 1 ? (
-                        <button
-                          className={styles.selectProduct}
-                          onClick={() => jump(3)}
-                        >
-                          {option.name}
-                          <ArrowRight size={14} />
-                        </button>
-                      ) : (
-                        <span className={styles.optionName}>{option.name}</span>
-                      )}
-                    </motion.div>
-                  ))}
+                )}
+              </div>
+              <div className={styles.sourceColumn}>
+                <div className={styles.sourcePhoto}>
+                  <Photo
+                    media="showcaseLiving"
+                    sizes="(max-width:700px) 44vw, 30vw"
+                  />
                 </div>
-              )}
-              {stage < 2 && (
-                <div className={styles.ingestMessage}>
-                  <div className={styles.mediaStack}>
-                    {photos.slice(0, 3).map((photo, i) => (
-                      <motion.div
-                        key={photo}
-                        initial={false}
-                        animate={{
-                          rotate: reduced ? 0 : (i - 1) * 8,
-                          x: reduced ? (i - 1) * 65 : (i - 1) * 80,
-                          y: i === 1 ? -10 : 5,
-                        }}
-                        transition={transition}
-                      >
-                        <PropertyPhoto photo={photo} sizes="400px" />
-                      </motion.div>
-                    ))}
-                  </div>
+                <div className={styles.sourceLabels}>
                   <p>
-                    {stage === 0
-                      ? "The shoot is in. Let’s see what’s possible."
-                      : "Your next products are taking shape."}
+                    <Check size={15} />
+                    27 professional photos
                   </p>
-                  <div className={styles.analysisProgress}>
-                    <span
-                      style={{
-                        transform: `scaleX(${stage === 0 ? 0.15 : 0.15 + 0.85 * ((elapsed - 4000) / 3000)})`,
-                      }}
-                    />
-                  </div>
+                  <p>
+                    <Check size={15} />
+                    Drone footage
+                  </p>
                 </div>
-              )}
-              {selected && (
-                <div
-                  className={`${styles.selected} ${finished ? styles.finished : ""}`}
-                >
-                  <motion.div
-                    layoutId="selected-product"
-                    transition={transition}
-                    className={styles.player}
+              </div>
+            </motion.div>
+          ) : phase === 2 ? (
+            <motion.div
+              key="products"
+              className={styles.found}
+              initial={{ opacity: 0, y: reduced ? 0 : 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={transition}
+            >
+              <div className={styles.foundImage}>
+                <Photo
+                  media="showcaseLiving"
+                  sizes="(max-width:700px) 90vw, 50vw"
+                />
+              </div>
+              <ol className={styles.productList}>
+                {products.map((name, i) => (
+                  <motion.li
+                    key={name}
+                    className={name === "Mixed Media Reel" ? styles.chosen : ""}
+                    initial={{ opacity: 0, x: reduced ? 0 : 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ...transition, delay: reduced ? 0 : i * 0.1 }}
                   >
-                    {photos.map((photo, index) => (
-                      <div
-                        key={photo}
-                        className={styles.playerFrame}
-                        style={{
-                          opacity: frame === index ? 1 : 0,
-                          transform: `scale(${finished && frame === index && !reduced ? 1 + (((elapsed - 23000) % 1400) / 1400) * 0.025 : 1})`,
-                        }}
-                      >
-                        <PropertyPhoto
-                          photo={photo}
-                          sizes="(max-width:480px) 470px, 640px"
-                        />
-                      </div>
-                    ))}
-                    <div className={styles.playerTop}>
-                      <span>{finished ? "Ready" : "Vertical Video Reel"}</span>
-                      {finished && <Check size={14} />}
-                    </div>
-                    <div className={styles.playerBottom}>
-                      <span>CHAPEL STREET</span>
-                      <strong>A fresh perspective.</strong>
-                      {finished && (
-                        <div className={styles.playerProgress}>
-                          <span
-                            style={{
-                              transform: `scaleX(${(elapsed - 23000) / 7000})`,
-                            }}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </motion.div>
-                  <div className={styles.selectionDetail}>
-                    {stage === 3 && (
-                      <>
-                        <p className={styles.detailKicker}>
-                          Vertical Video Reel
-                        </p>
-                        <h5>
-                          Three choices.
-                          <br />
-                          Your direction.
-                        </h5>
-                        <div className={styles.choices}>
-                          <label
-                            className={
-                              elapsed >= 14000 ? styles.choiceActive : ""
-                            }
-                          >
-                            Style
-                            <select
-                              value={style}
-                              onChange={(event) => {
-                                setStyle(event.target.value);
-                                setPlaying(false);
-                              }}
-                            >
-                              <option>Cinematic</option>
-                              <option>Architectural</option>
-                              <option>Lifestyle</option>
-                            </select>
-                            <ChevronDown size={14} />
-                          </label>
-                          <label
-                            className={
-                              elapsed >= 16000 ? styles.choiceActive : ""
-                            }
-                          >
-                            Length
-                            <select
-                              value={length}
-                              onChange={(event) => {
-                                setLength(event.target.value);
-                                setPlaying(false);
-                              }}
-                            >
-                              <option>25 sec</option>
-                              <option>20 sec</option>
-                              <option>30 sec</option>
-                            </select>
-                            <ChevronDown size={14} />
-                          </label>
-                          <label
-                            className={
-                              elapsed >= 18000 ? styles.choiceActive : ""
-                            }
-                          >
-                            Music
-                            <select
-                              value={music}
-                              onChange={(event) => {
-                                setMusic(event.target.value);
-                                setPlaying(false);
-                              }}
-                            >
-                              <option>Modern</option>
-                              <option>Ambient</option>
-                              <option>Acoustic</option>
-                            </select>
-                            <ChevronDown size={14} />
-                          </label>
-                        </div>
-                        <button
-                          className={styles.createButton}
-                          onClick={() => {
-                            setElapsed(20000);
-                            setPlaying(true);
-                          }}
-                        >
-                          Create Reel <ArrowRight size={16} />
-                        </button>
-                      </>
+                    <span>{name}</span>
+                    {name === "Mixed Media Reel" ? (
+                      <ArrowRight size={17} />
+                    ) : (
+                      <Check size={15} />
                     )}
-                    {stage === 4 && (
-                      <>
-                        <p className={styles.detailKicker}>
-                          Vertical Video Reel
-                        </p>
-                        <h5>
-                          We’ll take it
-                          <br />
-                          from here.
-                        </h5>
-                        <p className={styles.productionCopy}>
-                          {elapsed < 21500
-                            ? "Bringing your scenes together"
-                            : "Finishing your reel"}
-                        </p>
-                        <div className={styles.productionProgress}>
-                          <span
-                            style={{
-                              transform: `scaleX(${(elapsed - 20000) / 3000})`,
-                            }}
-                          />
-                        </div>
-                      </>
-                    )}
-                    {finished && (
-                      <>
-                        <span className={styles.readyBadge}>
-                          <Check size={15} /> Ready
-                        </span>
-                        <h5>
-                          More to offer.
-                          <br />
-                          Already yours.
-                        </h5>
-                        <p className={styles.productionCopy}>
-                          Vertical Video Reel
-                          <br />
-                          {length} · 9:16
-                          <br />
-                          {style} · {music}
-                        </p>
-                        <a className={styles.resultLink} href="/demo">
-                          Try it with your media <ArrowRight size={16} />
-                        </a>
-                      </>
-                    )}
-                  </div>
+                  </motion.li>
+                ))}
+              </ol>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="finished"
+              className={styles.result}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={transition}
+            >
+              <div className={styles.film}>
+                {showcaseFilm && !videoError ? (
+                  <video
+                    ref={video}
+                    src={showcaseFilm}
+                    poster="/media/showcase/aerial-1600.webp"
+                    muted
+                    playsInline
+                    preload="metadata"
+                    onEnded={() => {
+                      setEnded(true);
+                      setPlaying(false);
+                    }}
+                    onError={() => {
+                      setVideoError(true);
+                      setPlaying(false);
+                    }}
+                    aria-label="Mixed Media Reel of the Northern Beaches property"
+                  />
+                ) : (
+                  <Photo
+                    media="showcaseAerial"
+                    sizes="(max-width:700px) 90vw, 65vw"
+                  />
+                )}
+                <span className={styles.filmFormat}>16:9</span>
+              </div>
+              <div className={styles.resultCaption}>
+                <div>
+                  <span className={styles.kicker}>Mixed Media Reel</span>
+                  <p>Bring the best of the property capture together.</p>
+                  {(!showcaseFilm || videoError) && (
+                    <p className={styles.pending}>
+                      Motion preview is being prepared.
+                    </p>
+                  )}
                 </div>
-              )}
-            </div>
+                <a href="/demo">
+                  Book a demo <ArrowRight size={17} />
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      <div className={styles.controls}>
+        <div className={styles.progress} aria-hidden="true">
+          <span
+            style={{
+              transform: `scaleX(${phase === 3 ? 1 : elapsed / discoveryEnd})`,
+            }}
+          />
+        </div>
+        <div className={styles.controlRow}>
+          <span>Photography + drone footage</span>
+          <div>
+            {(phase < 3 || !!showcaseFilm) && (
+              <button
+                type="button"
+                onClick={toggle}
+                aria-label={
+                  playing && !ended ? "Pause showcase" : "Play showcase"
+                }
+              >
+                {playing && !ended ? <Pause size={15} /> : <Play size={15} />}
+                <span>{playing && !ended ? "Pause" : "Play"}</span>
+              </button>
+            )}
+            <button type="button" onClick={replay} aria-label="Replay showcase">
+              <RotateCcw size={15} />
+              <span>Replay</span>
+            </button>
           </div>
         </div>
-      </LayoutGroup>
-      <div className={styles.controls}>
-        <div className={styles.playback}>
-          <button
-            onClick={toggle}
-            aria-label={
-              playing && elapsed < duration
-                ? "Pause walkthrough"
-                : "Play walkthrough"
-            }
-          >
-            {playing && elapsed < duration ? (
-              <Pause size={16} />
-            ) : (
-              <Play size={16} />
-            )}
-          </button>
-          <button onClick={replay} aria-label="Replay walkthrough">
-            <RotateCcw size={16} />
-          </button>
-          <span>
-            {String(Math.floor(elapsed / 1000)).padStart(2, "0")} / 30s
-          </span>
-        </div>
-        <nav aria-label="Walkthrough stages">
-          {stages.map((item, index) => (
-            <button
-              key={item.name}
-              onClick={() => jump(index)}
-              aria-current={stage === index ? "step" : undefined}
-            >
-              {item.name}
-            </button>
-          ))}
-        </nav>
-        <span className={styles.soundLabel}>Sound off</span>
       </div>
       <p className="sr-only">
-        This demonstration shows uploaded property media, five additional
-        product opportunities, selection of a Vertical Video Reel, style, length
-        and music choices, creation, and a finished vertical output. Use the
-        stage controls to explore at your own pace.
+        One property with 27 professional photos and drone footage reveals Photo
+        Reel, Property Teaser, Feature Reel, Mixed Media Reel and Drone &amp;
+        Location Reel. The showcase then focuses on Mixed Media Reel.
       </p>
       <span
         className="sr-only"
         role="status"
         aria-live={active ? "off" : "polite"}
       >
-        {stages[stage].title}
+        {title}
       </span>
     </div>
   );

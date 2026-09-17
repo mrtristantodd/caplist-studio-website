@@ -8,14 +8,14 @@ import { AccessLink } from "./StudioUI";
 function Links({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
-      <a href="/#products" onClick={onNavigate}>
+      <a href="/examples" onClick={onNavigate}>
         Products
       </a>
       <a href="/#how-it-works" onClick={onNavigate}>
-        How It Works
+        See Caplist in action
       </a>
       <a href="/#for-media-businesses" onClick={onNavigate}>
-        For Media Businesses
+        For your business
       </a>
       <a href="/pricing" onClick={onNavigate}>
         Pricing
@@ -42,7 +42,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <Links />
         </nav>
         <div className="header-actions">
-          <AccessLink href={light ? "/#how-it-works" : undefined} />
+          <AccessLink href="/demo">Book a demo</AccessLink>
           <AppLoginLink className="header-avatar">
             <UserRound size={20} strokeWidth={1.7} aria-hidden="true" />
             <span className="sr-only">Sign in</span>
@@ -61,7 +61,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             }}
           >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <AccessLink href={light ? "/#how-it-works" : undefined} />
+            <AccessLink href="/demo">Book a demo</AccessLink>
             <AppLoginLink>Log in</AppLoginLink>
           </nav>
         </details>

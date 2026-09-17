@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/demo",
-    "/early-access",
+    "/partners",
     "/examples",
     "/media-policy",
     "/pricing",
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
-    lastModified: new Date("2026-09-15"),
+    lastModified: new Date("2026-09-18"),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.7,
   }));

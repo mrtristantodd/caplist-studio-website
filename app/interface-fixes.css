@@ -27,3 +27,42 @@
     margin-bottom: 0;
   }
 }
+
+/* Approved catalogue: visible definitions and working deep links. */
+.example-card[id],
+#partner-enquiry {
+  scroll-margin-top: 120px;
+}
+.product-facts {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+}
+.product-facts dt {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.product-facts dd {
+  margin: 0;
+  line-height: 1.65;
+  color: #586474;
+}
+.example-caption h2 {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+.example-caption h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+.about-editorial p + p {
+  margin-top: 20px;
+}
+.brand-footer nav + nav {
+  margin-top: 28px;
+}
+.pilot-intro h3 {
+  font-size: 20px;
+  margin-top: 28px;
+}

@@ -1,3 +1,5 @@
+> Historical reference. Superseded where conflicting by `docs/marketing/approved-messaging-v3.md` and the v3 implementation review.
+
 # Homepage concept review status
 
 - [x] Buyer-first message architecture approved
