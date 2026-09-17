@@ -4,7 +4,7 @@ import { PilotRequest } from "@/components/editorial/PilotRequest";
 export const metadata = {
   title: "Book a demo — Caplist Studio",
   description:
-    "Arrange a focused Caplist Studio demo for your professional property-media business.",
+    "See what additional products Caplist Studio could create from a completed property shoot in your media business.",
 };
 
 export default function Demo() {
@@ -12,27 +12,24 @@ export default function Demo() {
     <InnerPage>
       <section className="pilot-page shell">
         <div className="pilot-intro">
-          <p className="eyebrow">More from every capture</p>
+          <p className="eyebrow">Bring a recent property shoot</p>
           <h1>
-            See what your
+            See what else
             <br />
-            media could
+            you could have
             <br />
-            <span>become.</span>
+            <span>sold from it.</span>
           </h1>
           <p>
-            Tell us about your property-media business and what you would like
-            to add to your client offer. We’ll show you the most relevant Caplist
-            products and answer questions about how they could fit your workflow.
+            Show us the type of professional media your business already captures. We’ll walk through the additional Caplist products that could fit that same job, how little the workflow needs to change and where they could sit inside your existing client offer.
           </p>
           <ul>
-            <li>Explore products that suit the media you already capture</li>
-            <li>See how Caplist can fit your existing workflow</li>
-            <li>Discuss output options, pricing and next steps</li>
+            <li>See which additional products your current media could support</li>
+            <li>Understand what you would need to do — and what Caplist handles for you</li>
+            <li>Discuss pricing, packaging and the simplest way to test it on real jobs</li>
           </ul>
           <p>
-            Submit the details below to prepare an email request. We’ll confirm a
-            suitable demo time with you by email.
+            Send the details below and we’ll arrange a focused demo around your business rather than a generic software tour.
           </p>
         </div>
         <PilotRequest initialTier="Not sure yet" mode="demo" />
