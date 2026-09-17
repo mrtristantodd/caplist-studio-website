@@ -5,7 +5,13 @@ import { Photo, FrameCorners } from "@/components/editorial/Photo";
 import { PreviewButton } from "@/components/editorial/PreviewButton";
 import { AccessClose } from "@/components/editorial/StudioUI";
 import { products } from "@/lib/demo-media";
-export const metadata = { title: "Example products — Caplist Studio" };
+
+export const metadata = {
+  title: "Products you can sell — Caplist Studio",
+  description:
+    "See the additional visual products Caplist Studio can create from professional property media you have already captured.",
+};
+
 export default function Examples() {
   return (
     <InnerPage>
@@ -14,23 +20,23 @@ export default function Examples() {
           <Photo media="aerial" sizes="100vw" priority />
         </div>
         <div className="inner-hero shell">
-          <p className="eyebrow">An expanding product catalogue</p>
+          <p className="eyebrow">More products from the same property</p>
           <h1>
-            More ways to sell
+            See what else
             <br />
-            <span>the media you’ve already made.</span>
+            <span>you could sell.</span>
           </h1>
           <p>
-            Different source media can support different finished products —
-            giving your business more to offer without adding another shoot.
+            Caplist turns suitable photography, property video, drone and vertical footage from a completed shoot into additional finished products you can offer the same client.
           </p>
           <div className="examples-hero-signature">
-            <span>One capture</span>
+            <span>One completed shoot</span>
             <strong>5</strong>
-            <span>New ways to deliver</span>
+            <span>Additional product types to explore</span>
           </div>
         </div>
       </section>
+
       <section className="light-section examples-section">
         <div className="shell examples-grid">
           {products.map((p, i) => (
@@ -47,25 +53,15 @@ export default function Examples() {
                     <h2>
                       {
                         [
-                          "A fresh perspective.",
-                          "Make an entrance.",
-                          "It’s all in the details.",
-                          "A home worth a closer look.",
-                          "The home. The neighbourhood.",
+                          "More from the footage you already shot.",
+                          "A fast extra product for the same listing.",
+                          "Give one feature its own story.",
+                          "Turn the photo set into motion.",
+                          "Bring the full capture together.",
                         ][i]
                       }
                     </h2>
-                    <p>
-                      {
-                        [
-                          "Space to slow down",
-                          "Twilight collection",
-                          "Considered spaces",
-                          "Every room has a story",
-                          "Harbour collection",
-                        ][i]
-                      }
-                    </p>
+                    <p>{p.label}</p>
                   </div>
                   <FrameCorners />
                   <span className="example-format">
@@ -73,13 +69,14 @@ export default function Examples() {
                   </span>
                 </div>
               </div>
+
               <div className="example-caption">
                 <div>
                   <h3>{p.name.replace("Alternative / ", "")}</h3>
                   <p>{p.description}</p>
                 </div>
                 <PreviewButton product={p} className="example-open">
-                  <span className="sr-only">Preview {p.name}</span>
+                  <span className="sr-only">See a {p.name}</span>
                   <ArrowUpRight size={24} />
                 </PreviewButton>
               </div>
