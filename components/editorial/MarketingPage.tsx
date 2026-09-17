@@ -341,6 +341,7 @@ export function Footer() {
             <p>Turn professional property media you have already captured into additional finished products your clients can buy.</p>
           </div>
           <nav aria-label="Footer navigation">
+            <h3 className="footer-nav-heading">Explore</h3>
             <a href="/#products">Products</a>
             <a href="/#how-it-works">How It Works</a>
             <a href="/#for-media-businesses">For Media Businesses</a>
@@ -351,6 +352,7 @@ export function Footer() {
             <AppLoginLink>Log In</AppLoginLink>
           </nav>
           <div className="brand-footer-contact">
+            <h3 className="footer-nav-heading">Get in touch</h3>
             <p className="studio-kicker">See if Caplist fits your business</p>
             <a href={`mailto:${CONTACTS.general}`}>{CONTACTS.general} <ArrowUpRight size={18} /></a>
             <AccessLink />

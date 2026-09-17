@@ -1,0 +1,67 @@
+[
+  {
+    "name": "living",
+    "original": "_TTP9780.jpg",
+    "width": 6246,
+    "height": 4156,
+    "derivatives": [
+      480,
+      960,
+      1600,
+      2400
+    ],
+    "metadata": "stripped"
+  },
+  {
+    "name": "kitchen",
+    "original": "_TTP9784.jpg",
+    "width": 6192,
+    "height": 4128,
+    "derivatives": [
+      480,
+      960,
+      1600,
+      2400
+    ],
+    "metadata": "stripped"
+  },
+  {
+    "name": "bedroom",
+    "original": "_TTP9809.jpg",
+    "width": 6192,
+    "height": 4128,
+    "derivatives": [
+      480,
+      960,
+      1600,
+      2400
+    ],
+    "metadata": "stripped"
+  },
+  {
+    "name": "balcony",
+    "original": "_TTP9811.jpg",
+    "width": 6192,
+    "height": 4128,
+    "derivatives": [
+      480,
+      960,
+      1600,
+      2400
+    ],
+    "metadata": "stripped"
+  },
+  {
+    "name": "bathroom",
+    "original": "_TTP9799.jpg",
+    "width": 6192,
+    "height": 4128,
+    "derivatives": [
+      480,
+      960,
+      1600,
+      2400
+    ],
+    "metadata": "stripped"
+  }
+]

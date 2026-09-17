@@ -30,10 +30,10 @@ function Links({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ light = false }: { light?: boolean }) {
   const menu = useRef<HTMLDetailsElement>(null);
   return (
-    <header className="site-header">
+    <header className={`site-header ${light ? "home-header-light" : ""}`}>
       <div className="shell header-inner">
         <a href="/#top" className="brand-link" aria-label="Caplist Studio home">
           <CaplistLogo light />
@@ -42,7 +42,7 @@ export function SiteHeader() {
           <Links />
         </nav>
         <div className="header-actions">
-          <AccessLink />
+          <AccessLink href={light ? "/#how-it-works" : undefined} />
           <AppLoginLink className="header-avatar">
             <UserRound size={20} strokeWidth={1.7} aria-hidden="true" />
             <span className="sr-only">Sign in</span>
@@ -53,9 +53,15 @@ export function SiteHeader() {
             <Menu className="menu-open" size={22} />
             <X className="menu-close" size={22} />
           </summary>
-          <nav aria-label="Mobile navigation">
+          <nav
+            aria-label="Mobile navigation"
+            onClick={(event) => {
+              if ((event.target as HTMLElement).closest("a"))
+                menu.current?.removeAttribute("open");
+            }}
+          >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <AccessLink />
+            <AccessLink href={light ? "/#how-it-works" : undefined} />
             <AppLoginLink>Log in</AppLoginLink>
           </nav>
         </details>

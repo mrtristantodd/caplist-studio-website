@@ -1,0 +1,10 @@
+{
+  "static_homepage": "pass",
+  "h1_count": 1,
+  "walkthrough_count": 1,
+  "links_checked": 43,
+  "image_elements_checked": 27,
+  "missing_targets": [],
+  "floorplan_absent": true,
+  "browser_visual_qa": "blocked: browser admin policy check unavailable"
+}

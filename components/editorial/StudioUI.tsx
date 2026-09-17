@@ -1,15 +1,17 @@
 import { ArrowUpRight } from "lucide-react";
 export function AccessLink({
   secondary = false,
+  href = "/#products",
   children = "See Caplist in action",
 }: {
   secondary?: boolean;
+  href?: string;
   children?: React.ReactNode;
 }) {
   return (
     <a
       className={`studio-button ${secondary ? "studio-button-secondary" : ""}`}
-      href="/#products"
+      href={href}
     >
       {children}
       <ArrowUpRight size={18} />
