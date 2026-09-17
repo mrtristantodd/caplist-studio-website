@@ -4,78 +4,109 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { products } from "@/lib/demo-media";
 import { Photo, FrameCorners } from "./Photo";
 import { PreviewButton } from "./PreviewButton";
+
 const mediaTypes = ["Photography", "Video", "Drone", "Vertical"] as const;
 type MediaType = (typeof mediaTypes)[number];
-function suitability(id: string, selected: MediaType[]) {
-  const photo = selected.includes("Photography"),
-    video = selected.includes("Video") || selected.includes("Vertical"),
-    drone = selected.includes("Drone");
+
+type FitState = "Best Fit" | "Good Fit" | "Limited" | "Unavailable";
+
+function suitability(id: string, selected: MediaType[]): [FitState, string] {
+  const photo = selected.includes("Photography");
+  const video = selected.includes("Video") || selected.includes("Vertical");
+  const drone = selected.includes("Drone");
+
   if (id === "photo-reel")
     return photo
       ? [
           "Best Fit",
-          "Professional photography supports a motion-led photo product.",
+          "You already have the key ingredient: a professional photo set that can become an additional motion product.",
         ]
       : [
           "Unavailable",
-          "Add professional photography to explore a Photo Reel.",
+          "Add professional property photography to explore a Photo Reel.",
         ];
+
   if (id === "mixed-media")
     return photo && video && drone
       ? [
           "Best Fit",
-          "Photography, video and drone support a fuller property story.",
+          "You have the mix of photography, video and drone needed to explore a premium combined edit.",
         ]
       : photo && video
         ? [
             "Good Fit",
-            "Photos and video can form a combined edit; drone adds another perspective.",
+            "Photos and property video can support a combined edit; drone footage can add another premium layer.",
           ]
         : [
             "Unavailable",
-            "Combine photography and property video to explore this product.",
+            "Add photography and property video to explore a mixed-media product.",
           ];
+
   if (id === "feature-reel")
     return video
       ? [
           "Good Fit",
-          "Suitable video needs enough coverage of the property’s features.",
+          "Your property video may support a second, focused edit if it includes enough coverage of a standout space or feature.",
         ]
       : [
           "Unavailable",
-          "Add property video with coverage of the features you want to show.",
+          "Add property video to explore a feature-focused second edit.",
         ];
+
   if (id === "vertical-reel")
     return selected.includes("Vertical")
-      ? ["Best Fit", "Native vertical footage supports this delivery format."]
+      ? [
+          "Best Fit",
+          "Native vertical footage gives Caplist the strongest starting point for a social-ready vertical reel.",
+        ]
       : selected.includes("Video")
-        ? ["Limited", "Landscape footage needs a suitable vertical-safe crop."]
-        : ["Unavailable", "Add property video or native vertical footage."];
+        ? [
+            "Limited",
+            "Your landscape video may still work if the key rooms and features can be framed cleanly in a vertical format.",
+          ]
+        : [
+            "Unavailable",
+            "Add property video or native vertical footage to explore a Vertical Video Reel.",
+          ];
+
   return video
     ? [
         "Good Fit",
-        "Suitable property footage can support a concise opening edit.",
+        "Your existing property footage may be enough to create a short teaser as an additional product for the same listing.",
       ]
-    : ["Unavailable", "Add property video with a strong opening sequence."];
+    : [
+        "Unavailable",
+        "Add property video to explore a short Property Teaser.",
+      ];
 }
+
+function visibleFitLabel(state: FitState) {
+  if (state === "Best Fit") return "Strong match";
+  if (state === "Good Fit") return "Worth exploring";
+  if (state === "Limited") return "May be possible";
+  return "Needs more media";
+}
+
 export function ProductExplorer() {
   const [selected, setSelected] = useState<MediaType[]>([
     "Photography",
     "Video",
     "Drone",
   ]);
+
   const available = products.filter(
     (p) => suitability(p.id, selected)[0] !== "Unavailable",
   ).length;
+
   return (
     <div className="product-explorer">
       <div className="explorer-controls">
         <div>
-          <p className="studio-kicker">Explore a source-media example</p>
-          <h3>What have you already captured?</h3>
+          <p className="studio-kicker">Start with a property you have already shot</p>
+          <h3>What media did you capture?</h3>
         </div>
         <fieldset>
-          <legend className="sr-only">Available source media</legend>
+          <legend className="sr-only">Media captured for this property</legend>
           {mediaTypes.map((type) => (
             <label key={type}>
               <input
@@ -94,10 +125,11 @@ export function ProductExplorer() {
           ))}
         </fieldset>
       </div>
+
       <p className="explorer-result" role="status">
-        {available} of {products.length} products could suit this media
-        combination.
+        With this media, you could potentially offer {available} of {products.length} Caplist products from the same property.
       </p>
+
       <div className="explorer-grid">
         {products.map((p) => {
           const [state, reason] = suitability(p.id, selected);
@@ -119,7 +151,7 @@ export function ProductExplorer() {
               <div className="explorer-card-copy">
                 <div className="fit-state" data-fit={state}>
                   {state === "Best Fit" && <Check size={14} />}
-                  <span>{state}</span>
+                  <span>{visibleFitLabel(state)}</span>
                 </div>
                 <h3>{p.name}</h3>
                 <span className="product-meta">
@@ -128,27 +160,26 @@ export function ProductExplorer() {
                 <p>{p.purpose}</p>
                 <p className="fit-reason">{reason}</p>
                 <PreviewButton product={p} className="explorer-preview">
-                  Preview {p.name}
+                  See a {p.name}
                   <ArrowUpRight size={18} />
                 </PreviewButton>
               </div>
             </article>
           );
         })}
+
         <aside className="explorer-next">
-          <p className="studio-kicker">One source → more outputs</p>
+          <p className="studio-kicker">Same shoot. More to offer.</p>
           <h3>
-            Your media defines
+            See what else
             <br />
-            the possibilities.
+            you could sell.
           </h3>
           <p>
-            These are illustrative fit states based on media type. Actual
-            availability also depends on source quality, composition and the
-            current release.
+            Caplist checks the media you already captured and shows which additional products are worth creating for that property. You choose what makes sense for your client.
           </p>
           <a className="studio-text-link" href="/demo">
-            Discuss your media <ArrowUpRight size={18} />
+            Show us a recent shoot <ArrowUpRight size={18} />
           </a>
         </aside>
       </div>
