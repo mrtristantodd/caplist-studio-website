@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
-import styles from "./concepts.module.css";
+import styles from "./compare.module.css";
 
 export const metadata: Metadata = {
   title: "Homepage concept comparison | Caplist Studio",
@@ -20,19 +20,19 @@ const criteria = [
 
 export default function ConceptsIndex() {
   return (
-    <main className={styles.comparePage}>
-      <div className={styles.compareShell}>
+    <main className={styles.page}>
+      <div className={styles.shell}>
         <CaplistLogo />
         <p className={styles.kicker}>Homepage concept review</p>
         <h1>Same message. Two ways to explain it.</h1>
-        <p className={styles.compareLead}>
+        <p className={styles.lead}>
           Both concepts use the approved buyer-first positioning and the same
           Caplist visual system. Compare whether the product is clearer when the
           workflow is demonstrated through motion or explained through a more
           restrained editorial layout.
         </p>
 
-        <div className={styles.compareCards}>
+        <div className={styles.cards}>
           <a href="/concepts/editorial">
             <span>Concept A</span>
             <h2>Editorial / text-led</h2>
@@ -53,7 +53,7 @@ export default function ConceptsIndex() {
           </a>
         </div>
 
-        <section className={styles.reviewCriteria}>
+        <section className={styles.criteria}>
           <p className={styles.kicker}>Judge both against the same standard</p>
           <h2>What should be obvious to a first-time visitor?</h2>
           <ol>
@@ -66,7 +66,7 @@ export default function ConceptsIndex() {
           </ol>
         </section>
 
-        <p className={styles.compareNote}>
+        <p className={styles.note}>
           These routes are review concepts only. They are excluded from search
           indexing and are not linked from the public site navigation.
         </p>
