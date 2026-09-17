@@ -95,7 +95,7 @@ export function HomepageV2() {
               <PropertyPhoto
                 photo="living"
                 priority
-                sizes="(max-width:960px) 92vw, 48vw"
+                sizes="(max-width:960px) 92vw, 70vw"
               />
               <span className={styles.corner} aria-hidden="true" />
             </div>
@@ -164,7 +164,11 @@ export function HomepageV2() {
                 >
                   <PropertyPhoto
                     photo={product.photo}
-                    sizes="(max-width:640px) 90vw, (max-width:960px) 44vw, 48vw"
+                    sizes={
+                      product.ratio === "9:16"
+                        ? "(max-width:640px) 200vw, (max-width:960px) 120vw, 75vw"
+                        : "(max-width:640px) 90vw, (max-width:960px) 44vw, 48vw"
+                    }
                   />
                   <span className={styles.productFormat}>{product.ratio}</span>
                   <span className={styles.productArrow}>

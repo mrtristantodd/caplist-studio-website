@@ -216,7 +216,10 @@ export function ProductWalkthrough() {
                         layoutId={index === 1 ? "selected-product" : undefined}
                         className={`${styles.optionMedia} ${option.portrait ? styles.portrait : styles.landscape}`}
                       >
-                        <PropertyPhoto photo={option.photo} sizes="240px" />
+                        <PropertyPhoto
+                          photo={option.photo}
+                          sizes={option.portrait ? "400px" : "240px"}
+                        />
                         <span>{option.portrait ? "9:16" : "16:9"}</span>
                       </motion.div>
                       {index === 1 ? (
@@ -286,7 +289,7 @@ export function ProductWalkthrough() {
                       >
                         <PropertyPhoto
                           photo={photo}
-                          sizes="(max-width:700px) 65vw, 450px"
+                          sizes="(max-width:480px) 470px, 640px"
                         />
                       </div>
                     ))}

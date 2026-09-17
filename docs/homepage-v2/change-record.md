@@ -2,6 +2,7 @@
 
 Date: 17 September 2026. Approved starting commit: `6748abf`.
 Branch: `feature/homepage-v2`.
+Draft review: https://github.com/mrtristantodd/caplist-studio-website/pull/10
 
 ## Material changes
 
@@ -13,7 +14,7 @@ Branch: `feature/homepage-v2`.
 6. Reduced the commercial, outcome, quality and workflow sections. Removed homepage philosophy/roadmap explanations and defensive editor/quality copy. The complete deletion/rewrite audit is in `design-spec.md`.
 7. Gave the closing demo invitation its own section and substantial spacing.
 8. Added visible Explore and Get in touch footer headings, preserved existing routes, and allowed the contact row to wrap at tablet sizes.
-9. Created 20 local WebP derivatives from five user-approved Chapel Street originals (480/960/1600/2400px). Original files were not altered. Web metadata was stripped. Total derivative directory is approximately 3.4MB; responsive selection avoids loading every size.
+9. Created 20 local WebP derivatives from five user-approved Chapel Street originals (480/960/1600/2400px). Original files were not altered. Web metadata was stripped. Total derivative directory is approximately 3.4MB; responsive selection avoids loading every size. Portrait image size hints account for the landscape source width needed to fill a tall crop, preserving sharpness on high-density displays.
 10. Homepage-only light header and viewport configuration preserve secondary-page appearance. Existing concept routes remain noindex and unchanged apart from shared footer headings. No application/R&D code, pricing, policies, forms or product eligibility logic changed.
 
 ## Subsequent user direction
