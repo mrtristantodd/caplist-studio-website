@@ -4,7 +4,7 @@ import { PilotRequest } from "@/components/editorial/PilotRequest";
 export const metadata = {
   title: "Request Early Access — Caplist Studio",
   description:
-    "Request early access to Caplist Studio for your professional property-media business.",
+    "Request early access to Caplist Studio and test how much more one completed property shoot could produce for your media business.",
 };
 
 export default function EarlyAccess() {
@@ -12,26 +12,22 @@ export default function EarlyAccess() {
     <InnerPage>
       <section className="pilot-page shell">
         <div className="pilot-intro">
-          <p className="eyebrow">More from every capture</p>
+          <p className="eyebrow">Start with one completed shoot</p>
           <h1>
-            Your media.
+            See if Caplist can make
             <br />
-            Your clients.
-            <br />
-            <span>More to sell.</span>
+            <span>your existing jobs worth more.</span>
           </h1>
           <p>
-            Caplist Studio is being built to help you turn more of your existing
-            professional media into finished products your clients can buy.
+            Early access is for professional property-media businesses that want to test Caplist on real work before deciding how deeply it should fit into their service.
           </p>
           <ul>
-            <li>For professional real-estate photographers</li>
-            <li>For videographers and property-media businesses</li>
-            <li>Your clients. Your service. Your pricing.</li>
+            <li>Use media you already capture for clients</li>
+            <li>Explore additional products without another property visit</li>
+            <li>Keep your own client relationship, packages and pricing</li>
           </ul>
           <p>
-            Request early access to start a conversation about your business and
-            the products you want to offer.
+            Tell us about your business and the media you normally produce. We’ll help you choose a practical first property to test.
           </p>
         </div>
         <PilotRequest initialTier="Not sure yet" />

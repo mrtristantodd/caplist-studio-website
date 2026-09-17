@@ -17,7 +17,7 @@ export const publicResources: PublicResource[] = [
     id: "PUB-002",
     title: "Capture once. Sell more.",
     description:
-      "A practical guide to creating more commercial value from professional property media you have already captured.",
+      "A practical guide to creating more commercial value from a property shoot you have already completed.",
     category: "Commercial",
     format: "Guide",
     href: "/resources/capture-once-sell-more",
@@ -28,7 +28,7 @@ export const publicResources: PublicResource[] = [
     id: "PUB-003",
     title: "Five products from one property capture",
     description:
-      "See how photography, video, drone and vertical footage can unlock additional professional deliverables.",
+      "See how photography, video, drone and vertical footage from one property can become additional products to offer the same client.",
     category: "Products",
     format: "Illustrated guide",
     href: "/resources/five-products-from-one-capture",
@@ -36,9 +36,9 @@ export const publicResources: PublicResource[] = [
   },
   {
     id: "PUB-004",
-    title: "Increase AOV without increasing shoot time",
+    title: "Increase order value without increasing shoot time",
     description:
-      "Why product expansion can create another growth lever for property-media businesses without adding another visit.",
+      "How adding products to completed property jobs can create another growth lever without adding another property visit.",
     category: "Commercial",
     format: "Article",
     href: "/resources/increase-aov-without-more-shoot-time",
@@ -48,7 +48,7 @@ export const publicResources: PublicResource[] = [
     id: "PUB-005",
     title: "Photo Reel vs Vertical Reel vs Property Teaser",
     description:
-      "A clear comparison of what each product is designed to do and the source media each one needs.",
+      "A plain-English comparison of what each product gives the client and the property media needed to create it.",
     category: "Products",
     format: "Comparison guide",
     href: "/resources/product-comparison",
@@ -56,9 +56,9 @@ export const publicResources: PublicResource[] = [
   },
   {
     id: "PUB-006",
-    title: "Landscape video to vertical: what actually works",
+    title: "Can landscape property video become a vertical reel?",
     description:
-      "The practical constraints behind reframing professional 16:9 property footage into premium 9:16 outputs.",
+      "What needs to be true before professional 16:9 property footage can be reframed into a polished 9:16 product.",
     category: "Production",
     format: "Technical guide",
     href: "/resources/landscape-video-to-vertical",
@@ -68,7 +68,7 @@ export const publicResources: PublicResource[] = [
     id: "PUB-007",
     title: "Why professional source media still matters with AI",
     description:
-      "AI can accelerate production, but it does not remove the need for sharp, well-composed, professionally captured source media.",
+      "AI can speed up production, but sharp, well-composed and professionally captured source media still determines what is worth creating.",
     category: "Industry",
     format: "Article",
     href: "/resources/professional-source-media-and-ai",
@@ -76,9 +76,9 @@ export const publicResources: PublicResource[] = [
   },
   {
     id: "PUB-008",
-    title: "What can your media unlock?",
+    title: "What else could you sell from the media you already capture?",
     description:
-      "A source-media guide showing how photography, professional video, drone and native vertical footage expand the available product catalogue.",
+      "A source-media guide showing how photography, property video, drone and native vertical footage can expand the product menu for one property.",
     category: "Products",
     format: "Interactive guide",
     href: "/resources/source-media-product-guide",
@@ -86,9 +86,9 @@ export const publicResources: PublicResource[] = [
   },
   {
     id: "PUB-010",
-    title: "How Caplist assesses source-media quality",
+    title: "When should Caplist say no to a product?",
     description:
-      "An overview of why source suitability matters and why some outputs should remain unavailable when the media cannot support them.",
+      "Why some media should not be used for some outputs, and how quality checks protect the standard of the finished product.",
     category: "Production",
     format: "Guide",
     href: "/resources/source-media-quality",
@@ -96,9 +96,9 @@ export const publicResources: PublicResource[] = [
   },
   {
     id: "PUB-011",
-    title: "The economics of property-media repurposing",
+    title: "The business case for getting more from every property shoot",
     description:
-      "A commercial guide to additional products, pricing strategy and the revenue potential of getting more from each completed property shoot.",
+      "A commercial guide to additional products, pricing strategy and the revenue opportunity inside media you have already paid to capture.",
     category: "Commercial",
     format: "Commercial guide",
     href: "/resources/property-media-repurposing-economics",
