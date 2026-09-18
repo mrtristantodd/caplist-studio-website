@@ -5,6 +5,7 @@ import "./buyer-experience.css";
 import "./tokens.css";
 import "./studio-system.css";
 import "./interface-fixes.css";
+import "./marketing-v3.css";
 import { SiteEffects } from "@/components/editorial/SiteEffects";
 import { SITE_URL } from "@/lib/site";
 
@@ -18,7 +19,7 @@ const inter = localFont({
 });
 
 const description =
-  "Caplist Studio turns professional real-estate photography, video, drone and vertical footage into additional finished visual products your property-media business can sell.";
+  "Caplist Studio turns the professional property media you already capture into more premium visual products to sell — giving your clients more high-quality ways to market every listing without another property visit.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -62,8 +63,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  colorScheme: "dark",
-  themeColor: "#080d10",
+  colorScheme: "light",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({

@@ -13,14 +13,10 @@ export default function Contact() {
     <InnerPage>
       <section className="policy-page shell">
         <p className="eyebrow">Contact Caplist Studio</p>
-        <h1>
-          Tell us what
-          <br />
-          <span>you need.</span>
-        </h1>
+        <h1>How can we help?</h1>
         <p className="policy-lead">
-          Choose the type of enquiry below and send us the details. We’ll reply
-          from the appropriate Caplist Studio address.
+          Choose the enquiry that best matches what you need and we’ll make sure
+          it reaches the right place.
         </p>
 
         <ContactRequest />
@@ -28,19 +24,33 @@ export default function Contact() {
         <div className="policy-sections">
           <section>
             <h2>General enquiries</h2>
-            <p><a href={`mailto:${CONTACTS.general}`}>{CONTACTS.general}</a></p>
+            <p>
+              <a href={`mailto:${CONTACTS.general}`}>{CONTACTS.general}</a>
+            </p>
           </section>
           <section>
-            <h2>Partnerships & early access</h2>
-            <p><a href={`mailto:${CONTACTS.partners}`}>{CONTACTS.partners}</a></p>
+            <h2>Demos &amp; product enquiries</h2>
+            <p>
+              <a href="/demo">Book a demo</a>
+            </p>
+          </section>
+          <section>
+            <h2>Partnerships</h2>
+            <p>
+              <a href={`mailto:${CONTACTS.partners}`}>{CONTACTS.partners}</a>
+            </p>
           </section>
           <section>
             <h2>Privacy & data</h2>
-            <p><a href={`mailto:${CONTACTS.privacy}`}>{CONTACTS.privacy}</a></p>
+            <p>
+              <a href={`mailto:${CONTACTS.privacy}`}>{CONTACTS.privacy}</a>
+            </p>
           </section>
           <section>
             <h2>Accounts & billing</h2>
-            <p><a href={`mailto:${CONTACTS.accounts}`}>{CONTACTS.accounts}</a></p>
+            <p>
+              <a href={`mailto:${CONTACTS.accounts}`}>{CONTACTS.accounts}</a>
+            </p>
           </section>
         </div>
       </section>

@@ -1,0 +1,102 @@
+[
+  {
+    "file": "balcony-1600.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "balcony-2400.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "file": "balcony-480.webp",
+    "width": 480,
+    "height": 320
+  },
+  {
+    "file": "balcony-960.webp",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "file": "bathroom-1600.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "bathroom-2400.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "file": "bathroom-480.webp",
+    "width": 480,
+    "height": 320
+  },
+  {
+    "file": "bathroom-960.webp",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "file": "bedroom-1600.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "bedroom-2400.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "file": "bedroom-480.webp",
+    "width": 480,
+    "height": 320
+  },
+  {
+    "file": "bedroom-960.webp",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "file": "kitchen-1600.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "file": "kitchen-2400.webp",
+    "width": 2400,
+    "height": 1600
+  },
+  {
+    "file": "kitchen-480.webp",
+    "width": 480,
+    "height": 320
+  },
+  {
+    "file": "kitchen-960.webp",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "file": "living-1600.webp",
+    "width": 1600,
+    "height": 1065
+  },
+  {
+    "file": "living-2400.webp",
+    "width": 2400,
+    "height": 1597
+  },
+  {
+    "file": "living-480.webp",
+    "width": 480,
+    "height": 319
+  },
+  {
+    "file": "living-960.webp",
+    "width": 960,
+    "height": 639
+  }
+]

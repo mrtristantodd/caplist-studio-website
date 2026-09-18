@@ -1,36 +1,25 @@
 import { InnerPage } from "@/components/editorial/InnerPage";
-import { PilotRequest } from "@/components/editorial/PilotRequest";
-
+import { AccessLink } from "@/components/editorial/StudioUI";
 export const metadata = {
-  title: "Request Early Access — Caplist Studio",
-  description:
-    "Request early access to Caplist Studio and test how much more one completed property shoot could produce for your media business.",
+  title: "Early Access — Caplist Studio",
+  robots: { index: false, follow: true },
 };
-
 export default function EarlyAccess() {
   return (
     <InnerPage>
-      <section className="pilot-page shell">
-        <div className="pilot-intro">
-          <p className="eyebrow">Start with one completed shoot</p>
-          <h1>
-            See if Caplist can make
-            <br />
-            <span>your existing jobs worth more.</span>
-          </h1>
-          <p>
-            Early access is for professional property-media businesses that want to test Caplist on real work before deciding how deeply it should fit into their service.
-          </p>
-          <ul>
-            <li>Use media you already capture for clients</li>
-            <li>Explore additional products without another property visit</li>
-            <li>Keep your own client relationship, packages and pricing</li>
-          </ul>
-          <p>
-            Tell us about your business and the media you normally produce. We’ll help you choose a practical first property to test.
-          </p>
-        </div>
-        <PilotRequest initialTier="Not sure yet" />
+      <section className="policy-page shell">
+        <p className="eyebrow">CAPLIST EARLY ACCESS</p>
+        <h1>Interested in using Caplist with your property-media business?</h1>
+        <p className="policy-lead">
+          Early access is being introduced with selected professional
+          property-media businesses while the production catalogue and workflows
+          are refined.
+        </p>
+        <p>
+          Book a demo to see the product, discuss your current media workflow
+          and find out whether Caplist is a fit for your business.
+        </p>
+        <AccessLink href="/demo">Book a demo</AccessLink>
       </section>
     </InnerPage>
   );

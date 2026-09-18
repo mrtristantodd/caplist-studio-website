@@ -1,3 +1,4 @@
+import { Photo } from "@/components/editorial/Photo";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { publicResources, resourceCategories } from "@/lib/resource-catalog";
@@ -25,7 +26,9 @@ export default function Resources() {
               <span>work harder.</span>
             </h1>
             <p className={styles.heroLead}>
-              Practical guides on creating, packaging and selling more professional visual products from the property media your business already captures.
+              Practical guides for creating, packaging and selling more
+              professional visual products from property media your business
+              already captures.
             </p>
           </div>
         </div>
@@ -34,21 +37,22 @@ export default function Resources() {
       <section className={styles.section}>
         <div className="shell">
           <div className={styles.sectionIntro}>
-            <h2>Useful ideas for the business behind the camera.</h2>
+            <h2>Better ways to turn capture into commercial value.</h2>
             <p>
-              Explore ways to increase the value of a completed property job, understand which media can support different products and make smarter decisions about what is worth offering to clients.
+              Explore how professional photography, video, drone and vertical
+              media can create a larger product menu for your business — and
+              give your clients more high-quality content to market every
+              listing.
             </p>
           </div>
 
           <article className={styles.featured}>
             <div className={styles.featureVisual} aria-hidden="true">
-              <div className={styles.flow}>
-                <span>One completed shoot</span>
-                <b>→</b>
-                <span>More finished products</span>
-                <b>→</b>
-                <span>More to sell</span>
-              </div>
+              <Photo
+                media="coastal"
+                sizes="(max-width:760px) 90vw, 50vw"
+                decorative
+              />
             </div>
             <div className={styles.featureCopy}>
               <div className={styles.meta}>

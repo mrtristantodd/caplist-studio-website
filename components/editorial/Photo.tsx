@@ -4,7 +4,11 @@ import { demoMedia, type MediaKey } from "@/lib/demo-media";
 // Responsive files are served directly; no remote image service or image API.
 function localLoader({ src, width }: ImageLoaderProps) {
   const size =
-    [480, 960, 1600, 2200].find((candidate) => candidate >= width) ?? 2200;
+    (src.includes("/showcase/")
+      ? [480, 960, 1600]
+      : [480, 960, 1600, 2200]
+    ).find((candidate) => candidate >= width) ??
+    (src.includes("/showcase/") ? 1600 : 2200);
   return `${src}-${size}.webp`;
 }
 export function Photo({

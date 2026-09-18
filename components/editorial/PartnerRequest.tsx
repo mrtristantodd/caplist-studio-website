@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
 import { CONTACTS } from "@/lib/site";
 
@@ -15,6 +15,10 @@ export function PartnerRequest() {
     interest: "",
   });
   const [review, setReview] = useState(false);
+  const reviewHeading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (review) reviewHeading.current?.focus();
+  }, [review]);
   const [copied, setCopied] = useState(false);
 
   const body = useMemo(
@@ -36,7 +40,9 @@ export function PartnerRequest() {
     return (
       <div className="pilot-form pilot-review">
         <p className="eyebrow">02 / Review your enquiry</p>
-        <h2>Ready to start the conversation.</h2>
+        <h2 ref={reviewHeading} tabIndex={-1}>
+          Ready to start the conversation.
+        </h2>
         <p>
           Review the draft below. Nothing is sent until you open your email app
           and choose to send it.
@@ -52,8 +58,13 @@ export function PartnerRequest() {
             Open email draft
             <ArrowUpRight size={18} />
           </a>
-          <button className="button button-outline" type="button" onClick={copy}>
-            {copied ? <Check size={18} /> : <Copy size={18} />} {copied ? "Copied" : "Copy enquiry"}
+          <button
+            className="button button-outline"
+            type="button"
+            onClick={copy}
+          >
+            {copied ? <Check size={18} /> : <Copy size={18} />}{" "}
+            {copied ? "Copied" : "Copy enquiry"}
           </button>
         </div>
         <p role="status" className="pilot-note">
@@ -98,31 +109,60 @@ export function PartnerRequest() {
       <div className="pilot-field-grid">
         <label>
           Your name
-          <input name="name" autoComplete="name" required maxLength={100} />
+          <input
+            name="name"
+            defaultValue={details.name}
+            autoComplete="name"
+            required
+            maxLength={100}
+          />
         </label>
         <label>
           Work email
-          <input name="email" type="email" autoComplete="email" required maxLength={180} />
+          <input
+            name="email"
+            defaultValue={details.email}
+            type="email"
+            autoComplete="email"
+            required
+            maxLength={180}
+          />
         </label>
       </div>
       <div className="pilot-field-grid">
         <label>
           Media business
-          <input name="business" autoComplete="organization" required maxLength={160} />
+          <input
+            name="business"
+            defaultValue={details.business}
+            autoComplete="organization"
+            required
+            maxLength={160}
+          />
         </label>
         <label>
           Location
-          <input name="location" required maxLength={120} />
+          <input
+            name="location"
+            defaultValue={details.location}
+            required
+            maxLength={120}
+          />
         </label>
       </div>
       <div className="pilot-field-grid">
         <label>
           Approx. property shoots per month (optional)
-          <input name="volume" inputMode="numeric" maxLength={30} />
+          <input
+            name="volume"
+            defaultValue={details.volume}
+            inputMode="numeric"
+            maxLength={30}
+          />
         </label>
         <label>
           Current services
-          <select name="services" defaultValue="Photography">
+          <select name="services" defaultValue={details.services}>
             <option>Photography</option>
             <option>Photography + video</option>
             <option>Photography + video + drone</option>
@@ -133,7 +173,13 @@ export function PartnerRequest() {
       </div>
       <label>
         What would you like Caplist to help you add to your offer?
-        <textarea name="interest" required maxLength={1600} rows={6} />
+        <textarea
+          name="interest"
+          defaultValue={details.interest}
+          required
+          maxLength={1600}
+          rows={6}
+        />
       </label>
       <p className="pilot-note">
         Please do not send property media or client file links with this initial
@@ -141,7 +187,7 @@ export function PartnerRequest() {
         are shared.
       </p>
       <button className="button button-blue" type="submit">
-        Review my enquiry <ArrowUpRight size={18} />
+        Discuss a partnership <ArrowUpRight size={18} />
       </button>
     </form>
   );

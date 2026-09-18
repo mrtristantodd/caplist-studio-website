@@ -2,19 +2,22 @@
 
 import { useEffect } from "react";
 
-const validTiers = ["Essential", "Pro", "Studio"];
+const validTiers = ["Launch", "Growth", "Scale"];
 
 export function PilotRedirect() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const tier = params.get("tier");
-    const suffix = tier && validTiers.includes(tier) ? `?tier=${encodeURIComponent(tier)}` : "";
-    window.location.replace(`/early-access/${suffix}`);
+    const suffix =
+      tier && validTiers.includes(tier)
+        ? `?tier=${encodeURIComponent(tier)}`
+        : "";
+    window.location.replace(`/demo/${suffix}`);
   }, []);
 
   return (
     <p>
-      This page has moved. <a href="/early-access/">Continue to Early Access</a>.
+      This page has moved. <a href="/demo/">Book a demo</a>.
     </p>
   );
 }

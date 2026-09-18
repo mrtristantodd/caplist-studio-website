@@ -1,120 +1,88 @@
-import type { Metadata } from "next";
+import { Photo } from "@/components/editorial/Photo";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { PartnerRequest } from "@/components/editorial/PartnerRequest";
-
-export const metadata: Metadata = {
-  title: "Partner with Caplist Studio",
-  description:
-    "Early partner access for professional property-media businesses that want to create and sell more products from the media they already capture.",
-  robots: {
-    index: false,
-    follow: false,
-  },
+import { AccessLink } from "@/components/editorial/StudioUI";
+export const metadata = {
+  title: "Partners — Caplist Studio",
+  description: "Help shape a better way to get more from every property shoot.",
 };
-
-const products = [
-  "Photo Reel",
-  "20–30 second Vertical Video Reel",
-  "10–15 second Property Teaser",
-  "Alternative / Feature Reel",
-  "Mixed Media Reel where the source media supports it",
-];
-
 export default function Partners() {
   return (
     <InnerPage>
       <section className="policy-page shell">
-        <p className="eyebrow">Early partner programme</p>
-        <h1>
-          Add more products to your service
-          <br />
-          <span>without adding another shoot.</span>
-        </h1>
+        <p className="eyebrow">EARLY PARTNER PROGRAMME</p>
+        <h1>Help shape a better way to get more from every property shoot.</h1>
         <p className="policy-lead">
-          Caplist Studio helps professional property-media businesses turn completed photography, video, drone and vertical capture into additional finished products they can sell to existing clients.
+          We’re working with selected professional property-media businesses to
+          test Caplist on real property jobs, refine the product catalogue and
+          make sure the finished outputs are genuinely valuable to both the
+          media business and its clients.
         </p>
-
+        <AccessLink href="#partner-enquiry">Discuss a partnership</AccessLink>
+        <div className="editorial-image">
+          <Photo media="exterior" sizes="90vw" />
+        </div>
         <div className="policy-sections">
           <section>
-            <h2>Make more of the work you already win</h2>
+            <p className="eyebrow">Why partner early?</p>
+            <h2>Build new products around work your business already wins.</h2>
             <p>
-              The expensive part of a property job happens before delivery: booking, travel, equipment, capture and primary editing. Caplist gives that completed media another job to do by turning it into additional products you can offer the same client.
+              Early partners use real completed property captures to test how
+              Caplist fits into an operating media business.
+            </p>
+            <p>
+              Together, we look at the finished products, how easily they fit
+              into your workflow, how useful they are to your clients and where
+              the product catalogue should go next.
             </p>
           </section>
-
           <section>
-            <h2>A simple way to test it</h2>
-            <p>
-              Start with a completed property shoot. Upload the professional media you already have, see which additional products Caplist can create, choose one worth testing and review the finished result before deciding how it fits your normal offer.
-            </p>
-          </section>
-
-          <section>
-            <h2>Products you may be able to add</h2>
+            <h2>What your business gets</h2>
             <ul>
-              {products.map((product) => (
-                <li key={product}>{product}</li>
+              <li>More products to offer from existing property media.</li>
+              <li>
+                A direct role in shaping products designed for professional
+                property-media businesses.
+              </li>
+              <li>
+                Early exposure to new production capabilities as they become
+                commercially useful.
+              </li>
+              <li>
+                A workflow that keeps your business, brand and client
+                relationship in front.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <p className="eyebrow">What your clients get</p>
+            <h2>More high-quality ways to market every listing.</h2>
+            <p>
+              Caplist gives your business a broader visual product menu so
+              agents can buy more content from the media provider they already
+              trust — instead of organising another supplier, another shoot or
+              another production workflow.
+            </p>
+          </section>
+          <section>
+            <h2>What we test together</h2>
+            <ul>
+              {[
+                "Output quality",
+                "Product usefulness",
+                "Workflow fit",
+                "Production turnaround",
+                "Client interest",
+                "Which products are worth developing further",
+              ].map((x) => (
+                <li key={x}>{x}</li>
               ))}
             </ul>
-            <p>
-              The exact product mix varies by property because it depends on the media captured and the quality needed for a professional result.
-            </p>
-          </section>
-
-          <section>
-            <h2>Your client still buys from you</h2>
-            <p>
-              You choose what to offer, how to package it and what your client pays. Caplist performs the production work behind the scenes while your media business stays in front of the agent or agency relationship.
-            </p>
-          </section>
-
-          <section>
-            <h2>No need to rebuild the rest of your operation</h2>
-            <p>
-              Keep your existing CRM, booking system, delivery platform and capture workflow. Caplist is designed to add another production capability to the business you already run, not replace the systems that are already working.
-            </p>
-          </section>
-
-          <section>
-            <h2>Quality has to be good enough to carry your brand</h2>
-            <p>
-              Caplist is built for professional photography and media businesses. If the source material cannot support a product at a standard you would be comfortable delivering, that product should not be offered for the property.
-            </p>
-          </section>
-
-          <section>
-            <h2>Why join early</h2>
-            <p>
-              Early partners get to test Caplist on real jobs while the product catalogue and workflows are still being refined. Your feedback helps shape which outputs are most useful, how they fit into a working media business and what makes them genuinely sellable to agents.
-            </p>
-          </section>
-
-          <section>
-            <h2>What we would test together</h2>
-            <p>
-              We would compare the media from completed shoots with the additional products Caplist creates, then look at output quality, turnaround, workflow fit and client interest. The point is to establish whether Caplist can create useful, repeatable commercial value for your business.
-            </p>
-          </section>
-
-          <section>
-            <h2>Pricing</h2>
-            <p>
-              Preliminary subscription pricing is available on the{" "}
-              <a href="/pricing">Pricing page</a>. Early-access pricing and production charges may change during testing, and any applicable price will be clear before you commit to paid work.
-            </p>
-          </section>
-
-          <section>
-            <h2>Media handling</h2>
-            <p>
-              Before you share property media, we will make the transfer, processing, retention and deletion arrangements clear. See the{" "}
-              <a href="/media-policy">Media Handling Policy</a> and{" "}
-              <a href="/privacy">Privacy Policy</a> before sharing files.
-            </p>
           </section>
         </div>
-
-        <PartnerRequest />
+        <div id="partner-enquiry">
+          <PartnerRequest />
+        </div>
       </section>
     </InnerPage>
   );

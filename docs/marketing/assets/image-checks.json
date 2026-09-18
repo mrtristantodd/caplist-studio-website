@@ -1,0 +1,38 @@
+[
+  {
+    "file": "aerial-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "bytes": 504226
+  },
+  {
+    "file": "aerial-480.webp",
+    "width": 480,
+    "height": 270,
+    "bytes": 54170
+  },
+  {
+    "file": "aerial-960.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 205690
+  },
+  {
+    "file": "living-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "bytes": 325266
+  },
+  {
+    "file": "living-480.webp",
+    "width": 480,
+    "height": 270,
+    "bytes": 43374
+  },
+  {
+    "file": "living-960.webp",
+    "width": 960,
+    "height": 540,
+    "bytes": 147238
+  }
+]
