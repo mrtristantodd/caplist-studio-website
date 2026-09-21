@@ -1,259 +1,72 @@
 # CAPLIST DEMO PROPERTY 001 — Property Bible
 
-## Location
+## Canonical source of truth
 
-Northern Beaches, NSW, Australia.
+The approved existing photography is now the canonical DP001 property. The exact approved hero, reserve and wider-library filenames are recorded in [SHOT_LIST.md](SHOT_LIST.md).
 
-The property sits on a suburban coastal hillside in Sydney’s Northern Beaches.
+The approved images define the architecture, styling, interiors, landscape, pool area and property identity. This document describes and preserves those images; it does not require them to conform to the previous synthetic brief. Where earlier written requirements conflict with the approved image set, the approved images take precedence.
 
-The setting should feel recognisably Sydney/Northern Beaches without relying on famous landmarks.
+## Approved visual identity
 
-Appropriate environmental cues:
+- Premium Australian suburban family residence.
+- Warm brick exterior.
+- Dark tiled roof.
+- Established landscaped front garden.
+- Elevated suburban setting.
+- Partial water / bush outlook visible in plausible views.
+- Warm contemporary/classic interior styling.
+- Neutral professional real-estate photography grade.
+- Premium rear entertaining zone.
+- Pool and spa / plunge area.
+- Mature planting and polished outdoor styling.
+- Golden-hour / late-afternoon real-estate photography character.
+- Premium but realistic residential scale.
 
-- Elevated coastal/bush setting.
-- Mature eucalyptus and native vegetation.
-- Natural sandstone or rock where appropriate.
-- Glimpses of water where geographically plausible.
-- Believable Australian suburban density.
-- Premium but realistic neighbouring homes.
-- Australian pool and landscape design.
+## Location and outlook
 
-Avoid:
+DP001 remains a Northern Beaches, NSW, Australian suburban residence. Preserve the elevated suburban setting, neighbouring context, planting and partial water/bush outlook actually shown in the approved views.
 
-- Obvious US suburban architecture.
-- American-style roads/mailboxes.
-- Florida/Miami styling.
-- Californian clichés.
-- Non-Australian vegetation or streetscape cues.
+Do not invent a beachfront, direct-waterfront or resort setting. Preserve the apparent direction and distance of water and bush context relative to the approved property views. Do not add water immediately beyond a boundary or move the outlook to another side of the house. Where a relationship is not visible, leave it unspecified rather than constructing a new site model.
 
-## Water context
+## Architecture and materials
 
-- The property is not direct waterfront.
-- Water may appear as a partial or distant outlook where geographically plausible.
-- Aerials may reveal broader coastal or harbour context where plausible.
-- Preserve one consistent water/outlook direction across the entire set.
-- Do not switch between inland bush, beachfront, harbourfront or direct-waterfront interpretations.
-- Do not show direct beach frontage unless explicitly approved.
-- Do not place water immediately beyond the rear boundary unless the canonical site establishes that relationship.
-- The intended visual goal is: **suburban coastal hillside with partial water context**.
+Preserve the warm brick, dark roof tiles, roof silhouette, building footprint, levels, openings, glazing, doors, exterior finishes and details visible in the source images. Do not replace these with Colorbond roofing, pale masonry or a new contemporary architectural scheme.
 
-## Architecture
+The exact material colours, textures and proportions come from the approved images. Do not impose a universal black-glazing or timber specification where the source shows otherwise.
 
-Premium contemporary Australian family residence based on the already-approved website property aesthetic.
+## Interiors and styling
 
-Lock:
+Preserve the approved warm contemporary/classic character, furniture, upholstery, cabinetry, fixtures, artworks, staging and material palette. Keep the room proportions and visible room-to-room relationships intact. Do not redesign a room, move furniture, add a room or infer bedroom/bathroom counts from the former brief.
 
-- Low-profile dark Colorbond-style roof.
-- Pale warm brick or refined masonry.
-- Black-framed architectural glazing.
-- Restrained natural timber.
-- Strong indoor/outdoor relationship.
-- Integrated swimming pool.
-- Mature native landscaping.
-- Elevated Northern Beaches context.
-- Premium but believable residential scale.
+## Site, rear entertaining and pool continuity
 
-## Interior design
+The approved front garden, rear entertaining zone, pool and spa / plunge area, mature planting and outdoor styling define the site. Preserve their number, shape, position, boundaries and relationship to the house as shown.
 
-- Natural stone.
-- Restrained pale/medium timber.
-- Neutral premium upholstery.
-- Black architectural framing.
-- Warm off-white walls.
-- Contemporary Australian furniture/staging.
-- Uncluttered professional presentation.
-- Premium but still believable as a real family home.
+Use the approved views to establish orientation and spatial relationships. The former mandatory uphill-front/downhill-rear arrangement, open-plan kitchen/dining/living geometry, island direction and parallel-pool arrangement are no longer independent requirements. Preserve them only where supported by the approved images; never alter an image to enforce them.
 
-## Canonical spaces
-
-The property contains:
-
-- Front exterior.
-- Contemporary entry.
-- Main living room opening toward pool.
-- Premium open kitchen.
-- Dining area connected to kitchen/living.
-- Main bedroom.
-- Main ensuite.
-- Two additional bedrooms.
-- Family bathroom.
-- Secondary living/study.
-- Covered outdoor entertaining area.
-- Swimming pool.
-- Landscaped rear garden.
-- Elevated surrounding landscape.
-
-## Canonical site and house logic
-
-- Front of property faces the street and sits on the upper/higher side of the suburban coastal hillside.
-- Rear of property opens toward the primary outlook, landscaped garden and swimming pool.
-- The main living, dining and kitchen zone forms one connected open-plan area oriented toward the rear pool/outlook.
-- The main living area has large black-framed glazing opening toward the pool.
-- The kitchen is visually connected to dining and living, with an island facing into the main living zone.
-- The covered outdoor entertaining area sits immediately outside the main living/dining zone.
-- The swimming pool is positioned behind the house, parallel or near-parallel to the rear entertaining/living zone.
-- The rear garden and pool sit between the house and the broader elevated outlook.
-- Partial/distant water context appears beyond the broader suburban/coastal hillside environment, not directly beyond the pool boundary.
-- The main bedroom is positioned to benefit from the rear/outlook side where plausible.
-- Secondary bedrooms and service spaces occupy the quieter side/front portions of the home.
-- Bathrooms, hallways and study/secondary living spaces must be consistent with the same building footprint.
-- The property is premium and spacious but remains a believable Sydney family residence, not a resort compound.
-
-### Canonical orientation
-
-- Street/front = uphill/arrival side
-- Rear/pool = downhill/outlook side
-- Broader water/coastal context = distant/partial beyond the suburban hillside outlook
-- Drone views must preserve this orientation
-
-### Continuity rule
-
-Every generated interior, exterior and aerial must be interpretable as belonging to this single site plan and orientation.
-
-## Physical continuity
-
-Across every image preserve:
-
-- Roof form.
-- Window positions.
-- Pool position/orientation.
-- Main building footprint.
-- Exterior materials.
-- Garden layout.
-- Site relationship.
-- General terrain.
-- Hillside orientation.
-- Water/outlook direction.
-- Relationship between the house and the broader coastal context.
-
-The house must never randomly gain or lose:
-
-- Wings.
-- Floors.
-- Pools.
-- Major windows.
-- Roof forms.
-- Outdoor structures.
-
-## Time of day
-
-Late afternoon / early golden hour.
-
-All images must feel as though they were captured during one professionally scheduled property shoot.
-
-## Colour grade
-
-Internal shorthand:
-
-**Golden-hour light, neutral professional real-estate grade.**
-
-Requirements:
-
-- Warm directional late-afternoon sunlight.
-- Neutral whites.
-- Realistic timber warmth.
-- Realistic green foliage.
-- No strong yellow cast.
-- No orange cinematic grade.
-- No cold blue grade.
-- Clean window views.
-- Controlled highlight retention.
-- Balanced real-estate-style dynamic range.
-- Professional architectural contrast.
-- Restrained saturation.
-- Premium high-end Australian property photography.
-
-The goal is warm light, not warm colour contamination.
+Every selected still, approved drone asset and motion derivative must be interpretable as the same property. Do not invent hidden geometry to connect views. If source views appear ambiguous or inconsistent, flag the specific images for review instead of generating a replacement house.
 
 ## Canonical lighting and colour grade
 
-This visual treatment applies to all DP001 stills and motion so every asset feels as though it was captured during one professionally scheduled real-estate shoot.
-
-### Time of day
-
-- Late afternoon / early golden hour.
-- The sun should be low enough to create directional warmth and depth, but not so low that the property becomes dark or heavily sunset-toned.
-- Exterior, interior and drone images should all feel consistent with the same approximate capture window.
-
-### Overall photographic character
-
-- High-end Australian professional real-estate photography.
-- Clean, polished, architectural and realistic.
-- Premium without becoming cinematic fantasy.
-- The property should feel professionally photographed for sale, not stylised for a movie or resort campaign.
-
-### White balance and colour
-
-- Neutral whites must remain neutral.
-- Warm sunlight is allowed and desirable, but the global image must not become yellow, orange or sepia.
-- Timber should retain natural warmth.
-- Stone and masonry should retain accurate colour.
-- Black framing should remain neutral black/graphite rather than warm brown.
-- Foliage should remain believable natural green.
-- Pool water should remain realistic and clean, not artificially cyan or oversaturated.
-- Sky colour should remain realistic for late afternoon.
-
-### Dynamic range
-
-- Retain exterior/window detail wherever physically plausible.
-- Interiors should remain bright and inviting without appearing artificially lifted.
-- Highlights should be controlled.
-- Shadows should retain enough detail to support premium property presentation.
-- Avoid obvious HDR halos or unnatural tone mapping.
-
-### Contrast and saturation
-
-- Moderate architectural contrast.
-- Slightly restrained saturation.
-- No heavy teal/orange treatment.
-- No dramatic cinematic LUT.
-- No crushed blacks.
-- No excessively flat low-contrast treatment.
-
-### Interior lighting
-
-- Interior practical lights may be on where appropriate, but should not introduce a strong tungsten/yellow cast.
-- Mixed lighting should be balanced toward a clean professional real-estate finish.
-- Window light should remain the dominant environmental light source where plausible.
-
-### Exterior/drone lighting
-
-- Drone media should preserve the same late-afternoon/golden-hour direction as the ground photography.
-- The same side of the house/site should receive consistent sunlight across all aerials.
-- Water/coastal context should reflect the same time of day and light direction.
-
-### Internal shorthand
-
 **Golden-hour light, neutral professional real-estate grade.**
 
-### Reject if
+Preserve the approved late-afternoon/golden-hour character and each source view's credible lighting direction. Assets should feel like one professionally scheduled property shoot.
 
-Reject any generated image or motion clip with:
+- Neutral whites, accurate brick and roof colours, natural timber warmth and believable green foliage.
+- Clean, realistic pool/spa water and sky colour; no artificial cyan or oversaturation.
+- Balanced interior/window detail, controlled highlights and useful shadow detail without HDR halos.
+- Moderate architectural contrast and restrained saturation; no crushed blacks or flat artificial lift.
+- Balanced practical lighting without strong tungsten contamination.
+- No global orange/yellow, sepia, teal/orange cinematic treatment or cold blue interior grade.
 
-- Excessive yellow/orange warmth.
-- Inconsistent time of day.
-- Mismatched sun direction.
-- Overly blue/cold interiors.
-- Unrealistic HDR.
-- Oversaturated pool or foliage.
-- Cinematic grading inconsistent with professional property photography.
+Do not relight or materially restyle the approved photography to make it match an earlier synthetic lighting assumption.
 
-## Camera language
+## Motion preservation
 
-Images should resemble professionally captured real-estate photography:
+Subtle image-to-video motion must retain the source image's architecture, layout, furniture, styling, planting, pool/spa geometry, outlook and grade throughout the clip. Prefer restrained movement that does not reveal unsupported surfaces or rooms. Reject bending walls, morphing materials, drifting fixtures, moving furniture, invented structures and implausible camera travel. Do not introduce people or new scene elements.
 
-- Level verticals.
-- Controlled wide-angle perspective.
-- Believable focal lengths.
-- Architectural composition.
-- Clean framing.
-- No exaggerated ultra-wide distortion.
-- No surreal depth or impossible geometry.
+## Superseded requirements
 
-## People
+The former synthetic architectural direction, fixed room programme, hypothetical site plan, five generated canonical anchors, prescribed 27-shot generation schedule and mandatory seven-image drone set are superseded wherever they conflict with the approved media strategy.
 
-No people in the canonical property-media set.
-
-## Purpose
-
-The media must be believable enough that a professional real-estate photographer could plausibly present it as a completed property job.
+The approved hero set replaces synthetic anchor generation. Existing approved stills are not to be replaced merely to satisfy the former brief. The 27-photo requirement is now a curated upload-state target drawn from the approved wider library, with approved drone media recorded separately.

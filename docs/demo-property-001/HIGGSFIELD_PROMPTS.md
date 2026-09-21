@@ -1,233 +1,115 @@
-# DP001 Higgsfield Prompt Architecture
+# DP001 Higgsfield Motion Production Protocol
 
-This document defines the prompt architecture and production protocol. It does not contain the 34 final generation prompts and does not authorise generation to begin.
+## Canonical basis and role
 
-Every property generation prompt must contain five layers.
+The approved existing photography in [SHOT_LIST.md](SHOT_LIST.md) defines DP001. The ten approved hero frames and four reserves replace the previous synthetic anchor-generation strategy. Preserve the image-led [Property Bible](PROPERTY_BIBLE.md).
 
-## 1. Identity layer
+Higgsfield's primary role is **subtle image-to-video motion on the selected approved hero frames**. Do not generate replacement still images unless a genuine later need is identified and explicitly approved. Do not regenerate the old five anchors, complete a synthetic P01–P27 schedule or manufacture a seven-image drone set.
 
-- Exact same approved DP001 residence.
-- Northern Beaches, NSW.
-- Preserve canonical architecture/materials/site.
+This document defines the protocol; it does not submit jobs or authorise paid motion generation by itself.
 
-## 2. Shot layer
+## Five-layer prompt architecture
 
-- Precise Pxx/Dxx shot requirement.
-- Camera position.
-- Direction.
-- Composition.
+### 1. Identity layer
 
-## 3. Photography layer
+- Exact approved DP001 source filename and image reference.
+- Same premium Australian suburban family residence and visible scene.
+- Source imagery defines the warm brick, dark tiled roof, interiors, styling, landscape and pool/spa area.
 
-- Professional Australian real-estate photography.
-- Realistic architectural lens behaviour.
-- Level verticals.
-- Premium but believable composition.
+### 2. Shot and motion layer
 
-## 4. Light/grade layer
+- State the chosen hero frame, intended editorial role and output aspect ratio.
+- Specify one restrained camera movement compatible with the source, or keep the camera stable when movement would require invented geometry.
+- Preserve composition and spatial relationships; do not request a new room, reverse angle or unseen view from a single image.
+- Record duration and model configuration before estimating/submitting.
 
-- Late-afternoon golden-hour directional light.
-- Neutral real-estate colour grade.
-- Neutral whites.
-- Realistic green foliage.
-- No heavy yellow/orange cast.
+### 3. Photography layer
 
-## 5. Continuity constraints
+- Premium Australian professional real-estate presentation.
+- Preserve source perspective, architecture, framing, material detail and sharpness.
+- No exaggerated wide-angle distortion, dramatic orbit or fantasy cinematic treatment.
 
-Preserve:
+### 4. Light/grade layer
 
-- Roof.
-- Pool.
-- Windows.
-- Materials.
-- Landscape.
-- Building footprint.
-- Site orientation.
+- Preserve the source's late-afternoon / early golden-hour character and stable light direction.
+- Neutral professional real-estate grade; natural material and foliage colours.
+- No excessive yellow/orange, cold blue interiors, HDR halos or oversaturated pool water.
 
-## Generation protocol
+### 5. Continuity constraints
 
-1. Estimate cost before every new generation configuration.
-2. Generate only five canonical anchors first.
-3. Do not generate the remaining set until anchors are explicitly approved.
-4. Generate remaining media in small reviewable batches.
-5. Use approved anchors as references wherever supported.
-6. Do not automatically regenerate failures without confirming billing state.
-7. **Hard DP001 Higgsfield ceiling: 350 credits.**
-
-## Canonical anchor order
-
-1. P01 — Front exterior hero
-2. P04 — Main living hero toward pool
-3. P07 — Kitchen hero
-4. P23 — Rear exterior hero
-5. D01 — Low oblique canonical aerial
+- Preserve architecture, roof tiles and roof geometry, openings, layout, furniture, fixtures and styling.
+- Preserve planting, boundaries, pool/spa shape and position, terrain and the visible outlook.
+- No morphing, structural invention, introduced people, new objects or fabricated off-frame space.
 
 ## Reference hierarchy
 
-1. Canonical anchors are the highest-priority visual references.
-2. Once approved, later images should use the most relevant approved anchor/room image as a reference where the selected Higgsfield model supports it.
-3. Drone generations should use the canonical aerial plus exterior anchors to preserve roof, pool, site and hillside geometry. For the first D01 generation, use the approved exterior anchors; once D01 is approved, use it alongside those anchors for D02–D07 wherever supported.
-4. Do not use rejected generations as references.
-5. Do not let a later generation override locked property characteristics.
+1. The approved existing image set is the source of truth; the specific hero frame is the primary visual reference for its motion derivative.
+2. Use relevant approved same-property views as supplementary references only where the selected model supports them and they clarify the same scene.
+3. Approved drone media defines aerial geometry and context. Do not infer drone classification or a seven-asset count from filenames.
+4. Approved reserves may replace a hero for a defined production need; preserve the original source mapping and document the choice.
+5. Never use rejected motion outputs or rejected generations as references. A later generation must not override approved stills or locked property identity.
 
-The locked [Property Bible](PROPERTY_BIBLE.md) governs all visual references. An anchor that contradicts it must not be approved. The [Shot List](SHOT_LIST.md) defines coverage and IDs; the [QA Checklist](QA_CHECKLIST.md) defines asset review; the [Walkthrough Storyboard](WALKTHROUGH_STORYBOARD.md) defines presentation and output boundaries.
+## Prompt consistency and negative constraints
 
-## Prompt consistency rules
+Preserve the exact residence, visible layout, warm contemporary/classic styling, material palette, elevated suburban setting, plausible partial water/bush outlook and neutral golden-hour grade shown by the approved sources.
 
-Every generation prompt must preserve:
+Avoid invented direct waterfront, beach beyond the boundary, foreign suburban cues, resort exaggeration, altered roofs/pools/windows, new wings/floors, shifted furniture, morphing landscape, people and obvious AI artefacts. Do not enforce the former hypothetical uphill-front/downhill-rear plan, Colorbond architecture or fixed room programme where the approved sources differ.
 
-- Exact same DP001 residence.
-- Suburban coastal hillside setting.
-- Partial/distant water context only.
-- Late-afternoon / early golden-hour timing.
-- Neutral professional real-estate grade.
-- Canonical architecture.
-- Canonical materials.
-- Canonical pool position.
-- Canonical site orientation.
-- Consistent landscaping.
+## Production sequence
 
-Apply the locked house logic: street/front is uphill/arrival; rear/pool is downhill/outlook. Living, dining and kitchen form one connected rear-facing area, with the covered entertaining area immediately outside and the pool behind the house. Water remains beyond the broader suburban hillside, with one consistent direction and plausible distance. Preserve the same sunlight direction across stills and motion.
+### Stage 1 — Map approved source media
 
-**Golden-hour light, neutral professional real-estate grade.**
+Resolve exact filenames/paths from the approved inventory. Select 27 distinct professional photos for the upload state and identify approved drone media separately. Record the ten hero sources and four reserves without counting duplicate copies twice. Source approval is already established by the user; do not recreate these images to obtain it again.
 
-## Negative constraints
+### Stage 2 — Plan the reel and motion configuration
 
-Avoid:
+Curate an edit from the approved hero set and approved drone media. Not every hero or upload image must appear. Specify per-clip reference, motion intent, duration, aspect ratio, model and credit estimate. Prefer a deterministic treatment where it achieves the required result; do not disguise a static slideshow as a finished motion reel.
 
-- Direct waterfront.
-- Beach immediately beyond property.
-- American suburban cues.
-- Tropical resort aesthetic.
-- Excessive luxury/resort exaggeration.
-- Orange/yellow cinematic grade.
-- Overprocessed HDR.
-- Warped architecture.
-- Changing roof forms.
-- Changing pool geometry.
-- Changing window positions.
-- Invented wings/floors.
-- People.
-- Obvious AI artefacts.
+### Stage 3 — Motion pilot and review
 
-## Generation sequence
+Obtain explicit user approval to begin paid motion. Generate one or a small number of clips, then stop for review against the exact source and [QA_CHECKLIST.md](QA_CHECKLIST.md). Reject morphing or structural invention. A failed clip is not permission to replace an approved still.
 
-### Stage 1 — Canonical anchors
+### Stage 4 — Small approved motion batches
 
-Generate only, in the existing canonical anchor order:
+Proceed only after the prior required clip/batch is APPROVED. Reuse a reliable model/reference approach. Use approved reserves for defined problems rather than generating arbitrary alternatives. Log and review each output before advancing.
 
-1. P01 — Front exterior hero
-2. P04 — Main living hero toward pool
-3. P07 — Kitchen hero
-4. P23 — Rear exterior hero
-5. D01 — Low oblique canonical aerial
+### Stage 5 — Curate, finish and review
 
-Review each anchor before using it as a reference for the next required asset. Stop for review. All five anchors must be explicitly APPROVED before Stage 2 begins.
+Create A1, the 16:9 Mixed Media Reel, and A2, a 9:16 derivative from the same approved media. Include approved drone material where it supports the edit. Review the full sequence for property identity, styling, grade and believable motion. A2 does not validate landscape-video-to-vertical-video reframing.
 
-### Stage 2 — Interior photography
+The former prerequisite of generating and approving 34 synthetic source images is superseded. Approval of selected existing sources and review of every new motion derivative remain required.
 
-Generate P05–P19 as appropriate in small reviewable batches. P07 is already an approved anchor and must not be regenerated merely to complete this range.
+## Approval and logging
 
-Remaining IDs: P05, P06, P08, P09, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19.
+For new derivatives use **GENERATED → REVIEW → APPROVED → MASTER → WEB → LIVE**. Existing approved stills retain their approval and provenance; they need not be generated again. Failed derivatives remain in REVIEW with a reason recorded. Approval of a still does not approve its motion derivative or website release.
 
-Stop between batches for continuity review. The prior required batch must be APPROVED before the next batch begins.
+Record every generation's asset ID, exact source filename/path, model, resolution, prompt version and full prompt, reference assets, estimated credits, actual credits if known, status and rejection reason where relevant. Also retain duration/aspect ratio, candidate ID and provider job ID for reconciliation. Record unknown billing as unknown, never zero; retain failed/timed-out attempts and unresolved reservations.
 
-### Stage 3 — Exterior photography
+## Walkthrough boundary
 
-Generate the remaining exterior/pool/garden photography in small reviewable batches.
+[WALKTHROUGH_STORYBOARD.md](WALKTHROUGH_STORYBOARD.md) defines Asset B, the separate React/CSS homepage narrative that presents A1. Higgsfield does not generate Caplist logos, UI text, buttons, cards, progress bars or software interfaces.
 
-Remaining IDs: P02, P03, P20, P21, P22, P24, P25, P26, P27. P01 and P23 are already approved anchors.
-
-Stop for continuity review, including uphill arrival, downhill rear/pool, and distant/partial water relationships.
-
-### Stage 4 — Drone media
-
-Generate D02–D07 only after D01 is approved, following approval of the prior required stage/batch. Use small reviewable batches and preserve the approved aerial and exterior geometry.
-
-### Stage 5 — Final continuity QA
-
-Review the entire set together against the Property Bible, Shot List and QA Checklist, including geometry, room relationships, hillside orientation, water direction/distance, lighting and grade.
-
-Confirm exactly 27 professional photos (P01–P27) and seven Drone media images (D01–D07): **34 approved source images**, with one selected approved image per ID. Alternatives do not increase the required delivery count.
-
-No motion generation begins until all 34 source images are approved. Passing this gate does not itself authorise motion generation or website integration.
-
-## Cost-control protocol
-
-- Estimate cost before every new generation configuration.
-- Record the estimate before generation.
-- Maintain cumulative credit usage across the entire DP001 Higgsfield project, including billed failures, alternatives and subsequent motion work.
-- Do not automatically retry failed/timed-out jobs until billing status is confirmed.
-- Do not exceed 350 credits without explicit user approval.
-- Prioritise consistency over generating many alternatives.
-- Generate one or a small number of candidates when possible, review, then continue.
-
-Before each submission, check confirmed cumulative usage plus reserved costs for unresolved jobs plus the proposed generation estimate against the 350-credit ceiling. Reconcile estimates with actual billing when known. An unknown charge is not zero; keep it reserved and resolve the billing state before retrying or assuming those credits are available. The ceiling is a maximum, not a target or permission to spend without the required approval gates.
-
-## Model-selection principle
-
-- Use the lowest-cost Higgsfield model that can meet the quality/consistency requirement for that specific task.
-- Use a higher-quality model for canonical anchors if it materially improves architectural consistency.
-- Reuse approved references aggressively to reduce drift.
-- Do not use different models merely for variety.
-- Model choice will be specified before each generation step.
-
-Check the selected model's reference support and estimate the actual proposed configuration before submission; this document does not assume current model availability or prices.
-
-## Approval gate
-
-Generation may proceed only when the prior required asset/batch is marked **APPROVED**.
-
-Status flow:
-
-**GENERATED → REVIEW → APPROVED → MASTER → WEB → LIVE**
-
-The first anchor requires explicit authorisation to begin production; it has no prior generated asset. Subsequent work follows the dependencies and review stops above. Approval must be explicitly recorded, not inferred from a successful generation or elapsed time.
-
-Apply the QA Checklist to every image/clip. An asset rejected during review remains in REVIEW with its rejection reason recorded; it must not be used as a reference or advance downstream. Only APPROVED assets may enter the master reel or website. MASTER, WEB and LIVE retain the approval requirement.
-
-## Logging
-
-Every generation must record:
-
-- Asset ID.
-- Model.
-- Resolution.
-- Prompt version.
-- Reference assets.
-- Estimated credits.
-- Actual credits if known.
-- Status.
-- Rejection reason where relevant.
-
-Record the proposed model, resolution, prompt version, references and estimate before submission. Retain the exact prompt text, candidate/version identifier and provider job ID when available so results and billing can be reconciled. Record unknown actual credits as unknown and update them when confirmed; retain failed/timed-out attempt records and their billing state separately from the asset approval status. Update cumulative confirmed usage and unresolved reservations after each attempt. Record explicit approval against the selected candidate.
-
-## Walkthrough and motion boundary
-
-The source job is **27 professional photos · Drone media**. Do not introduce professional property video as an input for this walkthrough.
-
-After all 34 source images are approved and motion work is authorised, curate from the complete job for A1, the 16:9 Mixed Media Reel, and A2, a 9:16 derivative from the same DP001 source media. Not every source image needs to appear. A2 does not validate landscape-video-to-vertical-video reframing.
-
-Higgsfield supplies property media and selected motion only. Caplist logo, UI text, buttons, product cards, progress bars and the software interface remain React/CSS work under the approved storyboard. The current homepage placeholder remains unchanged until separately authorised integration.
+Use **27 professional photos · Drone media** only with the mapped 27-photo subset and separately approved drone assets. Do not claim seven drone images or professional property video as an input for this walkthrough. Do not modify the current homepage placeholder during documentation or media preparation.
 
 ## DP001 credit budget and stop rules
 
 ### Project budget
 
-- Planned Higgsfield allocation: one Pro month with approximately 600 credits available.
+- Subscription: Pro. Original planning allocation: approximately 600 credits.
+- Verified controlled-production baseline: **575.5 credits on 2026-09-21**, as recorded in the local control files. Earlier image generation preceded this balance verification; do not treat the original allocation as the current balance.
 - DP001 hard ceiling: **350 credits**.
 - Target operating range: **200–270 credits**.
-- Desired reserve after DP001: **250+ credits**.
+- Desired reserve after DP001: **250+ credits where practical**.
 
 ### Budget allocation
 
-Use these planning bands:
+The existing planning bands remain caps, not generation tasks. The three still-generation allocations are dormant under the approved-image strategy and may be used only for a genuinely required, explicitly approved exception; no automatic transfer of unused still credits to motion is authorised.
 
 | Phase | Target credits | Hard ceiling credits |
 | --- | --- | --- |
-| Canonical anchors | 25–40 | 50 |
-| Remaining professional photography | 35–50 | 65 |
-| Remaining Drone media | 15–30 | 35 |
+| Former canonical anchors (dormant) | 25–40 | 50 |
+| Replacement/additional photography (exception only) | 35–50 | 65 |
+| Replacement/additional drone media (exception only) | 15–30 | 35 |
 | Motion generation | 100–150 | 180 |
 
 Regeneration/fix reserve: **up to 70 credits**.
@@ -267,15 +149,15 @@ Stop generation immediately and request user review if:
 
 - Start with the lowest-cost model likely to meet the quality requirement.
 - Escalate only when a specific quality or consistency failure justifies it.
-- Canonical anchor quality takes priority over saving a small number of credits.
+- Faithful preservation of the approved hero image takes priority over saving a small number of credits; a model failure does not authorise replacement of the canonical still.
 - Once a model/reference combination proves reliable for a batch, keep it consistent rather than changing models.
 
 ### Human approval gates
 
 Require explicit user approval before:
 
-- Generating beyond the five canonical anchors.
-- Generating Drone media beyond D01.
+- Generating any replacement/additional still image or drone image to solve a defined, genuine need.
+- Expanding the approved source set or replacing a selected hero with a newly generated source.
 - Beginning motion generation.
 - Exceeding any phase hard ceiling.
 - Exceeding the overall 350-credit ceiling.
@@ -286,4 +168,4 @@ The local file:
 
 `/Users/tristantodd/Movies/Caplist-Studio-Production/DP001/00_ADMIN/GENERATION_LOG.csv`
 
-is the operational credit ledger. Every paid generation must be logged there using the fields and billing reconciliation requirements in the Logging section.
+is the operational credit ledger. Every paid generation must be logged there using the fields and billing reconciliation requirements in the Approval and logging section.

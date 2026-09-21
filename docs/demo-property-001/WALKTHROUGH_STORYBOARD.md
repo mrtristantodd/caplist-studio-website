@@ -10,6 +10,12 @@ The walkthrough is a directed product showcase, not a fake interactive demo.
 
 **27 professional photos · Drone media**
 
+Use the locked mapping in [SHOT_LIST.md](SHOT_LIST.md): exactly **27 approved professional photos** and **3 approved Drone media assets**, totalling **30 approved standalone source assets**. D01–D03 are not included in the 27-photo count. Exclude the four listed boards/collages and ignore duplicate copies. The homepage must refer generically to **Drone media**, not claim seven drone assets.
+
+The ten current hero/reel candidates comprise D01 (elevated front/property context), D03 (top-down property/pool aerial), and the eight mapped photography scenes: front exterior, outdoor/pool, alternate outdoor/pool, kitchen, living, main bedroom, bathroom and transition/hall. Retain the four approved reserves. D02 supplies rear/pool aerial context in the upload library and is not part of the ten-asset hero set. Exact filenames and classifications are locked in the inventory.
+
+The final Mixed Media Reel should appear intelligently curated from the complete property job rather than simply animating every supplied asset. Neither every source nor every hero candidate must appear in the finished edit.
+
 Do not show professional property video as an input in this specific walkthrough.
 
 Video remains a Caplist capability elsewhere on the website.
@@ -21,7 +27,7 @@ Finished Caplist media products:
 - **A1 — 16:9 Mixed Media Reel**
 - **A2 — 9:16 vertical derivative created from the same DP001 source media**
 
-A1 is used inside the homepage walkthrough.
+A1 is the actual finished media product used inside the homepage walkthrough. Build it from the approved hero sources, approved drone media and individually approved subtle motion derivatives. It remains a separate asset from the surrounding software narrative.
 
 A2 demonstrates that the same property capture can support another finished format/product.
 
@@ -31,7 +37,7 @@ This does not claim to validate landscape-video-to-vertical-video reframing.
 
 Homepage Caplist walkthrough built in React/CSS using the approved site UI.
 
-Higgsfield generates property media and selected motion only.
+Higgsfield primarily creates subtle image-to-video motion from the approved hero frames. Do not generate replacement stills unless a genuine need is separately approved. Asset B remains the React/CSS upload/analysis/create narrative; it is not the Mixed Media Reel itself.
 
 Higgsfield does not render:
 
@@ -49,9 +55,11 @@ Target duration: approximately 4 seconds.
 Show:
 
 - Northern Beaches, NSW
-- Populated property-media thumbnails from DP001
+- Representative thumbnails from the 27 mapped approved photos and D01–D03 approved drone assets
 - 27 professional photos
 - Drone media
+
+The upload UI does not need to display all 30 assets simultaneously. It may display a representative thumbnail grid while the text **27 professional photos · Drone media** communicates the full source-media inventory.
 
 ## Scene 02 — Processing
 
