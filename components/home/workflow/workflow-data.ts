@@ -17,7 +17,7 @@ export const workflowDurations: Record<WorkflowState, number> = {
 };
 
 export const workflowReel = {
-  src: "/media/dp001/reel-premium-mixed-final.mp4",
+  src: "/media/dp001/reel-premium-mixed.mp4",
   poster: "/media/dp001/drone.webp",
   previewLabel: "Final reel · 16:9",
   mediaLabel: "H.264 MP4",

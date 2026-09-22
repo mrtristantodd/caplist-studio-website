@@ -44,6 +44,20 @@ The selected product is now the approved **Premium Mixed Media Reel**. Ready pla
 
 `workflowReel` in `components/home/workflow/workflow-data.ts` contains the final source, poster, format, duration and media metadata. The Create treatment now describes selection, sequencing, motion treatment, rendering and quality control, while the source stack remains anchored.
 
+### Replacing the reel after launch
+
+The website uses the stable asset path `public/media/dp001/reel-premium-mixed.mp4`. Production exports may keep their revisioned filenames; the workflow component does not depend on those names.
+
+1. Place the newly approved production reel in the DP001 production folder.
+2. Generate a browser-safe web derivative that preserves the approved aspect ratio and edit.
+3. Replace `public/media/dp001/reel-premium-mixed.mp4` with that derivative.
+4. Update the poster, duration, format or media metadata in the central `workflowReel` record only when those values change.
+5. Run video playback QA, responsive lifecycle QA and the production build.
+6. Commit the replacement and any required metadata update.
+7. Deploy through the normal release process.
+
+No workflow component, motion timing or layout change is required. A future object-storage or CDN migration only requires changing `workflowReel.src` to the new public URL.
+
 ## Evidence and limits
 
 - [Lifecycle and responsive results](workflow-motion-qa.json): all eight states, complete loop, viewport pause/resume, manual pause, reduced motion, pinned-state routes, tablet and mobile bounds.

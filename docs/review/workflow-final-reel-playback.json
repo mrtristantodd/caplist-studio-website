@@ -1,16 +1,16 @@
 {
   "initialRequests": 0,
-  "readyAtMs": 11475,
+  "readyAtMs": 11383,
   "requests": [
     {
-      "elapsedMs": 11493,
+      "elapsedMs": 11400,
       "state": "ready",
-      "url": "http://127.0.0.1:4322/media/dp001/reel-premium-mixed-final.mp4",
+      "url": "http://127.0.0.1:4322/media/dp001/reel-premium-mixed.mp4",
       "range": "bytes=0-"
     }
   ],
   "metadata": {
-    "currentTime": 3.018507,
+    "currentTime": 3.027571,
     "duration": 23.4,
     "videoWidth": 1280,
     "videoHeight": 720,
@@ -19,9 +19,9 @@
     "controls": false,
     "readyState": 4
   },
-  "playbackAdvancedSeconds": 1.2140980000000003,
+  "playbackAdvancedSeconds": 1.2131689999999997,
   "playbackAfterWait": {
-    "currentTime": 4.232605,
+    "currentTime": 4.24074,
     "paused": false,
     "readyState": 4
   },
