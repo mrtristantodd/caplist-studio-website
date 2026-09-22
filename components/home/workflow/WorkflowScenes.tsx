@@ -125,7 +125,7 @@ function UnderstandScene() {
           <p key={item}><CheckCircle2 size={15} />{item}</p>
         ))}
         <div className={styles.analysisTags}>
-          <span>Kitchen</span><span>Exterior</span><span>Pool</span><span>4K</span><span>Vertical-safe</span>
+          <span>Kitchen</span><span>Exterior</span><span>Pool</span><span>4K</span><span>Suitable for vertical</span>
         </div>
       </aside>
     </div>
@@ -212,7 +212,7 @@ function ReadyScene() {
         >
           <source src="/media/dp001/reel-v03.mp4" type="video/mp4" />
         </video>
-        <span className={styles.readyBadge}><Check size={13} />Ready</span>
+        <span className={styles.readyBadge}>Demo preview · 16:9</span>
       </div>
       <aside className={styles.outputDetails}>
         <span className={styles.outputIcon}><Play size={19} /></span>
@@ -220,9 +220,11 @@ function ReadyScene() {
         <strong>9 Coastview Drive</strong>
         <dl>
           <div><dt>Duration</dt><dd>23 sec</dd></div>
-          <div><dt>Output</dt><dd>1080 × 1920</dd></div>
+          <div><dt>Target output</dt><dd>9:16 vertical</dd></div>
+          <div><dt>Preview media</dt><dd>Approved V03 · 16:9</dd></div>
           <div><dt>Source</dt><dd>Existing property media</dd></div>
         </dl>
+        <small className={styles.placeholderNote}>Temporary demo media. Final vertical reel pending.</small>
         <div className={styles.outputActions}>
           <button type="button"><Play size={15} />Preview</button>
           <a href="/media/dp001/reel-v03.mp4" download><Download size={15} />Download</a>
@@ -244,7 +246,10 @@ function OutcomeScene() {
         </div>
         <strong>One media set</strong>
       </div>
-      <ArrowRight className={styles.outcomeArrow} size={25} />
+      <div className={styles.outcomeBridge} aria-hidden="true">
+        <i /><i /><i />
+        <ArrowRight className={styles.outcomeArrow} size={25} />
+      </div>
       <div className={styles.outcomeProducts}>
         <span>Multiple professional outputs</span>
         <div>

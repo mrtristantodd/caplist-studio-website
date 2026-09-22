@@ -1,10 +1,16 @@
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
 import { WorkflowScene } from "./WorkflowScenes";
-import { workflowStateDetails, type WorkflowState } from "./workflow-data";
+import {
+  workflowPhaseByState,
+  workflowPhases,
+  workflowStateDetails,
+  type WorkflowState,
+} from "./workflow-data";
 import styles from "./workflow.module.css";
 
 export function WorkflowShell({ state, review = false }: { state: WorkflowState; review?: boolean }) {
   const details = workflowStateDetails[state];
+  const activePhase = workflowPhaseByState[state];
   return (
     <section className={`${styles.shell} ${review ? styles.reviewShell : ""}`} data-workflow-state={state}>
       <header className={styles.shellHeader}>
@@ -23,7 +29,14 @@ export function WorkflowShell({ state, review = false }: { state: WorkflowState;
       </div>
       <footer className={styles.shellFooter}>
         <span>Professional input</span>
-        <div><i className={styles.activeStep} /><i /><i /><i /></div>
+        <div className={styles.phaseProgress} aria-label={`Workflow phase: ${activePhase}`}>
+          <small>{activePhase}</small>
+          <span aria-hidden="true">
+            {workflowPhases.map((phase) => (
+              <i key={phase} className={phase === activePhase ? styles.activeStep : ""} />
+            ))}
+          </span>
+        </div>
         <strong>Professional output</strong>
       </footer>
     </section>

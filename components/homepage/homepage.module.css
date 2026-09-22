@@ -875,6 +875,7 @@
 }
 @media (max-width: 640px) {
   .hero {
+    gap: 26px;
     padding-top: 45px;
   }
   .hero h1 {

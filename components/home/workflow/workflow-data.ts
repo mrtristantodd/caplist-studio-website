@@ -11,6 +11,19 @@ export const workflowStates = [
 
 export type WorkflowState = (typeof workflowStates)[number];
 
+export const workflowPhases = ["Upload", "Understand", "Create", "Ready"] as const;
+
+export const workflowPhaseByState: Record<WorkflowState, (typeof workflowPhases)[number]> = {
+  upload: "Upload",
+  uploading: "Upload",
+  understand: "Understand",
+  unlock: "Understand",
+  choose: "Create",
+  create: "Create",
+  ready: "Ready",
+  outcome: "Ready",
+};
+
 export const workflowStateDetails: Record<
   WorkflowState,
   { step: string; label: string; headline: string }
@@ -69,8 +82,8 @@ export const propertyMedia = [
 export const unlockedProducts = [
   { name: "Photo Reel", format: "9:16", source: "Photography" },
   { name: "Vertical Video Reel", format: "9:16", source: "Photo + video" },
-  { name: "Property Teaser", format: "16:9", source: "Video + drone" },
-  { name: "Alternative / Feature Reel", format: "16:9", source: "Complete job" },
+  { name: "Property Teaser", format: "9:16", source: "Video + drone" },
+  { name: "Alternative / Feature Reel", format: "9:16", source: "Complete job" },
 ] as const;
 
 export function isWorkflowState(value: string | null): value is WorkflowState {

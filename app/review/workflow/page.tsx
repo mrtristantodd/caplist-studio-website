@@ -17,7 +17,7 @@ export default function WorkflowReviewPage() {
           Homepage workflow hero
         </h1>
         <p style={{ maxWidth: 650, marginTop: 18, color: "#566170", lineHeight: 1.6 }}>
-          Pass 1 static states for hierarchy, responsive composition and product-language review.
+          Pass 1.1 static states for product accuracy, responsive composition and visual-system review.
         </p>
       </header>
       <HeroWorkflowDemo reviewAll />

@@ -138,12 +138,28 @@
   text-align: right;
 }
 
-.shellFooter > div {
+.phaseProgress {
+  min-width: 88px;
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+}
+
+.phaseProgress small {
+  color: #526171;
+  font-size: 7px;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.phaseProgress > span {
   display: flex;
   gap: 5px;
 }
 
-.shellFooter i {
+.phaseProgress i {
   width: 18px;
   height: 2px;
   display: block;
@@ -754,6 +770,13 @@
   border-color: #286ce3;
 }
 
+.placeholderNote {
+  margin-top: 11px;
+  color: #778493;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
 .outcomeLayout {
   width: 100%;
   display: grid;
@@ -805,11 +828,47 @@
   font-size: 12px;
 }
 
+.outcomeBridge {
+  position: relative;
+  width: 48px;
+  height: 116px;
+  display: grid;
+  place-items: center;
+}
+
+.outcomeBridge > i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: linear-gradient(90deg, #9ebfff, #2f7bff);
+  transform-origin: left center;
+}
+
+.outcomeBridge > i:first-child {
+  transform: rotate(-18deg);
+}
+
+.outcomeBridge > i:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.outcomeBridge > i:nth-child(3) {
+  transform: rotate(18deg);
+}
+
 .outcomeArrow {
-  color: var(--workflow-blue);
+  position: relative;
+  z-index: 1;
+  padding: 4px;
+  color: #fff;
+  background: var(--workflow-blue);
+  border-radius: 50%;
 }
 
 .outcomeProducts > div {
+  position: relative;
   margin-top: 14px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -825,6 +884,11 @@
   color: #fff;
   background: #111820;
   border-radius: 9px;
+}
+
+.outcomeProducts article:nth-child(2),
+.outcomeProducts article:nth-child(4) {
+  transform: translateX(5px);
 }
 
 .outcomeProducts article svg {
@@ -945,6 +1009,14 @@
 
   .shellFooter {
     padding: 11px 13px;
+  }
+
+  .phaseProgress {
+    min-width: 76px;
+  }
+
+  .phaseProgress i {
+    width: 15px;
   }
 
   .uploadLayout,
@@ -1091,12 +1163,22 @@
   }
 
   .outcomeLayout {
-    grid-template-columns: 0.78fr auto 1fr;
-    gap: 10px;
+    grid-template-columns: 0.78fr 28px 1fr;
+    gap: 7px;
+  }
+
+  .outcomeBridge {
+    width: 28px;
+    height: 98px;
   }
 
   .outcomeStack {
     height: 135px;
+  }
+
+  .outcomeStack img {
+    height: 82px;
+    object-fit: cover;
   }
 
   .outcomeProducts > div {
@@ -1107,10 +1189,6 @@
     min-height: 43px;
     flex-direction: row;
     align-items: center;
-  }
-
-  .outcomeProducts article:nth-child(n + 4) {
-    display: none;
   }
 
   .outcomeProducts > p {
