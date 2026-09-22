@@ -1,0 +1,703 @@
+{
+  "checks": [
+    {
+      "name": "desktop-cycle",
+      "states": [
+        "upload",
+        "uploading",
+        "understand",
+        "unlock",
+        "choose",
+        "create",
+        "ready",
+        "outcome"
+      ],
+      "heights": [
+        597
+      ],
+      "maxWidth": 1440,
+      "video": [
+        {
+          "paused": false,
+          "time": 0,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.061561,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.141615,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.220653,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.300939,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.380613,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.461426,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.540923,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.622079,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.703357,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.782785,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.861582,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 0.94074,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.021739,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.102743,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.182945,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.261574,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.342882,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.422881,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.502658,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.580684,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.660794,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.741205,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.822295,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.900877,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 1.981892,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.061417,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.140803,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.220969,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.300845,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.381538,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.461421,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.542313,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.621576,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.700885,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.78264,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.861459,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 2.941395,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.021437,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.10128,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.181416,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.262431,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.342754,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.42036,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.50075,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.581468,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.662208,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.742612,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.821356,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.901215,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 3.98124,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.061011,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.143068,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.220975,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.300862,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.381702,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.461892,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.542912,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.621781,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.701375,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.781711,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.862792,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 4.941406,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 5.021302,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 5.10084,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 5.182383,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 5.261464,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 5.341611,
+          "muted": true,
+          "controls": false
+        },
+        {
+          "paused": false,
+          "time": 5.421767,
+          "muted": true,
+          "controls": false
+        }
+      ]
+    },
+    {
+      "name": "offscreen-ready-pause",
+      "paused": {
+        "state": "ready",
+        "running": "false",
+        "videoTime": 3.770755,
+        "videoPaused": true,
+        "animations": 0
+      },
+      "held": {
+        "state": "ready",
+        "videoTime": 3.770755
+      },
+      "resumed": {
+        "state": "ready",
+        "running": "true",
+        "videoTime": 4.452537,
+        "videoPaused": false
+      }
+    },
+    {
+      "name": "manual-pause",
+      "before": "ready",
+      "after": "ready",
+      "running": "false"
+    },
+    {
+      "name": "manual-resume",
+      "running": "true"
+    },
+    {
+      "name": "responsive-390",
+      "sizes": [
+        {
+          "state": "upload",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "uploading",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "understand",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "unlock",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "choose",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "create",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "ready",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        },
+        {
+          "state": "outcome",
+          "height": 810,
+          "scroll": 390,
+          "viewport": 390,
+          "clipped": 0
+        }
+      ]
+    },
+    {
+      "name": "responsive-768",
+      "sizes": [
+        {
+          "state": "upload",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "uploading",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "understand",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "unlock",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "choose",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "create",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "ready",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        },
+        {
+          "state": "outcome",
+          "height": 597,
+          "scroll": 768,
+          "viewport": 768,
+          "clipped": 0
+        }
+      ]
+    },
+    {
+      "name": "responsive-1024",
+      "sizes": [
+        {
+          "state": "upload",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "uploading",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "understand",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "unlock",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "choose",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "create",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "ready",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        },
+        {
+          "state": "outcome",
+          "height": 597,
+          "scroll": 1024,
+          "viewport": 1024,
+          "clipped": 0
+        }
+      ]
+    },
+    {
+      "name": "reduced-motion",
+      "state": "unlock",
+      "mode": "static",
+      "animations": 0,
+      "videoRequests": 0
+    },
+    {
+      "name": "pinned-upload",
+      "state": "upload",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-uploading",
+      "state": "uploading",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-understand",
+      "state": "understand",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-unlock",
+      "state": "unlock",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-choose",
+      "state": "choose",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-create",
+      "state": "create",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-ready",
+      "state": "ready",
+      "mode": "static"
+    },
+    {
+      "name": "pinned-outcome",
+      "state": "outcome",
+      "mode": "static"
+    },
+    {
+      "name": "review-route",
+      "count": 8
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

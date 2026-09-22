@@ -11,6 +11,23 @@ export const workflowStates = [
 
 export type WorkflowState = (typeof workflowStates)[number];
 
+export const workflowDurations: Record<WorkflowState, number> = {
+  upload: 1200, uploading: 1800, understand: 2200, unlock: 1700,
+  choose: 1200, create: 3000, ready: 5500, outcome: 2000,
+};
+
+// Replace this record when the approved vertical export is available.
+export const workflowReel = {
+  src: "/media/dp001/reel-v03.mp4",
+  poster: "/media/dp001/drone.webp",
+  previewLabel: "Demo preview · 16:9",
+  mediaLabel: "Approved V03 · 16:9",
+  targetFormat: "9:16 vertical",
+  durationLabel: "23 sec",
+  note: "Temporary demo media. Final vertical reel pending.",
+  excerptStart: 3,
+};
+
 export const workflowPhases = ["Upload", "Understand", "Create", "Ready"] as const;
 
 export const workflowPhaseByState: Record<WorkflowState, (typeof workflowPhases)[number]> = {

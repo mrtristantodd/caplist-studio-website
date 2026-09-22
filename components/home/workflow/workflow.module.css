@@ -146,6 +146,8 @@
 }
 
 .phaseProgress small {
+  width: 100%;
+  text-align: center;
   color: #526171;
   font-size: 7px;
   font-weight: 650;
@@ -220,7 +222,8 @@
 }
 
 .dropzone button,
-.choiceSummary button {
+.choiceSummary button,
+.demoButton {
   min-height: 40px;
   margin-top: 20px;
   padding: 10px 16px;
@@ -613,6 +616,13 @@
 .choiceSummary button {
   display: inline-flex;
   align-items: center;
+  gap: 16px;
+}
+
+.demoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -1228,6 +1238,61 @@
   .processingList p:nth-child(n + 5) {
     display: none;
   }
+}
+
+.motionShell .sceneHeader { height: 89px; }
+.motionShell .sceneBody { height: 390px; min-height: 390px; }
+.motionShell .sceneBody > div { min-height: 0; }
+.motionShell .thumbnailGrid figure { min-height: 0; }
+.motionShell .thumbnailGrid img { position: absolute; inset: 0; }
+.motionShell .reelPreview video { position: absolute; inset: 0; object-fit: contain; }
+.motionShell .outcomeStack img { height: calc(100% - 46px); }
+.motionShell .progressMeta span:last-child { width: 90px; text-align: right; font-variant-numeric: tabular-nums; }
+
+.incomingMedia { display: flex; justify-content: center; gap: 6px; height: 46px; }
+.incomingMedia img { width: 40px; height: 46px; object-fit: cover; border-radius: 5px; }
+.sourceRail { position: relative; }
+.flyingMedia { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.flyingMedia img { position: absolute; left: 0; top: 0; }
+.flyingMedia img:nth-child(2) { top: 54px; }
+.flyingMedia img:nth-child(3) { top: 108px; }
+.playbackControl {
+  display: flex; align-items: center; justify-self: start; gap: 5px;
+  min-height: 22px; color: #526171; font-size: 9px; background: transparent;
+}
+.videoFallback {
+  position: absolute; bottom: 12px; left: 12px; right: 12px;
+  color: white; background: #0b0d10cc; padding: 8px; border-radius: 6px; font-size: 10px;
+}
+
+@media (max-width: 1120px) {
+  .flyingMedia img:nth-child(2) { top: 48px; }
+  .flyingMedia img:nth-child(3) { top: 96px; }
+}
+@media (max-width: 640px) {
+  .motionShell .sceneHeader { height: 104px; }
+  .motionShell .sceneBody { height: 600px; min-height: 600px; }
+  .motionShell .readyLayout { grid-template-rows: 215px 1fr; }
+  .motionShell .uploadLayout,
+  .motionShell .uploadingLayout,
+  .motionShell .understandLayout,
+  .motionShell .unlockLayout,
+  .motionShell .chooseLayout { align-content: center; }
+  .motionShell .outcomeLayout { align-content: center; }
+  .motionShell .sourceRail > img:nth-child(n+4) { display: none; }
+  .flyingMedia img:nth-child(2) { top: 49px; }
+  .flyingMedia img:nth-child(3) { display: none; }
+  .motionShell .mediaGroups { grid-template-columns: 1fr 1fr 1fr; }
+  .motionShell .mediaGroups article:nth-child(3) { display: block; }
+  .motionShell .mediaGroups article > div { display: block; }
+  .motionShell .mediaGroups strong,
+  .motionShell .mediaGroups span { display: block; }
+  .motionShell .mediaGroups strong { font-size: 10px; }
+  .motionShell .analysisTags span:nth-child(n+4) { display: inline; }
+  .motionShell .processingList p:nth-child(n+5) { display: flex; }
+}
+@media (max-width: 420px) {
+  .flyingMedia img:nth-child(2) { top: 45px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

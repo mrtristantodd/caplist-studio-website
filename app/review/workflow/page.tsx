@@ -17,8 +17,9 @@ export default function WorkflowReviewPage() {
           Homepage workflow hero
         </h1>
         <p style={{ maxWidth: 650, marginTop: 18, color: "#566170", lineHeight: 1.6 }}>
-          Pass 1.1 static states for product accuracy, responsive composition and visual-system review.
+          Eight approved states. The homepage runs the complete motion sequence; these cards remain static for visual review.
         </p>
+        <a href="/#how-it-works" style={{ display: "inline-block", marginTop: 16, color: "#2f7bff" }}>Watch the animated hero →</a>
       </header>
       <HeroWorkflowDemo reviewAll />
     </main>

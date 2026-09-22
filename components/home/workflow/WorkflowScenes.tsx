@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownToLine,
   ArrowRight,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 import {
   propertyMedia,
+  workflowReel,
   unlockedProducts,
   type WorkflowState,
 } from "./workflow-data";
@@ -64,14 +66,16 @@ function ProductList({ selected = false }: { selected?: boolean }) {
   );
 }
 
-function UploadScene() {
+function UploadScene({ animated = false }: { animated?: boolean }) {
   return (
     <div className={styles.uploadLayout}>
       <div className={styles.dropzone}>
-        <span className={styles.dropIcon}><Upload size={23} /></span>
+        {animated ? <div className={styles.incomingMedia} aria-label="Existing photography, video and drone media">
+          {[propertyMedia[0], propertyMedia[1], propertyMedia[5]].map(media => <img key={media.src} src={media.src} alt={media.alt} />)}
+        </div> : <span className={styles.dropIcon}><Upload size={23} /></span>}
         <strong>Upload completed property media</strong>
         <p>Drop files here or choose a folder</p>
-        <button type="button">Choose media</button>
+        <span className={styles.demoButton}>Choose media</span>
       </div>
       <aside className={styles.sourceSummary}>
         <div className={styles.projectPhoto}>
@@ -85,7 +89,7 @@ function UploadScene() {
   );
 }
 
-function UploadingScene() {
+function UploadingScene({ animated = false }: { animated?: boolean }) {
   return (
     <div className={styles.uploadingLayout}>
       <ThumbnailGrid compact />
@@ -94,8 +98,8 @@ function UploadingScene() {
           <span><ArrowDownToLine size={18} /></span>
           <div><strong>Uploading media</strong><small>Professional source files</small></div>
         </div>
-        <div className={styles.progressTrack}><span style={{ width: "76%" }} /></div>
-        <div className={styles.progressMeta}><span>76%</span><span>30 of 39 files</span></div>
+        <div className={styles.progressTrack}><span style={{ width: animated ? "100%" : "76%", transformOrigin: "left" }} /></div>
+        <div className={styles.progressMeta}><span data-upload-percent>76%</span><span data-upload-files>30 of 39 files</span></div>
         <MediaCounts />
       </aside>
     </div>
@@ -161,13 +165,13 @@ function ChooseScene() {
           <div><dt>Duration</dt><dd>20 to 30 sec</dd></div>
           <div><dt>Creative control</dt><dd>Style + source selection</dd></div>
         </dl>
-        <button type="button">Create reel <ArrowRight size={16} /></button>
+        <span className={styles.demoButton}>Create reel <ArrowRight size={16} /></span>
       </aside>
     </div>
   );
 }
 
-function CreateScene() {
+function CreateScene({ animated = false }: { animated?: boolean }) {
   const statuses = [
     ["Selecting strongest scenes", true],
     ["Reframing for 9:16", true],
@@ -181,6 +185,9 @@ function CreateScene() {
         {propertyMedia.slice(0, 5).map((media) => (
           <img key={media.src} src={media.src} alt="" />
         ))}
+        {animated && <div className={styles.flyingMedia} aria-hidden="true">
+          {propertyMedia.slice(0, 3).map(media => <img key={media.src} src={media.src} alt="" />)}
+        </div>}
       </div>
       <div className={styles.feedLine}><ArrowRight size={18} /></div>
       <div className={styles.verticalOutput}>
@@ -190,7 +197,7 @@ function CreateScene() {
       <aside className={styles.processingList}>
         {statuses.map(([label, complete]) => (
           <p key={label} className={complete ? styles.complete : ""}>
-            {complete ? <Check size={14} /> : <span />}{label}
+            {complete || animated ? <Check size={14} /> : <span />}{label}
           </p>
         ))}
       </aside>
@@ -198,36 +205,63 @@ function CreateScene() {
   );
 }
 
-function ReadyScene() {
+function ReadyScene({ animated = false, running = false, paused = false }: { animated?: boolean; running?: boolean; paused?: boolean }) {
+  const video = useRef<HTMLVideoElement>(null);
+  const [manualPlaying, setManualPlaying] = useState(false);
+  const [unavailable, setUnavailable] = useState(false);
+  useEffect(() => {
+    const media = video.current;
+    if (!media) return;
+    const play = !paused && (running || manualPlaying);
+    if (play) void media.play().catch(() => setUnavailable(true));
+    else media.pause();
+    return () => media.pause();
+  }, [animated, running, manualPlaying, paused]);
+  useEffect(() => {
+    const media = video.current;
+    if (!media) return;
+    const pauseHidden = () => { if (document.hidden) { media.pause(); setManualPlaying(false); } };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) { media.pause(); setManualPlaying(false); }
+    });
+    observer.observe(media);
+    document.addEventListener("visibilitychange", pauseHidden);
+    return () => { observer.disconnect(); document.removeEventListener("visibilitychange", pauseHidden); };
+  }, []);
   return (
     <div className={styles.readyLayout}>
       <div className={styles.reelPreview}>
         <video
-          controls
+          ref={video}
+          controls={!animated}
           muted
           playsInline
-          preload="metadata"
-          poster="/media/dp001/drone.webp"
+          preload="none"
+          poster={workflowReel.poster}
+          onLoadedMetadata={() => { if (animated && video.current) video.current.currentTime = workflowReel.excerptStart; }}
+          onError={() => setUnavailable(true)}
           aria-label="DP001 property reel preview"
         >
-          <source src="/media/dp001/reel-v03.mp4" type="video/mp4" />
+          <source src={workflowReel.src} type="video/mp4" />
         </video>
-        <span className={styles.readyBadge}>Demo preview · 16:9</span>
+        <span className={styles.readyBadge}>{workflowReel.previewLabel}</span>
+        {unavailable && <span className={styles.videoFallback}>Preview available to download</span>}
       </div>
       <aside className={styles.outputDetails}>
         <span className={styles.outputIcon}><Play size={19} /></span>
         <p>Vertical Video Reel</p>
         <strong>9 Coastview Drive</strong>
         <dl>
-          <div><dt>Duration</dt><dd>23 sec</dd></div>
-          <div><dt>Target output</dt><dd>9:16 vertical</dd></div>
-          <div><dt>Preview media</dt><dd>Approved V03 · 16:9</dd></div>
+          <div><dt>Duration</dt><dd>{workflowReel.durationLabel}</dd></div>
+          <div><dt>Target output</dt><dd>{workflowReel.targetFormat}</dd></div>
+          <div><dt>Preview media</dt><dd>{workflowReel.mediaLabel}</dd></div>
           <div><dt>Source</dt><dd>Existing property media</dd></div>
         </dl>
-        <small className={styles.placeholderNote}>Temporary demo media. Final vertical reel pending.</small>
+        <small className={styles.placeholderNote}>{workflowReel.note}</small>
         <div className={styles.outputActions}>
-          <button type="button"><Play size={15} />Preview</button>
-          <a href="/media/dp001/reel-v03.mp4" download><Download size={15} />Download</a>
+          <button type="button" onClick={() => setManualPlaying(value => !value)} aria-pressed={manualPlaying}>
+            <Play size={15} />{manualPlaying ? "Pause preview" : "Preview"}</button>
+          <a href={workflowReel.src} download aria-label="Download the 16:9 demo preview"><Download size={15} />Download</a>
         </div>
       </aside>
     </div>
@@ -263,15 +297,15 @@ function OutcomeScene() {
   );
 }
 
-export function WorkflowScene({ state }: { state: WorkflowState }) {
+export function WorkflowScene({ state, animated = false, running = false, paused = false }: { state: WorkflowState; animated?: boolean; running?: boolean; paused?: boolean }) {
   switch (state) {
-    case "upload": return <UploadScene />;
-    case "uploading": return <UploadingScene />;
+    case "upload": return <UploadScene animated={animated} />;
+    case "uploading": return <UploadingScene animated={animated} />;
     case "understand": return <UnderstandScene />;
     case "unlock": return <UnlockScene />;
     case "choose": return <ChooseScene />;
-    case "create": return <CreateScene />;
-    case "ready": return <ReadyScene />;
+    case "create": return <CreateScene animated={animated} />;
+    case "ready": return <ReadyScene animated={animated} running={running} paused={paused} />;
     case "outcome": return <OutcomeScene />;
   }
 }

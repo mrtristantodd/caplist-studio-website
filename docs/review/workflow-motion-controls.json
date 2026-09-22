@@ -1,0 +1,9 @@
+{
+  "manualPlaying": true,
+  "paused": true,
+  "resumed": true,
+  "hidden": {
+    "running": "false",
+    "paused": true
+  }
+}
