@@ -4,7 +4,7 @@ import { Footer } from "@/components/editorial/MarketingPage";
 import { homeCopy as copy } from "@/lib/approved-messaging";
 import { products } from "@/lib/demo-media";
 import { Photo } from "@/components/editorial/Photo";
-import { ProductWalkthrough } from "./ProductWalkthrough";
+import { HeroWorkflowDemo } from "@/components/home/HeroWorkflowDemo";
 import styles from "./homepage.module.css";
 
 function Paragraphs({ body }: { body: readonly string[] }) {
@@ -41,36 +41,9 @@ export function HomepageV2() {
             </div>
             <p className={styles.audience}>{copy.hero.audience}</p>
           </div>
-          <figure className={styles.heroFigure}>
-            <div className={styles.heroImage}>
-              <Photo
-                media="suburban"
-                priority
-                sizes="(max-width:960px) 92vw, 70vw"
-              />
-              <span className={styles.corner} aria-hidden="true" />
-            </div>
-            <figcaption>
-              <span>One completed shoot.</span>
-              <strong>More to create.</strong>
-            </figcaption>
-          </figure>
-        </section>
-        <section
-          className={`${styles.walkthrough} ${styles.wrap}`}
-          id="how-it-works"
-          aria-labelledby="walkthrough-heading"
-        >
-          <div className={styles.sectionTop}>
-            <div>
-              <p className={styles.eyebrow}>{copy.showcase.eyebrow}</p>
-              <h2 id="walkthrough-heading">{copy.showcase.headline}</h2>
-            </div>
+          <div className={styles.heroWorkflow} id="how-it-works">
+            <HeroWorkflowDemo />
           </div>
-          <div className={styles.introCopy}>
-            <Paragraphs body={copy.showcase.body} />
-          </div>
-          <ProductWalkthrough />
         </section>
         {[copy.opportunity, copy.category].map((section) => (
           <section

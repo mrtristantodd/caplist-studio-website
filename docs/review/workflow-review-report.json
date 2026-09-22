@@ -1,0 +1,155 @@
+[
+  {
+    "name": "workflow-hero-desktop-1440",
+    "url": "http://127.0.0.1:4322/",
+    "width": 1440,
+    "height": 1000,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "stateCount": 1,
+      "heroBottom": 885.1875
+    }
+  },
+  {
+    "name": "workflow-hero-mobile-390",
+    "url": "http://127.0.0.1:4322/",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1395.015625
+    }
+  },
+  {
+    "name": "workflow-all-states",
+    "url": "http://127.0.0.1:4322/review/workflow/",
+    "width": 1440,
+    "height": 1000,
+    "fullPage": true,
+    "errors": [],
+    "metrics": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "stateCount": 8
+    }
+  },
+  {
+    "name": "workflow-state-upload-390",
+    "url": "http://127.0.0.1:4322/?workflowState=upload",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1395.015625
+    }
+  },
+  {
+    "name": "workflow-state-uploading-390",
+    "url": "http://127.0.0.1:4322/?workflowState=uploading",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1415.515625
+    }
+  },
+  {
+    "name": "workflow-state-understand-390",
+    "url": "http://127.0.0.1:4322/?workflowState=understand",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1395.015625
+    }
+  },
+  {
+    "name": "workflow-state-unlock-390",
+    "url": "http://127.0.0.1:4322/?workflowState=unlock",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1395.015625
+    }
+  },
+  {
+    "name": "workflow-state-choose-390",
+    "url": "http://127.0.0.1:4322/?workflowState=choose",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1460.359375
+    }
+  },
+  {
+    "name": "workflow-state-create-390",
+    "url": "http://127.0.0.1:4322/?workflowState=create",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1395.015625
+    }
+  },
+  {
+    "name": "workflow-state-ready-390",
+    "url": "http://127.0.0.1:4322/?workflowState=ready",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1535.359375
+    }
+  },
+  {
+    "name": "workflow-state-outcome-390",
+    "url": "http://127.0.0.1:4322/?workflowState=outcome",
+    "width": 390,
+    "height": 900,
+    "fullPage": false,
+    "errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "stateCount": 1,
+      "heroBottom": 1395.015625
+    }
+  }
+]

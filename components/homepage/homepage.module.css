@@ -36,10 +36,15 @@
 }
 .hero {
   display: grid;
-  grid-template-columns: 1.08fr 1fr;
+  grid-template-columns: minmax(360px, 0.86fr) minmax(560px, 1.22fr);
   gap: 64px;
   align-items: center;
   padding-block: 88px 102px;
+}
+.heroWorkflow {
+  min-width: 0;
+  align-self: center;
+  scroll-margin-top: 108px;
 }
 .hero h1 {
   font-size: clamp(44px, 4.6vw, 66px);
@@ -431,6 +436,7 @@
   }
   .hero {
     gap: 40px;
+    grid-template-columns: minmax(320px, 0.72fr) minmax(510px, 1.28fr);
   }
   .hero h1 {
     font-size: 49px;
@@ -454,6 +460,9 @@
   .hero {
     grid-template-columns: 1fr;
     padding-block: 60px 80px;
+  }
+  .heroWorkflow {
+    width: 100%;
   }
   .hero h1 {
     font-size: clamp(44px, 7vw, 66px);
