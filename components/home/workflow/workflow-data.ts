@@ -16,15 +16,13 @@ export const workflowDurations: Record<WorkflowState, number> = {
   choose: 1200, create: 3000, ready: 5500, outcome: 2000,
 };
 
-// Replace this record when the approved vertical export is available.
 export const workflowReel = {
-  src: "/media/dp001/reel-v03.mp4",
+  src: "/media/dp001/reel-premium-mixed-final.mp4",
   poster: "/media/dp001/drone.webp",
-  previewLabel: "Demo preview · 16:9",
-  mediaLabel: "Approved V03 · 16:9",
-  targetFormat: "9:16 vertical",
-  durationLabel: "23 sec",
-  note: "Temporary demo media. Final vertical reel pending.",
+  previewLabel: "Final reel · 16:9",
+  mediaLabel: "H.264 MP4",
+  targetFormat: "16:9",
+  durationLabel: "23.4 sec",
   excerptStart: 3,
 };
 
@@ -63,7 +61,7 @@ export const workflowStateDetails: Record<
   unlock: {
     step: "04",
     label: "Unlock",
-    headline: "4 additional products are available.",
+    headline: "5 additional products are available.",
   },
   choose: {
     step: "05",
@@ -73,12 +71,12 @@ export const workflowStateDetails: Record<
   create: {
     step: "06",
     label: "Create",
-    headline: "Creating your Vertical Video Reel...",
+    headline: "Creating your Premium Mixed Media Reel...",
   },
   ready: {
     step: "07",
     label: "Ready",
-    headline: "Your Vertical Video Reel is ready.",
+    headline: "Your Premium Mixed Media Reel is ready.",
   },
   outcome: {
     step: "08",
@@ -97,6 +95,7 @@ export const propertyMedia = [
 ] as const;
 
 export const unlockedProducts = [
+  { name: "Premium Mixed Media Reel", format: "16:9", source: "Complete job" },
   { name: "Photo Reel", format: "9:16", source: "Photography" },
   { name: "Vertical Video Reel", format: "9:16", source: "Photo + video" },
   { name: "Property Teaser", format: "9:16", source: "Video + drone" },

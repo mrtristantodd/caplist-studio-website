@@ -654,8 +654,8 @@
 .verticalOutput {
   position: relative;
   justify-self: center;
-  height: 300px;
-  aspect-ratio: 9 / 16;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #111820;
   border: 5px solid #fff;
@@ -778,13 +778,6 @@
   color: #fff;
   background: #286ce3;
   border-color: #286ce3;
-}
-
-.placeholderNote {
-  margin-top: 11px;
-  color: #778493;
-  font-size: 8px;
-  line-height: 1.45;
 }
 
 .outcomeLayout {
@@ -967,7 +960,7 @@
   }
 
   .verticalOutput {
-    height: 270px;
+    height: auto;
   }
 }
 
@@ -1152,7 +1145,7 @@
   }
 
   .verticalOutput {
-    height: 272px;
+    height: auto;
   }
 
   .processingList {
@@ -1228,7 +1221,7 @@
   }
 
   .verticalOutput {
-    height: 250px;
+    height: auto;
   }
 
   .feedLine svg {

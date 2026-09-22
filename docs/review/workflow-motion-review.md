@@ -40,9 +40,9 @@ The motion canvas reserves the maximum required scene space on mobile, keeping t
 
 ## Reel
 
-The approved V03 file remains the clearly labelled **16:9 demo preview**, while the target product remains **9:16 vertical**. The animated state plays a muted, inline excerpt starting at 3 seconds, without native controls. Static review retains native controls and an explicit Preview action. Loading is deferred until needed; poster and download fallback remain available.
+The selected product is now the approved **Premium Mixed Media Reel**. Ready plays the final 23.4-second, 16:9 V03 edit from a browser-safe 1280×720 H.264 MP4 derivative. The production source remains untouched at 1920×1080. The animated state plays a muted inline excerpt starting at 3 seconds without native controls; static review retains controls and an explicit Preview action.
 
-`workflowReel` in `components/home/workflow/workflow-data.ts` contains the replaceable source, poster, aspect labels, duration and placeholder note. Replace that record for the approved final vertical export without redesigning the component.
+`workflowReel` in `components/home/workflow/workflow-data.ts` contains the final source, poster, format, duration and media metadata. The Create treatment now describes selection, sequencing, motion treatment, rendering and quality control, while the source stack remains anchored.
 
 ## Evidence and limits
 
@@ -51,7 +51,7 @@ The approved V03 file remains the clearly labelled **16:9 demo preview**, while 
 - [Control checks](workflow-motion-controls.json): manually started preview obeys Pause/Resume; hidden-page events suspend video and sequence.
 - [Payload comparison](workflow-motion-payload.json): approximately 24 KB additional gzip JavaScript, no new dependencies, unchanged image/video assets.
 - Typecheck, repository lint (TypeScript), production export and whitespace checks pass.
-- Final desktop/mobile recordings measured zero layout shift, zero initial video requests, no horizontal overflow and no console errors.
+- Final desktop/mobile recordings measured zero layout shift, zero initial video requests, no horizontal overflow and no console errors. The final reel request begins only after Ready activates, and playback advances normally.
 - No Website V1 recovery references were changed. Existing DP001 documentation edits were excluded.
 
-The vertical final export remains pending. Browser tests use Chromium viewport emulation, not physical iOS/Android devices. The existing V03 file is approximately 5 MB and stays deferred until Ready; a dedicated compressed vertical excerpt is the later replacement opportunity.
+Browser tests use Chromium viewport emulation rather than physical iOS/Android devices. The 5,233,879-byte derivative remains deferred until Ready. The 5.5-second Ready hold intentionally shows an excerpt from the longer approved reel while preserving the approved 18.6-second workflow loop.

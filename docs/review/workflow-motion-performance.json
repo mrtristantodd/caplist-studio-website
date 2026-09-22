@@ -5,7 +5,12 @@
     "totalMediaRequests": 2,
     "errors": [],
     "shifts": [],
-    "longtasks": [],
+    "longtasks": [
+      {
+        "duration": 61,
+        "time": 170.89999997615814
+      }
+    ],
     "resourceBytes": [
       {
         "name": "0336a89fb4e7fc1d-s.p.woff2",
@@ -28,13 +33,13 @@
         "type": "link"
       },
       {
-        "name": "b54e64e24557765b.css",
-        "size": 98801,
+        "name": "caplist-mark-light.svg",
+        "size": 1901,
         "type": "link"
       },
       {
-        "name": "caplist-mark-light.svg",
-        "size": 1901,
+        "name": "b54e64e24557765b.css",
+        "size": 98801,
         "type": "link"
       },
       {
@@ -48,8 +53,8 @@
         "type": "link"
       },
       {
-        "name": "0d9a913c7787bff2.css",
-        "size": 39258,
+        "name": "b53c00294f66f7ad.css",
+        "size": 39253,
         "type": "link"
       },
       {
@@ -58,18 +63,13 @@
         "type": "link"
       },
       {
-        "name": "4bd1b696-92152b0f5947070d.js",
-        "size": 201354,
-        "type": "script"
-      },
-      {
         "name": "794-3b4e831e04fcc275.js",
         "size": 241599,
         "type": "script"
       },
       {
-        "name": "main-app-5ee1d73dc5b75d4f.js",
-        "size": 813,
+        "name": "4bd1b696-92152b0f5947070d.js",
+        "size": 201354,
         "type": "script"
       },
       {
@@ -78,13 +78,13 @@
         "type": "script"
       },
       {
-        "name": "915-2ecff3a8406d9ab0.js",
-        "size": 17835,
+        "name": "main-app-5ee1d73dc5b75d4f.js",
+        "size": 813,
         "type": "script"
       },
       {
-        "name": "645-a42a62d6376024c9.js",
-        "size": 10083,
+        "name": "915-2ecff3a8406d9ab0.js",
+        "size": 17835,
         "type": "script"
       },
       {
@@ -93,8 +93,13 @@
         "type": "script"
       },
       {
-        "name": "417-db3b358a7753ccc4.js",
-        "size": 22529,
+        "name": "645-a42a62d6376024c9.js",
+        "size": 10083,
+        "type": "script"
+      },
+      {
+        "name": "417-f37a4f1fff96fb3d.js",
+        "size": 22566,
         "type": "script"
       },
       {
@@ -108,13 +113,13 @@
         "type": "img"
       },
       {
-        "name": "luxury-living-2200.webp",
-        "size": 365788,
+        "name": "suburban-960.webp",
+        "size": 192102,
         "type": "img"
       },
       {
-        "name": "suburban-960.webp",
-        "size": 192102,
+        "name": "luxury-living-2200.webp",
+        "size": 365788,
         "type": "img"
       },
       {
@@ -138,13 +143,13 @@
         "type": "img"
       },
       {
-        "name": "luxury-aerial-960.webp",
-        "size": 245934,
+        "name": "familyKitchen-960.webp",
+        "size": 97690,
         "type": "img"
       },
       {
-        "name": "familyKitchen-960.webp",
-        "size": 97690,
+        "name": "luxury-aerial-960.webp",
+        "size": 245934,
         "type": "img"
       },
       {
@@ -186,7 +191,12 @@
     "totalMediaRequests": 2,
     "errors": [],
     "shifts": [],
-    "longtasks": [],
+    "longtasks": [
+      {
+        "duration": 55,
+        "time": 128.60000002384186
+      }
+    ],
     "resourceBytes": [
       {
         "name": "0336a89fb4e7fc1d-s.p.woff2",
@@ -209,6 +219,11 @@
         "type": "link"
       },
       {
+        "name": "caplist-mark-light.svg",
+        "size": 1901,
+        "type": "link"
+      },
+      {
         "name": "b54e64e24557765b.css",
         "size": 98801,
         "type": "link"
@@ -219,18 +234,13 @@
         "type": "link"
       },
       {
-        "name": "caplist-mark-light.svg",
-        "size": 1901,
+        "name": "b53c00294f66f7ad.css",
+        "size": 39253,
         "type": "link"
       },
       {
         "name": "eb4e7deca0c1aced.css",
         "size": 47904,
-        "type": "link"
-      },
-      {
-        "name": "0d9a913c7787bff2.css",
-        "size": 39258,
         "type": "link"
       },
       {
@@ -269,6 +279,11 @@
         "type": "script"
       },
       {
+        "name": "417-f37a4f1fff96fb3d.js",
+        "size": 22566,
+        "type": "script"
+      },
+      {
         "name": "645-a42a62d6376024c9.js",
         "size": 10083,
         "type": "script"
@@ -276,11 +291,6 @@
       {
         "name": "page-b190e86b600e1f59.js",
         "size": 2416,
-        "type": "script"
-      },
-      {
-        "name": "417-db3b358a7753ccc4.js",
-        "size": 22529,
         "type": "script"
       },
       {
@@ -294,13 +304,13 @@
         "type": "img"
       },
       {
-        "name": "luxury-kitchen-480.webp",
-        "size": 36554,
+        "name": "suburban-480.webp",
+        "size": 52110,
         "type": "img"
       },
       {
-        "name": "suburban-480.webp",
-        "size": 52110,
+        "name": "luxury-kitchen-480.webp",
+        "size": 36554,
         "type": "img"
       },
       {
@@ -324,23 +334,23 @@
         "type": "img"
       },
       {
-        "name": "luxury-aerial-480.webp",
-        "size": 65004,
-        "type": "img"
-      },
-      {
         "name": "familyLiving-480.webp",
         "size": 40524,
         "type": "img"
       },
       {
-        "name": "bedroom.webp",
-        "size": 54256,
+        "name": "luxury-aerial-480.webp",
+        "size": 65004,
         "type": "img"
       },
       {
         "name": "kitchen.webp",
         "size": 56906,
+        "type": "img"
+      },
+      {
+        "name": "bedroom.webp",
+        "size": 54256,
         "type": "img"
       },
       {

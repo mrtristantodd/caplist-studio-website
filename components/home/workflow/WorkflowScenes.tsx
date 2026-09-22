@@ -48,7 +48,7 @@ function ProductList({ selected = false }: { selected?: boolean }) {
   return (
     <div className={styles.productList}>
       {unlockedProducts.map((product) => {
-        const active = selected && product.name === "Vertical Video Reel";
+        const active = selected && product.name === "Premium Mixed Media Reel";
         return (
           <article key={product.name} className={active ? styles.selectedProduct : ""}>
             <span className={styles.productIcon}>
@@ -159,10 +159,10 @@ function ChooseScene() {
       <aside className={styles.choiceSummary}>
         <span className={styles.choiceIcon}><Film size={20} /></span>
         <p>Selected product</p>
-        <strong>Vertical Video Reel</strong>
+        <strong>Premium Mixed Media Reel</strong>
         <dl>
-          <div><dt>Format</dt><dd>9:16</dd></div>
-          <div><dt>Duration</dt><dd>20 to 30 sec</dd></div>
+          <div><dt>Format</dt><dd>16:9</dd></div>
+          <div><dt>Duration</dt><dd>23.4 sec</dd></div>
           <div><dt>Creative control</dt><dd>Style + source selection</dd></div>
         </dl>
         <span className={styles.demoButton}>Create reel <ArrowRight size={16} /></span>
@@ -174,8 +174,8 @@ function ChooseScene() {
 function CreateScene({ animated = false }: { animated?: boolean }) {
   const statuses = [
     ["Selecting strongest scenes", true],
-    ["Reframing for 9:16", true],
     ["Building sequence", true],
+    ["Applying motion treatment", true],
     ["Rendering", false],
     ["Quality check", false],
   ] as const;
@@ -191,8 +191,8 @@ function CreateScene({ animated = false }: { animated?: boolean }) {
       </div>
       <div className={styles.feedLine}><ArrowRight size={18} /></div>
       <div className={styles.verticalOutput}>
-        <img src="/media/dp001/pool.webp" alt="Vertical reel preview showing the pool terrace" />
-        <span>9:16</span>
+        <img src="/media/dp001/pool.webp" alt="Premium Mixed Media Reel preview showing the pool terrace" />
+        <span>16:9</span>
       </div>
       <aside className={styles.processingList}>
         {statuses.map(([label, complete]) => (
@@ -249,19 +249,18 @@ function ReadyScene({ animated = false, running = false, paused = false }: { ani
       </div>
       <aside className={styles.outputDetails}>
         <span className={styles.outputIcon}><Play size={19} /></span>
-        <p>Vertical Video Reel</p>
+        <p>Premium Mixed Media Reel</p>
         <strong>9 Coastview Drive</strong>
         <dl>
           <div><dt>Duration</dt><dd>{workflowReel.durationLabel}</dd></div>
-          <div><dt>Target output</dt><dd>{workflowReel.targetFormat}</dd></div>
-          <div><dt>Preview media</dt><dd>{workflowReel.mediaLabel}</dd></div>
+          <div><dt>Format</dt><dd>{workflowReel.targetFormat}</dd></div>
+          <div><dt>Media</dt><dd>{workflowReel.mediaLabel}</dd></div>
           <div><dt>Source</dt><dd>Existing property media</dd></div>
         </dl>
-        <small className={styles.placeholderNote}>{workflowReel.note}</small>
         <div className={styles.outputActions}>
           <button type="button" onClick={() => setManualPlaying(value => !value)} aria-pressed={manualPlaying}>
             <Play size={15} />{manualPlaying ? "Pause preview" : "Preview"}</button>
-          <a href={workflowReel.src} download aria-label="Download the 16:9 demo preview"><Download size={15} />Download</a>
+          <a href={workflowReel.src} download aria-label="Download the final Premium Mixed Media Reel"><Download size={15} />Download</a>
         </div>
       </aside>
     </div>

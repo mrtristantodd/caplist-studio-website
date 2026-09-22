@@ -1,0 +1,29 @@
+{
+  "initialRequests": 0,
+  "readyAtMs": 11475,
+  "requests": [
+    {
+      "elapsedMs": 11493,
+      "state": "ready",
+      "url": "http://127.0.0.1:4322/media/dp001/reel-premium-mixed-final.mp4",
+      "range": "bytes=0-"
+    }
+  ],
+  "metadata": {
+    "currentTime": 3.018507,
+    "duration": 23.4,
+    "videoWidth": 1280,
+    "videoHeight": 720,
+    "paused": false,
+    "muted": true,
+    "controls": false,
+    "readyState": 4
+  },
+  "playbackAdvancedSeconds": 1.2140980000000003,
+  "playbackAfterWait": {
+    "currentTime": 4.232605,
+    "paused": false,
+    "readyState": 4
+  },
+  "errors": []
+}
