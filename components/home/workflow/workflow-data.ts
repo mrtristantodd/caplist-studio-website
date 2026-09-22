@@ -12,8 +12,8 @@ export const workflowStates = [
 export type WorkflowState = (typeof workflowStates)[number];
 
 export const workflowDurations: Record<WorkflowState, number> = {
-  upload: 1200, uploading: 1800, understand: 2200, unlock: 1700,
-  choose: 1200, create: 3000, ready: 5500, outcome: 2000,
+  upload: 1400, uploading: 2200, understand: 3000, unlock: 2300,
+  choose: 1600, create: 4000, ready: 6500, outcome: 3000,
 };
 
 export const workflowReel = {

@@ -17,16 +17,16 @@ Recordings show the production export in Chromium at the indicated viewport widt
 
 | Internal state | Public phase | Seconds |
 | --- | --- | ---: |
-| Upload | Upload | 1.2 |
-| Uploading | Upload | 1.8 |
-| Understand | Understand | 2.2 |
-| Unlock | Understand | 1.7 |
-| Choose product | Create | 1.2 |
-| Create | Create | 3.0 |
-| Ready | Ready | 5.5 |
-| Outcome | Ready | 2.0 |
+| Upload | Upload | 1.4 |
+| Uploading | Upload | 2.2 |
+| Understand | Understand | 3.0 |
+| Unlock | Understand | 2.3 |
+| Choose product | Create | 1.6 |
+| Create | Create | 4.0 |
+| Ready | Ready | 6.5 |
+| Outcome | Ready | 3.0 |
 
-Total: 18.6 seconds. Each state includes a short entry/exit dissolve. The shell remains mounted; only the scene changes. Media counts describe a condensed demonstration rather than measured upload or render speed.
+Total: 24.0 seconds. Entry and exit transitions retain their approved crisp timing; the additional duration is readable hold time within each scene. The shell remains mounted; only the scene changes. Media counts describe a condensed demonstration rather than measured upload or render speed.
 
 ## Motion and lifecycle
 
