@@ -783,7 +783,7 @@
 .outcomeLayout {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr auto 1.1fr;
+  grid-template-columns: minmax(0, 1fr) 88px minmax(0, .95fr);
   align-items: center;
   gap: 18px;
 }
@@ -833,7 +833,7 @@
 
 .outcomeBridge {
   position: relative;
-  width: 48px;
+  width: 88px;
   height: 116px;
   display: grid;
   place-items: center;
@@ -841,8 +841,8 @@
 
 .outcomeBridge > i {
   position: absolute;
-  left: -55px;
-  width: calc(100% + 110px);
+  left: -58px;
+  width: calc(100% + 116px);
   height: 144px;
   display: block;
   background: linear-gradient(90deg, #2f7bff04, #2f7bff1f 42%, #2f7bff0c);
@@ -852,25 +852,29 @@
 
 .outcomeFragments {
   position: absolute;
-  inset: 0 -44px;
+  inset: 0 -40px;
   pointer-events: none;
 }
 
 .outcomeFragments img {
   position: absolute;
-  width: 32px;
-  height: 23px;
+  width: 33px;
+  height: 24px;
   object-fit: cover;
   border: 2px solid white;
   border-radius: 4px;
   box-shadow: 0 3px 8px #17385914;
-  left: 22%;
-  top: 28%;
-  opacity: .7;
+  left: 2%;
+  top: 24%;
+  opacity: .82;
+  transform: rotate(-3deg);
 }
 
-.outcomeFragments img:nth-child(2) { left: 43%; top: 48%; opacity: .45; }
-.outcomeFragments img:nth-child(3) { left: 67%; top: 65%; opacity: .2; }
+.outcomeFragments img:nth-child(2) { left: 37%; top: 48%; width: 27px; height: 27px; opacity: .48; transform: rotate(2deg); }
+.outcomeFragments img:nth-child(3) { left: 69%; top: 66%; width: 30px; height: 20px; opacity: .2; transform: rotate(4deg); }
+.animatedFragments img,
+.animatedFragments img:nth-child(2),
+.animatedFragments img:nth-child(3) { left: 2%; }
 .outcomeSource, .outcomeProducts { position: relative; z-index: 1; }
 .outcomeBridge { z-index: 2; pointer-events: none; }
 
@@ -878,6 +882,8 @@
   .outcomeBridge > i { left: -28px; width: calc(100% + 56px); height: 128px; }
   .outcomeFragments { inset-inline: -23px; }
   .outcomeFragments img { width: 20px; height: 15px; border-width: 1px; }
+  .outcomeFragments img:nth-child(2) { width: 17px; height: 17px; }
+  .outcomeFragments img:nth-child(3) { width: 18px; height: 13px; }
 }
 
 .outcomeProducts > div {

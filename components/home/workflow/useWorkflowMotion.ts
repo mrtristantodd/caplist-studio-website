@@ -113,16 +113,23 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
       case "ready":
         reveal(query("outputDetails"), 140);
         break;
-      case "outcome":
+      case "outcome": {
         run(query("outcomeBridge") + " i", [{ opacity: 0 }, { opacity: 1 }], 160, 360, 100);
-        run(query("outcomeFragments") + " img", [
-          { transform: `translateX(${mobile ? -18 : -35}px) scale(1)`, opacity: 0, filter: "blur(0px)" },
-          { offset: .2, transform: `translateX(${mobile ? -10 : -20}px) scale(1)`, opacity: .8, filter: "blur(0px)" },
-          { offset: .65, opacity: .35, filter: "blur(.5px)" },
-          { transform: `translateX(${mobile ? 16 : 32}px) scale(.75)`, opacity: 0, filter: "blur(1.2px)" },
-        ], 180, 2200, 180);
+        root.querySelectorAll<HTMLElement>(query("outcomeFragments") + " img").forEach((fragment, index) => {
+          const distance = mobile ? 62 : 150;
+          const angle = [-3, 2, 4][index];
+          const animation = fragment.animate([
+            { transform: `translateX(0px) rotate(${angle}deg) scale(1)`, opacity: 0, filter: "blur(0px)" },
+            { offset: .16, transform: `translateX(${distance * .12}px) rotate(${angle}deg) scale(1)`, opacity: .82, filter: "blur(0px)" },
+            { offset: .54, transform: `translateX(${distance * .55}px) rotate(${angle}deg) scale(.87)`, opacity: .48, filter: "blur(.35px)" },
+            { transform: `translateX(${distance}px) rotate(${angle}deg) scale(.7)`, opacity: 0, filter: "blur(1.2px)" },
+          ], { duration: 1950, delay: 160 + index * 160, fill: "both", easing: "ease-in-out" });
+          if (!active.current) animation.pause();
+          animations.current.push(animation);
+        });
         reveal(query("outcomeProducts") + " > p", 1250);
         break;
+      }
     }
     return () => {
       animations.current.forEach(animation => animation.cancel()); animations.current = [];

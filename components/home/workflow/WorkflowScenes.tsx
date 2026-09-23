@@ -267,7 +267,7 @@ function ReadyScene({ animated = false, running = false, paused = false }: { ani
   );
 }
 
-function OutcomeScene() {
+function OutcomeScene({ animated }: { animated: boolean }) {
   return (
     <div className={styles.outcomeLayout}>
       <div className={styles.outcomeSource}>
@@ -281,7 +281,7 @@ function OutcomeScene() {
       </div>
       <div className={styles.outcomeBridge} aria-hidden="true">
         <i />
-        <div className={styles.outcomeFragments}>
+        <div className={`${styles.outcomeFragments} ${animated ? styles.animatedFragments : ""}`}>
           {propertyMedia.slice(0, 3).map(media => <img key={media.src} src={media.src} alt="" />)}
         </div>
       </div>
@@ -307,6 +307,6 @@ export function WorkflowScene({ state, animated = false, running = false, paused
     case "choose": return <ChooseScene />;
     case "create": return <CreateScene animated={animated} />;
     case "ready": return <ReadyScene animated={animated} running={running} paused={paused} />;
-    case "outcome": return <OutcomeScene />;
+    case "outcome": return <OutcomeScene animated={animated} />;
   }
 }
