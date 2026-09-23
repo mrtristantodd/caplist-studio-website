@@ -29,22 +29,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
-  icons: {
-    icon: [
-      {
-        url: "/favicon-96.png",
-        type: "image/png",
-        sizes: "96x96",
-      },
-    ],
-    apple: [
-      {
-        url: "/apple-touch-icon.png",
-        type: "image/png",
-        sizes: "180x180",
-      },
-    ],
-  },
   openGraph: {
     type: "website",
     locale: "en_AU",
