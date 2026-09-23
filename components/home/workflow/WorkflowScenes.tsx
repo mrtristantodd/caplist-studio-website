@@ -280,13 +280,13 @@ function OutcomeScene() {
         <strong>One media set</strong>
       </div>
       <div className={styles.outcomeBridge} aria-hidden="true">
-        <i /><i /><i />
-        <ArrowRight className={styles.outcomeArrow} size={25} />
+        <i />
+        <span className={styles.outcomeArrow}><img src="/brand/caplist-mark-light.svg" alt="" /></span>
       </div>
       <div className={styles.outcomeProducts}>
         <span>Multiple professional outputs</span>
         <div>
-          {unlockedProducts.map((product) => (
+          {unlockedProducts.filter(product => product.name !== "Premium Mixed Media Reel").map((product) => (
             <article key={product.name}><Film size={15} /><strong>{product.name}</strong></article>
           ))}
         </div>
