@@ -281,7 +281,9 @@ function OutcomeScene() {
       </div>
       <div className={styles.outcomeBridge} aria-hidden="true">
         <i />
-        <span className={styles.outcomeArrow}><img src="/brand/caplist-mark-light.svg" alt="" /></span>
+        <div className={styles.outcomeFragments}>
+          {propertyMedia.slice(0, 3).map(media => <img key={media.src} src={media.src} alt="" />)}
+        </div>
       </div>
       <div className={styles.outcomeProducts}>
         <span>Multiple professional outputs</span>

@@ -841,31 +841,43 @@
 
 .outcomeBridge > i {
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 72px;
+  left: -55px;
+  width: calc(100% + 110px);
+  height: 144px;
   display: block;
-  background: linear-gradient(90deg, #2f7bff08, #2f7bff20, #2f7bff08);
-  clip-path: polygon(0 0, 50% 40%, 100% 0, 100% 100%, 50% 60%, 0 100%);
+  background: linear-gradient(90deg, #2f7bff04, #2f7bff1f 42%, #2f7bff0c);
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
+  border-radius: 24px;
 }
 
-.outcomeArrow {
-  position: relative;
-  z-index: 1;
-  width: 25px;
-  height: 25px;
-  display: grid;
-  place-items: center;
-  padding: 4px;
-  color: #fff;
-  background: var(--workflow-blue);
-  border-radius: 50%;
+.outcomeFragments {
+  position: absolute;
+  inset: 0 -44px;
+  pointer-events: none;
 }
 
-.outcomeArrow img {
-  width: 17px;
-  height: 14px;
-  filter: brightness(0) invert(1);
+.outcomeFragments img {
+  position: absolute;
+  width: 32px;
+  height: 23px;
+  object-fit: cover;
+  border: 2px solid white;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px #17385914;
+  left: 22%;
+  top: 28%;
+  opacity: .7;
+}
+
+.outcomeFragments img:nth-child(2) { left: 43%; top: 48%; opacity: .45; }
+.outcomeFragments img:nth-child(3) { left: 67%; top: 65%; opacity: .2; }
+.outcomeSource, .outcomeProducts { position: relative; z-index: 1; }
+.outcomeBridge { z-index: 2; pointer-events: none; }
+
+@media (max-width: 640px) {
+  .outcomeBridge > i { left: -28px; width: calc(100% + 56px); height: 128px; }
+  .outcomeFragments { inset-inline: -23px; }
+  .outcomeFragments img { width: 20px; height: 15px; border-width: 1px; }
 }
 
 .outcomeProducts > div {

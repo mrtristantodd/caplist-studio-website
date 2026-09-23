@@ -115,7 +115,12 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
         break;
       case "outcome":
         run(query("outcomeBridge") + " i", [{ opacity: 0 }, { opacity: 1 }], 160, 360, 100);
-        reveal(query("outcomeProducts") + " article", 350, 220, mobile ? -9 : -24);
+        run(query("outcomeFragments") + " img", [
+          { transform: `translateX(${mobile ? -18 : -35}px) scale(1)`, opacity: 0, filter: "blur(0px)" },
+          { offset: .2, transform: `translateX(${mobile ? -10 : -20}px) scale(1)`, opacity: .8, filter: "blur(0px)" },
+          { offset: .65, opacity: .35, filter: "blur(.5px)" },
+          { transform: `translateX(${mobile ? 16 : 32}px) scale(.75)`, opacity: 0, filter: "blur(1.2px)" },
+        ], 180, 2200, 180);
         reveal(query("outcomeProducts") + " > p", 1250);
         break;
     }
