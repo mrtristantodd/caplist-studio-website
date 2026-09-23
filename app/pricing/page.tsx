@@ -17,9 +17,7 @@ const plans = [
       "Access the complete CAPLIST workflow with standard wholesale production pricing.",
     features: [
       "Product planning and capture requirements",
-      "Property-media analysis",
-      "Property Media Graph",
-      "Latent product inventory",
+      "Property media analysis and product opportunities",
       "Sales Opportunities",
       "Partner sales support resources",
       "Standard media retention",
@@ -82,24 +80,19 @@ const pricingSteps = [
   {
     title: "Subscribe",
     paragraphs: [
-      "Choose the CAPLIST plan that matches how often your business expects to produce.",
-      "Your subscription gives you access to the platform, product planning, media analysis, Property Media Graph, latent inventory and supporting workflow.",
+      "Choose the CAPLIST plan that matches your business volume. Your subscription gives you access to the platform, media analysis and supporting sales tools.",
     ],
   },
   {
     title: "Capture and upload",
     paragraphs: [
-      "For planned jobs, select the products you intend to sell before the shoot and CAPLIST shows you the required source media.",
-      "For existing or unplanned jobs, simply upload what you already have.",
-      "CAPLIST analyses the media and determines which products it can professionally support.",
+      "Upload the professional media from a completed property. CAPLIST identifies the additional products that media can support.",
     ],
   },
   {
     title: "Produce on demand",
     paragraphs: [
-      "CAPLIST may identify several additional products from a property.",
-      "Those products remain available without being unnecessarily rendered.",
-      "When you decide to create one, you pay the wholesale production rate for your subscription tier.",
+      "Create the products you want, when you need them, at the wholesale production rate for your plan.",
     ],
   },
 ] as const;
@@ -112,14 +105,7 @@ const questions = [
     ],
   },
   {
-    question: "Does CAPLIST automatically generate every available product?",
-    answer: [
-      "No.",
-      "CAPLIST identifies what the property media can support and stores those products as available opportunities. Nothing needs to be rendered until you want it.",
-    ],
-  },
-  {
-    question: "Can I generate another product later?",
+    question: "Can I create another product later?",
     answer: [
       "Yes.",
       "If the required source media remains available, CAPLIST can use the existing property analysis to create another eligible product later without unnecessarily starting from scratch.",
@@ -176,7 +162,7 @@ export default function Pricing() {
               CAPLIST gives professional property-media businesses the tools to turn each completed shoot into more products to sell.
             </p>
             <p>
-              Subscribe for access to the platform, media intelligence and workflow. Then pay a wholesale production rate only when you choose to create a finished commercial product.
+              Subscribe for access to the platform, media intelligence and workflow. Then pay the wholesale production rate for each finished product you create.
             </p>
           </div>
           <div className={styles.heroFoot}>
@@ -216,9 +202,8 @@ export default function Pricing() {
             <p className={styles.eyebrow}>WHOLESALE PRODUCTION PRICING</p>
             <h2 id="production-title">Pay when you create something to sell.</h2>
             <div className={styles.sectionCopy}>
-              <p>Uploading and analysing a property does not mean CAPLIST automatically generates every product the media can support.</p>
-              <p>CAPLIST analyses the available media, identifies eligible products and keeps those opportunities available within the property.</p>
-              <p className={styles.emphasis}>A production charge applies only when you choose to create a finished commercial product.</p>
+              <p>CAPLIST identifies the additional products your existing media can support and keeps them available to create when you need them.</p>
+              <p className={styles.emphasis}>A production charge applies only when you create a finished product.</p>
             </div>
           </div>
           <div className={styles.rateTableWrap}>
@@ -268,18 +253,17 @@ export default function Pricing() {
         <section className={`${styles.inventory} ${styles.wrap}`} aria-labelledby="inventory-title">
           <div>
             <h2 id="inventory-title">Your media can keep working after the shoot</h2>
-            <h3>Capture now. Sell later.</h3>
-            <p>A property may contain more sellable products than were originally ordered.</p>
-            <p>CAPLIST stores those opportunities as latent product inventory.</p>
-            <p>For example, a completed job may already contain everything required for:</p>
+            <h3>More products, ready when you need them.</h3>
+            <p>A completed property may already contain everything needed to create additional professional media.</p>
+            <p>CAPLIST identifies those opportunities so you can return later and create another product without another property visit.</p>
             <ul className={styles.productChips}>
               <li>Property Teaser</li>
               <li>Vertical Reel</li>
               <li>Drone Reel</li>
               <li>Alternative Edit</li>
             </ul>
-            <p className={styles.emphasis}>Nothing is generated until you choose to create it.</p>
-            <p>That means you can return to an existing property and produce additional media without another visit, provided the required source media remains available.</p>
+            <p className={styles.emphasis}>Create what you need, when you need it.</p>
+            <p>Return to an existing property and produce additional media from the source assets already captured.</p>
           </div>
         </section>
 
