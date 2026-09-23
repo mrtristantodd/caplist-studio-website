@@ -114,8 +114,9 @@ export function HomepageV2() {
           id="for-media-businesses"
         >
           <p className={styles.eyebrow}>{copy.outcomes.eyebrow}</p>
-          <h2>{copy.outcomes.headline}</h2>
+          <h2>Commercial benefits</h2>
           <div className={styles.introCopy}>
+            <p className={styles.outcomeLead}>{copy.outcomes.headline}</p>
             <Paragraphs body={copy.outcomes.body} />
           </div>
           <div className={styles.outcomeGrid}>

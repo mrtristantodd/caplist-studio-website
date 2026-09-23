@@ -246,7 +246,7 @@
   padding: 78px 0 55px;
 }
 .marketing-v3 .inner-hero p {
-  max-width: 790px;
+  max-width: 900px;
   color: #596571;
   font-size: 17px;
 }
@@ -270,7 +270,9 @@
   background: #111820;
   min-height: 0;
   height: auto;
+  aspect-ratio: 4 / 3;
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 0;
 }
@@ -282,13 +284,13 @@
   overflow: hidden;
 }
 .marketing-v3 .example-portrait {
-  width: 48%;
-  height: auto;
+  width: auto;
+  height: calc(100% - 40px);
   aspect-ratio: 9/16;
 }
 .marketing-v3 .example-stage:has(.example-portrait) {
   background: #111820;
-  padding: 28px;
+  padding: 20px;
 }
 .marketing-v3 .example-art {
   display: none;
@@ -302,6 +304,10 @@
 .marketing-v3 .example-caption {
   padding: 24px 0 0;
   display: block;
+}
+.marketing-v3 .example-caption > div {
+  display: grid;
+  grid-template-rows: auto minmax(58px, auto) minmax(84px, auto) auto;
 }
 .marketing-v3 .example-caption h2 {
   font-size: 27px;
@@ -448,20 +454,21 @@
 .marketing-v3 .brand-footer {
   background: #0b1117;
   color: #fff;
-  padding-block: 65px 24px;
+  padding-block: 48px 20px;
   border-top: 1px solid #28333e;
 }
 .marketing-v3 .brand-footer-main {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 70px;
+  gap: 52px;
+  padding-bottom: 28px;
 }
 .marketing-v3 .brand-footer h2 {
   color: #fff;
   font-size: 22px;
   line-height: 1.4;
   max-width: 290px;
-  margin-top: 26px;
+  margin-top: 18px;
   letter-spacing: -0.04em;
 }
 .marketing-v3 .brand-footer .footer-nav-heading {
@@ -476,7 +483,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 11px;
+  gap: 4px;
 }
 .marketing-v3 .brand-footer nav a {
   color: #acb7c2;
@@ -490,7 +497,11 @@
   border-color: #28333e;
   color: #a7b4c0;
   font-size: 11px;
-  margin-top: 55px;
+  margin-top: 0;
+  padding-block: 18px 0;
+}
+.marketing-v3 .brand-footer nav + nav {
+  margin-top: 20px;
 }
 .marketing-v3
   :where(a, button, input, select, textarea, summary):focus-visible {
@@ -562,8 +573,18 @@
     grid-template-columns: 1fr;
     gap: 55px;
   }
+  .marketing-v3 .example-stage {
+    aspect-ratio: auto;
+  }
   .marketing-v3 .example-portrait {
     width: 55%;
+    height: auto;
+  }
+  .marketing-v3 .example-stage:has(.example-portrait) {
+    padding: 20px;
+  }
+  .marketing-v3 .example-caption > div {
+    display: block;
   }
   .marketing-v3 .product-facts {
     grid-template-columns: 1fr;
@@ -577,7 +598,7 @@
   }
   .marketing-v3 .brand-footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 42px 24px;
+    gap: 30px 24px;
   }
   .marketing-v3 .brand-footer-main > div:first-child {
     grid-column: 1/-1;
