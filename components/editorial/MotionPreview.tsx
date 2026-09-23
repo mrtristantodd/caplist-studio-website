@@ -36,11 +36,15 @@ export function MotionPreview({ product }: { product: Product }) {
       data-paused={paused || !visible}
       aria-label={`${product.name} animated example`}
     >
-      {scenes[product.id].map((media, i) => (
+      {(scenes[product.id] ?? [product.media]).map((media, i) => (
         <div
           className="motion-scene"
           key={media}
-          data-movement={["pan", "push", "crane", "pull", "flyover"][(Number(product.number) - 1 + i) % 5]}
+          data-movement={
+            ["pan", "push", "crane", "pull", "flyover"][
+              (Number(product.number) - 1 + i) % 5
+            ]
+          }
           style={{ animationDelay: `${i * 8}s` }}
         >
           <Photo media={media} sizes="(max-width:767px) 90vw, 48vw" />

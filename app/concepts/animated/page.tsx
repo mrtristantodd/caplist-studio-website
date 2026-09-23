@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
-import { HomepageConcept } from "@/components/editorial/HomepageConcept";
-
-export const metadata: Metadata = {
-  title: "Homepage concept — Animated | Caplist Studio",
-  robots: { index: false, follow: false },
+import { HomepageV2 } from "@/components/homepage/HomepageV2";
+export const metadata = {
+  title: "Caplist Studio",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "/" },
 };
-
-export default function AnimatedHomepageConcept() {
-  return <HomepageConcept variant="animated" />;
+export default function CurrentHomepage() {
+  return <HomepageV2 />;
 }

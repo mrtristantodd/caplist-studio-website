@@ -1,0 +1,11 @@
+{
+  "baselineCommit": "79382af703a9f66f77b63fdcecd2f7dc933bb974",
+  "baselineBytes": 607244,
+  "baselineGzipBytes": 186913,
+  "motionBytes": 675893,
+  "motionGzipBytes": 211072,
+  "addedGzipBytes": 24159,
+  "newDependencies": 0,
+  "unchangedImagesBytes": 608646,
+  "unchangedVideoBytes": 5233879
+}

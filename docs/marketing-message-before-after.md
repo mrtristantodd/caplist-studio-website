@@ -1,3 +1,5 @@
+> Historical reference. Superseded where conflicting by `docs/marketing/approved-messaging-v3.md` and the v3 implementation review.
+
 # Caplist Studio marketing message: before → after
 
 This document records the buyer-facing messaging rewrite approved on 17 September 2026. It is intended to make the change in positioning visible and reviewable before deployment.

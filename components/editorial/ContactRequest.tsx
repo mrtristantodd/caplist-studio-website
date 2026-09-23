@@ -1,14 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
 import { CONTACTS } from "@/lib/site";
 
 const enquiryRoutes = {
-  General: CONTACTS.general,
-  "Partnership / early access": CONTACTS.partners,
-  "Privacy / data": CONTACTS.privacy,
-  "Accounts / billing": CONTACTS.accounts,
+  "General enquiries": CONTACTS.general,
+  "Demos & product enquiries": CONTACTS.general,
+  Partnerships: CONTACTS.partners,
+  "Privacy & data": CONTACTS.privacy,
+  "Accounts & billing": CONTACTS.accounts,
 } as const;
 
 type EnquiryType = keyof typeof enquiryRoutes;
@@ -18,10 +19,14 @@ export function ContactRequest() {
     name: "",
     email: "",
     business: "",
-    type: "General" as EnquiryType,
+    type: "General enquiries" as EnquiryType,
     message: "",
   });
   const [review, setReview] = useState(false);
+  const reviewHeading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (review) reviewHeading.current?.focus();
+  }, [review]);
   const [copied, setCopied] = useState(false);
   const recipient = enquiryRoutes[details.type];
 
@@ -45,7 +50,9 @@ export function ContactRequest() {
     return (
       <div className="pilot-form pilot-review">
         <p className="eyebrow">02 / Review your enquiry</p>
-        <h2>Your message is ready.</h2>
+        <h2 ref={reviewHeading} tabIndex={-1}>
+          Your message is ready.
+        </h2>
         <p>
           Review the details below, then open the draft in your email app. The
           website does not send anything until you choose to send the email.
@@ -61,7 +68,11 @@ export function ContactRequest() {
             Open email draft
             <ArrowUpRight size={18} />
           </a>
-          <button className="button button-outline" onClick={copy} type="button">
+          <button
+            className="button button-outline"
+            onClick={copy}
+            type="button"
+          >
             {copied ? <Check size={18} /> : <Copy size={18} />}{" "}
             {copied ? "Copied" : "Copy message"}
           </button>
@@ -106,12 +117,19 @@ export function ContactRequest() {
       <div className="pilot-field-grid">
         <label>
           Your name
-          <input name="name" autoComplete="name" required maxLength={100} />
+          <input
+            name="name"
+            defaultValue={details.name}
+            autoComplete="name"
+            required
+            maxLength={100}
+          />
         </label>
         <label>
           Work email
           <input
             name="email"
+            defaultValue={details.email}
             type="email"
             autoComplete="email"
             required
@@ -122,11 +140,16 @@ export function ContactRequest() {
       <div className="pilot-field-grid">
         <label>
           Business (optional)
-          <input name="business" autoComplete="organization" maxLength={160} />
+          <input
+            name="business"
+            defaultValue={details.business}
+            autoComplete="organization"
+            maxLength={160}
+          />
         </label>
         <label>
           Enquiry type
-          <select name="type" defaultValue="General">
+          <select name="type" defaultValue={details.type}>
             {Object.keys(enquiryRoutes).map((type) => (
               <option key={type}>{type}</option>
             ))}
@@ -135,12 +158,19 @@ export function ContactRequest() {
       </div>
       <label>
         Message
-        <textarea name="message" required maxLength={2000} rows={7} />
+        <textarea
+          name="message"
+          defaultValue={details.message}
+          required
+          maxLength={2000}
+          rows={7}
+        />
       </label>
       <p className="pilot-note">
         Please do not send property media, passwords or other sensitive files in
-        an initial website enquiry. See our <a href="/privacy">Privacy Policy</a>{" "}
-        and <a href="/media-policy">Media Handling Policy</a>.
+        an initial website enquiry. See our{" "}
+        <a href="/privacy">Privacy Policy</a> and{" "}
+        <a href="/media-policy">Media Handling Policy</a>.
       </p>
       <button className="button button-blue" type="submit">
         Review my enquiry <ArrowUpRight size={18} />

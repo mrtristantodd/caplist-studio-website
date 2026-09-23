@@ -1,3 +1,5 @@
+> Historical reference. Superseded where conflicting by `docs/marketing/approved-messaging-v3.md` and the v3 implementation review.
+
 # Caplist Studio homepage concept comparison
 
 The buyer-first copy rewrite changes the job of the homepage from explaining Caplist as a media-production system to making the commercial opportunity immediately obvious to a first-time property-media visitor.
