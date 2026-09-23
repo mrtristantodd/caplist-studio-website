@@ -42,8 +42,12 @@ def strings(o):
  else:
   for v in o:yield from strings(v)
 for name,path in [('homeCopy','index.html'),('demoCopy','demo/index.html'),('aboutCopy','about/index.html')]:
- for text in strings(load(name)):
+ copy=load(name)
+ # The approved interactive hero replaces the former static showcase block.
+ if name=='homeCopy':copy={key:value for key,value in copy.items() if key!='showcase'}
+ for text in strings(copy):
   if re.sub(r'\s+',' ',text).strip() not in pages[path].content():errors.append(f'{path}: approved copy missing: {text[:90]}')
+if 'See Caplist in action' not in pages['index.html'].content():errors.append('index.html: missing homepage workflow CTA')
 products=module_exports(ROOT/'lib/demo-media.ts')['products']
 for p in products:
  for key in ['name','purpose','description','client','business','needs','formats']:
