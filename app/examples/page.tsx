@@ -1,7 +1,7 @@
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { Photo, FrameCorners } from "@/components/editorial/Photo";
 import { AccessLink } from "@/components/editorial/StudioUI";
-import { products } from "@/lib/demo-media";
+import { catalogueProducts } from "@/lib/demo-media";
 export const metadata = {
   title: "Products — Caplist Studio",
   description:
@@ -31,7 +31,7 @@ export default function Products() {
       </section>
       <section className="light-section examples-section">
         <div className="shell examples-grid">
-          {products.map((p) => (
+          {catalogueProducts.map((p) => (
             <article className="example-card" key={p.id} id={p.id}>
               <div className="example-stage">
                 <div

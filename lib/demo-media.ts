@@ -210,3 +210,15 @@ export const products = [
   },
 ] as const;
 export type Product = (typeof products)[number];
+
+// Lead the public catalogue with the approved portrait/landscape comparison row.
+const catalogueLeadIds: readonly string[] = [
+  "photo-reel",
+  "vertical-reel",
+  "mixed-media",
+  "short-property-edit",
+];
+export const catalogueProducts = [
+  ...catalogueLeadIds.flatMap((id) => products.filter((product) => product.id === id)),
+  ...products.filter((product) => !catalogueLeadIds.includes(product.id)),
+];
