@@ -48,7 +48,7 @@ export const homeCopy = {
     eyebrow: "WHAT CAPLIST ADDS TO THE BUSINESS",
     headline: "Make more from each job — not only from doing more jobs.",
     body: [
-      "Growth in a property-media business usually means winning more shoots, adding more photographers or increasing editing capacity. CAPLIST creates another option: get more commercial value from the work your business is already producing.",
+      "Growth in a property-media business usually means winning more shoots, adding more photographers or increasing editing capacity. Caplist creates another option: get more commercial value from the work your business is already producing.",
     ],
     items: [
       [
