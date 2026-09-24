@@ -162,7 +162,7 @@ export default function Pricing() {
               CAPLIST gives professional property-media businesses the tools to turn each completed shoot into more products to sell.
             </p>
             <p>
-              Subscribe for access to the platform, media intelligence and workflow. Then pay the wholesale production rate for each finished product you create.
+              Subscribe for access to the platform, media intelligence and workflow. Then pay a wholesale production rate only when you choose to create a finished commercial product.
             </p>
           </div>
           <div className={styles.heroFoot}>
@@ -267,13 +267,15 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.wrap} ${styles.economics}`} aria-labelledby="economics-title">
-          <h2 id="economics-title">Higher usage should mean better production economics</h2>
-          <div className={styles.economicsCopy}>
-            <p>Your CAPLIST subscription determines your wholesale production rate.</p>
-            <p>Launch gives occasional users access without a large monthly commitment.</p>
-            <p>Growth lowers production costs for businesses using CAPLIST regularly.</p>
-            <p>Scale provides the strongest production economics and additional team, white-label and workflow capabilities for higher-volume businesses.</p>
+        <section className={`${styles.section} ${styles.wrap} ${styles.businessValue}`} aria-labelledby="business-value-title">
+          <div>
+            <p className={styles.eyebrow}>BUILT FOR YOUR BUSINESS</p>
+            <h2 id="business-value-title">More value as CAPLIST becomes part of your workflow.</h2>
+          </div>
+          <div className={styles.businessValueCopy}>
+            <p>Launch gives you a low-risk way to start adding new products to selected jobs.</p>
+            <p>Growth adds stronger commercial tools and reduced production rates for businesses using CAPLIST regularly.</p>
+            <p>Scale adds team, white-label and workflow capabilities for established higher-volume media businesses.</p>
             <div className={styles.commercialPoints}>
               <p>You remain free to set your own retail prices.</p>
               <p>CAPLIST does not take a percentage of what you charge your clients.</p>

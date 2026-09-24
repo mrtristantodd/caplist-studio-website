@@ -29,9 +29,9 @@
 }
 .heroText {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 50px;
-  max-width: 1110px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  max-width: 870px;
 }
 .heroText p { margin: 0; color: #566170; font-size: 17px; line-height: 1.6; }
 .heroText .lead { color: #25303b; font-size: 20px; line-height: 1.48; }
@@ -80,7 +80,7 @@
 .sectionIntro .eyebrow { grid-column: 1 / -1; }
 .sectionIntro h2 { margin-top: 14px; }
 .sectionCopy { padding-top: 8px; }
-.sectionCopy p, .steps p, .inventory p, .economics p, .quality p, .faq p, .finalCta p { color: #566170; font-size: 15px; line-height: 1.64; }
+.sectionCopy p, .steps p, .inventory p, .businessValue p, .quality p, .faq p, .finalCta p { color: #566170; font-size: 15px; line-height: 1.64; }
 .sectionCopy p { margin: 0 0 14px; }
 .sectionCopy .emphasis, .inventory .emphasis { color: #111820; font-weight: 650; }
 .rateTableWrap { margin-top: 36px; border: 1px solid #dce2e9; border-radius: 10px; overflow: hidden; }
@@ -107,9 +107,10 @@
 .inventory p { margin: 0 0 12px; }
 .productChips { display: flex; flex-wrap: wrap; gap: 9px; margin: 16px 0 20px; padding: 0; list-style: none; }
 .productChips li { padding: 10px 14px; border: 1px solid #cbd7e6; border-radius: 5px; background: #fff; font-size: 13px; font-weight: 570; }
-.economics { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 8%; }
-.economics h2 { margin: 0; }
-.economicsCopy p { margin: 0 0 12px; }
+.businessValue { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 8%; }
+.businessValue .eyebrow { font-size: 11px; line-height: 1.5; }
+.businessValue h2 { margin: 14px 0 0; }
+.businessValueCopy p { margin: 0 0 12px; }
 .commercialPoints { margin-top: 20px; padding: 13px 0 3px 20px; border-left: 3px solid #2f7bff; }
 .commercialPoints p { color: #111820; font-weight: 620; }
 .quality { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 8%; margin-block: 0 76px; padding: 44px 52px; border-radius: 10px; background: #131b23; color: #fff; }
@@ -142,7 +143,7 @@
 }
 @media (max-width: 800px) {
   .page { padding-top: 54px; }
-  .heroText, .sectionIntro, .economics, .quality { grid-template-columns: 1fr; gap: 16px; }
+  .heroText, .sectionIntro, .businessValue, .quality { grid-template-columns: 1fr; gap: 16px; }
   .heroText .lead { font-size: 18px; }
   .heroFoot { align-items: start; flex-direction: column; }
   .planGrid { grid-template-columns: 1fr; gap: 14px; }

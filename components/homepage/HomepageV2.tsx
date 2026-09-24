@@ -51,7 +51,7 @@ export function HomepageV2() {
             className={`${styles.opportunity} ${styles.wrap} ${section === copy.category ? styles.graphite : ""}`}
           >
             <p className={styles.eyebrow}>{section.eyebrow}</p>
-            <div className={styles.split}>
+            <div className={`${styles.split} ${section === copy.opportunity ? styles.opportunitySplit : styles.categorySplit}`}>
               <h2>{section.headline}</h2>
               <div className={styles.bodyCopy}>
                 <Paragraphs body={section.body} />

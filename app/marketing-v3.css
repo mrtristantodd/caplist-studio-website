@@ -147,7 +147,7 @@
 }
 .marketing-v3 .image-pair {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 .marketing-v3 .image-pair .editorial-image {
@@ -477,18 +477,20 @@
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin: 0 0 18px;
+  margin: 0 0 10px;
 }
 .marketing-v3 .brand-footer nav {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
 }
 .marketing-v3 .brand-footer nav a {
   color: #acb7c2;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 20px;
+  min-height: 28px;
+  padding-block: 4px;
 }
 .marketing-v3 .brand-footer nav a:hover {
   color: #fff;
@@ -498,10 +500,10 @@
   color: #a7b4c0;
   font-size: 11px;
   margin-top: 0;
-  padding-block: 18px 0;
+  padding-block: 14px 0;
 }
 .marketing-v3 .brand-footer nav + nav {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .marketing-v3
   :where(a, button, input, select, textarea, summary):focus-visible {
@@ -615,4 +617,9 @@
     animation-duration: 0s !important;
     transition-duration: 0s !important;
   }
+}
+
+/* Preserve generous targets on touch devices without loosening desktop lists. */
+@media (pointer: coarse) {
+  .marketing-v3 .brand-footer nav a { min-height: 44px; }
 }
