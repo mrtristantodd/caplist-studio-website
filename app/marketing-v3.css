@@ -37,7 +37,8 @@
   gap: 23px;
 }
 .marketing-v3 .desktop-nav a {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
   white-space: nowrap;
 }
 .marketing-v3 .studio-button,

@@ -28,15 +28,15 @@ export function HomepageV2() {
           <div className={`${styles.hero} ${styles.wrap}`}>
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
-              <h1>{copy.hero.headline}</h1>
+              <h1>
+                {copy.hero.headline.replace(/sell\.$/, "")}
+                <span className={styles.heroAccent}>sell.</span>
+              </h1>
               <div className={styles.lead}>
                 <Paragraphs body={copy.hero.body} />
               </div>
               <div className={styles.actions}>
-                <a className={styles.button} href="#how-it-works">
-                  See Caplist in action <ArrowRight size={18} />
-                </a>
-                <a className={styles.textLink} href="/demo">
+                <a className={styles.button} href="/demo">
                   Book a demo <ArrowUpRight size={17} />
                 </a>
               </div>
