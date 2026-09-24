@@ -114,6 +114,7 @@
 }
 .rateRow h3 { margin: 0; font-size: 18px; font-weight: 610; line-height: 1.32; }
 .ratePreview { position: relative; display: flex; align-items: center; justify-content: center; width: 112px; height: 78px; }
+.previewIcon { position: absolute; z-index: 2; left: 0; bottom: 3px; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid #e1e7ee; border-radius: 7px; background: #f5f7fa; color: #25313d; }
 .previewFrame { position: relative; display: block; flex: none; overflow: hidden; border-radius: 5px; background: #e8edf1; }
 .previewFrame img { object-fit: cover; }
 .portrait .previewFrame { width: 43px; height: 76px; }

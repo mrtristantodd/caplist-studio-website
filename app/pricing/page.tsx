@@ -1,5 +1,6 @@
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { AccessLink } from "@/components/editorial/StudioUI";
+import { House, ImageIcon, Layers, MonitorPlay, Play, Smartphone } from "lucide-react";
 import Image from "next/image";
 import styles from "./pricing.module.css";
 
@@ -77,14 +78,25 @@ const productionPrices = [
   { name: "Mixed Media Reel", launch: "$159", growth: "$139", scale: "$119" },
 ] as const;
 
+function DroneIcon({ size = 18, strokeWidth = 1.8 }: { size?: number; strokeWidth?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="5" r="2.5" /><circle cx="19" cy="5" r="2.5" />
+      <circle cx="5" cy="19" r="2.5" /><circle cx="19" cy="19" r="2.5" />
+      <path d="m7 7 3 3m7-3-3 3m-7 7 3-3m7 3-3-3" />
+      <rect x="10" y="10" width="4" height="4" rx="1" />
+    </svg>
+  );
+}
+
 const productionPreviews = [
-  { format: "portrait", images: ["/media/dp001/front.webp"] },
-  { format: "portrait", images: ["/media/dp001/pool.webp"] },
-  { format: "portrait", images: ["/media/dp001/living.webp"] },
-  { format: "portrait", images: ["/media/dp001/kitchen.webp"] },
-  { format: "landscape", images: ["/media/dp001/front.webp"] },
-  { format: "landscape", images: ["/media/dp001/drone.webp"] },
-  { format: "mixed", images: ["/media/dp001/front.webp", "/media/dp001/living.webp", "/media/dp001/drone.webp"] },
+  { format: "portrait", icon: ImageIcon, images: ["/media/luxury-coastal-480.webp"] },
+  { format: "portrait", icon: Play, images: ["/media/luxury-exterior-480.webp"] },
+  { format: "portrait", icon: Smartphone, images: ["/media/luxury-kitchen-480.webp"] },
+  { format: "portrait", icon: House, images: ["/media/luxury-living-480.webp"] },
+  { format: "landscape", icon: MonitorPlay, images: ["/media/showcase/living-480.webp"] },
+  { format: "landscape", icon: DroneIcon, images: ["/media/luxury-aerial-480.webp"] },
+  { format: "mixed", icon: Layers, images: ["/media/luxury-coastal-480.webp", "/media/familyLiving-480.webp", "/media/showcase/aerial-480.webp"] },
 ] as const;
 
 const pricingSteps = [
@@ -227,9 +239,11 @@ export default function Pricing() {
             <ol className={styles.rateList}>
               {productionPrices.map((product, index) => {
                 const preview = productionPreviews[index];
+                const Icon = preview.icon;
                 return (
                   <li className={styles.rateRow} key={product.name}>
                     <div className={`${styles.ratePreview} ${styles[preview.format]}`} aria-hidden="true">
+                      <span className={styles.previewIcon}><Icon size={17} strokeWidth={1.8} /></span>
                       {preview.images.map((src) => (
                         <span className={styles.previewFrame} key={src}>
                           <Image src={src} alt="" fill unoptimized sizes="120px" />
