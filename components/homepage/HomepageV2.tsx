@@ -28,10 +28,7 @@ export function HomepageV2() {
           <div className={`${styles.hero} ${styles.wrap}`}>
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
-              <h1>
-                {copy.hero.headline.replace(/sell\.$/, "")}
-                <span className={styles.heroAccent}>sell.</span>
-              </h1>
+              <h1>{copy.hero.headline}</h1>
               <div className={styles.lead}>
                 <Paragraphs body={copy.hero.body} />
               </div>

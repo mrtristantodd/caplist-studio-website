@@ -1,5 +1,6 @@
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { AccessLink } from "@/components/editorial/StudioUI";
+import Image from "next/image";
 import styles from "./pricing.module.css";
 
 export const metadata = {
@@ -74,6 +75,16 @@ const productionPrices = [
   { name: "16:9 Walkthrough", launch: "$149", growth: "$129", scale: "$109" },
   { name: "Drone Reel", launch: "$99", growth: "$79", scale: "$69" },
   { name: "Mixed Media Reel", launch: "$159", growth: "$139", scale: "$119" },
+] as const;
+
+const productionPreviews = [
+  { format: "portrait", images: ["/media/dp001/front.webp"] },
+  { format: "portrait", images: ["/media/dp001/pool.webp"] },
+  { format: "portrait", images: ["/media/dp001/living.webp"] },
+  { format: "portrait", images: ["/media/dp001/kitchen.webp"] },
+  { format: "landscape", images: ["/media/dp001/front.webp"] },
+  { format: "landscape", images: ["/media/dp001/drone.webp"] },
+  { format: "mixed", images: ["/media/dp001/front.webp", "/media/dp001/living.webp", "/media/dp001/drone.webp"] },
 ] as const;
 
 const pricingSteps = [
@@ -206,33 +217,35 @@ export default function Pricing() {
               <p className={styles.emphasis}>A production charge applies only when you create a finished product.</p>
             </div>
           </div>
-          <div className={styles.rateTableWrap}>
-            <table className={styles.rateTable}>
-              <caption className={styles.visuallyHidden}>Wholesale production prices by subscription plan, AUD excluding GST</caption>
-              <thead><tr><th scope="col">Production</th><th scope="col">Launch</th><th scope="col" className={styles.growthColumn}>Growth</th><th scope="col">Scale</th></tr></thead>
-              <tbody>
-                {productionPrices.map((product) => (
-                  <tr key={product.name}>
-                    <th scope="row">{product.name}</th>
-                    <td>{product.launch}</td>
-                    <td className={styles.growthColumn}>{product.growth}</td>
-                    <td>{product.scale}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className={styles.mobileRates} aria-label="Wholesale production prices by subscription plan">
-            {productionPrices.map((product) => (
-              <article key={product.name}>
-                <h3>{product.name}</h3>
-                <dl>
-                  <div><dt>Launch</dt><dd>{product.launch}</dd></div>
-                  <div><dt>Growth</dt><dd>{product.growth}</dd></div>
-                  <div><dt>Scale</dt><dd>{product.scale}</dd></div>
-                </dl>
-              </article>
-            ))}
+          <div className={styles.rateCatalogue} aria-label="Wholesale production prices by subscription plan, AUD excluding GST">
+            <div className={styles.rateHead} aria-hidden="true">
+              <span>Production</span>
+              <span>Launch</span>
+              <span className={styles.growthHead}>Growth <small>Most Popular</small></span>
+              <span>Scale</span>
+            </div>
+            <ol className={styles.rateList}>
+              {productionPrices.map((product, index) => {
+                const preview = productionPreviews[index];
+                return (
+                  <li className={styles.rateRow} key={product.name}>
+                    <div className={`${styles.ratePreview} ${styles[preview.format]}`} aria-hidden="true">
+                      {preview.images.map((src) => (
+                        <span className={styles.previewFrame} key={src}>
+                          <Image src={src} alt="" fill unoptimized sizes="120px" />
+                        </span>
+                      ))}
+                    </div>
+                    <h3>{product.name}</h3>
+                    <dl className={styles.ratePrices}>
+                      <div className={styles.ratePrice}><dt>Launch</dt><dd>{product.launch}</dd></div>
+                      <div className={`${styles.ratePrice} ${styles.growthPrice}`}><dt>Growth</dt><dd>{product.growth}</dd></div>
+                      <div className={styles.ratePrice}><dt>Scale</dt><dd>{product.scale}</dd></div>
+                    </dl>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
           <p className={styles.rateNote}>Production availability depends on the source media supplied and whether it meets CAPLIST&apos;s quality and capture requirements.</p>
         </section>
