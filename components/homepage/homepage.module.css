@@ -34,9 +34,12 @@
   text-transform: uppercase;
   margin-bottom: 26px;
 }
+.heroField {
+  background: #0b0d10;
+}
 .hero {
   display: grid;
-  grid-template-columns: minmax(360px, 0.86fr) minmax(560px, 1.22fr);
+  grid-template-columns: minmax(0, 0.41fr) minmax(0, 0.59fr);
   gap: 64px;
   align-items: center;
   padding-block: 88px 102px;
@@ -45,6 +48,7 @@
   min-width: 0;
   align-self: center;
   scroll-margin-top: 108px;
+
 }
 .hero h1 {
   font-size: clamp(44px, 4.6vw, 66px);
@@ -52,8 +56,24 @@
   letter-spacing: -0.065em;
   text-wrap: initial;
 }
-.hero h1 span {
-  color: #0b0d10;
+.heroCopy h1,
+.heroCopy h1 span {
+  color: #fafafa;
+}
+.heroCopy .eyebrow,
+.heroCopy .audience {
+  color: #b9bcc2;
+}
+.heroCopy .lead {
+  color: #d2d4d8;
+}
+.heroCopy .textLink {
+  color: #f0f1f3;
+}
+.heroWorkflow :global([data-workflow-state]) {
+  border: 1px solid #dce2e9;
+  border-radius: 12px;
+  box-shadow: none;
 }
 .lead {
   color: var(--home-muted);
@@ -66,7 +86,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  margin-top: 32px;
+  margin-top: 26px;
 }
 .button {
   min-height: 52px;
@@ -106,7 +126,7 @@
 .audience {
   color: var(--home-muted);
   font-size: 12px;
-  margin-top: 32px;
+  margin-top: 26px;
 }
 .heroFigure {
   margin: 0;
@@ -436,7 +456,7 @@
   }
   .hero {
     gap: 40px;
-    grid-template-columns: minmax(320px, 0.72fr) minmax(510px, 1.28fr);
+    grid-template-columns: minmax(0, 0.41fr) minmax(0, 0.59fr);
   }
   .hero h1 {
     font-size: 49px;
@@ -682,22 +702,29 @@
     width: 144px;
     gap: 8px;
   }
-  .page :global(.home-header-light .brand-lockup img:first-child) {
-    width: 30px;
-    height: auto;
-  }
-  .page :global(.home-header-light .brand-lockup img:last-child) {
-    width: 106px;
+  .page :global(.home-header-light .brand-lockup img) {
+    width: 100%;
     height: auto;
   }
 }
 
 /* Pass 1: readable containers for the approved content architecture. */
 .introCopy {
-  max-width: 760px;
+  max-width: 900px;
   margin-block: 28px 40px;
   color: var(--home-muted);
   font-size: 17px;
+}
+.outcomeLead {
+  max-width: 760px;
+  color: #18212b;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+.outcomeLead + p {
+  margin-top: 18px;
 }
 .bodyCopy p + p {
   margin-top: 20px;
@@ -753,6 +780,11 @@
   gap: 70px;
   align-items: start;
 }
+/* Title and body share one grid row beneath the section eyebrow. */
+.split > h2,
+.split > .bodyCopy {
+  align-self: start;
+}
 .split p {
   max-width: 600px;
   font-size: 16px;
@@ -782,21 +814,24 @@
 }
 .showroom {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 38px 26px;
+  gap: 12px 26px;
 }
-.product0,
-.product1,
-.product2,
-.product3,
-.product4 {
-  grid-column: auto;
-  grid-row: auto;
-  max-width: none;
+.product {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 12px;
+  padding-bottom: 26px;
 }
-.product0,
-.product1 {
-  grid-row: span 2;
+.productStage {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
 }
+.productStage .landscape { width: 100%; }
+.productStage .portrait { width: 56.25%; }
+.productTitle { margin-top: 8px; }
+.product > p { margin-top: 0; }
 .productImage {
   border-radius: 3px;
 }
@@ -861,13 +896,18 @@
     grid-row: auto;
   }
   .split {
-    gap: 35px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
   .graphite {
     padding-inline: 28px;
   }
   .finalCta > .wrap {
-    gap: 24px 35px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .finalCta .button {
+    grid-column: auto;
   }
   .hero {
     gap: 35px;
@@ -888,8 +928,18 @@
     font-size: 16px;
   }
   .showroom {
-    gap: 30px 18px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
+  .product {
+    display: block;
+    grid-row: auto;
+    padding-bottom: 0;
+  }
+  .productStage { aspect-ratio: auto; }
+  .productStage .portrait { width: 78%; }
+  .productTitle { margin-top: 20px; }
+  .product > p { margin-top: 8px; }
   .productTitle h3 {
     font-size: 16px;
   }
@@ -907,6 +957,13 @@
   }
   .split {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 24px;
+  }
+  .split > h2,
+  .split > .bodyCopy {
+    grid-column: 1;
+    grid-row: auto;
   }
   .graphite {
     padding: 55px 20px;
@@ -931,5 +988,16 @@
   }
   .walkthrough {
     padding-bottom: 30px;
+  }
+}
+
+/* Match visible cap tops as well as grid boxes, without positional offsets. */
+@media (min-width: 961px) {
+  .split > h2,
+  .split > .bodyCopy > p:first-child,
+  .finalCta h2,
+  .finalCta .introCopy > p:first-child {
+    text-box-trim: trim-start;
+    text-box-edge: cap alphabetic;
   }
 }

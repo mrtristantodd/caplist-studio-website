@@ -3,7 +3,7 @@
 ## Sources and scope
 
 - `claude-design-system-prompt-main.zip`: design principles and sequential review procedures. Used for token extraction, hierarchy, rhythm, interaction states and accessibility. The archive is reference material, not a replacement for workspace instructions. No prompt, AGENTS file or tool installation from it was activated.
-- `CAPLIST.zip`: original black/white outlined wordmarks and three-panel marks. SVG paths are preserved exactly; individual assets are extracted into `public/brand` with tight view boxes. The logo typography is original artwork. No body font files or named typeface specification were included, so the site's existing locally hosted Inter remains.
+- Current brand source: approved `CAPLIST STUDIO LOGOS - SVG.zip` and `CAPLIST STUDIO LOGOS - PNG.zip`. Supplied SVG artwork is installed in `public/brand` with tight view boxes. The updated archives' dedicated `APP` asset is used for app/social icons and their dedicated `FAVICON` asset for browser icons; the footer uses the supplied all-white horizontal logo. The logo typography is supplied artwork; the site's existing locally hosted Inter remains the body font. Earlier `CAPLIST.zip` treatments are historical.
 - Supplied positioning copy: source for commercial narrative, product definitions, workflow, reseller positioning, quality principles, vision, navigation, commercial copy and SEO; the later locked baseline sets the current hero CTA pair. Commentary about the positioning brief is editorial guidance and is not published as customer copy.
 
 ## Direction
@@ -14,7 +14,7 @@ Use near-black and lightly toned paper as the two primary section surfaces. Use 
 
 ## Tokens
 
-`app/tokens.css` defines the system. The locked brand blue is **#2F7BFF**, overriding the older #2F6AF5 embedded in the ZIP. SVG centre-panel fills have been normalised to the locked blue without changing geometry. Small white button labels use an 88% brand-blue / 12% brand-black mix for AA contrast. Pale blue is reserved for text on dark backgrounds. Primary neutrals come from the existing site: #0B0D10, #F8FAFC and #566170.
+`app/tokens.css` defines the UI system. Its action blue is **#2F7BFF**; supplied logo artwork retains its original blue centre-panel fill without recolouring. Small white button labels use an 88% action-blue / 12% brand-black mix for AA contrast. Pale blue is reserved for text on dark backgrounds. Primary neutrals come from the existing site: #0B0D10, #F8FAFC and #566170.
 
 - Spacing: 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96px.
 - Type: 12px labels, 14px secondary, 16px body, 18px lead, 24px cards. Fluid 32–52px section headings and 42–72px display headings.

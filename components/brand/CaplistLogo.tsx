@@ -1,31 +1,23 @@
-/** Original outlined wordmark and three-panel mark from the supplied CAPLIST.zip. */
-export function CaplistMark({ size = 32 }: { size?: number }) {
+/** Approved Caplist Studio artwork; the SVGs preserve the supplied logo paths. */
+export function CaplistMark({ size = 32, onDark = false }: { size?: number; onDark?: boolean }) {
   return (
     <img
-      src="/brand/caplist-mark-light.svg"
+      src={`/brand/caplist-mark-${onDark ? "dark" : "light"}.svg`}
       width={size}
-      height={(size * 280) / 340}
+      height={(size * 600) / 620}
       alt=""
       aria-hidden="true"
       className="brand-mark"
     />
   );
 }
-export function CaplistLogo({ light = false }: { light?: boolean }) {
+export function CaplistLogo({ light = false, monochrome = false }: { light?: boolean; monochrome?: boolean }) {
   return (
     <div className="brand-lockup" role="img" aria-label="Caplist Studio">
       <img
-        src={`/brand/caplist-mark-${light ? "dark" : "light"}.svg`}
-        width={38}
-        height={31.3}
-        alt=""
-        aria-hidden="true"
-        className="brand-mark"
-      />
-      <img
-        src={`/brand/caplist-wordmark-${light ? "dark" : "light"}.svg`}
-        width={140}
-        height={39.2}
+        src={monochrome ? "/brand/caplist-horizontal-monochrome-white.svg" : `/brand/caplist-horizontal-on-${light ? "light" : "dark"}.svg`}
+        width={190}
+        height={39}
         alt=""
         aria-hidden="true"
       />

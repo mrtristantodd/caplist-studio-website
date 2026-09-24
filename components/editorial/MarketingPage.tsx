@@ -7,7 +7,7 @@ export function Footer() {
         <div className="brand-footer-main">
           <div>
             <a href="/#top" aria-label="Caplist Studio home">
-              <CaplistLogo />
+              <CaplistLogo monochrome />
             </a>
             <h2>Capture once. Create more. Sell more.</h2>
           </div>

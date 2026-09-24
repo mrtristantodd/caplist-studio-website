@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/editorial/SiteHeader";
 import { Footer } from "@/components/editorial/MarketingPage";
 import { homeCopy as copy } from "@/lib/approved-messaging";
-import { products } from "@/lib/demo-media";
+import { catalogueProducts } from "@/lib/demo-media";
 import { Photo } from "@/components/editorial/Photo";
 import { HeroWorkflowDemo } from "@/components/home/HeroWorkflowDemo";
 import styles from "./homepage.module.css";
@@ -24,25 +24,24 @@ export function HomepageV2() {
       </a>
       <SiteHeader light />
       <main id="main-content">
-        <section className={`${styles.hero} ${styles.wrap}`} id="top">
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
-            <h1>{copy.hero.headline}</h1>
-            <div className={styles.lead}>
-              <Paragraphs body={copy.hero.body} />
+        <section className={styles.heroField} id="top">
+          <div className={`${styles.hero} ${styles.wrap}`}>
+            <div className={styles.heroCopy}>
+              <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
+              <h1>{copy.hero.headline}</h1>
+              <div className={styles.lead}>
+                <Paragraphs body={copy.hero.body} />
+              </div>
+              <div className={styles.actions}>
+                <a className={styles.button} href="/demo">
+                  Book a demo <ArrowUpRight size={17} />
+                </a>
+              </div>
+              <p className={styles.audience}>{copy.hero.audience}</p>
             </div>
-            <div className={styles.actions}>
-              <a className={styles.button} href="#how-it-works">
-                See Caplist in action <ArrowRight size={18} />
-              </a>
-              <a className={styles.textLink} href="/demo">
-                Book a demo <ArrowUpRight size={17} />
-              </a>
+            <div className={styles.heroWorkflow} id="how-it-works">
+              <HeroWorkflowDemo />
             </div>
-            <p className={styles.audience}>{copy.hero.audience}</p>
-          </div>
-          <div className={styles.heroWorkflow} id="how-it-works">
-            <HeroWorkflowDemo />
           </div>
         </section>
         {[copy.opportunity, copy.category].map((section) => (
@@ -76,29 +75,31 @@ export function HomepageV2() {
             <Paragraphs body={copy.products.body} />
           </div>
           <div className={styles.showroom}>
-            {products.map((product, index) => (
+            {catalogueProducts.map((product) => (
               <article
                 key={product.id}
-                className={`${styles.product} ${styles[`product${index}`] || ""}`}
+                className={styles.product}
               >
-                <a
-                  className={`${styles.productImage} ${product.ratio === "9:16" ? styles.portrait : styles.landscape}`}
-                  href={`/examples/#${product.id}`}
-                  aria-label={`Explore ${product.name}`}
-                >
-                  <Photo
-                    media={product.media}
-                    sizes={
-                      product.ratio === "9:16"
-                        ? "(max-width:640px) 200vw, 100vw"
-                        : "(max-width:640px) 90vw, 50vw"
-                    }
-                  />
-                  <span className={styles.productFormat}>{product.ratio}</span>
-                  <span className={styles.productArrow}>
-                    <ArrowUpRight size={23} />
-                  </span>
-                </a>
+                <div className={styles.productStage}>
+                  <a
+                    className={`${styles.productImage} ${product.ratio === "9:16" ? styles.portrait : styles.landscape}`}
+                    href={`/examples/#${product.id}`}
+                    aria-label={`Explore ${product.name}`}
+                  >
+                    <Photo
+                      media={product.media}
+                      sizes={
+                        product.ratio === "9:16"
+                          ? "(max-width:640px) 200vw, 100vw"
+                          : "(max-width:640px) 90vw, 50vw"
+                      }
+                    />
+                    <span className={styles.productFormat}>{product.ratio}</span>
+                    <span className={styles.productArrow}>
+                      <ArrowUpRight size={23} />
+                    </span>
+                  </a>
+                </div>
                 <div className={styles.productTitle}>
                   <h3>
                     <a href={`/examples/#${product.id}`}>{product.name}</a>
@@ -114,8 +115,9 @@ export function HomepageV2() {
           id="for-media-businesses"
         >
           <p className={styles.eyebrow}>{copy.outcomes.eyebrow}</p>
-          <h2>{copy.outcomes.headline}</h2>
+          <h2>Commercial benefits</h2>
           <div className={styles.introCopy}>
+            <p className={styles.outcomeLead}>{copy.outcomes.headline}</p>
             <Paragraphs body={copy.outcomes.body} />
           </div>
           <div className={styles.outcomeGrid}>

@@ -28,8 +28,10 @@ for path,page in pages.items():
   if target not in pages:
    if not (ROOT/'out'/target).exists():errors.append(f'{path}: missing {href}')
   elif u.fragment and unquote(u.fragment) not in pages[target].ids:errors.append(f'{path}: missing anchor {href}')
- for banned in ['Capture once. Sell more.','Interactive Floorplan','Try it with your media','Request early access','See what your media could create','product library','The products available depend','wholesale','quality gates']:
+ for banned in ['Capture once. Sell more.','Interactive Floorplan','Try it with your media','Request early access','See what your media could create','product library','The products available depend','quality gates','wholesale margin','wholesale costs','partner economics','COGS','resale margin formulas']:
   if banned.lower() in page.content().lower():errors.append(f'{path}: stale language {banned}')
+ if path != 'pricing/index.html' and 'wholesale' in page.content().lower():
+  errors.append(f'{path}: stale language wholesale')
 def module_exports(path):
  js = "const ts=require('typescript'),fs=require('fs'),vm=require('vm');const source=fs.readFileSync(process.argv[1],'utf8');const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;const scope={exports:{}};vm.runInNewContext(compiled,scope);console.log(JSON.stringify(scope.exports));"
  return json.loads(subprocess.check_output(['node','-e',js,str(path)],cwd=ROOT,text=True))

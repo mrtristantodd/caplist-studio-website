@@ -37,7 +37,8 @@
   gap: 23px;
 }
 .marketing-v3 .desktop-nav a {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
   white-space: nowrap;
 }
 .marketing-v3 .studio-button,
@@ -147,7 +148,7 @@
 }
 .marketing-v3 .image-pair {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 .marketing-v3 .image-pair .editorial-image {
@@ -246,7 +247,7 @@
   padding: 78px 0 55px;
 }
 .marketing-v3 .inner-hero p {
-  max-width: 790px;
+  max-width: 900px;
   color: #596571;
   font-size: 17px;
 }
@@ -257,24 +258,35 @@
   padding: 25px 0 80px;
 }
 .marketing-v3 .examples-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 70px 44px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px 26px;
   align-items: start;
 }
 .marketing-v3 .example-card {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  padding-bottom: 40px;
   background: #fff;
   color: #111820;
   border: 0;
 }
 .marketing-v3 .example-stage {
-  background: #111820;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   min-height: 0;
   height: auto;
+  aspect-ratio: 1;
   display: flex;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   padding: 0;
 }
 .marketing-v3 .example-media {
+  box-shadow: none;
+  border-radius: 9px;
+  margin: 0;
   height: auto;
   width: 100%;
   aspect-ratio: 16/9;
@@ -282,13 +294,9 @@
   overflow: hidden;
 }
 .marketing-v3 .example-portrait {
-  width: 48%;
+  width: 56.25%;
   height: auto;
   aspect-ratio: 9/16;
-}
-.marketing-v3 .example-stage:has(.example-portrait) {
-  background: #111820;
-  padding: 28px;
 }
 .marketing-v3 .example-art {
   display: none;
@@ -299,18 +307,18 @@
   color: #fff;
   font-size: 11px;
 }
-.marketing-v3 .example-caption {
-  padding: 24px 0 0;
-  display: block;
+.marketing-v3 .example-caption,
+.marketing-v3 .example-caption > div {
+  display: contents;
 }
 .marketing-v3 .example-caption h2 {
   font-size: 27px;
-  margin-bottom: 14px;
+  margin: 0;
 }
 .marketing-v3 .example-caption h3 {
   font-size: 20px;
   line-height: 1.4;
-  margin-bottom: 14px;
+  margin: 0;
 }
 .marketing-v3 .example-caption p {
   font-size: 15px;
@@ -448,20 +456,21 @@
 .marketing-v3 .brand-footer {
   background: #0b1117;
   color: #fff;
-  padding-block: 65px 24px;
+  padding-block: 48px 20px;
   border-top: 1px solid #28333e;
 }
 .marketing-v3 .brand-footer-main {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 70px;
+  gap: 52px;
+  padding-bottom: 28px;
 }
 .marketing-v3 .brand-footer h2 {
   color: #fff;
   font-size: 22px;
   line-height: 1.4;
   max-width: 290px;
-  margin-top: 26px;
+  margin-top: 18px;
   letter-spacing: -0.04em;
 }
 .marketing-v3 .brand-footer .footer-nav-heading {
@@ -470,18 +479,20 @@
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin: 0 0 18px;
+  margin: 0 0 10px;
 }
 .marketing-v3 .brand-footer nav {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 11px;
+  gap: 0;
 }
 .marketing-v3 .brand-footer nav a {
   color: #acb7c2;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 20px;
+  min-height: 28px;
+  padding-block: 4px;
 }
 .marketing-v3 .brand-footer nav a:hover {
   color: #fff;
@@ -490,7 +501,11 @@
   border-color: #28333e;
   color: #a7b4c0;
   font-size: 11px;
-  margin-top: 55px;
+  margin-top: 0;
+  padding-block: 14px 0;
+}
+.marketing-v3 .brand-footer nav + nav {
+  margin-top: 16px;
 }
 .marketing-v3
   :where(a, button, input, select, textarea, summary):focus-visible {
@@ -503,6 +518,11 @@
   }
   .marketing-v3 .mobile-menu {
     display: block;
+  }
+}
+@media (max-width: 1100px) {
+  .marketing-v3 .examples-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 960px) {
@@ -562,8 +582,28 @@
     grid-template-columns: 1fr;
     gap: 55px;
   }
+  .marketing-v3 .example-stage {
+    aspect-ratio: auto;
+  }
   .marketing-v3 .example-portrait {
     width: 55%;
+    height: auto;
+  }
+  .marketing-v3 .example-card {
+    display: block;
+    grid-row: auto;
+    padding-bottom: 0;
+  }
+  .marketing-v3 .example-caption {
+    display: block;
+    padding: 24px 0 0;
+    margin: 0;
+  }
+  .marketing-v3 .example-caption :is(h2, h3) {
+    margin-bottom: 14px;
+  }
+  .marketing-v3 .example-caption > div {
+    display: block;
   }
   .marketing-v3 .product-facts {
     grid-template-columns: 1fr;
@@ -577,7 +617,7 @@
   }
   .marketing-v3 .brand-footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 42px 24px;
+    gap: 30px 24px;
   }
   .marketing-v3 .brand-footer-main > div:first-child {
     grid-column: 1/-1;
@@ -594,4 +634,9 @@
     animation-duration: 0s !important;
     transition-duration: 0s !important;
   }
+}
+
+/* Preserve generous targets on touch devices without loosening desktop lists. */
+@media (pointer: coarse) {
+  .marketing-v3 .brand-footer nav a { min-height: 44px; }
 }
