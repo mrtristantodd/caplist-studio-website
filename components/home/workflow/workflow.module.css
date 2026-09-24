@@ -39,13 +39,8 @@
   gap: 8px;
 }
 
-.shellHeader :global(.brand-lockup img:first-child) {
-  width: 27px;
-  height: auto;
-}
-
-.shellHeader :global(.brand-lockup img:last-child) {
-  width: 82px;
+.shellHeader :global(.brand-lockup img) {
+  width: 100%;
   height: auto;
 }
 

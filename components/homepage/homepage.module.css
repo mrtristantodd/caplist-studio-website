@@ -702,12 +702,8 @@
     width: 144px;
     gap: 8px;
   }
-  .page :global(.home-header-light .brand-lockup img:first-child) {
-    width: 30px;
-    height: auto;
-  }
-  .page :global(.home-header-light .brand-lockup img:last-child) {
-    width: 106px;
+  .page :global(.home-header-light .brand-lockup img) {
+    width: 100%;
     height: auto;
   }
 }

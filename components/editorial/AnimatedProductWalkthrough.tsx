@@ -107,7 +107,7 @@ export function AnimatedProductWalkthrough() {
                   <span className={styles.stepLabel}>0{stage + 1} / 06</span>
                   <h3>{current.label}</h3>
                 </div>
-                <CaplistMark size={34} />
+                <CaplistMark size={34} onDark />
               </div>
 
               <div className={styles.messageCard} data-stage={current.id}>

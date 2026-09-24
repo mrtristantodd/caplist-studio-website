@@ -117,7 +117,7 @@ function HeroMiniAnimation() {
           </div>
         </div>
         <div className={`${styles.miniFrame} ${styles.miniFrameTwo}`}>
-          <CaplistMark size={34} />
+          <CaplistMark size={34} onDark />
           <strong>Checking what this shoot can become…</strong>
           <div className={styles.progressTrack}><span /></div>
         </div>
@@ -208,7 +208,7 @@ function AnimatedWalkthrough() {
 
         <div className={styles.appDemo} aria-label="Animated demonstration of the Caplist Studio workflow">
           <div className={styles.appChrome}>
-            <span className={styles.appBrand}><CaplistMark size={24} /> CAPLIST STUDIO</span>
+            <span className={styles.appBrand}><CaplistMark size={24} onDark /> CAPLIST STUDIO</span>
             <span>PROJECT / 14 RIVER STREET</span>
           </div>
           <div className={styles.appBody}>
@@ -230,7 +230,7 @@ function AnimatedWalkthrough() {
                 <strong>Caplist checks what the media can support</strong>
               </div>
               <div className={styles.analysisPanel}>
-                <div className={styles.analysisIcon}><CaplistMark size={44} /></div>
+                <div className={styles.analysisIcon}><CaplistMark size={44} onDark /></div>
                 <p>Looking at media type, quality and suitability for additional products.</p>
                 <div className={styles.analysisRows}>
                   <span>Photography <b>Ready</b></span>

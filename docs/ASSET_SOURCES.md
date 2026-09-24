@@ -29,14 +29,14 @@ All website media is served from `public/media`. `lib/demo-media.ts` contains th
 
 Four prebuilt WebP variants per photograph use the existing local image loader. All active media now depicts Australian properties. Previous demo images remain archived in the repository but are not referenced by the website. These examples are from different shoots; they illustrate the product concept.
 
-The rising-bar logo and geometric wordmark are scalable vector interpretations of the user-supplied brand board, approved for this direction in the task. Replace with master vector brand artwork when available. The four corners are retained solely as photographic framing details.
+Current live logos use the approved artwork supplied in `CAPLIST STUDIO LOGOS - SVG.zip` and `CAPLIST STUDIO LOGOS - PNG.zip`. The SVG paths and fills are preserved in `public/brand/`; only export view boxes and required file formats were adapted. Standalone app, social and favicon tiles use the approved reversed mark on `#0B0D10`, with the original blue centre accent. The four corners are retained solely as photographic framing details.
 
 Inter is hosted locally. Source: https://github.com/rsms/inter . The SIL Open Font License is included at `public/fonts/OFL.txt`. Next local-font loading preloads the font and supplies an adjusted fallback to prevent layout shift.
 
 The supplied visual references are preserved in `docs/review/design-reference.png` and `docs/review/brand-reference.png`.
 
 ## Brand kit and September 11 refinements
-- Brand source: user-supplied `Screenshot 2026-09-11 at 2.20.06 PM.png`. Reconstructed scalable three-panel mark and blue-A wordmark from the raster reference; these are vector interpretations, not original source artwork.
+- Historical brand source for the September 11 iteration: user-supplied `Screenshot 2026-09-11 at 2.20.06 PM.png`. Its reconstructed vector interpretations have since been superseded by the approved supplied logo archives above.
 - Reusable light/dark icon, horizontal, stacked and wordmark SVGs: `public/brand/`.
 - Six additional fictional property concepts generated with OpenAI image generation: suburban, weatherboard, familyKitchen, familyLiving, bathroom, bedroom. Responsive WebP variants are locally hosted in `public/media/`.
 - Two catalogue properties now show architectural suburban homes. Harbour imagery remains for drone examples. Five-product range retained at the user's request.

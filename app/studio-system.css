@@ -36,6 +36,8 @@ button:disabled {
 .brand-lockup img {
   display: block;
   flex-shrink: 0;
+  width: 100%;
+  height: auto;
 }
 .brand-mark {
   object-fit: contain;
@@ -999,7 +1001,7 @@ button:disabled {
     gap: 8px;
   }
   .brand-lockup > img {
-    width: 124px;
+    width: 100%;
   }
   .brand-lockup .brand-mark {
     width: 32px;
