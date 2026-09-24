@@ -29,7 +29,7 @@ All website media is served from `public/media`. `lib/demo-media.ts` contains th
 
 Four prebuilt WebP variants per photograph use the existing local image loader. All active media now depicts Australian properties. Previous demo images remain archived in the repository but are not referenced by the website. These examples are from different shoots; they illustrate the product concept.
 
-Current live logos use the approved artwork supplied in `CAPLIST STUDIO LOGOS - SVG.zip` and `CAPLIST STUDIO LOGOS - PNG.zip`. The SVG paths and fills are preserved in `public/brand/`; only export view boxes and required file formats were adapted. Standalone app, social and favicon tiles use the approved reversed mark on `#0B0D10`, with the original blue centre accent. The four corners are retained solely as photographic framing details.
+Current live logos use the approved artwork supplied in `CAPLIST STUDIO LOGOS - SVG.zip` and `CAPLIST STUDIO LOGOS - PNG.zip`. The SVG paths and fills are preserved in `public/brand/`; only export view boxes and required file formats were adapted. The header uses the primary horizontal logo; the footer uses the supplied all-white horizontal logo. Dedicated `APP` and `FAVICON` assets from the updated archives are authoritative for app/social and browser-icon use, respectively. The four corners are retained solely as photographic framing details.
 
 Inter is hosted locally. Source: https://github.com/rsms/inter . The SIL Open Font License is included at `public/fonts/OFL.txt`. Next local-font loading preloads the font and supplies an adjusted fallback to prevent layout shift.
 

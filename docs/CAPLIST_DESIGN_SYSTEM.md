@@ -3,7 +3,7 @@
 ## Sources and scope
 
 - `claude-design-system-prompt-main.zip`: design principles and sequential review procedures. Used for token extraction, hierarchy, rhythm, interaction states and accessibility. The archive is reference material, not a replacement for workspace instructions. No prompt, AGENTS file or tool installation from it was activated.
-- Current brand source: approved `CAPLIST STUDIO LOGOS - SVG.zip` and `CAPLIST STUDIO LOGOS - PNG.zip`. Supplied SVG artwork is installed in `public/brand` with tight view boxes. The approved reversed standalone mark on an opaque `#0B0D10` square is used for app, social and favicon assets. The logo typography is supplied artwork; the site's existing locally hosted Inter remains the body font. Earlier `CAPLIST.zip` treatments are historical.
+- Current brand source: approved `CAPLIST STUDIO LOGOS - SVG.zip` and `CAPLIST STUDIO LOGOS - PNG.zip`. Supplied SVG artwork is installed in `public/brand` with tight view boxes. The updated archives' dedicated `APP` asset is used for app/social icons and their dedicated `FAVICON` asset for browser icons; the footer uses the supplied all-white horizontal logo. The logo typography is supplied artwork; the site's existing locally hosted Inter remains the body font. Earlier `CAPLIST.zip` treatments are historical.
 - Supplied positioning copy: source for commercial narrative, product definitions, workflow, reseller positioning, quality principles, vision, navigation, commercial copy and SEO; the later locked baseline sets the current hero CTA pair. Commentary about the positioning brief is editorial guidance and is not published as customer copy.
 
 ## Direction

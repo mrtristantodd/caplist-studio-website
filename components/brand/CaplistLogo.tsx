@@ -11,11 +11,11 @@ export function CaplistMark({ size = 32, onDark = false }: { size?: number; onDa
     />
   );
 }
-export function CaplistLogo({ light = false }: { light?: boolean }) {
+export function CaplistLogo({ light = false, monochrome = false }: { light?: boolean; monochrome?: boolean }) {
   return (
     <div className="brand-lockup" role="img" aria-label="Caplist Studio">
       <img
-        src={`/brand/caplist-horizontal-on-${light ? "light" : "dark"}.svg`}
+        src={monochrome ? "/brand/caplist-horizontal-monochrome-white.svg" : `/brand/caplist-horizontal-on-${light ? "light" : "dark"}.svg`}
         width={190}
         height={39}
         alt=""
