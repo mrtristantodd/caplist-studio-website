@@ -25,10 +25,3 @@ jobs:
         run: npm run build
       - name: Check approved marketing copy and links
         run: python3 scripts/check-marketing-copy.py
-      - name: Upload static site artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: caplist-studio-site
-          path: out/
-          if-no-files-found: error
-          retention-days: 14
