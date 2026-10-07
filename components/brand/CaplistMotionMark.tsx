@@ -23,7 +23,7 @@ export function CaplistMotionMark({
 
   const src = reducedMotion
     ? `/brand/caplist-mark-${onDark ? "dark" : "light"}.svg`
-    : `/brand/motion/caplist-logo-motion-${onDark ? "dark" : "light"}-transparent-short-2s.svg`;
+    : `/brand/motion/caplist-logo-motion-${onDark ? "dark" : "light"}-transparent-short-2s-web.svg`;
 
   return (
     <img
