@@ -5429,3 +5429,35 @@ html {scroll-padding-top:110px;}
   border-color: var(--blue);
   color: var(--blue);
 }
+
+/* Final Studio entry controls. */
+.header-avatar {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  aspect-ratio: 1 / 1;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center;
+  border: 1px solid #d7dee8;
+  border-radius: 999px !important;
+  background: #fff;
+  color: #0b0d10;
+  line-height: 1;
+  flex: 0 0 38px;
+  overflow: hidden;
+}
+.header-avatar svg {
+  width: 18px;
+  height: 18px;
+}
+.header-login-link {
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: var(--type-small);
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+.header-try {
+  font-family: var(--font-inter), Arial, sans-serif;
+}
