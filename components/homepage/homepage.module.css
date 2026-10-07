@@ -1057,3 +1057,44 @@
 .page :global(.preview-dialog .button-blue) {
   color: #ffffff !important;
 }
+
+/* Final CTA: headline and body copy begin on the same visual row. */
+.finalCta > .wrap {
+  grid-template-areas:
+    "eyebrow eyebrow"
+    "headline side";
+}
+.finalCta .eyebrow {
+  grid-area: eyebrow;
+}
+.finalCta h2 {
+  grid-area: headline;
+  align-self: start;
+}
+.finalCtaSide {
+  grid-area: side;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.finalCtaSide .introCopy {
+  margin: 0 0 22px;
+}
+.finalCtaSide > .button {
+  margin: 0;
+}
+.finalCtaSide .finalMotion {
+  margin: 38px 0 0;
+}
+@media (max-width: 960px) {
+  .finalCta > .wrap {
+    grid-template-areas:
+      "eyebrow"
+      "headline"
+      "side";
+  }
+  .finalCtaSide .finalMotion {
+    margin-top: 28px;
+  }
+}
