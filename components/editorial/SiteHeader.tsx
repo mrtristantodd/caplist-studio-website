@@ -61,7 +61,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             }}
           >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <AppLoginLink>Log in</AppLoginLink>
+            <AppLoginLink className="header-login-link">Log in</AppLoginLink>
             <AppSignupLink className="header-try">Try CAPLIST</AppSignupLink>
           </nav>
         </details>
