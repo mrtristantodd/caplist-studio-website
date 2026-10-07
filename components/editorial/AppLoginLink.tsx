@@ -1,5 +1,4 @@
-import { APP_LIVE, APP_URL } from "@/lib/site";
-import { PreviewButton } from "./PreviewButton";
+import { APP_URL } from "@/lib/site";
 
 export function AppLoginLink({
   className,
@@ -8,17 +7,9 @@ export function AppLoginLink({
   className?: string;
   children?: React.ReactNode;
 }) {
-  if (APP_LIVE) {
-    return (
-      <a className={className} href={APP_URL}>
-        {children}
-      </a>
-    );
-  }
-
   return (
-    <PreviewButton notice="login" className={className}>
+    <a className={className} href={`${APP_URL}/login`}>
       {children}
-    </PreviewButton>
+    </a>
   );
 }
