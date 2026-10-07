@@ -6,6 +6,7 @@ import { catalogueProducts } from "@/lib/demo-media";
 import { Photo } from "@/components/editorial/Photo";
 import { HeroWorkflowDemo } from "@/components/home/HeroWorkflowDemo";
 import { CaplistMotionLogo } from "@/components/brand/CaplistMotionMark";
+import { APP_URL } from "@/lib/site";
 import styles from "./homepage.module.css";
 
 function Paragraphs({ body }: { body: readonly string[] }) {
@@ -34,8 +35,11 @@ export function HomepageV2() {
                 <Paragraphs body={copy.hero.body} />
               </div>
               <div className={styles.actions}>
-                <a className={styles.button} href="/demo">
-                  Book a demo <ArrowUpRight size={17} />
+                <a className={styles.button} href={`${APP_URL}/signup`}>
+                  Try CAPLIST <ArrowUpRight size={17} />
+                </a>
+                <a className={styles.textLink} href="/demo">
+                  Book a demo
                 </a>
               </div>
               <p className={styles.audience}>{copy.hero.audience}</p>
