@@ -183,17 +183,17 @@ export function HomepageV2() {
             <p className={styles.eyebrow}>{copy.close.eyebrow}</p>
             <h2>{copy.close.headline}</h2>
             <div className={styles.finalCtaSide}>
+              <div className={styles.introCopy}>
+                <Paragraphs body={copy.close.body} />
+              </div>
+              <a className={styles.button} href="/demo">
+                Book a demo <ArrowUpRight size={19} />
+              </a>
               <div className={styles.finalMotion} aria-hidden="true">
                 <CaplistMotionLogo width={220} />
                 <span>One capture → multiple outputs</span>
               </div>
-              <div className={styles.introCopy}>
-                <Paragraphs body={copy.close.body} />
-              </div>
             </div>
-            <a className={styles.button} href="/demo">
-              Book a demo <ArrowUpRight size={19} />
-            </a>
           </div>
         </section>
       </main>
