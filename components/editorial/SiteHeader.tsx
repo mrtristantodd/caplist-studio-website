@@ -42,7 +42,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <Links />
         </nav>
         <div className="header-actions">
-          <AppSignupLink className="button button-blue header-cta">Try CAPLIST</AppSignupLink>
+          <AppSignupLink className="header-try">Try CAPLIST</AppSignupLink>
           <AppLoginLink className="header-avatar">
             <UserRound size={18} strokeWidth={1.7} aria-hidden="true" />
             <span className="sr-only">Log in to Studio</span>
@@ -62,7 +62,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
             <AppLoginLink>Log in</AppLoginLink>
-            <AppSignupLink className="button button-blue header-cta">Try CAPLIST</AppSignupLink>
+            <AppSignupLink className="header-try">Try CAPLIST</AppSignupLink>
           </nav>
         </details>
       </div>
