@@ -895,7 +895,7 @@
   text-transform: uppercase;
 }
 .finalMotion img {
-  width: 118px;
+  width: min(220px, 42vw);
   height: auto;
   display: block;
 }
@@ -1008,7 +1008,7 @@
     gap: 10px;
   }
   .finalMotion img {
-    width: 104px;
+    width: min(190px, 52vw);
   }
   .finalCta .introCopy {
     margin: 0;
