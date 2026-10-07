@@ -1,7 +1,6 @@
 export const SITE_URL = "https://capliststudio.com";
 export const APP_URL =
-  process.env.NEXT_PUBLIC_CAPLIST_APP_URL ?? "https://app.capliststudio.com";
-export const APP_LIVE = process.env.NEXT_PUBLIC_CAPLIST_APP_LIVE === "true";
+  process.env.NEXT_PUBLIC_CAPLIST_APP_URL ?? "https://caplist-studio.vercel.app";
 
 export const CONTACTS = {
   general: "hello@capliststudio.com",
