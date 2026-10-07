@@ -5,7 +5,7 @@ import { homeCopy as copy } from "@/lib/approved-messaging";
 import { catalogueProducts } from "@/lib/demo-media";
 import { Photo } from "@/components/editorial/Photo";
 import { HeroWorkflowDemo } from "@/components/home/HeroWorkflowDemo";
-import { CaplistMotionMark } from "@/components/brand/CaplistMotionMark";
+import { CaplistMotionLogo } from "@/components/brand/CaplistMotionMark";
 import styles from "./homepage.module.css";
 
 function Paragraphs({ body }: { body: readonly string[] }) {
@@ -180,7 +180,7 @@ export function HomepageV2() {
             <h2>{copy.close.headline}</h2>
             <div className={styles.finalCtaSide}>
               <div className={styles.finalMotion} aria-hidden="true">
-                <CaplistMotionMark size={152} />
+                <CaplistMotionLogo width={220} />
                 <span>One capture → multiple outputs</span>
               </div>
               <div className={styles.introCopy}>
