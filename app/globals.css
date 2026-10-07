@@ -1225,6 +1225,16 @@ a svg {
   line-height: 1.05;
   font-weight: 550;
   letter-spacing: -0.05em;
+  color: #f7f9fb;
+}
+.preview-dialog .eyebrow {
+  color: #8b95a1;
+}
+.preview-dialog .dialog-copy > p:not(.eyebrow) {
+  color: #acb6bf;
+}
+.preview-dialog .button-blue {
+  color: #ffffff;
 }
 .dialog-copy > p:not(.eyebrow) {
   font-size: var(--type-small);
