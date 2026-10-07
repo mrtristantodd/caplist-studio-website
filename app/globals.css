@@ -5394,3 +5394,22 @@ html {scroll-padding-top:110px;}
 @media (prefers-reduced-motion: reduce) {
   .header-signin { transition: none; }
 }
+
+.header-try {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--blue);
+  font-size: var(--type-label);
+  font-weight: 650;
+  white-space: nowrap;
+}
+.header-try:hover {
+  background: var(--blue);
+  color: #fff;
+}
