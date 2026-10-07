@@ -1098,3 +1098,68 @@
     margin-top: 28px;
   }
 }
+
+/* Final CTA composition: paired top labels and deliberate two-column alignment. */
+.finalCta > .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  grid-template-areas:
+    "eyebrow motionlabel"
+    "main side";
+  column-gap: 72px;
+  row-gap: 22px;
+  align-items: start;
+}
+.finalEyebrow {
+  grid-area: eyebrow;
+  margin: 0;
+  align-self: start;
+}
+.finalMotionLabel {
+  grid-area: motionlabel;
+  margin: 0;
+  color: #566170;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .11em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  align-self: start;
+}
+.finalCtaMain {
+  grid-area: main;
+  min-width: 0;
+}
+.finalCtaMain h2 {
+  margin: 0;
+}
+.finalCtaMain .introCopy {
+  max-width: 590px;
+  margin: 24px 0 24px;
+}
+.finalCtaSide {
+  grid-area: side;
+  align-self: start;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.finalCtaSide img {
+  width: min(220px, 100%);
+  height: auto;
+  display: block;
+}
+@media (max-width: 960px) {
+  .finalCta > .wrap {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "motionlabel"
+      "main"
+      "side";
+    row-gap: 18px;
+  }
+  .finalCtaMain .introCopy {
+    margin-top: 20px;
+  }
+}
