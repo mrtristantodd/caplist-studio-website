@@ -58,7 +58,7 @@ export function CaplistMotionLogo({
 
   const src = reducedMotion
     ? `/brand/caplist-horizontal-on-${onDark ? "dark" : "light"}.svg`
-    : `/brand/motion/caplist-logo-motion-${onDark ? "dark" : "light"}-transparent-short-2s.svg`;
+    : `/brand/motion/caplist-logo-motion-${onDark ? "dark" : "light"}-transparent-short-2s-web.svg`;
 
   return (
     <img
