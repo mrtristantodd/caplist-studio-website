@@ -1242,3 +1242,17 @@
     width: min(190px, 58vw);
   }
 }
+
+/* Mobile final CTA rhythm: deliberate handoff from CTA to motion identity. */
+@media (max-width: 767px) {
+  .finalCtaSide {
+    margin-top: 28px !important;
+  }
+  .finalCtaSide .finalMotionLabel {
+    margin: 0 0 8px !important;
+  }
+  .finalCtaSide .finalMotion {
+    margin: -46px 0 -40px !important;
+    overflow: visible;
+  }
+}
