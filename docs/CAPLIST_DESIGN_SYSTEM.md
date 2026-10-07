@@ -59,3 +59,39 @@ The Book a demo route prepares a request email. It never claims a calendar booki
 ## Verification result
 
 Production build and TypeScript passed. The final browser suite checked 10 routes at 320, 390, 768, 1024 and 1440px: no horizontal overflow or clipped headings/controls, one H1 per page, HTTP 200. Verified three public workflow steps, media-type fit changes, all five product dialogs with Escape, quality accordion, mobile navigation, demo request validation/review/edit, tier carry-through and reduced motion. No messages sent. Primary small-label action contrast is 4.54:1 against the off-white label colour (4.75:1 against pure white). This is not a certification of the entire site or a production-backend test.
+
+
+## Approved static + motion identity system
+
+The original solid CAPLIST Studio mark remains the **primary static brand identity**. Use it in the site header, footer, favicon, social avatars, documents and product chrome.
+
+The overlapping / rotated media-frame device is an approved **secondary motion identity**, not a replacement static logo. Its meaning is:
+
+**one capture → duplicate → reframe → multiple professional outputs**
+
+Website use should be restrained:
+- do not animate the navigation logo;
+- use the motion mark only at high-value narrative moments;
+- keep the static primary mark as the resolved identity;
+- on light surfaces use black / slate / CAPLIST blue;
+- on dark surfaces use off-white / light grey / CAPLIST blue;
+- reduced-motion users must receive the existing static mark instead.
+
+Production assets:
+- `/public/brand/caplist-motion-mark-on-light.svg`
+- `/public/brand/caplist-motion-mark-on-dark.svg`
+- `components/brand/CaplistMotionMark.tsx`
+
+The motion treatment is part of the broader CAPLIST visual language and may also be reused for product-state transitions, loaders and video idents, provided it remains subordinate to professional property media.
+
+
+### Canonical supplied motion assets
+
+The user-supplied short 2-second motion SVGs are the canonical website motion assets for this pass:
+
+- `/public/brand/motion/caplist-logo-motion-light-transparent-short-2s.svg`
+- `/public/brand/motion/caplist-logo-motion-dark-transparent-short-2s.svg`
+- `/public/brand/motion/caplist-logo-motion-light-exact-wordmark-short-2s.svg`
+- `/public/brand/motion/caplist-logo-motion-dark-exact-wordmark-short-2s.svg`
+
+Use transparent variants when the surrounding site owns the background colour. Keep the original solid logo for navigation, favicon and persistent product chrome. The motion logo is a secondary narrative device and must never replace the static header identity.

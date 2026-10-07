@@ -879,6 +879,32 @@
   max-width: 590px;
   margin: 0;
 }
+.finalCtaSide {
+  grid-column: 2;
+  min-width: 0;
+}
+.finalMotion {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  margin: 0 0 24px;
+  color: #566170;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.finalMotion img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.finalMotion span {
+  align-self: start;
+  padding-top: 8px;
+}
 .finalCta .introCopy {
   margin: 0 0 25px;
   font-size: 16px;
@@ -906,8 +932,13 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+  .finalCtaSide,
   .finalCta .button {
     grid-column: auto;
+  }
+  .finalMotion {
+    grid-template-columns: minmax(160px, 200px) minmax(0, 1fr);
+    gap: 22px;
   }
   .hero {
     gap: 35px;
@@ -974,8 +1005,19 @@
   .finalCta > .wrap {
     grid-template-columns: 1fr;
   }
+  .finalCtaSide,
   .finalCta .button {
     grid-column: auto;
+  }
+  .finalMotion {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .finalMotion img {
+    width: min(190px, 52vw);
+  }
+  .finalMotion span {
+    padding-top: 0;
   }
   .finalCta .introCopy {
     margin: 0;
@@ -1000,4 +1042,18 @@
     text-box-trim: trim-start;
     text-box-edge: cap alphabetic;
   }
+}
+
+/* Keep modal contrast independent from the light homepage type rules. */
+.page :global(.preview-dialog .dialog-copy h2) {
+  color: #f7f9fb !important;
+}
+.page :global(.preview-dialog .dialog-copy > .eyebrow) {
+  color: #8b95a1 !important;
+}
+.page :global(.preview-dialog .dialog-copy > p:not(.eyebrow)) {
+  color: #acb6bf !important;
+}
+.page :global(.preview-dialog .button-blue) {
+  color: #ffffff !important;
 }

@@ -5,6 +5,7 @@ import { homeCopy as copy } from "@/lib/approved-messaging";
 import { catalogueProducts } from "@/lib/demo-media";
 import { Photo } from "@/components/editorial/Photo";
 import { HeroWorkflowDemo } from "@/components/home/HeroWorkflowDemo";
+import { CaplistMotionLogo } from "@/components/brand/CaplistMotionMark";
 import styles from "./homepage.module.css";
 
 function Paragraphs({ body }: { body: readonly string[] }) {
@@ -177,8 +178,14 @@ export function HomepageV2() {
           <div className={styles.wrap}>
             <p className={styles.eyebrow}>{copy.close.eyebrow}</p>
             <h2>{copy.close.headline}</h2>
-            <div className={styles.introCopy}>
-              <Paragraphs body={copy.close.body} />
+            <div className={styles.finalCtaSide}>
+              <div className={styles.finalMotion} aria-hidden="true">
+                <CaplistMotionLogo width={220} />
+                <span>One capture → multiple outputs</span>
+              </div>
+              <div className={styles.introCopy}>
+                <Paragraphs body={copy.close.body} />
+              </div>
             </div>
             <a className={styles.button} href="/demo">
               Book a demo <ArrowUpRight size={19} />
