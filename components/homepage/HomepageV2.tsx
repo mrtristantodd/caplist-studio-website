@@ -180,9 +180,8 @@ export function HomepageV2() {
         </section>
         <section className={styles.finalCta}>
           <div className={styles.wrap}>
-            <p className={`${styles.eyebrow} ${styles.finalEyebrow}`}>{copy.close.eyebrow}</p>
-            <p className={styles.finalMotionLabel}>One capture → multiple outputs</p>
             <div className={styles.finalCtaMain}>
+              <p className={`${styles.eyebrow} ${styles.finalEyebrow}`}>{copy.close.eyebrow}</p>
               <h2>{copy.close.headline}</h2>
               <div className={styles.introCopy}>
                 <Paragraphs body={copy.close.body} />
@@ -191,8 +190,11 @@ export function HomepageV2() {
                 Book a demo <ArrowUpRight size={19} />
               </a>
             </div>
-            <div className={styles.finalCtaSide} aria-hidden="true">
-              <CaplistMotionLogo width={220} />
+            <div className={styles.finalCtaSide}>
+              <p className={styles.finalMotionLabel}>One capture → multiple outputs</p>
+              <div className={styles.finalMotion} aria-hidden="true">
+                <CaplistMotionLogo width={220} />
+              </div>
             </div>
           </div>
         </section>
