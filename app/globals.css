@@ -5413,3 +5413,19 @@ html {scroll-padding-top:110px;}
   background: var(--blue);
   color: #fff;
 }
+
+.header-avatar {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid #d7dee8;
+  border-radius: 50%;
+  background: #fff;
+  color: #0b0d10;
+}
+.header-avatar:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
