@@ -1043,3 +1043,17 @@
     text-box-edge: cap alphabetic;
   }
 }
+
+/* Keep modal contrast independent from the light homepage type rules. */
+.page :global(.preview-dialog .dialog-copy h2) {
+  color: #f7f9fb !important;
+}
+.page :global(.preview-dialog .dialog-copy > .eyebrow) {
+  color: #8b95a1 !important;
+}
+.page :global(.preview-dialog .dialog-copy > p:not(.eyebrow)) {
+  color: #acb6bf !important;
+}
+.page :global(.preview-dialog .button-blue) {
+  color: #ffffff !important;
+}
