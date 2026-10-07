@@ -4,7 +4,6 @@ import { Menu, UserRound, X } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
 import { AppLoginLink } from "./AppLoginLink";
 import { AppSignupLink } from "./AppSignupLink";
-import { AccessLink } from "./StudioUI";
 
 function Links({ onNavigate }: { onNavigate?: () => void }) {
   return (
