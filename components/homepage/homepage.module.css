@@ -1173,3 +1173,72 @@
     margin-top: 0;
   }
 }
+
+/* Final CTA responsive composition: paired columns on tablet+, stacked intentionally on mobile. */
+.finalCta > .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 0 72px;
+  align-items: start;
+}
+.finalCtaMain,
+.finalCtaSide {
+  min-width: 0;
+  align-self: start;
+}
+.finalCtaMain .finalEyebrow,
+.finalCtaSide .finalMotionLabel {
+  margin: 0 0 22px;
+}
+.finalCtaMain h2 {
+  margin: 0;
+}
+.finalCtaMain .introCopy {
+  max-width: 590px;
+  margin: 24px 0 24px;
+}
+.finalCtaSide {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.finalMotionLabel {
+  color: #566170;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .11em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.finalCtaSide .finalMotion {
+  margin: 0;
+  display: block;
+}
+.finalCtaSide .finalMotion img {
+  width: min(220px, 100%);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .finalCta > .wrap {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .finalCtaMain .finalEyebrow {
+    margin-bottom: 20px;
+  }
+  .finalCtaMain .introCopy {
+    margin: 20px 0 22px;
+  }
+  .finalCtaSide {
+    margin-top: 34px;
+  }
+  .finalCtaSide .finalMotionLabel {
+    margin-bottom: 16px;
+  }
+  .finalCtaSide .finalMotion img {
+    width: min(190px, 58vw);
+  }
+}
