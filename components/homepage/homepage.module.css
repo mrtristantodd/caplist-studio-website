@@ -884,20 +884,26 @@
   min-width: 0;
 }
 .finalMotion {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  margin: -8px 0 18px;
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  margin: 0 0 24px;
   color: #566170;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.11em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 .finalMotion img {
-  width: min(220px, 42vw);
+  width: 100%;
   height: auto;
   display: block;
+}
+.finalMotion span {
+  align-self: start;
+  padding-top: 8px;
 }
 .finalCta .introCopy {
   margin: 0 0 25px;
@@ -931,7 +937,8 @@
     grid-column: auto;
   }
   .finalMotion {
-    margin-top: 0;
+    grid-template-columns: minmax(160px, 200px) minmax(0, 1fr);
+    gap: 22px;
   }
   .hero {
     gap: 35px;
@@ -1003,12 +1010,14 @@
     grid-column: auto;
   }
   .finalMotion {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .finalMotion img {
     width: min(190px, 52vw);
+  }
+  .finalMotion span {
+    padding-top: 0;
   }
   .finalCta .introCopy {
     margin: 0;
