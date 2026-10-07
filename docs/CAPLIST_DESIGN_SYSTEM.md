@@ -83,3 +83,15 @@ Production assets:
 - `components/brand/CaplistMotionMark.tsx`
 
 The motion treatment is part of the broader CAPLIST visual language and may also be reused for product-state transitions, loaders and video idents, provided it remains subordinate to professional property media.
+
+
+### Canonical supplied motion assets
+
+The user-supplied short 2-second motion SVGs are the canonical website motion assets for this pass:
+
+- `/public/brand/motion/caplist-logo-motion-light-transparent-short-2s.svg`
+- `/public/brand/motion/caplist-logo-motion-dark-transparent-short-2s.svg`
+- `/public/brand/motion/caplist-logo-motion-light-exact-wordmark-short-2s.svg`
+- `/public/brand/motion/caplist-logo-motion-dark-exact-wordmark-short-2s.svg`
+
+Use transparent variants when the surrounding site owns the background colour. Keep the original solid logo for navigation, favicon and persistent product chrome. The motion logo is a secondary narrative device and must never replace the static header identity.
