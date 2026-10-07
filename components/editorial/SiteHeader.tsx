@@ -1,8 +1,9 @@
 "use client";
 import { useRef } from "react";
-import { UserRound, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
 import { AppLoginLink } from "./AppLoginLink";
+import { AppSignupLink } from "./AppSignupLink";
 import { AccessLink } from "./StudioUI";
 
 function Links({ onNavigate }: { onNavigate?: () => void }) {
@@ -42,11 +43,8 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <Links />
         </nav>
         <div className="header-actions">
-          <AccessLink href="/demo">Book a demo</AccessLink>
-          <AppLoginLink className="header-avatar">
-            <UserRound size={20} strokeWidth={1.7} aria-hidden="true" />
-            <span className="sr-only">Sign in</span>
-          </AppLoginLink>
+          <AppLoginLink className="login-link">Log in</AppLoginLink>
+          <AppSignupLink className="button button-blue header-cta">Try CAPLIST</AppSignupLink>
         </div>
         <details ref={menu} className="mobile-menu">
           <summary aria-label="Toggle navigation">
@@ -61,8 +59,9 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             }}
           >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <AccessLink href="/demo">Book a demo</AccessLink>
             <AppLoginLink>Log in</AppLoginLink>
+            <AppSignupLink className="button button-blue header-cta">Try CAPLIST</AppSignupLink>
+            <AccessLink href="/demo">Book a demo</AccessLink>
           </nav>
         </details>
       </div>
