@@ -1,37 +1,42 @@
-# Caplist Studio — static visual redesign
+# CAPLIST Studio — Public Website
 
-**MORE FROM EVERY CAPTURE.**
+**Capture once. Create more. Sell more.**
 
-Pass One of the approved two-pass redesign. A frontend-only visual prototype for professional property-media businesses, built from the existing `caplist-premium-interface-motion` codebase. Pass Two motion requires explicit visual approval.
+The public marketing website for [CAPLIST Studio](https://capliststudio.com/), a B2B platform helping professional property photographers, videographers and property-media businesses manufacture additional sellable visual/motion products from media already captured at a property.
 
-## Run locally
+This repository contains the **marketing website**, not the authenticated customer Studio or internal R&D Lab. The separate app repository is [mrtristantodd/caplist-studio](https://github.com/mrtristantodd/caplist-studio).
 
-```sh
-npm install
-npm run typecheck
-npm run build
-npm start
-```
+## Current product boundaries
 
-Open http://127.0.0.1:3000. For development, run `npm run dev`. Node 20.9+ is required. Webpack is used because Turbopack's CSS worker could not bind its internal port in this desktop environment. The homepage is prerendered as static content.
+- Professional inputs: edited property photography, professional landscape video, drone photography/video and native vertical footage.
+- Output catalogue is conditional on real source assets and technical/professional eligibility. The early scope centres on Photo Reels, vertical repurposing, teasers and alternative/feature edits; mixed media enters when proven reliable.
+- CAPLIST is a visual-media creation/repurposing system, **not** a CRM, booking, advertising, listing, brochure, description/caption-writing or campaign distribution product.
+- Brand language: **Capture once. Create more. Sell more.** The user-facing workflow is **Ingest → Understand → Unlock → Select → Create → QC → Deliver**.
+- Professional fidelity, input quality, reliable rendering and unit economics govern product availability.
 
-## Review
+## Website and Studio links
 
-See [Pass One review](docs/PASS_ONE_REVIEW.md), [browser evidence](docs/review/responsive-report.json), and [asset sources](docs/ASSET_SOURCES.md).
+| Surface | Link | Purpose / status |
+| --- | --- | --- |
+| Website | [capliststudio.com](https://capliststudio.com/) | Public marketing, product presentation, partner information and resources |
+| Customer Studio | [caplist-studio.vercel.app](https://caplist-studio.vercel.app/) | Current Vercel project host; **customer sign-in and readiness must be verified before public activation** |
+| Planned dedicated app domain | `https://app.capliststudio.com` | Intended customer URL only after DNS, TLS, deployment and access checks pass |
+| Internal R&D Lab | Protected `/tests` routes of the app | Internal testing; never point public website users to an R&D preview |
 
-The homepage has six acts: hero, commercial opportunity, media-to-product relationships, editorial product catalogue, professional standards, and a photographic commercial close. The rising-bar identity follows the supplied brand board. Image corner markers are static framing details.
+The header's `AppLoginLink` already supports real navigation when both `NEXT_PUBLIC_CAPLIST_APP_URL` and `NEXT_PUBLIC_CAPLIST_APP_LIVE=true` are set. With the live flag disabled it deliberately presents a preview notice. **Do not enable the public login link until a stable customer host and sign-in are verified.** Keep a reciprocal "Back to website" link in the customer Studio, to the canonical public domain; that change belongs in the app repo and must not disturb internal R&D routes.
 
-Product buttons open local still-preview dialogs. Pricing and Log in open explanatory preview notices. Resources opens a capture checklist. No credentials, environment variables, database, authentication, upload processing, AI analysis, video rendering, billing, email or backend integration are used.
+## Current implementation status (October 2026)
 
-## Source structure
+The marketing site has evolved beyond its earlier static Pass One prototype: pages include product examples, pricing, resources and partner-oriented content. The logged-in application has an established Next.js/Supabase foundation, but media rendering, customer access, delivery workflows and operational readiness must be verified by implemented and tested milestones, not inferred from marketing content or previews.
 
-- `components/editorial/MarketingPage.tsx`: six-act page architecture.
-- `components/editorial/SiteHeader.tsx`: public navigation and mobile menu.
-- `components/editorial/PreviewButton.tsx`: native, keyboard-accessible preview dialogs.
-- `components/editorial/Photo.tsx`: local responsive image loader and frame details.
-- `lib/demo-media.ts`: replaceable photography and product metadata.
-- `app/globals.css`: static layout, typography, tonal chapters and responsive rules.
-- `scripts/review-responsive.cjs`: nine-width Chromium review and interaction checks; requires Playwright and a local CDP browser URL.
-- `scripts/package-review.cjs`: creates compressed review copies of captured PNG screenshots.
+This README replaces the older static redesign note, which incorrectly said the site had only six static acts, that Log in was always a preview notice, and that Resources was only a basic checklist. Refer to current source and deployment evidence for exact behaviour.
 
-The original motion prototype is preserved in baseline commit `447463f`. It is not mounted in the static redesign. No advanced motion is present.
+## Development
+
+- Next.js, React and TypeScript; locally hosted Inter and approved three-layer CAPLIST mark.
+- Use approved brand references and shared design authority from the application repository, while preserving the website's lighter editorial composition.
+- Build with `npm install`, `npm run typecheck` and `npm run build`; consult `package.json` for current scripts and Node requirements.
+- Develop on feature branches, verify responsive browser behaviour and protected link destinations, then open a draft PR before merge.
+- Do not commit secrets, enable unverified login, or mistake an internal preview for a public app.
+
+Current relevant code: `components/editorial/SiteHeader.tsx`, `components/editorial/AppLoginLink.tsx`, `lib/site.ts`, `app/page.tsx`.
