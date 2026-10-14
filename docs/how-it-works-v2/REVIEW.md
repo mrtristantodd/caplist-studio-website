@@ -41,3 +41,9 @@ Hosted preview and CI results are recorded on the PR. Approval is required befor
 - Layout, responsive breakpoints, media, animation, pricing and CTA destinations remain unchanged.
 
 Refinement validation: lint, typecheck, production build and marketing checker pass (21 pages, eight product definitions). How it works, homepage, Pricing and early access checked at 390/768/1440px: no horizontal overflow, no sparkle icons on the revised page, no secondary homepage hero link, Studio login retained, and one Book a demo entry on Pricing. Mobile/tablet/desktop compositions visually inspected.
+
+## Animated four-step media story
+
+Added isolated WorkflowStory component and scoped styles. Existing DP001 media settles into a capture frame, expands into six cards, narrows to two blue selections, then recomposes into four representative outputs. Desktop timing is 3.3 seconds with one iteration and a held final state; mobile stages activate independently as they enter view. Intersection and document visibility pause animation without resetting it. Reduced motion and no-JavaScript rendering show complete static compositions. No new dependency or approved copy change.
+
+Validation: lint/typecheck/build and marketing checks pass. Visual checks at 1440, 1024, 768 and 390px show four columns through tablet and vertical mobile stages, with no horizontal overflow. Focused lifecycle checks cover viewport pause/resume, hidden-tab pause/resume, reduced-motion state and cleanup. Reduced-motion CSS disables all story animation; OS preference emulation is unavailable in the browser tooling. Existing hero animation is unchanged.

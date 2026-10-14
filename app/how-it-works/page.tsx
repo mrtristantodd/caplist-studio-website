@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowRight, Upload, Check, CircleCheck, Layers, Music2, SlidersHorizontal, Clapperboard, RefreshCw, X } from "lucide-react";
+import { WorkflowStory } from "@/components/how-it-works/WorkflowStory";
+import { ArrowRight, Check, CircleCheck, Layers, Music2, SlidersHorizontal, RefreshCw, X } from "lucide-react";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { AccessLink } from "@/components/editorial/StudioUI";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
@@ -12,12 +13,6 @@ export const metadata = {
   title: "See CAPLIST in action — How it works",
   description: "From completed property media to additional professional products. Upload, unlock, choose, create and review with CAPLIST Studio.",
 };
-const stages = [
-  { label: "Upload", icon: Upload, title: "Use the media you already captured.", body: "Photos, video, drone and vertical footage from the property." },
-  { label: "Unlock", icon: Layers, title: "See what more you can create.", body: "CAPLIST shows the additional products available from that property." },
-  { label: "Choose", icon: Check, title: "Select what you want to sell.", body: "Choose the product and guide the creative intent." },
-  { label: "Create", icon: Clapperboard, title: "CAPLIST does the production work.", body: "Review the finished output and deliver it through your business." },
-];
 const outputs = [
   { name: "Photo Reel", image: "front", id: "photo-reel" },
   { name: "Vertical Video Reel", image: "living", id: "vertical-reel" },
@@ -44,10 +39,7 @@ export default function HowItWorks() {
     </section>
     <section className={`${styles.wrap} ${styles.section}`}>
       <Eyebrow>How it works</Eyebrow><h2>From your media to more products in four steps.</h2><p>A simple workflow. Professional results.</p>
-      <ol className={styles.stages}>{stages.map(({ label, icon: Icon, title, body }, i) => <li key={label}>
-        <div className={styles.stageLabel}><Icon size={23} strokeWidth={1.7} /><span>0{i + 1}</span><strong>{label}</strong></div>
-        <h3>{title}</h3><p>{body}</p>{i < 3 && <ArrowRight className={styles.connector} size={18} aria-hidden="true" />}
-      </li>)}</ol>
+      <WorkflowStory />
     </section>
     <section className={styles.opportunityField}>
       <div className={`${styles.wrap} ${styles.section}`}>
