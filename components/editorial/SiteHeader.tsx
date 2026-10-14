@@ -43,7 +43,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
         </nav>
         <div className="header-actions">
           <AccessLink href="/demo">Book a demo</AccessLink>
-          <AppLoginLink className="login-link">Studio Preview</AppLoginLink>
+          <AppLoginLink />
         </div>
         <details ref={menu} className="mobile-menu">
           <summary aria-label="Toggle navigation">
@@ -59,7 +59,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
             <AccessLink href="/demo">Book a demo</AccessLink>
-            <AppLoginLink>Studio Preview</AppLoginLink>
+            <AppLoginLink className="mobile-profile-signin" />
           </nav>
         </details>
       </div>
