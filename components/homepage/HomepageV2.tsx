@@ -38,9 +38,6 @@ export function HomepageV2() {
                 <a className={styles.button} href={`${APP_URL}/signup`}>
                   Get started <ArrowUpRight size={17} />
                 </a>
-                <a className={styles.textLink} href="/how-it-works">
-                  See how CAPLIST works <ArrowRight size={17} />
-                </a>
               </div>
               <p className={styles.audience}>{copy.hero.audience}</p>
             </div>
