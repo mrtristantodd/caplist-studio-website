@@ -5339,7 +5339,7 @@ html {scroll-padding-top:110px;}
 .profile-label strong {font-size:13px;font-weight:500;}
 .profile-label > span {font-size:11px;color:#b0c7dc;}
 .reading-progress {position:fixed;inset:0 0 auto;height:2px;z-index:100;pointer-events:none;}
-.reading-progress > span {display:block;width:100%;height:100%;background:#62a2ff;transform:scaleX(var(--reading-progress,0));transform-origin:left;box-shadow:0 0 9px #2f7bff;}
+.reading-progress > span {display:block;width:100%;height:100%;background:#62a2ff;transform:scaleX(var(--reading-progress,0));transform-origin:left;box-shadow:none;}
 .site-header {transition:box-shadow .3s,background-color .3s;}
 .page-scrolled .site-header {background:#0b1520f2;backdrop-filter:blur(18px);box-shadow:0 8px 25px #0005;}
 .site-reveal {transition:opacity .65s ease var(--reveal-delay,0ms),translate .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms);}
@@ -5417,7 +5417,7 @@ html {scroll-padding-top:110px;}
 .header-avatar {
   width: 38px;
   height: 38px;
-  flex: 0 0 38px;
+  flex: 0 0 44px;
   display: inline-grid;
   place-items: center;
   border: 1px solid #d7dee8;
@@ -5432,10 +5432,10 @@ html {scroll-padding-top:110px;}
 
 /* Final Studio entry controls. */
 .header-avatar {
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
   aspect-ratio: 1 / 1;
   padding: 0 !important;
   display: inline-grid !important;
@@ -5445,7 +5445,7 @@ html {scroll-padding-top:110px;}
   background: #fff;
   color: #0b0d10;
   line-height: 1;
-  flex: 0 0 38px;
+  flex: 0 0 44px;
   overflow: hidden;
 }
 .header-avatar svg {

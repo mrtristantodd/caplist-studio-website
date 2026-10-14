@@ -4,7 +4,7 @@
   color: #101419;
   color-scheme: light;
   --muted: #596571;
-  --rule: #e0e5e9;
+  --rule: var(--border-light);
 }
 .marketing-v3 .shell {
   width: min(1280px, calc(100% - 96px));
@@ -34,7 +34,7 @@
   color: #111820;
 }
 .marketing-v3 .desktop-nav {
-  gap: 23px;
+  gap: var(--space-6);
 }
 .marketing-v3 .desktop-nav a {
   font-size: 14px;
@@ -43,18 +43,18 @@
 }
 .marketing-v3 .studio-button,
 .marketing-v3 .button-blue {
-  background: #286ce3;
+  background: var(--brand-blue-action);
   color: #fff;
-  border: 1px solid #286ce3;
-  border-radius: 5px;
+  border: 1px solid var(--brand-blue-action);
+  border-radius: var(--radius-control);
   font-size: 14px;
   min-height: 48px;
-  padding: 14px 20px;
+  padding: var(--space-3) var(--space-6);
   box-shadow: none;
 }
 .marketing-v3 .studio-button:hover,
 .marketing-v3 .button-blue:hover {
-  background: #1856c2;
+  background: color-mix(in srgb, var(--brand-blue-action) 92%, var(--caplist-black));
   color: #fff;
 }
 .marketing-v3 .inner-page,
@@ -209,7 +209,7 @@
   background: #fff;
   color: #111820;
   border: 1px solid #cad1d8;
-  border-radius: 4px;
+  border-radius: var(--radius-control);
   font-size: 15px;
 }
 .marketing-v3 .pilot-form textarea::placeholder {
@@ -285,7 +285,7 @@
 }
 .marketing-v3 .example-media {
   box-shadow: none;
-  border-radius: 9px;
+  border-radius: var(--radius-media);
   margin: 0;
   height: auto;
   width: 100%;
@@ -509,7 +509,7 @@
 }
 .marketing-v3
   :where(a, button, input, select, textarea, summary):focus-visible {
-  outline: 2px solid #286ce3;
+  outline: 2px solid var(--caplist-blue);
   outline-offset: 4px;
 }
 @media (max-width: 1250px) {
@@ -639,4 +639,83 @@
 /* Preserve generous targets on touch devices without loosening desktop lists. */
 @media (pointer: coarse) {
   .marketing-v3 .brand-footer nav a { min-height: 44px; }
+}
+
+/* Website v2: shared controls and quiet supporting surfaces. */
+.marketing-v3 :is(.button, .studio-button, .offer-cta, .header-try) {
+  border-radius: var(--radius-control);
+  font-weight: 600;
+  transition: background-color var(--transition-fast) var(--motion-ease),
+    border-color var(--transition-fast) var(--motion-ease),
+    color var(--transition-fast) var(--motion-ease),
+    translate var(--transition-fast) var(--motion-ease);
+}
+.marketing-v3 :is(.button, .studio-button, .offer-cta):hover {
+  box-shadow: none;
+}
+.marketing-v3 .header-try {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  font-size: 12px;
+  border-color: var(--border-light);
+  background: var(--surface-light-alt);
+}
+.marketing-v3 .site-header .header-try:hover {
+  color: var(--brand-blue-action);
+  background: var(--surface-light);
+  border-color: var(--caplist-blue);
+}
+.marketing-v3 .lucide { stroke-width: 1.7; }
+.marketing-v3 :is(.offer-body li svg, .media-policy-link svg) {
+  color: currentColor;
+}
+.marketing-v3 .offer-pro { border-color: var(--border-light); }
+.marketing-v3 .pilot-form {
+  border: 0;
+  border-radius: var(--radius-panel);
+}
+.marketing-v3 :is(.offer-card, .pilot-next) {
+  border-radius: var(--radius-panel);
+}
+.marketing-v3 .site-reveal {
+  transition-duration: var(--transition-slow);
+  transition-timing-function: var(--motion-ease);
+}
+.marketing-v3 .desktop-nav a:after {
+  transition: transform var(--transition-fast) var(--motion-ease);
+}
+.marketing-v3 .mobile-menu summary {
+  min-width: 44px;
+  min-height: 44px;
+}
+@media (max-width: 767px) {
+  .marketing-v3 .header-inner { gap: var(--space-2); }
+  .marketing-v3 .header-actions { gap: var(--space-2); margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marketing-v3 *, .marketing-v3 *::before, .marketing-v3 *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Reserve room for three real touch targets instead of clipping the menu. */
+@media (max-width: 767px) {
+  .marketing-v3 .site-header .brand-link {
+    width: clamp(80px, calc(100vw - 250px), 144px);
+    flex-shrink: 0;
+  }
+  .marketing-v3 .site-header .brand-lockup { width: 100%; }
+  .marketing-v3 .header-actions .header-try { padding-inline: 10px; }
+  .marketing-v3 .mobile-menu { flex-shrink: 0; }
+}
+@media (max-width: 359px) {
+  .marketing-v3 .site-header .shell { width: calc(100% - 32px); }
+}
+/* Intro paragraph rules must not enlarge short metadata labels. */
+.marketing-v3 p.eyebrow,
+.marketing-v3 p.studio-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: 1.5;
 }

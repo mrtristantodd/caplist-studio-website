@@ -1,8 +1,8 @@
 .shell {
-  --workflow-blue: #2f7bff;
+  --workflow-blue: var(--caplist-blue);
   --workflow-ink: #0b0d10;
   --workflow-muted: #647080;
-  --workflow-line: #dce2e9;
+  --workflow-line: var(--border-light);
   width: 100%;
   min-width: 0;
   overflow: hidden;
@@ -10,12 +10,12 @@
   background: #f8fafc;
   border: 1px solid #dce2e9;
   border-radius: 16px;
-  box-shadow: 0 24px 70px #24456f1a;
+  box-shadow: none;
 }
 
 .shell button,
 .shell a {
-  transition: background-color 180ms, border-color 180ms, color 180ms, transform 180ms;
+  transition: background-color var(--transition-fast) var(--motion-ease), border-color var(--transition-fast) var(--motion-ease), color var(--transition-fast) var(--motion-ease), transform var(--transition-fast) var(--motion-ease);
 }
 
 .shell button:active,
@@ -54,7 +54,7 @@
 .projectIdentity span {
   color: #8a95a3;
   font-size: 9px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -63,7 +63,7 @@
   overflow: hidden;
   color: #34404d;
   font-size: 11px;
-  font-weight: 550;
+  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -88,13 +88,13 @@
 .sceneHeader > div span {
   color: var(--workflow-blue);
   font-size: 10px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .sceneHeader > div strong {
   color: #677382;
   font-size: 9px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -129,7 +129,7 @@
 
 .shellFooter > strong {
   color: #36414e;
-  font-weight: 550;
+  font-weight: 500;
   text-align: right;
 }
 
@@ -145,7 +145,7 @@
   text-align: center;
   color: #526171;
   font-size: 7px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.11em;
   line-height: 1;
   text-transform: uppercase;
@@ -223,10 +223,10 @@
   margin-top: 20px;
   padding: 10px 16px;
   color: #fff;
-  background: #286ce3;
+  background: var(--brand-blue-action);
   border-radius: 8px;
   font-size: 11px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .dropzone button:hover,
@@ -291,7 +291,7 @@
 }
 
 .mediaCounts svg {
-  color: var(--workflow-blue);
+  color: var(--workflow-muted);
 }
 
 .thumbnailGrid {
@@ -416,7 +416,7 @@
 .mediaGroups svg {
   grid-row: span 2;
   align-self: center;
-  color: var(--workflow-blue);
+  color: var(--workflow-muted);
 }
 
 .mediaGroups strong {
@@ -501,7 +501,7 @@
   margin-top: 14px;
   color: #34404e;
   font-size: 11px;
-  font-weight: 550;
+  font-weight: 500;
   line-height: 1.45;
 }
 
@@ -604,7 +604,7 @@
 .outputDetails dd {
   margin: 0;
   color: #303b48;
-  font-weight: 550;
+  font-weight: 500;
   text-align: right;
 }
 
@@ -655,7 +655,7 @@
   background: #111820;
   border: 5px solid #fff;
   border-radius: 12px;
-  box-shadow: 0 14px 34px #1f426b29;
+  box-shadow: var(--shadow-panel);
 }
 
 .verticalOutput img {
@@ -732,10 +732,10 @@
   align-items: center;
   gap: 5px;
   color: #fff;
-  background: #286ce3;
+  background: var(--brand-blue-action);
   border-radius: 7px;
   font-size: 8px;
-  font-weight: 650;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -771,8 +771,8 @@
 
 .outputActions a {
   color: #fff;
-  background: #286ce3;
-  border-color: #286ce3;
+  background: var(--brand-blue-action);
+  border-color: var(--brand-blue-action);
 }
 
 .outcomeLayout {
@@ -792,7 +792,7 @@
 .outcomeProducts > span {
   color: var(--workflow-muted);
   font-size: 8px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -809,7 +809,7 @@
   width: 72%;
   border: 4px solid #fff;
   border-radius: 10px;
-  box-shadow: 0 12px 26px #17385921;
+  box-shadow: var(--shadow-panel);
 }
 
 .outcomeStack img:nth-child(2) {
@@ -858,7 +858,7 @@
   object-fit: cover;
   border: 2px solid white;
   border-radius: 4px;
-  box-shadow: 0 3px 8px #17385914;
+  box-shadow: none;
   left: 2%;
   top: 24%;
   opacity: .82;
@@ -911,14 +911,14 @@
 
 .outcomeProducts article strong {
   font-size: 8px;
-  font-weight: 550;
+  font-weight: 500;
 }
 
 .outcomeProducts > p {
   margin-top: 14px;
   color: var(--workflow-blue);
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .reviewGrid {
@@ -953,7 +953,7 @@
 }
 
 .reviewShell {
-  box-shadow: 0 14px 44px #24456f14;
+  box-shadow: var(--shadow-panel);
 }
 
 @media (max-width: 1120px) {
@@ -1305,4 +1305,20 @@
   .shell *::after {
     transition-duration: 0s !important;
   }
+}
+
+/* Static type icons need no blue tile. Selection and production keep blue. */
+.dropIcon, .analysisIcon, .choiceIcon, .outputIcon, .productIcon {
+  background: transparent;
+}
+.dropIcon, .productIcon { color: var(--workflow-muted); }
+.selectedProduct .productIcon { color: var(--workflow-blue); }
+.shell :global(.lucide) { stroke-width: 1.7; }
+.outputDetails, .choiceSummary, .analysisPanel {
+  border: 0;
+  background: transparent;
+}
+@media (pointer: coarse) {
+  .playbackControl { min-height: 44px; }
+  .outputActions button, .outputActions a, .demoButton { min-height: 44px; }
 }

@@ -2,7 +2,7 @@
   background: #fff;
   color: #0b0d10;
   --home-muted: #566170;
-  --home-line: #e0e5eb;
+  --home-line: var(--border-light);
   color-scheme: light;
 }
 .wrap {
@@ -32,7 +32,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 26px;
+  margin-bottom: var(--space-6);
 }
 .heroField {
   background: #0b0d10;
@@ -79,21 +79,21 @@
   color: var(--home-muted);
   font-size: 17px;
   max-width: 480px;
-  margin-top: 28px;
+  margin-top: var(--space-8);
 }
 .actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  margin-top: 26px;
+  margin-top: var(--space-6);
 }
 .button {
   min-height: 52px;
-  padding: 16px 23px;
-  background: #286ce3;
+  padding: var(--space-4) var(--space-6);
+  background: var(--brand-blue-action);
   color: #fff;
-  border-radius: 6px;
+  border-radius: var(--radius-control);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -101,12 +101,12 @@
   font-size: 14px;
   font-weight: 500;
   transition:
-    background 0.2s,
-    transform 0.2s;
+    background var(--transition-fast) var(--motion-ease),
+    transform var(--transition-fast) var(--motion-ease);
 }
 .button:hover {
-  background: #1554c3;
-  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--brand-blue-action) 92%, var(--caplist-black));
+  transform: translateY(-1px);
 }
 .button:active {
   transform: translateY(1px);
@@ -126,7 +126,7 @@
 .audience {
   color: var(--home-muted);
   font-size: 12px;
-  margin-top: 26px;
+  margin-top: var(--space-6);
 }
 .heroFigure {
   margin: 0;
@@ -139,7 +139,7 @@
   position: relative;
   aspect-ratio: 5 / 6;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: var(--radius-media);
 }
 .heroImage img {
   object-position: 53% center;
@@ -245,7 +245,7 @@
   aspect-ratio: 16 / 9;
 }
 .productImage img {
-  transition: transform 0.6s;
+  transition: transform var(--transition-slow) var(--motion-ease);
 }
 .productImage:hover img {
   transform: scale(1.035);
@@ -349,7 +349,7 @@
   width: 35%;
   aspect-ratio: 9 / 16;
   border: 6px solid #fff;
-  box-shadow: 0 12px 32px #0c1a2926;
+  box-shadow: var(--shadow-panel);
 }
 .qualityCopy p:not(.eyebrow) {
   font-size: 16px;
@@ -397,9 +397,9 @@
   color: #7e8997;
 }
 .workflow .caplistStep {
-  background: #286ce3;
+  background: var(--brand-blue-action);
   border-color: #286ce3;
-  border-radius: 3px;
+  border-radius: var(--radius-media);
 }
 .workflow .caplistStep :is(h3, p, span, svg) {
   color: #fff;
@@ -442,7 +442,7 @@
   max-width: 1280px;
 }
 .page :where(a, button, select):focus-visible {
-  outline: 2px solid #286ce3;
+  outline: 2px solid var(--caplist-blue);
   outline-offset: 5px;
 }
 @media (min-width: 1700px) {
@@ -661,7 +661,7 @@
   .workflow ol {
     grid-template-columns: 1fr 1fr;
     gap: 20px 0;
-    margin-top: 28px;
+    margin-top: var(--space-8);
   }
   .workflow li {
     min-height: 150px;
@@ -750,8 +750,8 @@
 
 /* Pass 2: restrained graphite rhythm and a ratio-faithful product gallery. */
 .hero {
-  padding-block: 76px 92px;
-  gap: 52px;
+  padding-block: var(--space-20) var(--space-24);
+  gap: var(--space-12);
 }
 .hero h1 {
   font-size: clamp(43px, 4.5vw, 64px);
@@ -773,11 +773,11 @@
   max-width: 860px;
 }
 .opportunity {
-  padding-block: 85px;
+  padding-block: var(--space-20);
 }
 .split {
   grid-template-columns: 1fr 1.05fr;
-  gap: 70px;
+  gap: var(--space-16);
   align-items: start;
 }
 /* Title and body share one grid row beneath the section eyebrow. */
@@ -810,18 +810,18 @@
 }
 .products {
   border-top: 0;
-  padding-top: 90px;
+  padding-top: var(--space-24);
 }
 .showroom {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px 26px;
+  gap: var(--space-3) var(--space-6);
 }
 .product {
   display: grid;
   grid-row: span 3;
   grid-template-rows: subgrid;
   row-gap: 12px;
-  padding-bottom: 26px;
+  padding-bottom: var(--space-6);
 }
 .productStage {
   aspect-ratio: 1;
@@ -833,7 +833,7 @@
 .productTitle { margin-top: 8px; }
 .product > p { margin-top: 0; }
 .productImage {
-  border-radius: 3px;
+  border-radius: var(--radius-media);
 }
 .productTitle h3 {
   font-size: 18px;
@@ -860,7 +860,7 @@
   color: #6fa1ff;
 }
 .finalCta {
-  padding-block: 72px 82px;
+  padding-block: var(--space-20);
   text-align: left;
   background: #f7f9fb;
   border-top: 1px solid #e0e5e9;
@@ -868,7 +868,7 @@
 .finalCta > .wrap {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: 0 72px;
+  gap: 0 var(--space-16);
   align-items: start;
 }
 .finalCta .eyebrow {
@@ -947,7 +947,7 @@
 @media (max-width: 640px) {
   .hero {
     gap: 26px;
-    padding-top: 45px;
+    padding-top: var(--space-12);
   }
   .hero h1 {
     font-size: 42px;
@@ -997,10 +997,10 @@
     grid-row: auto;
   }
   .graphite {
-    padding: 55px 20px;
+    padding: var(--space-16) 20px;
   }
   .opportunity {
-    padding-block: 55px;
+    padding-block: var(--space-16);
   }
   .finalCta > .wrap {
     grid-template-columns: 1fr;
@@ -1023,7 +1023,7 @@
     margin: 0;
   }
   .finalCta {
-    padding-block: 55px 60px;
+    padding-block: var(--space-16);
   }
   .quality {
     padding-block: 60px;
@@ -1079,7 +1079,7 @@
   align-items: flex-start;
 }
 .finalCtaSide .introCopy {
-  margin: 0 0 22px;
+  margin: 0 0 var(--space-6);
 }
 .finalCtaSide > .button {
   margin: 0;
@@ -1095,7 +1095,7 @@
       "side";
   }
   .finalCtaSide .finalMotion {
-    margin-top: 28px;
+    margin-top: var(--space-8);
   }
 }
 
@@ -1121,7 +1121,7 @@
   color: #566170;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: .11em;
+  letter-spacing: .16em;
   line-height: 1.5;
   text-transform: uppercase;
   align-self: start;
@@ -1178,7 +1178,7 @@
 .finalCta > .wrap {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: 0 72px;
+  gap: 0 var(--space-16);
   align-items: start;
 }
 .finalCtaMain,
@@ -1188,7 +1188,7 @@
 }
 .finalCtaMain .finalEyebrow,
 .finalCtaSide .finalMotionLabel {
-  margin: 0 0 22px;
+  margin: 0 0 var(--space-6);
 }
 .finalCtaMain h2 {
   margin: 0;
@@ -1207,7 +1207,7 @@
   color: #566170;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: .11em;
+  letter-spacing: .16em;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -1246,7 +1246,7 @@
 /* Mobile final CTA rhythm: deliberate handoff from CTA to motion identity. */
 @media (max-width: 767px) {
   .finalCtaSide {
-    margin-top: 28px !important;
+    margin-top: var(--space-8) !important;
   }
   .finalCtaSide .finalMotionLabel {
     margin: 0 0 8px !important;
@@ -1255,4 +1255,41 @@
     margin: -46px 0 -40px !important;
     overflow: visible;
   }
+}
+
+/* Website v2: media objects share geometry; editorial regions stay unboxed. */
+.sourceImage,
+.cropImage {
+  overflow: hidden;
+  border-radius: var(--radius-media);
+}
+.heroWorkflow :global([data-workflow-state]) {
+  border-color: var(--border-light);
+  border-radius: var(--radius-panel);
+}
+.finalCtaMain .finalEyebrow,
+.finalCtaSide .finalMotionLabel {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .16em;
+}
+/* Keep the simpler editorial columns through tablet. The detailed hero demo
+   still stacks below 960px so its media and controls remain legible. */
+@media (min-width: 768px) and (max-width: 960px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: var(--space-8);
+  }
+}
+@media (max-width: 767px) {
+  .hero { gap: var(--space-8); }
+  .actions { gap: var(--space-4); }
+  .finalCtaMain .introCopy { margin-block: var(--space-6); }
+}
+
+/* Labels now belong to their columns; obsolete named rows must not force
+   those columns onto separate tablet rows. */
+.finalCta > .wrap { grid-template-areas: "main side"; }
+@media (max-width: 767px) {
+  .finalCta > .wrap { grid-template-areas: "main" "side"; }
 }
