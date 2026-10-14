@@ -1,9 +1,8 @@
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
-import { APP_LIVE, APP_URL, STUDIO_PREVIEW_URL } from "@/lib/site";
+import { APP_LIVE, APP_URL, STUDIO_LOGIN_URL, STUDIO_PREVIEW_URL } from "@/lib/site";
 
 export function Footer() {
-  const studioHref = APP_LIVE ? APP_URL : STUDIO_PREVIEW_URL;
-  const studioLabel = APP_LIVE ? "Client login" : "Studio Preview";
+  const liveStudio = APP_LIVE ? APP_URL : STUDIO_PREVIEW_URL;
 
   return (
     <footer className="brand-footer">
@@ -23,7 +22,8 @@ export function Footer() {
             <a href="/resources">Resources</a>
             <a href="/#for-media-businesses">For your business</a>
             <a href="/demo">Book a demo</a>
-            <a href={studioHref}>{studioLabel}</a>
+            <a href={STUDIO_LOGIN_URL}>Client login</a>
+            {!APP_LIVE && <a href={liveStudio}>Studio Preview</a>}
             <a href="/partners">Partners</a>
           </nav>
           <div>
