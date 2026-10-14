@@ -2,7 +2,7 @@ import { APP_URL } from "@/lib/site";
 
 export function AppSignupLink({
   className,
-  children = "Try CAPLIST",
+  children = "Get started",
 }: {
   className?: string;
   children?: React.ReactNode;

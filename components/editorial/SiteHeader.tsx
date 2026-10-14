@@ -11,8 +11,8 @@ function Links({ onNavigate }: { onNavigate?: () => void }) {
       <a href="/examples" onClick={onNavigate}>
         Products
       </a>
-      <a href="/#how-it-works" onClick={onNavigate}>
-        See Caplist in action
+      <a href="/how-it-works" onClick={onNavigate}>
+        See CAPLIST in action
       </a>
       <a href="/#for-media-businesses" onClick={onNavigate}>
         For your business
@@ -42,10 +42,10 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <Links />
         </nav>
         <div className="header-actions">
-          <AppSignupLink className="header-try">Try CAPLIST</AppSignupLink>
+          <AppSignupLink className="header-try">Get started</AppSignupLink>
           <AppLoginLink className="header-avatar">
             <UserRound size={18} strokeWidth={1.7} aria-hidden="true" />
-            <span className="sr-only">Log in to Studio</span>
+            <span className="sr-only">Studio login</span>
           </AppLoginLink>
         </div>
         <details ref={menu} className="mobile-menu">
@@ -61,8 +61,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             }}
           >
             <Links onNavigate={() => menu.current?.removeAttribute("open")} />
-            <AppLoginLink className="header-login-link">Log in</AppLoginLink>
-            <AppSignupLink className="header-try">Try CAPLIST</AppSignupLink>
+            <AppLoginLink className="header-login-link">Studio login</AppLoginLink>
           </nav>
         </details>
       </div>

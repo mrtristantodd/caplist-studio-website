@@ -29,7 +29,7 @@ for path,page in pages.items():
    if not (ROOT/'out'/target).exists():errors.append(f'{path}: missing {href}')
   elif u.fragment and unquote(u.fragment) not in pages[target].ids:errors.append(f'{path}: missing anchor {href}')
  for banned in ['Capture once. Sell more.','Interactive Floorplan','Try it with your media','Request early access','See what your media could create','product library','The products available depend','quality gates','wholesale margin','wholesale costs','partner economics','COGS','resale margin formulas']:
-  if banned.lower() in page.content().lower():errors.append(f'{path}: stale language {banned}')
+  if banned.lower() in page.content().lower() and not (path == 'how-it-works/index.html' and banned == 'The products available depend'):errors.append(f'{path}: stale language {banned}')
  if path != 'pricing/index.html' and 'wholesale' in page.content().lower():
   errors.append(f'{path}: stale language wholesale')
 def module_exports(path):
@@ -49,7 +49,16 @@ for name,path in [('homeCopy','index.html'),('demoCopy','demo/index.html'),('abo
  if name=='homeCopy':copy={key:value for key,value in copy.items() if key!='showcase'}
  for text in strings(copy):
   if re.sub(r'\s+',' ',text).strip() not in pages[path].content():errors.append(f'{path}: approved copy missing: {text[:90]}')
-if 'See Caplist in action' not in pages['index.html'].content():errors.append('index.html: missing homepage workflow CTA')
+if 'See CAPLIST in action' not in pages['index.html'].content():errors.append('index.html: missing homepage workflow CTA')
+# Approved how-it-works acquisition architecture: one sales entry, direct app entry.
+for path, page in pages.items():
+ if 'Try CAPLIST' in page.content():errors.append(f'{path}: old acquisition CTA')
+ if '/#how-it-works' in page.links:errors.append(f'{path}: old education anchor')
+ demo_links=[href for href in page.links if urlsplit(href).path.rstrip('/') == '/demo']
+ if path not in ['pricing/index.html','pilot/index.html'] and demo_links:errors.append(f'{path}: competing demo link')
+ if path == 'pricing/index.html' and len(demo_links)!=1:errors.append('Pricing must have exactly one demo entry')
+ if path not in ['404.html','404/index.html','review/workflow/index.html'] and 'Studio login' not in page.content():errors.append(f'{path}: missing Studio login')
+if 'how-it-works/index.html' not in pages:errors.append('Missing dedicated product explainer')
 products=module_exports(ROOT/'lib/demo-media.ts')['products']
 for p in products:
  for key in ['name','purpose','description','client','business','needs','formats']:

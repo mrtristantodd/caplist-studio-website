@@ -2,7 +2,7 @@ import { APP_URL } from "@/lib/site";
 
 export function AppLoginLink({
   className,
-  children = "Log in",
+  children = "Studio login",
 }: {
   className?: string;
   children?: React.ReactNode;

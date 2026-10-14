@@ -29,9 +29,9 @@ export default function Contact() {
             </p>
           </section>
           <section>
-            <h2>Demos &amp; product enquiries</h2>
+            <h2>Product enquiries</h2>
             <p>
-              <a href="/demo">Book a demo</a>
+              <a href="/pricing#business-demo">Explore options for your business</a>
             </p>
           </section>
           <section>

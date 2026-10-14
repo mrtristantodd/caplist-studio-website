@@ -36,10 +36,10 @@ export function HomepageV2() {
               </div>
               <div className={styles.actions}>
                 <a className={styles.button} href={`${APP_URL}/signup`}>
-                  Try CAPLIST <ArrowUpRight size={17} />
+                  Get started <ArrowUpRight size={17} />
                 </a>
-                <a className={styles.textLink} href="/demo">
-                  Book a demo
+                <a className={styles.textLink} href="/how-it-works">
+                  See how CAPLIST works <ArrowRight size={17} />
                 </a>
               </div>
               <p className={styles.audience}>{copy.hero.audience}</p>
@@ -186,8 +186,8 @@ export function HomepageV2() {
               <div className={styles.introCopy}>
                 <Paragraphs body={copy.close.body} />
               </div>
-              <a className={styles.button} href="/demo">
-                Book a demo <ArrowUpRight size={19} />
+              <a className={styles.button} href={`${APP_URL}/signup`}>
+                Get started <ArrowUpRight size={19} />
               </a>
             </div>
             <div className={styles.finalCtaSide}>

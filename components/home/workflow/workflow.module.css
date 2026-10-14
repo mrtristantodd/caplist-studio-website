@@ -1,3 +1,5 @@
+.viewport, .reviewItem { container: workflow / inline-size; }
+
 .shell {
   --workflow-blue: var(--caplist-blue);
   --workflow-ink: #0b0d10;
@@ -873,7 +875,7 @@
 .outcomeSource, .outcomeProducts { position: relative; z-index: 1; }
 .outcomeBridge { z-index: 2; pointer-events: none; }
 
-@media (max-width: 640px) {
+@container workflow (max-width: 480px) {
   .outcomeBridge > i { left: -28px; width: calc(100% + 56px); height: 128px; }
   .outcomeFragments { inset-inline: -23px; }
   .outcomeFragments img { width: 20px; height: 15px; border-width: 1px; }
@@ -956,7 +958,7 @@
   box-shadow: var(--shadow-panel);
 }
 
-@media (max-width: 1120px) {
+@container workflow (max-width: 640px) {
   .sceneBody {
     min-height: 360px;
   }
@@ -982,7 +984,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@container workflow (max-width: 480px) {
   .shell {
     border-radius: 12px;
   }
@@ -1216,7 +1218,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@container workflow (max-width: 340px) {
   .sceneBody {
     min-height: 405px;
   }
@@ -1269,11 +1271,11 @@
   color: white; background: #0b0d10cc; padding: 8px; border-radius: 6px; font-size: 10px;
 }
 
-@media (max-width: 1120px) {
+@container workflow (max-width: 640px) {
   .flyingMedia img:nth-child(2) { top: 48px; }
   .flyingMedia img:nth-child(3) { top: 96px; }
 }
-@media (max-width: 640px) {
+@container workflow (max-width: 480px) {
   .motionShell .sceneHeader { height: 104px; }
   .motionShell .sceneBody { height: 600px; min-height: 600px; }
   .motionShell .readyLayout { grid-template-rows: 215px 1fr; }
@@ -1295,7 +1297,7 @@
   .motionShell .analysisTags span:nth-child(n+4) { display: inline; }
   .motionShell .processingList p:nth-child(n+5) { display: flex; }
 }
-@media (max-width: 420px) {
+@container workflow (max-width: 340px) {
   .flyingMedia img:nth-child(2) { top: 45px; }
 }
 

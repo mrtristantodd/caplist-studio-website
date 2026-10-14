@@ -1,0 +1,33 @@
+# How it works v2 — review
+
+Branch: `feature/how-it-works-v2`, based on `design/website-v2-polish` at `a6ec178`. The stacked PR preserves the current reviewed header, circular account utility and preceding visual refinements. No merge or production release is included.
+
+The supplied concept is composition/art direction. Existing website primitives, Inter, tokens, approved logos and shared app design authority govern implementation. App authority was read only. No app, authentication or database code changed.
+
+## Implementation
+
+- New eight-section `/how-it-works` page: explanatory hero, four-stage sequence, source-to-products composition, progressive catalogue, quality comparison, creative intent, real-media review and final acquisition CTA.
+- Reuses `InnerPage`, header/footer, `AccessLink`, exact `HeroWorkflowDemo`, DP001 media and its existing reel. No logo animation replaces the product demonstration. Static logo artwork identifies the transformation, not a new animated asset.
+- Workflow breakpoints now respond to the component container rather than the viewport. This prevents tablet column content overlapping the footer. Existing responsive rules and animation logic are reused.
+- The six-output opportunity is labelled illustrative: the source materials do not establish six actual unlocked outputs. Existing workflow demonstration retains its own five-product example. The quality comparison explicitly labels simulated blur; no fabricated assessment scores or customer results. Creative controls are an explanatory composition, not a pretend working editor. QC has actual native video controls; the review checklist is informational.
+
+## Acquisition architecture
+
+- Get started → configured Studio `/signup`, including pricing plans. Pricing amounts unchanged; no unsupported plan-selection parameter invented.
+- Studio login → configured Studio `/login`, accessible via unchanged circular header utility and footer.
+- See CAPLIST in action → `/how-it-works`; homepage has a secondary educational text link.
+- Book a demo exists as one deliberate sales entry on Pricing, under “Running a larger property-media business?”. Contact points there. No repeated footer/header/hero sales CTA. The existing demo form and legacy `/pilot` redirect remain functional.
+- Homepage closing copy now supports account entry. The approved messaging record and its checker were updated for this explicitly approved copy revision.
+
+## Verification
+
+- `npm run lint`: pass (repository alias for TypeScript checking).
+- `npm run typecheck`: pass.
+- `npm run build`: pass, static export includes new route.
+- `python3 scripts/check-marketing-copy.py`: pass, 21 HTML pages, eight catalogue definitions, internal links/anchors, approved copy and new CTA architecture.
+- Local production-export browser: 320/390/768/1024/1440px new-page widths, no document overflow; Inter and 11px eyebrow confirmed; no broken source previews. Actual desktop, tablet and mobile views reviewed.
+- All eight workflow states checked at 390/768px with no scene overflow; animation pause toggles state correctly. QC reel plays with no media error.
+- Homepage, Pricing, Products, Contact and About checked at 390/768/1440px; no horizontal overflow, no Try CAPLIST, one demo link only on Pricing. Mobile navigation preserves one header acquisition control and closes on navigation.
+- Signup/login destinations verified against existing configuration; account creation and authenticated app behaviour are outside this website task. No form submissions performed. Existing reduced-motion handling remains in the reused animation; OS preference emulation was not available.
+
+Hosted preview and CI results are recorded on the PR. Approval is required before merge or production deployment.
