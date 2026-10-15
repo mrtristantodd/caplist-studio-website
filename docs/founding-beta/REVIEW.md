@@ -18,7 +18,7 @@ WorkflowStory accepts an optional `variant="founding-beta"`. This reuses its exi
 
 ## Media provenance
 
-Two local, silent 540×960 H.264 illustrative previews are derived from the existing DP001 demonstration assets. Photo Reel uses the existing edited exterior/living/kitchen images. Vertical Video Reel uses a short portrait excerpt of the existing landscape demonstration reel. Both are labelled illustrative on the page; they are not claimed as customer work or validated CAPLIST production results. Native controls, no autoplay/loop, preload none, local WebP posters. Total additional video: 801,180 bytes.
+Refinement: [current media and verification notes](./REFINEMENT.md). Photo Reel retains the labelled illustrative photo-motion sample. Vertical Video Reel shows the existing landscape source, opening on the drone passage with a clean aerial poster; a representative finished vertical edit is explicitly pending. The old portrait excerpt and its transition-frame poster have been removed. No illustrative media is claimed as a confirmed CAPLIST pipeline output.
 
 ## Validation
 
@@ -27,7 +27,7 @@ Two local, silent 540×960 H.264 illustrative previews are derived from the exis
 - `npm run build`: pass; static export includes standalone route.
 - `python3 scripts/check-marketing-copy.py`: pass; 22 HTML pages, eight existing catalogue definitions, internal links/anchors and approved existing-page copy.
 - Chromium production-export checks at 1440, 1024, 768 and 390px: Founding Beta, homepage and How It Works all have no horizontal overflow or broken images; no browser page errors.
-- Desktop/tablet/mobile visual review, both vertical videos play at 540×960, existing landscape source plays at 1280×720.
+- Desktop/tablet/mobile visual review; retained Photo Reel motion sample plays at 540×960 and illustrative landscape source plays at 1280×720. A finished Vertical Video Reel example remains pending.
 - Workflow: paused before viewport entry; progresses on meaningful entry; freezes offscreen; resumes and holds final state; one iteration; hidden-document pause; individually activated mobile stages; actual reduced-motion emulation yields static compositions.
 - Form: required fields/native validation, multiple capture selections, unavailable response with zero submission requests, no URL leakage, disabled controls without JavaScript, visible keyboard focus and skip-to-main.
 - Studio login destination retained from AppLoginLink; browser GET returned HTTP 200 and Caplist Studio title. No authenticated app operation or account creation performed.

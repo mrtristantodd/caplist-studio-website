@@ -88,13 +88,13 @@
 .finalField { background: var(--caplist-black); color: var(--text-dark-primary); --muted: var(--text-dark-secondary); scroll-margin-top: 24px; }
 .final { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
 .final > div > p:not(.eyebrow) { margin-top: 24px; max-width: 450px; }
-.form { min-width: 0; }
-.page .formNote { font-size: 13px; line-height: 1.6; margin-bottom: 24px; color: var(--text-dark-secondary); }
-.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+.form { min-width: 0; padding: var(--space-8); border: 1px solid var(--border-light); border-radius: var(--radius-panel); background: var(--caplist-offwhite); color: var(--text-light-primary); --muted: var(--text-light-secondary); }
+.page .formNote { font-size: 13px; line-height: 1.6; margin-bottom: 24px; color: var(--text-light-secondary); }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-4); }
 .formGrid > label { display: grid; gap: 8px; font-size: 13px; line-height: 1.5; min-width: 0; }
 .fullField { grid-column: 1/-1; }
-.formGrid input { width: 100%; min-width: 0; min-height: 48px; padding: 12px; font: inherit; font-size: 16px; color: var(--text-dark-primary); background: var(--surface-dark-900); border: 1px solid #566170; border-radius: 8px; }
-.formGrid input::placeholder { color: var(--text-dark-secondary); }
+.formGrid input { width: 100%; min-width: 0; min-height: 48px; padding: 12px; font: inherit; font-size: 16px; color: var(--text-light-primary); background: var(--surface-light); border: 1px solid color-mix(in srgb, var(--text-light-secondary) 65%, var(--surface-light)); border-radius: var(--radius-control); }
+.formGrid input::placeholder { color: var(--text-light-secondary); }
 .form fieldset { border: 0; padding: 0; margin: 24px 0; min-width: 0; }
 .form legend { font-size: 13px; margin-bottom: 8px; padding: 0; }
 .captureOptions { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
@@ -151,3 +151,63 @@
 
 .skipLink { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 12px 20px; background: white; color: var(--caplist-black); font-size: 14px; }
 .skipLink:focus { top: 16px; }
+
+/* Route-only refinement: source proof, commercial relationship and Studio form. */
+.relationship { grid-template-columns: minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr); gap: var(--space-8); border: 0; padding-top: 0; }
+.relationship > svg { margin-top: 64px; }
+.commercialStep { min-width: 0; }
+.relationship .commercialStep h3 { font-size: 24px; margin-bottom: 16px; }
+.relationship .commercialStep p { font-size: 14px; line-height: 1.7; }
+.stepNumber { display: block; margin: 24px 0 12px; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.captureGraphic, .createGraphic, .sellGraphic { height: 144px; display: flex; gap: 12px; align-items: center; }
+.captureGraphic > div { position: relative; overflow: hidden; width: 29%; height: 104px; border-radius: var(--radius-control); }
+.captureGraphic > div:nth-child(2) { height: 128px; }
+.captureGraphic img, .createGraphic img { object-fit: cover; }
+.createGraphic > span { width: 24px; height: 1px; background: var(--border-light); }
+.createGraphic > div { position: relative; width: 64px; height: 112px; overflow: hidden; border-radius: var(--radius-control); }
+.createGraphic > div:last-child { margin-top: 24px; }
+.sellGraphic { gap: 24px; }.sellGraphic > span { font-size: 24px; line-height: 1.3; letter-spacing: -.03em; }
+.page .commercialClose { padding-top: 32px; margin-top: 40px; border-top: 1px solid var(--border-light); color: inherit; font-size: 14px; }
+.commercialClose span { color: var(--muted); margin-left: 16px; }
+.products { align-items: start; }
+.outputPreview { min-height: 792px; padding: 32px 24px 24px; }
+.productSource { width: 100%; max-width: 368px; }
+.page .sourceLabel { font-size: 11px; line-height: 1.5; color: var(--text-dark-secondary); margin-bottom: 16px; }
+.sourceContactSheet { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.sourceContactSheet > div { position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: var(--radius-control); }
+.sourceContactSheet img { object-fit: cover; }
+.outputLabel { display: flex; align-items: center; gap: 8px; color: var(--text-dark-secondary); font-size: 11px; line-height: 1.5; margin-block: 24px; text-align: center; }
+.outputLabel svg { transform: rotate(90deg); flex-shrink: 0; }
+.videoSourcePreview .productSource video { width: 100%; max-width: none; aspect-ratio: 16/9; border-radius: var(--radius-control); }
+.pendingOutput { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 200px; max-width: 100%; min-height: 296px; border: 1px solid var(--border-dark); border-radius: var(--radius-panel); padding: 24px; text-align: center; gap: 16px; color: var(--text-dark-secondary); }
+.pendingOutput > p { color: var(--text-dark-primary); font-size: 15px; line-height: 1.5; }
+.pendingOutput > span { color: var(--text-dark-secondary); font-size: 12px; line-height: 1.6; }
+.outputPreview figcaption { align-self: end; }
+.formGrid input:focus-visible { outline: 2px solid var(--caplist-blue); outline-offset: 4px; }
+.form :global(.studio-button) { width: 100%; }
+@media(max-width:1100px) {
+  .relationship { gap: 24px; }.createGraphic { gap: 8px; }.createGraphic > span { width: 12px; }
+  .outputPreview { min-height: 760px; }
+}
+@media(max-width:900px) {
+  .relationship { gap: 16px; }.captureGraphic, .createGraphic, .sellGraphic { height: 120px; gap: 8px; }
+  .captureGraphic > div { height: 80px; }.captureGraphic > div:nth-child(2) { height: 104px; }
+  .createGraphic > div { width: 44px; height: 80px; }.createGraphic :global(img.brand-mark) { width: 28px; height: auto; }
+  .createGraphic > span { width: 8px; }.sellGraphic { gap: 12px; }.sellGraphic > span { font-size: 20px; }
+  .relationship .commercialStep h3 { font-size: 22px; }.relationship .commercialStep p { font-size: 13px; }
+  .relationship > svg { margin-top: 48px; }.outputPreview { min-height: 744px; }
+  .form { padding: var(--space-6); }
+}
+@media(max-width:640px) {
+  .relationship { grid-template-columns: 1fr; gap: 24px; }
+  .relationship > svg { margin: 0; transform: rotate(90deg); }
+  .commercialStep { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; align-items: center; }
+  .captureGraphic, .createGraphic, .sellGraphic { grid-column: 2; grid-row: 1/4; height: 144px; }
+  .stepNumber { margin: 0 0 12px; font-size: 9px; }.relationship .commercialStep h3 { margin-bottom: 12px; }
+  .relationship .commercialStep p { grid-column: 1/-1; margin-top: 20px; font-size: 14px; }
+  .sellGraphic > span { font-size: 18px; }.sellGraphic > svg { width: 28px; flex-shrink: 0; }
+  .page .commercialClose { margin-top: 32px; padding-top: 24px; }.commercialClose span { display: block; margin: 8px 0 0; }
+  .outputPreview { min-height: 768px; padding: 24px 16px; }
+  .productSource { max-width: 310px; }.pendingOutput { min-height: 360px; width: 220px; }
+  .formGrid { grid-template-columns: 1fr; }.fullField { grid-column: auto; }
+}

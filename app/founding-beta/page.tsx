@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, PackagePlus, Film } from "lucide-react";
 import { CaplistLogo, CaplistMark } from "@/components/brand/CaplistLogo";
 import { AppLoginLink } from "@/components/editorial/AppLoginLink";
 import { AccessLink } from "@/components/editorial/StudioUI";
@@ -25,13 +25,39 @@ function ApplyLink() {
 function PropertyImage({ scene, alt, priority = false }: { scene: string; alt: string; priority?: boolean }) {
   return <Image src={`/media/dp001/${scene}.webp`} alt={alt} fill unoptimized preload={priority} sizes="(max-width: 640px) 80vw, 40vw" />;
 }
-function OutputPreview({ name, file, poster }: { name: string; file: string; poster: string }) {
+function PhotoReelPreview() {
   return <figure className={styles.outputPreview}>
-    <video controls playsInline preload="none" poster={poster} aria-label={`Play illustrative ${name} preview`}>
-      <source src={`/media/founding-beta/${file}.mp4`} type="video/mp4" />
+    <div className={styles.productSource}>
+      <p className={styles.sourceLabel}>Source · Professionally edited photography</p>
+      <div className={styles.sourceContactSheet}>
+        {["front", "living", "kitchen"].map(scene => <div key={scene}><PropertyImage scene={scene} alt={`Edited ${scene} source photograph`} /></div>)}
+      </div>
+    </div>
+    <div className={styles.outputLabel}><ArrowRight size={14} aria-hidden="true" /> Vertical photo-motion reel</div>
+    <video controls playsInline preload="none" poster="/media/founding-beta/photo-reel-poster.webp" aria-label="Play illustrative Photo Reel motion sample">
+      <source src="/media/founding-beta/photo-reel.mp4" type="video/mp4" />
       Your browser does not support video playback.
     </video>
-    <figcaption>Illustrative product preview · 9:16 · no audio</figcaption>
+    <figcaption>Illustrative motion sample · 9:16 · no audio<br />Not a confirmed CAPLIST production output.</figcaption>
+  </figure>;
+}
+
+function VerticalVideoPreview() {
+  return <figure className={`${styles.outputPreview} ${styles.videoSourcePreview}`}>
+    <div className={styles.productSource}>
+      <p className={styles.sourceLabel}>Source · Existing landscape property video</p>
+      <video controls playsInline preload="none" poster="/media/dp001/drone.webp" aria-label="Play illustrative landscape source footage for Vertical Video Reel">
+        <source src="/media/dp001/reel-premium-mixed.mp4" type="video/mp4" />
+        Your browser does not support video playback.
+      </video>
+    </div>
+    <div className={styles.outputLabel}><ArrowRight size={14} aria-hidden="true" /> Selected moments. Reframed for vertical.</div>
+    <div className={styles.pendingOutput} role="note">
+      <Film size={28} strokeWidth={1.5} aria-hidden="true" />
+      <p>Vertical edit example<br />coming soon</p>
+      <span>A representative finished example is not available yet.</span>
+    </div>
+    <figcaption>Illustrative landscape source footage · 16:9<br />A finished Vertical Video Reel is not shown.</figcaption>
   </figure>;
 }
 
@@ -64,10 +90,10 @@ export default function FoundingBeta() {
                 <span>Edited photos</span>
               </div>
               <div className={styles.sourceVideo}>
-                <video controls playsInline preload="none" poster="/media/dp001/living.webp" aria-label="Play existing landscape demonstration video">
+                <video controls playsInline preload="none" poster="/media/dp001/drone.webp" aria-label="Play existing landscape demonstration video">
                   <source src="/media/dp001/reel-premium-mixed.mp4" type="video/mp4" />
                 </video>
-                <span>Landscape video · example source</span>
+                <span>Landscape video · aerial opening</span>
               </div>
             </div>
             <div className={styles.transform}><span /><CaplistMark size={40} /><span /><ArrowRight size={18} aria-hidden="true" /></div>
@@ -75,7 +101,7 @@ export default function FoundingBeta() {
               <div className={styles.heroOutput}><div><PropertyImage scene="front" alt="Photo Reel portrait composition" /></div><span>Photo Reel</span></div>
               <div className={styles.heroOutput}><div><PropertyImage scene="living" alt="Vertical Video Reel portrait composition" /></div><span>Vertical Video Reel <small>Beta</small></span></div>
             </div>
-            <figcaption className={styles.heroCaption}>Existing media → CAPLIST → additional finished products</figcaption>
+            <figcaption className={styles.heroCaption}>Existing media → two product formats · illustrative overview</figcaption>
           </figure>
         </div>
         <div className={`${styles.wrap} ${styles.heroFoot}`}><span>Initial beta · 3 Australian businesses</span><span>Capture once. Create more. Sell more.</span></div>
@@ -87,12 +113,33 @@ export default function FoundingBeta() {
           <p>You have already won the booking, travelled to the property, captured the media and completed the primary edit. CAPLIST gives that existing work another commercial life.</p>
         </div>
         <div className={styles.relationship}>
-          <div><h3>Already done</h3><ul><li>Property captured</li><li>Photos edited</li><li>Video completed</li></ul></div>
+          <div className={styles.commercialStep}>
+            <div className={styles.captureGraphic} aria-hidden="true">
+              {["front", "living", "kitchen"].map(scene => <div key={scene}><PropertyImage scene={scene} alt="" /></div>)}
+            </div>
+            <span className={styles.stepNumber}>01 · ALREADY CAPTURED</span>
+            <h3>Capture once.</h3>
+            <p>Professional photography and property video. The booking, capture and primary edit are already done.</p>
+          </div>
           <ArrowRight aria-hidden="true" />
-          <div><h3>CAPLIST adds</h3><ul><li>Additional production</li><li>New finished formats</li></ul></div>
+          <div className={styles.commercialStep}>
+            <div className={styles.createGraphic} aria-hidden="true">
+              <CaplistMark size={40} /><span />
+              <div><PropertyImage scene="front" alt="" /></div><div><PropertyImage scene="living" alt="" /></div>
+            </div>
+            <span className={styles.stepNumber}>02 · CAPLIST ADDS</span>
+            <h3>Create more.</h3>
+            <p>Photo Reel and Vertical Video Reel — Beta. Additional professional formats from the same property media.</p>
+          </div>
           <ArrowRight aria-hidden="true" />
-          <div><h3>Your business gets</h3><ul><li>More products to offer</li><li>More value from the same booking</li><li>No return property visit</li></ul></div>
+          <div className={styles.commercialStep}>
+            <div className={styles.sellGraphic} aria-hidden="true"><PackagePlus size={36} strokeWidth={1.3} /><span>One property.<br />More to offer.</span></div>
+            <span className={styles.stepNumber}>03 · YOUR BUSINESS</span>
+            <h3>Sell more.</h3>
+            <p>Add finished media products to your client offer, without another property visit.</p>
+          </div>
         </div>
+        <p className={styles.commercialClose}>More products from the same booking. <span>No return property visit.</span></p>
       </section>
 
       <section className={styles.productField} aria-labelledby="products-title">
@@ -101,17 +148,17 @@ export default function FoundingBeta() {
           <h2 id="products-title">More to deliver.<br />From the same capture.</h2>
           <div className={styles.products}>
             <article className={styles.product}>
-              <OutputPreview name="Photo Reel" file="photo-reel" poster="/media/founding-beta/photo-reel-poster.webp" />
+              <PhotoReelPreview />
               <div className={styles.productCopy}><div className={styles.productTitle}><h3>Photo Reel</h3><span>A$19</span></div>
-                <p>Turn professionally edited property photography into a finished vertical reel ready for your client.</p>
-                <dl><div><dt>Source</dt><dd>Edited property photos</dd></div><div><dt>Output</dt><dd>Vertical reel</dd></div></dl><p className={styles.micro}>Founding Beta pricing</p>
+                <p>Turn professionally edited property photography into a vertical photo-motion reel ready for your client.</p>
+                <dl><div><dt>Source</dt><dd>Edited property photos</dd></div><div><dt>Output</dt><dd>Vertical photo-motion reel</dd></div></dl><p className={styles.micro}>Founding Beta pricing</p>
               </div>
             </article>
             <article className={styles.product}>
-              <OutputPreview name="Vertical Video Reel" file="vertical-video-reel" poster="/media/founding-beta/vertical-video-reel-poster.webp" />
+              <VerticalVideoPreview />
               <div className={styles.productCopy}><div className={styles.productTitle}><h3>Vertical Video Reel <small>Beta</small></h3><span>A$89</span></div>
-                <p>Turn existing professional landscape property video into a shorter vertical product for your client.</p>
-                <dl><div><dt>Source</dt><dd>Existing professional property video</dd></div><div><dt>Output</dt><dd>Vertical reel</dd></div></dl><p className={styles.micro}>Founding Beta pricing</p>
+                <p>Turn existing professional landscape property video into a shorter vertical edit, with selected moments reframed for your client.</p>
+                <dl><div><dt>Source</dt><dd>Existing professional landscape video</dd></div><div><dt>Output</dt><dd>Selected and reframed vertical edit</dd></div></dl><p className={styles.micro}>Founding Beta pricing</p>
               </div>
             </article>
           </div>

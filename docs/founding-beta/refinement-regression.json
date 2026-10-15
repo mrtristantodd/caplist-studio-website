@@ -1,0 +1,98 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/how-it-works/",
+    "width": 1440,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/examples/",
+    "width": 1440,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/pricing/",
+    "width": 1440,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/how-it-works/",
+    "width": 1024,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/examples/",
+    "width": 1024,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/pricing/",
+    "width": 1024,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/how-it-works/",
+    "width": 768,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/examples/",
+    "width": 768,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/pricing/",
+    "width": 768,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/how-it-works/",
+    "width": 390,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/examples/",
+    "width": 390,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  },
+  {
+    "route": "/pricing/",
+    "width": 390,
+    "sameContentAndGeometry": true,
+    "overflow": false
+  }
+]

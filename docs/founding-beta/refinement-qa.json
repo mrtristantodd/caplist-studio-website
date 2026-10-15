@@ -1,0 +1,72 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": 0,
+      "equalProductWidth": true
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": 0,
+      "equalProductWidth": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "brokenImages": 0,
+      "equalProductWidth": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "brokenImages": 0,
+      "equalProductWidth": true
+    }
+  ],
+  "errors": [],
+  "playback": [
+    {
+      "src": "http://127.0.0.1:3000/media/dp001/reel-premium-mixed.mp4",
+      "poster": "http://127.0.0.1:3000/media/dp001/drone.webp",
+      "width": 1280,
+      "height": 720,
+      "time": 0.4082,
+      "error": null
+    },
+    {
+      "src": "http://127.0.0.1:3000/media/founding-beta/photo-reel.mp4",
+      "poster": "http://127.0.0.1:3000/media/founding-beta/photo-reel-poster.webp",
+      "width": 540,
+      "height": 960,
+      "time": 0.402,
+      "error": null
+    },
+    {
+      "src": "http://127.0.0.1:3000/media/dp001/reel-premium-mixed.mp4",
+      "poster": "http://127.0.0.1:3000/media/dp001/drone.webp",
+      "width": 1280,
+      "height": 720,
+      "time": 0.4071,
+      "error": null
+    }
+  ],
+  "motion": {
+    "offscreenPause": true,
+    "playsOnce": true,
+    "holdsFinal": true,
+    "reducedMotion": true
+  },
+  "form": {
+    "nativeValidation": true,
+    "multiSelect": true,
+    "requests": 0,
+    "focus": {
+      "outline": "2px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(11, 13, 16)"
+    },
+    "unavailableReceipt": true
+  }
+}
