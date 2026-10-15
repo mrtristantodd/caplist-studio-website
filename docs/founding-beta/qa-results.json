@@ -1,0 +1,127 @@
+{
+  "responsive": [
+    {
+      "width": 1440,
+      "route": "/founding-beta/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1440,
+      "route": "/how-it-works/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1024,
+      "route": "/founding-beta/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 1024,
+      "route": "/how-it-works/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "/founding-beta/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 768,
+      "route": "/how-it-works/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "/founding-beta/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "brokenImages": 0
+    },
+    {
+      "width": 390,
+      "route": "/how-it-works/",
+      "overflow": false,
+      "brokenImages": 0
+    }
+  ],
+  "errors": [],
+  "motion": {
+    "offscreenPaused": true,
+    "holdsFinal": true,
+    "iterations": 1,
+    "initialTimes": [
+      450.0279999999899,
+      450.0279999999899
+    ],
+    "reducedMotionStatic": true
+  },
+  "form": {
+    "nativeValidation": true,
+    "multiSelect": true,
+    "unavailableFeedback": true,
+    "submissionRequests": 0,
+    "noJavaScriptSafe": true
+  },
+  "media": [
+    {
+      "src": "http://127.0.0.1:3000/media/dp001/reel-premium-mixed.mp4",
+      "width": 1280,
+      "height": 720,
+      "time": 0.3036,
+      "error": null
+    },
+    {
+      "src": "http://127.0.0.1:3000/media/founding-beta/photo-reel.mp4",
+      "width": 540,
+      "height": 960,
+      "time": 0.3089,
+      "error": null
+    },
+    {
+      "src": "http://127.0.0.1:3000/media/founding-beta/vertical-video-reel.mp4",
+      "width": 540,
+      "height": 960,
+      "time": 0.3034,
+      "error": null
+    }
+  ],
+  "login": "https://caplist-studio.vercel.app/login",
+  "additional": {
+    "skipLink": true,
+    "mobileStages": true,
+    "hiddenTabPause": true,
+    "reducedMotion": true,
+    "loginStatus": 200,
+    "loginTitle": "Caplist Studio",
+    "loginURL": "https://caplist-studio.vercel.app/login"
+  }
+}
