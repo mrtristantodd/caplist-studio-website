@@ -17,7 +17,7 @@ export function PilotRedirect() {
 
   return (
     <p>
-      This page has moved. <a href="/demo/">Book a demo</a>.
+      This page has moved. <a href="/demo/">Continue to demo</a>.
     </p>
   );
 }

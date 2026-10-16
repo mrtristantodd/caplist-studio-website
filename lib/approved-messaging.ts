@@ -102,7 +102,7 @@ export const homeCopy = {
     eyebrow: "CAPTURE ONCE. CREATE MORE. SELL MORE.",
     headline: "See what Caplist could add to your next property order.",
     body: [
-      "Book a short walkthrough and see how the professional media your business already captures can become a larger product menu for you — and more high-quality content for your clients.",
+      "Get started with the professional media your business already captures. Create a larger product menu for you — and more high-quality content for your clients.",
     ],
   },
 } as const;

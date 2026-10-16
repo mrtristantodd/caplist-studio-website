@@ -1,22 +1,15 @@
-import { LogIn } from "lucide-react";
-import { STUDIO_LOGIN_URL } from "@/lib/site";
+import { APP_URL } from "@/lib/site";
 
 export function AppLoginLink({
   className,
+  children = "Studio login",
 }: {
   className?: string;
+  children?: React.ReactNode;
 }) {
   return (
-    <a
-      className={["client-login-link", className].filter(Boolean).join(" ")}
-      href={STUDIO_LOGIN_URL}
-      aria-label="Open Caplist Studio client login"
-      title="Client login"
-    >
-      <span className="client-login-icon" aria-hidden="true">
-        <LogIn size={19} strokeWidth={2} />
-      </span>
-      <span className="client-login-label">Client login</span>
+    <a className={className} href={`${APP_URL}/login`}>
+      {children}
     </a>
   );
 }

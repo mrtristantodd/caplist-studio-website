@@ -1,4 +1,5 @@
 "use client";
+import { APP_URL } from "@/lib/site";
 import { useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { products } from "@/lib/demo-media";
@@ -178,8 +179,8 @@ export function ProductExplorer() {
           <p>
             Caplist checks the media you already captured and shows which additional products are worth creating for that property. You choose what makes sense for your client.
           </p>
-          <a className="studio-text-link" href="/demo">
-            Show us a recent shoot <ArrowUpRight size={18} />
+          <a className="studio-text-link" href={`${APP_URL}/signup`}>
+            Get started <ArrowUpRight size={18} />
           </a>
         </aside>
       </div>

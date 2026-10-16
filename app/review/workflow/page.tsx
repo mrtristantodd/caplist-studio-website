@@ -19,7 +19,7 @@ export default function WorkflowReviewPage() {
         <p style={{ maxWidth: 650, marginTop: 18, color: "#566170", lineHeight: 1.6 }}>
           Eight approved states. The homepage runs the complete motion sequence; these cards remain static for visual review.
         </p>
-        <a href="/#how-it-works" style={{ display: "inline-block", marginTop: 16, color: "#2f7bff" }}>Watch the animated hero →</a>
+        <a href="/how-it-works" style={{ display: "inline-block", marginTop: 16, color: "#2f7bff" }}>Watch the animated hero →</a>
       </header>
       <HeroWorkflowDemo reviewAll />
     </main>

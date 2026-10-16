@@ -813,7 +813,7 @@ See what Caplist could add to your next property order.
 
 Body
 
-Book a short walkthrough and see how the professional media your business already captures can become a larger product menu for you — and more high-quality content for your clients.
+Get started with the professional media your business already captures. Create a larger product menu for you — and more high-quality content for your clients.
 
 CTA
 

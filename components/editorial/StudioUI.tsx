@@ -1,9 +1,10 @@
+import { APP_URL } from "@/lib/site";
 import { ArrowUpRight } from "lucide-react";
 import { homeCopy } from "@/lib/approved-messaging";
 export function AccessLink({
   secondary = false,
-  href = "/#how-it-works",
-  children = "See Caplist in action",
+  href = `${APP_URL}/signup`,
+  children = "Get started",
 }: {
   secondary?: boolean;
   href?: string;
@@ -47,7 +48,7 @@ export function AccessClose() {
             {homeCopy.close.body.map((p) => (
               <p key={p}>{p}</p>
             ))}
-            <AccessLink href="/demo">Book a demo</AccessLink>
+            <AccessLink href={`${APP_URL}/signup`}>Get started</AccessLink>
           </div>
         </div>
       </div>

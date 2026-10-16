@@ -22,7 +22,7 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
       root.querySelectorAll<HTMLElement>(selector).forEach((element, index) => {
         const animation = element.animate(frames, {
           duration: time, delay: delay + index * stagger, fill: "both",
-          easing: "cubic-bezier(.22,.68,.2,1)",
+          easing: "cubic-bezier(.22,1,.36,1)",
         });
         if (!active.current) animation.pause();
         animations.current.push(animation);
@@ -30,7 +30,7 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
     };
     const reveal = (selector: string, delay = 0, stagger = 0, x = 0) => run(selector,
       [{ opacity: 0, transform: `translate(${x}px, ${mobile ? 5 : 9}px)` },
-        { opacity: 1, transform: "translate(0, 0)" }], delay, 360, stagger);
+        { opacity: 1, transform: "translate(0, 0)" }], delay, 400, stagger);
 
     for (const name of ["sceneHeader", "sceneBody"]) {
       const element = root.querySelector<HTMLElement>(query(name));
@@ -43,7 +43,7 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
     }
     run(`${query("phaseProgress")} .${styles.activeStep}`, [
       { transform: "scaleX(.35)" }, { transform: "scaleX(1)" },
-    ], 0, 260);
+    ], 0, 280);
 
     switch (state) {
       case "upload":
@@ -62,7 +62,7 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
           const animation = photo.animate([
             { transform: `translate(${mobile ? 10 : 25}px, ${(1 - index) * (mobile ? 25 : 58)}px) rotate(${index % 2 ? 5 : -4}deg)`, opacity: 0.55 },
             { transform: "translate(0,0) rotate(0deg)", opacity: 1 },
-          ], { duration: 600, delay: 100 + index * 160, fill: "both", easing: "ease-out" });
+          ], { duration: 520, delay: 100 + index * 160, fill: "both", easing: "cubic-bezier(.22,1,.36,1)" });
           if (!active.current) animation.pause();
           animations.current.push(animation);
         });
@@ -74,14 +74,14 @@ export function useWorkflowMotion(state: WorkflowState, enabled: boolean, runnin
         run(query("productList") + " article", [
           { opacity: 0.3, transform: "translateX(-6px)" },
           { opacity: 1, transform: "translateX(0)" },
-        ], 200, 340, 230);
+        ], 200, 400, 230);
         reveal(query("productIcon"), 250, 230);
         break;
       case "choose":
         run(query("selectedProduct"), [
           { boxShadow: "inset 0px 0 0 #2f7bff", backgroundColor: "#ffffff", borderColor: "#dce2e9" },
           { boxShadow: "inset 3px 0 0 #2f7bff", backgroundColor: "#eaf2ff", borderColor: "#83adff" },
-        ], 180, 300);
+        ], 180, 280);
         run(query("productList") + ` article:not(.${styles.selectedProduct})`, [{ opacity: 1 }, { opacity: 0.65 }], 250, 280);
         reveal(query("choiceSummary") + " > :not(span)", 380, 30);
         break;

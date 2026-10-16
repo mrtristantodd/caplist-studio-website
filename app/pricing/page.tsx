@@ -1,3 +1,4 @@
+import { APP_URL } from "@/lib/site";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { AccessLink } from "@/components/editorial/StudioUI";
 import { House, ImageIcon, Layers, MonitorPlay, Play, Smartphone } from "lucide-react";
@@ -25,7 +26,7 @@ const plans = [
       "Standard media retention",
       "Standard wholesale production rates",
     ],
-    cta: "Start with Launch",
+    cta: "Get started",
   },
   {
     name: "Growth",
@@ -44,7 +45,7 @@ const plans = [
       "Selected workflow integrations as available",
       "Full Sales Opportunities and Partner Sales Toolkit access",
     ],
-    cta: "Choose Growth",
+    cta: "Get started",
     popular: true,
   },
   {
@@ -64,7 +65,7 @@ const plans = [
       "API and webhook access as available",
       "Priority support",
     ],
-    cta: "Choose Scale",
+    cta: "Get started",
   },
 ] as const;
 
@@ -213,7 +214,7 @@ export default function Pricing() {
                   <ul>
                     {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
                   </ul>
-                  <AccessLink href="/early-access">{plan.cta}</AccessLink>
+                  <AccessLink href={`${APP_URL}/signup`}>Get started</AccessLink>
                 </div>
               </article>
             ))}
@@ -332,13 +333,19 @@ export default function Pricing() {
           </div>
         </section>
 
+        <section id="business-demo" className={`${styles.section} ${styles.wrap}`}>
+          <h2>Running a larger property-media business?</h2>
+          <p>See how CAPLIST could fit your existing workflow.</p>
+          <a className="studio-text-link" href="/demo">Book a demo</a>
+        </section>
+
         <section className={`${styles.finalCta} ${styles.wrap}`} aria-labelledby="final-title">
           <div>
             <h2 id="final-title">More from every property you already shoot.</h2>
             <p>Turn professionally captured media into additional products your business can sell—without another property visit or another manual edit.</p>
           </div>
           <div className={styles.finalAction}>
-            <AccessLink href="/early-access">Start with CAPLIST</AccessLink>
+            <AccessLink href={`${APP_URL}/signup`}>Get started</AccessLink>
             <p>Capture once. Edit once. Sell more.</p>
           </div>
         </section>

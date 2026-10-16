@@ -76,7 +76,7 @@ export function HeroWorkflowDemo({ reviewAll = false }: { reviewAll?: boolean })
 
   const displayedState = pinned ? state : reduced ? "unlock" : state;
   return (
-    <div ref={root} data-workflow-running={running} data-workflow-mode={animated ? "motion" : "static"}
+    <div ref={root} className={styles.viewport} data-workflow-running={running} data-workflow-mode={animated ? "motion" : "static"}
       onFocusCapture={(event) => setFocused(!(event.target as HTMLElement).closest("[data-workflow-toggle]"))}
       onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
       <WorkflowShell state={displayedState} animated={animated} running={running}

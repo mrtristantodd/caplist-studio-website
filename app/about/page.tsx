@@ -1,3 +1,4 @@
+import { APP_URL } from "@/lib/site";
 import { Photo } from "@/components/editorial/Photo";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { AccessLink } from "@/components/editorial/StudioUI";
@@ -47,7 +48,7 @@ export default function About() {
           {copy.close.body.map((p) => (
             <p key={p}>{p}</p>
           ))}
-          <AccessLink href="/demo">Book a demo</AccessLink>
+          <AccessLink href={`${APP_URL}/signup`}>Get started</AccessLink>
         </div>
       </section>
     </InnerPage>

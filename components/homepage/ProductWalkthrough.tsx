@@ -1,4 +1,5 @@
 "use client";
+import { APP_URL } from "@/lib/site";
 import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
@@ -219,8 +220,8 @@ export function ProductWalkthrough() {
                     </p>
                   )}
                 </div>
-                <a href="/demo">
-                  Book a demo <ArrowRight size={17} />
+                <a href={`${APP_URL}/signup`}>
+                  Get started <ArrowRight size={17} />
                 </a>
               </div>
             </motion.div>

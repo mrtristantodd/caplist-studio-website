@@ -1,0 +1,56 @@
+.steps { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:40px; margin:40px 0 0; padding:0; }
+.step { position:relative; min-width:0; --ease:cubic-bezier(.22,1,.36,1); }
+.visual { position:relative; width:100%; aspect-ratio:1.25; margin-bottom:28px; container-type:inline-size; }
+.visual img { object-fit:cover; }
+.capture,.card,.output { position:absolute; border:3px solid white; border-radius:10px; background:#fff; box-shadow:0 3px 12px #0b0d1010; }
+.capture { inset:15% 7%; overflow:hidden; }
+.corners { position:absolute; inset:12px; border:1px solid #ffffffa0; border-radius:4px; }
+.corners::before,.corners::after { content:""; position:absolute; width:18px; height:18px; border-color:white; border-style:solid; }
+.corners::before { left:-1px; top:-1px; border-width:2px 0 0 2px; }.corners::after { right:-1px; bottom:-1px; border-width:0 2px 2px 0; }
+.shutter { position:absolute; width:24px; height:24px; border:2px solid white; border-radius:50%; bottom:10px; left:calc(50% - 12px); background:#ffffff30; }
+.card { width:44%; height:57%; left:28%; top:22%; overflow:hidden; transform:translate(var(--x),var(--y)) rotate(var(--r)); }
+.card0 { --x:-57%;--y:-6%;--r:-5deg; }.card1 { --x:49%;--y:-10%;--r:5deg; }.card2 { --x:28%;--y:-30%;--r:2deg; }.card3 { --x:-28%;--y:-30%;--r:-2deg; }.card4 { --x:32%;--y:19%;--r:3deg; }.card5 { --x:-15%;--y:12%;--r:-2deg; }
+.choose .card:not(.selected) { opacity:.25; transform:translate(var(--x),var(--y)) scale(.94); }
+.choose .selected { border-color:#2f7bff; box-shadow:0 0 0 2px white,0 3px 12px #0b0d1010; }
+.choose .card4 { --x:30%;--y:-1%;--r:2deg; }.choose .card5 { --x:-25%;--y:11%;--r:-2deg; }
+.check { position:absolute; right:5px; top:5px; display:grid; place-items:center; width:21px; height:21px; border-radius:50%; color:white; background:#2f7bff; }
+.output { overflow:hidden; }.output0 { --from-x:90%;--from-y:0%; left:0; top:13%; width:30%; height:76%; }.output1 { --from-x:0%;--from-y:20%; left:34%; top:4%; width:32%; height:49%; }.output2 { --from-x:0%;--from-y:-45%; left:34%; top:57%; width:32%; height:39%; }.output3 { --from-x:-95%;--from-y:0%; left:70%; top:20%; width:30%; height:57%; }
+.outputImage { position:absolute; inset:0 0 24px; overflow:hidden; }.productLabel { position:absolute; bottom:0; left:0; width:100%; height:24px; display:grid; place-items:center; font-size:clamp(6px,3cqw,9px); font-weight:500; line-height:1.1; text-align:center; padding:2px; }
+.play { position:absolute; left:calc(50% - 12px); top:calc(50% - 12px); width:24px; height:24px; display:grid; place-items:center; border:1px solid #ffffffb0; border-radius:50%; background:#0b0d1030; color:white; }
+.label { display:flex; align-items:center; gap:10px; margin-bottom:24px; text-transform:uppercase; font-size:12px; }.label span { color:#566170; font-size:11px; }.label strong { font-weight:500; }
+.steps .step p { font-size:14px; }.connector { position:absolute; right:-28px; top:100px; color:#566170; }
+.step[data-motion=animate] .capture { animation:capture .6s var(--ease) var(--delay) both; }
+.step[data-motion=animate] .unlock .card { animation:expand .6s var(--ease) var(--delay) both; }
+.step[data-motion=animate] .choose .card { animation:curate .6s var(--ease) var(--delay) both; }
+.step[data-motion=animate] .choose .check { animation:check .24s var(--ease) calc(var(--delay) + .35s) both; }
+.step[data-motion=animate] .create .output { animation:resolve .9s var(--ease) var(--delay) both; }
+.step[data-motion=animate] .connector { animation:progress .6s var(--ease) calc(var(--delay) + .5s) both; }
+.step[data-running=false] *, .step[data-running=false] *::before,.step[data-running=false] *::after { animation-play-state:paused !important; }
+.step[data-motion=animate] .create .productLabel { animation:check .24s var(--ease) calc(var(--delay) + .6s) both; }
+@keyframes capture { from { transform:scale(.97);opacity:.65; } to { transform:scale(1);opacity:1; } }
+@keyframes expand { from { transform:translate(0,0) rotate(0); } }
+@keyframes curate { from { opacity:1; border-color:white; transform:translate(var(--x),var(--y)) rotate(var(--r)); } }
+@keyframes check { from { opacity:0; } to { opacity:1; } }
+@keyframes resolve { from { transform:translate(var(--from-x),var(--from-y)) scale(.94); border-color:#2f7bff; } to { transform:none; border-color:white; } }
+@keyframes progress { 0%,100% { color:#566170; } 40% { color:#2f7bff; } }
+@media(max-width:1100px) { .steps { gap:24px; }.connector { right:-20px;width:14px;top:75px; } }
+@media(max-width:900px) { .steps { gap:20px; }.label { gap:6px;flex-wrap:wrap; }.label svg { width:19px; }.steps .step h3 { font-size:16px; }.steps .step p { font-size:13px; }.connector { top:60px; }.visual { margin-bottom:24px; } }
+@media(max-width:640px) { .steps { grid-template-columns:1fr;gap:0;margin-top:32px; }.step { padding-block:24px 40px;border-top:1px solid var(--border-light);--delay:0s !important; }.visual { max-width:310px;margin:0 auto 24px; }.label { margin-bottom:16px; }.steps .step h3 { font-size:19px; }.steps .step p { font-size:15px; }.connector { top:auto;bottom:10px;right:calc(50% - 9px);transform:rotate(90deg); } }
+@media(prefers-reduced-motion:reduce) { .steps * { animation:none !important; } }
+
+/* Opt-in Beta catalogue. The standard marketing workflow is unchanged. */
+.beta .catalogue { position:absolute;inset:12% 2%;display:flex;flex-direction:column;justify-content:center;gap:12px; }
+.beta .catalogue > span { font-size:8px;letter-spacing:.12em;color:var(--text-light-secondary); }
+.beta .catalogue > div { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px; }
+.beta .catalogue > div > div { position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:5px; }
+.beta .step[data-motion=animate] .catalogue { animation:capture .9s var(--ease) var(--delay) both; }
+.beta .card { width:48%;height:auto;aspect-ratio:16/9;top:34%;left:26%;border-width:2px; }
+.beta .choose .card:not(.selected) { opacity:.15;transform:translate(var(--x),calc(var(--y) - 35%)) scale(.9); }
+.beta .create .output0 { left:4%;top:10%;width:42%;height:auto; }
+.beta .create .output1 { left:54%;top:10%;width:42%;height:auto; }
+.beta .create .outputImage { position:relative;inset:auto;aspect-ratio:9/16; }
+.beta .create .productLabel { position:static;height:32px;font-size:clamp(7px,3.3cqw,10px); }
+.beta .connector { top:40%;right:-25px; }
+@media(max-width:1100px) { .beta .connector { right:-20px; } }
+
+.beta .step[data-motion=animate] > .connector { animation:none;color:var(--caplist-blue); }

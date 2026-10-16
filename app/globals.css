@@ -5339,7 +5339,7 @@ html {scroll-padding-top:110px;}
 .profile-label strong {font-size:13px;font-weight:500;}
 .profile-label > span {font-size:11px;color:#b0c7dc;}
 .reading-progress {position:fixed;inset:0 0 auto;height:2px;z-index:100;pointer-events:none;}
-.reading-progress > span {display:block;width:100%;height:100%;background:#62a2ff;transform:scaleX(var(--reading-progress,0));transform-origin:left;box-shadow:0 0 9px #2f7bff;}
+.reading-progress > span {display:block;width:100%;height:100%;background:#62a2ff;transform:scaleX(var(--reading-progress,0));transform-origin:left;box-shadow:none;}
 .site-header {transition:box-shadow .3s,background-color .3s;}
 .page-scrolled .site-header {background:#0b1520f2;backdrop-filter:blur(18px);box-shadow:0 8px 25px #0005;}
 .site-reveal {transition:opacity .65s ease var(--reveal-delay,0ms),translate .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms);}
@@ -5395,167 +5395,69 @@ html {scroll-padding-top:110px;}
   .header-signin { transition: none; }
 }
 
-
-/* Studio preview account control — mirrors the client workspace identity pattern. */
-.profile-signin {
-  width: auto;
-  height: auto;
-  min-height: 52px;
+.header-try {
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 5px 12px 5px 5px;
-  border: 1px solid #dbe2e9;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #10171d;
-  text-align: left;
-  box-shadow: 0 2px 8px #0b0d1012;
-}
-.profile-signin:hover {
-  border-color: #aebdcc;
-  background: #fbfcfd;
-  box-shadow: 0 6px 18px #0b0d1018;
-  color: #10171d;
-}
-.profile-signin:focus-visible {
-  outline: 2px solid #2f7bff;
-  outline-offset: 3px;
-}
-.profile-avatar {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  border: 1px solid #d8e0e8;
-  border-radius: 50%;
-  background: #f7f9fb;
-  color: #111820;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1;
-}
-.profile-label {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 3px;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--blue);
+  font-size: var(--type-label);
+  font-weight: 650;
   white-space: nowrap;
 }
-.profile-label strong {
-  color: #111820;
-  font-size: 14px;
-  font-weight: 550;
-  line-height: 1.15;
+.header-try:hover {
+  background: var(--blue);
+  color: #fff;
 }
-.profile-label > span {
-  max-width: 168px;
+
+.header-avatar {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid #d7dee8;
+  border-radius: 50%;
+  background: #fff;
+  color: #0b0d10;
+}
+.header-avatar:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* Final Studio entry controls. */
+.header-avatar {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  aspect-ratio: 1 / 1;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center;
+  border: 1px solid #d7dee8;
+  border-radius: 999px !important;
+  background: #fff;
+  color: #0b0d10;
+  line-height: 1;
+  flex: 0 0 44px;
   overflow: hidden;
-  color: #667383;
-  font-size: 12px;
-  line-height: 1.15;
-  text-overflow: ellipsis;
 }
-.mobile-profile-signin {
-  width: 100%;
-  justify-content: flex-start;
-  margin-top: 4px;
+.header-avatar svg {
+  width: 18px;
+  height: 18px;
 }
-@media (max-width: 767px) {
-  .header-actions > .profile-signin {
-    min-height: 42px;
-    padding: 2px;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-  .header-actions > .profile-signin .profile-avatar {
-    width: 38px;
-    height: 38px;
-    flex-basis: 38px;
-  }
-  .header-actions > .profile-signin .profile-label {
-    display: none;
-  }
-  .mobile-menu .profile-signin {
-    display: flex;
-    width: 100%;
-    min-height: 54px;
-    padding: 6px 10px 6px 6px;
-  }
-  .mobile-menu .profile-signin .profile-label {
-    display: flex;
-  }
-}
-
-
-/* Caplist Studio client login control. */
-.client-login-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  min-height: 44px;
-  padding: 4px 10px 4px 4px;
-  border: 1px solid #cad5df;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #10171d;
-  font-size: 14px;
+.header-login-link {
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: var(--type-small);
   font-weight: 550;
-  line-height: 1;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px #0b0d1010;
+  letter-spacing: -0.01em;
 }
-.client-login-link:hover {
-  border-color: #9eb2c5;
-  background: #fbfcfd;
-  color: #10171d;
-  box-shadow: 0 6px 18px #0b0d1016;
-}
-.client-login-link:focus-visible {
-  outline: 2px solid #2f7bff;
-  outline-offset: 3px;
-}
-.client-login-icon {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
-  border-radius: 50%;
-  background: #2f7bff;
-  color: #ffffff;
-  box-shadow: inset 0 1px 0 #ffffff35;
-}
-.client-login-label {
-  padding-right: 2px;
-}
-@media (max-width: 767px) {
-  .header-actions > .client-login-link {
-    width: 42px;
-    min-height: 42px;
-    padding: 3px;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-  .header-actions > .client-login-link .client-login-icon {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-  }
-  .header-actions > .client-login-link .client-login-label {
-    display: none;
-  }
-  .mobile-menu .client-login-link {
-    width: 100%;
-    justify-content: flex-start;
-    min-height: 52px;
-    padding: 5px 10px 5px 5px;
-    border-color: #d6dee6;
-  }
-  .mobile-menu .client-login-link .client-login-label {
-    display: inline;
-  }
+.header-try {
+  font-family: var(--font-inter), Arial, sans-serif;
 }

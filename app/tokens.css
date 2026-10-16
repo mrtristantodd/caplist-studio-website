@@ -1,5 +1,5 @@
 :root {
-  /* Locked Caplist Studio baseline v1.0 supplied by the user. */
+  /* Shared CAPLIST palette; Website v2 refinement of the approved baseline. */
   --caplist-black: #0b0d10;
   --caplist-blue: #2f7bff;
   --caplist-offwhite: #f8fafc;
@@ -68,8 +68,10 @@
   --line-heading: 1.1;
   --radius-control: 8px;
   --radius-panel: 16px;
+  --radius-media: 12px;
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
   --radius-pill: 999px;
   --motion-state: var(--transition-fast);
-  --shadow-panel: 0 16px 40px #0000001a;
+  --shadow-panel: 0 16px 40px #0b0d1010;
   --content-width: 1440px;
 }

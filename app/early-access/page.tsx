@@ -1,3 +1,4 @@
+import { APP_URL } from "@/lib/site";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { AccessLink } from "@/components/editorial/StudioUI";
 export const metadata = {
@@ -16,10 +17,9 @@ export default function EarlyAccess() {
           are refined.
         </p>
         <p>
-          Book a demo to see the product, discuss your current media workflow
-          and find out whether Caplist is a fit for your business.
+          Create your Caplist account to get started with your property-media business.
         </p>
-        <AccessLink href="/demo">Book a demo</AccessLink>
+        <AccessLink href={`${APP_URL}/signup`}>Get started</AccessLink>
       </section>
     </InnerPage>
   );

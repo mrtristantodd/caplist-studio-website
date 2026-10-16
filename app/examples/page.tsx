@@ -1,3 +1,4 @@
+import { APP_URL } from "@/lib/site";
 import { InnerPage } from "@/components/editorial/InnerPage";
 import { Photo, FrameCorners } from "@/components/editorial/Photo";
 import { AccessLink } from "@/components/editorial/StudioUI";
@@ -87,7 +88,7 @@ export default function Products() {
             your business to sell and more high-quality content for your clients
             to use.
           </p>
-          <AccessLink href="/demo">Book a demo</AccessLink>
+          <AccessLink href={`${APP_URL}/signup`}>Get started</AccessLink>
         </div>
       </section>
     </InnerPage>

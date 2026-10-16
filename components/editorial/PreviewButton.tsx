@@ -1,4 +1,5 @@
 "use client";
+import { APP_URL } from "@/lib/site";
 import { MotionPreview } from "./MotionPreview";
 import { useRef } from "react";
 import { ArrowUpRight, X } from "lucide-react";
@@ -13,10 +14,10 @@ const notices = {
     href: "/pricing",
   },
   login: {
-    title: "Caplist Studio is currently invite-only.",
-    text: "If you run a professional property-media business, book a demo and we’ll talk through how Caplist could fit your existing workflow.",
-    link: "Book a demo",
-    href: "/demo",
+    title: "Your Caplist Studio account.",
+    text: "Sign in to your existing Caplist Studio account.",
+    link: "Studio login",
+    href: `${APP_URL}/login`,
   },
   resources: {
     title: "Start with a stronger capture.",

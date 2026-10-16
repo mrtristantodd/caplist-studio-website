@@ -1,9 +1,8 @@
+import { AppSignupLink } from "./AppSignupLink";
+import { AppLoginLink } from "./AppLoginLink";
 import { CaplistLogo } from "@/components/brand/CaplistLogo";
-import { APP_LIVE, APP_URL, STUDIO_LOGIN_URL, STUDIO_PREVIEW_URL } from "@/lib/site";
 
 export function Footer() {
-  const liveStudio = APP_LIVE ? APP_URL : STUDIO_PREVIEW_URL;
-
   return (
     <footer className="brand-footer">
       <div className="shell">
@@ -14,22 +13,20 @@ export function Footer() {
             </a>
             <h2>Capture once. Create more. Sell more.</h2>
           </div>
-          <nav aria-label="Explore">
-            <h3 className="footer-nav-heading">Explore</h3>
+          <nav aria-label="Product">
+            <h3 className="footer-nav-heading">Product</h3>
+            <a href="/how-it-works">How it works</a>
             <a href="/examples">Products</a>
             <a href="/pricing">Pricing</a>
-            <a href="/#how-it-works">See Caplist in action</a>
-            <a href="/resources">Resources</a>
-            <a href="/#for-media-businesses">For your business</a>
-            <a href="/demo">Book a demo</a>
-            <a href={STUDIO_LOGIN_URL}>Client login</a>
-            {!APP_LIVE && <a href={liveStudio}>Studio Preview</a>}
-            <a href="/partners">Partners</a>
+            <AppSignupLink />
+            <AppLoginLink />
           </nav>
           <div>
             <nav aria-label="Company">
               <h3 className="footer-nav-heading">Company</h3>
               <a href="/about">About</a>
+              <a href="/resources">Resources</a>
+              <a href="/partners">Partners</a>
               <a href="/contact">Contact</a>
             </nav>
             <nav aria-label="Legal">

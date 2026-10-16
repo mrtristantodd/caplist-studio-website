@@ -6,6 +6,7 @@ import { catalogueProducts } from "@/lib/demo-media";
 import { Photo } from "@/components/editorial/Photo";
 import { HeroWorkflowDemo } from "@/components/home/HeroWorkflowDemo";
 import { CaplistMotionLogo } from "@/components/brand/CaplistMotionMark";
+import { APP_URL } from "@/lib/site";
 import styles from "./homepage.module.css";
 
 function Paragraphs({ body }: { body: readonly string[] }) {
@@ -34,8 +35,8 @@ export function HomepageV2() {
                 <Paragraphs body={copy.hero.body} />
               </div>
               <div className={styles.actions}>
-                <a className={styles.button} href="/demo">
-                  Book a demo <ArrowUpRight size={17} />
+                <a className={styles.button} href={`${APP_URL}/signup`}>
+                  Get started <ArrowUpRight size={17} />
                 </a>
               </div>
               <p className={styles.audience}>{copy.hero.audience}</p>
@@ -176,20 +177,22 @@ export function HomepageV2() {
         </section>
         <section className={styles.finalCta}>
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>{copy.close.eyebrow}</p>
-            <h2>{copy.close.headline}</h2>
-            <div className={styles.finalCtaSide}>
-              <div className={styles.finalMotion} aria-hidden="true">
-                <CaplistMotionLogo width={220} />
-                <span>One capture → multiple outputs</span>
-              </div>
+            <div className={styles.finalCtaMain}>
+              <p className={`${styles.eyebrow} ${styles.finalEyebrow}`}>{copy.close.eyebrow}</p>
+              <h2>{copy.close.headline}</h2>
               <div className={styles.introCopy}>
                 <Paragraphs body={copy.close.body} />
               </div>
+              <a className={styles.button} href={`${APP_URL}/signup`}>
+                Get started <ArrowUpRight size={19} />
+              </a>
             </div>
-            <a className={styles.button} href="/demo">
-              Book a demo <ArrowUpRight size={19} />
-            </a>
+            <div className={styles.finalCtaSide}>
+              <p className={styles.finalMotionLabel}>One capture → multiple outputs</p>
+              <div className={styles.finalMotion} aria-hidden="true">
+                <CaplistMotionLogo width={220} />
+              </div>
+            </div>
           </div>
         </section>
       </main>

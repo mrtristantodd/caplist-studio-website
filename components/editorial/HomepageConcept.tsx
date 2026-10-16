@@ -1,3 +1,4 @@
+import { APP_URL } from "@/lib/site";
 import { ArrowRight, Check, Play } from "lucide-react";
 import { CaplistMark } from "@/components/brand/CaplistLogo";
 import { products } from "@/lib/demo-media";
@@ -49,8 +50,8 @@ function ConceptHero({ variant }: { variant: Variant }) {
           </p>
           <div className={styles.actions}>
             <AccessLink />
-            <a className={styles.textLink} href="/demo">
-              Book a demo <ArrowRight size={18} />
+            <a className={styles.textLink} href={`${APP_URL}/signup`}>
+              Get started <ArrowRight size={18} />
             </a>
           </div>
           <p className={styles.audience}>
