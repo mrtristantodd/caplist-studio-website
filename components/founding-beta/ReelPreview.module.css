@@ -1,0 +1,7 @@
+.reel { position:relative;width:100%;overflow:hidden;border-radius:7px;background:var(--caplist-black);isolation:isolate; }
+.media { position:relative;width:100%;aspect-ratio:9/16;overflow:hidden; }
+.frame { position:absolute;inset:0;opacity:0;transition:opacity .8s ease; }
+.frame[data-active=true] { opacity:1; }
+.frame img,.reel video { object-fit:cover;width:100%;height:100%;display:block; }
+.error { position:absolute;inset:12px 12px auto;padding:8px;background:var(--caplist-black);color:white !important;font-size:11px !important;z-index:2; }
+@media(prefers-reduced-motion:reduce) { .frame { transition:none; } }

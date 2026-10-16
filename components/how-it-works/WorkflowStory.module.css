@@ -38,8 +38,19 @@
 @media(max-width:640px) { .steps { grid-template-columns:1fr;gap:0;margin-top:32px; }.step { padding-block:24px 40px;border-top:1px solid var(--border-light);--delay:0s !important; }.visual { max-width:310px;margin:0 auto 24px; }.label { margin-bottom:16px; }.steps .step h3 { font-size:19px; }.steps .step p { font-size:15px; }.connector { top:auto;bottom:10px;right:calc(50% - 9px);transform:rotate(90deg); } }
 @media(prefers-reduced-motion:reduce) { .steps * { animation:none !important; } }
 
-/* Opt-in MVP presentation. Default How It Works composition is unchanged. */
-.beta .create .output0 { left: 4%; top: 8%; width: 42%; height: 84%; }
-.beta .create .output1 { left: 54%; top: 8%; width: 42%; height: 84%; }
-.beta .create .productLabel { font-size: clamp(7px, 3.3cqw, 10px); height: 32px; }
-.beta .create .outputImage { bottom: 32px; }
+/* Opt-in Beta catalogue. The standard marketing workflow is unchanged. */
+.beta .catalogue { position:absolute;inset:12% 2%;display:flex;flex-direction:column;justify-content:center;gap:12px; }
+.beta .catalogue > span { font-size:8px;letter-spacing:.12em;color:var(--text-light-secondary); }
+.beta .catalogue > div { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px; }
+.beta .catalogue > div > div { position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:5px; }
+.beta .step[data-motion=animate] .catalogue { animation:capture .9s var(--ease) var(--delay) both; }
+.beta .card { width:48%;height:auto;aspect-ratio:16/9;top:34%;left:26%;border-width:2px; }
+.beta .choose .card:not(.selected) { opacity:.15;transform:translate(var(--x),calc(var(--y) - 35%)) scale(.9); }
+.beta .create .output0 { left:4%;top:10%;width:42%;height:auto; }
+.beta .create .output1 { left:54%;top:10%;width:42%;height:auto; }
+.beta .create .outputImage { position:relative;inset:auto;aspect-ratio:9/16; }
+.beta .create .productLabel { position:static;height:32px;font-size:clamp(7px,3.3cqw,10px); }
+.beta .connector { top:40%;right:-25px; }
+@media(max-width:1100px) { .beta .connector { right:-20px; } }
+
+.beta .step[data-motion=animate] > .connector { animation:none;color:var(--caplist-blue); }

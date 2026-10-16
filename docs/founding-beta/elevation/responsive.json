@@ -1,0 +1,58 @@
+[
+  {
+    "brokenImages": [],
+    "height": 1000,
+    "missingAnchors": [],
+    "overflow": false,
+    "requiredFields": [
+      "name",
+      "business",
+      "email",
+      "portfolio"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "brokenImages": [],
+    "height": 1000,
+    "missingAnchors": [],
+    "overflow": false,
+    "requiredFields": [
+      "name",
+      "business",
+      "email",
+      "portfolio"
+    ],
+    "scrollWidth": 1024,
+    "width": 1024
+  },
+  {
+    "brokenImages": [],
+    "height": 1000,
+    "missingAnchors": [],
+    "overflow": false,
+    "requiredFields": [
+      "name",
+      "business",
+      "email",
+      "portfolio"
+    ],
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "brokenImages": [],
+    "height": 844,
+    "missingAnchors": [],
+    "overflow": false,
+    "requiredFields": [
+      "name",
+      "business",
+      "email",
+      "portfolio"
+    ],
+    "scrollWidth": 390,
+    "width": 390
+  }
+]

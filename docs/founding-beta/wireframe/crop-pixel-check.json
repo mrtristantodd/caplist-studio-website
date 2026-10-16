@@ -1,0 +1,21 @@
+{
+  "method": "Compare equally sized screenshot regions inside source outline and output; exclude 6px sides, 44px top label, 16px bottom corners. Mean absolute RGB error on 0\u2013255 values. JPEG and subpixel resampling prevent byte identity.",
+  "results": [
+    {
+      "screenshot": "crop-matched-1440.jpg",
+      "bounds": "crop-aerial-bounds.json",
+      "sourceTime": 0,
+      "meanAbsoluteRgbError": 2.573449998992525,
+      "threshold": 5,
+      "pass": true
+    },
+    {
+      "screenshot": "crop-bedroom-1440.jpg",
+      "bounds": "crop-bedroom-bounds.json",
+      "sourceTime": 13.779802,
+      "meanAbsoluteRgbError": 1.8076099659473293,
+      "threshold": 5,
+      "pass": true
+    }
+  ]
+}

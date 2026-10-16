@@ -3,7 +3,6 @@ export type BetaApplicationValues = {
   business: string;
   email: string;
   portfolio: string;
-  jobsPerWeek: string;
   capture: string[];
 };
 
